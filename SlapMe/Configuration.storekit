@@ -1,0 +1,61 @@
+{
+  "identifier" : "F7A2C1D8-4B3E-4A1F-9C5D-8E6F2A3B4C5D",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "A1B2C3D4-E5F6-7890-ABCD-EF1234567890",
+      "localizations" : [
+        {
+          "description" : "Tüm ses paketlerini ve karakterleri aç",
+          "displayName" : "SlapMe PRO",
+          "locale" : "tr"
+        },
+        {
+          "description" : "Unlock all sound packs and characters",
+          "displayName" : "SlapMe PRO",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.slapme.premium",
+      "referenceName" : "SlapMe PRO",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "1234567890",
+    "_developerTeamID" : "XXXXXXXXXX",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : "",
+    "_locale" : "tr",
+    "_storefront" : "TUR",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "setting" : "automatic-renewal-status"
+      },
+      {
+        "current" : null,
+        "setting" : "billing-retry-period"
+      },
+      {
+        "current" : null,
+        "setting" : "product-fetch"
+      },
+      {
+        "current" : null,
+        "setting" : "purchase"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

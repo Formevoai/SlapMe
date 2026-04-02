@@ -1,0 +1,19 @@
+{
+  "id": "yamete",
+  "title": "Yamete",
+  "icon": "waveform",
+  "isPremium": true,
+  "soundFolder": "yamete",
+  "themeColor": "#E8719A",
+  "characters": [
+    {
+      "id": "yamete",
+      "name": "Yumi",
+      "softClips": ["yamete_01.mp3", "yamete_02.mp3"],
+      "mediumClips": ["yamete_03.mp3", "yamete_04.mp3"],
+      "hardClips": ["yamete_05.mp3", "yamete_06.mp3"],
+      "comboClips": ["yamete_05.mp3", "yamete_06.mp3"],
+      "previewClip": "yamete_03.mp3"
+    }
+  ]
+}

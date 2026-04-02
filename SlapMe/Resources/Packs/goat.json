@@ -1,0 +1,55 @@
+{
+  "id": "goat",
+  "title": "Animals",
+  "icon": "pawprint.fill",
+  "isPremium": false,
+  "soundFolder": "goat",
+  "themeColor": "#8B5E3C",
+  "characters": [
+    {
+      "id": "goat",
+      "name": "Goat King",
+      "softClips": ["goat_1.mp3", "goat_2.mp3", "goat_3.mp3"],
+      "mediumClips": ["goat_4.mp3", "goat_5.mp3", "goat_6.mp3", "goat_7.mp3"],
+      "hardClips": ["goat_8.mp3", "goat_9.mp3", "goat_10.mp3"],
+      "comboClips": ["goat_9.mp3", "goat_10.mp3"],
+      "previewClip": "goat_5.mp3"
+    },
+    {
+      "id": "cat",
+      "name": "Kedi",
+      "softClips": [],
+      "mediumClips": [],
+      "hardClips": [],
+      "comboClips": [],
+      "previewClip": ""
+    },
+    {
+      "id": "dog",
+      "name": "Köpek",
+      "softClips": [],
+      "mediumClips": [],
+      "hardClips": [],
+      "comboClips": [],
+      "previewClip": ""
+    },
+    {
+      "id": "monkey",
+      "name": "Maymun",
+      "softClips": [],
+      "mediumClips": [],
+      "hardClips": [],
+      "comboClips": [],
+      "previewClip": ""
+    },
+    {
+      "id": "esek",
+      "name": "Eşek",
+      "softClips": [],
+      "mediumClips": [],
+      "hardClips": [],
+      "comboClips": [],
+      "previewClip": ""
+    }
+  ]
+}

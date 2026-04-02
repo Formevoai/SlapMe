@@ -1,0 +1,19 @@
+{
+  "id": "classic",
+  "title": "Classic",
+  "icon": "person.fill",
+  "isPremium": false,
+  "soundFolder": "classic",
+  "themeColor": "#E87C2B",
+  "characters": [
+    {
+      "id": "classic",
+      "name": "Guy",
+      "softClips": ["male_00_Ow.mp3", "male_01_Ouch.mp3", "male_07_Hey.mp3"],
+      "mediumClips": ["male_02_Owwie.mp3", "male_04_Ow_stop_it.mp3", "male_08_Yowch.mp3", "male_09_That_stings.mp3"],
+      "hardClips": ["male_03_Hey_that_hurts.mp3", "male_05_What_was_that_for.mp3", "male_06_Ow_ow_ow.mp3"],
+      "comboClips": ["male_05_What_was_that_for.mp3", "male_06_Ow_ow_ow.mp3"],
+      "previewClip": "male_01_Ouch.mp3"
+    }
+  ]
+}

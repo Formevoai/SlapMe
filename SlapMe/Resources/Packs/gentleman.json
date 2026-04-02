@@ -1,0 +1,19 @@
+{
+  "id": "gentleman",
+  "title": "Gentleman",
+  "icon": "theatermasks.fill",
+  "isPremium": false,
+  "soundFolder": "gentleman",
+  "themeColor": "#4A4A8A",
+  "characters": [
+    {
+      "id": "gentleman",
+      "name": "Sir Slap",
+      "softClips": ["gentleman_01.wav", "gentleman_02.wav"],
+      "mediumClips": ["gentleman_03.wav", "gentleman_04.wav"],
+      "hardClips": ["gentleman_05.wav"],
+      "comboClips": ["gentleman_05.wav"],
+      "previewClip": "gentleman_03.wav"
+    }
+  ]
+}

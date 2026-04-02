@@ -1,0 +1,122 @@
+{
+  "id": "sexy",
+  "title": "Sexy",
+  "icon": "heart.fill",
+  "isPremium": true,
+  "soundFolder": "sexy",
+  "themeColor": "#C2185B",
+  "characters": [
+    {
+      "id": "alice",
+      "name": "Alice",
+      "softClips": ["alice_light.mp3"],
+      "mediumClips": ["alice_medium.mp3"],
+      "hardClips": ["alice_hard.mp3"],
+      "comboClips": ["alice_hard.mp3"],
+      "previewClip": "alice_light.mp3"
+    },
+    {
+      "id": "isabell",
+      "name": "Isabell",
+      "softClips": ["isabell_light.mp3"],
+      "mediumClips": ["isabell_medium.mp3"],
+      "hardClips": ["isabell_hard.mp3"],
+      "comboClips": ["isabell_hard.mp3"],
+      "previewClip": "isabell_light.mp3"
+    },
+    {
+      "id": "cute_anime",
+      "name": "Cute Anime",
+      "softClips": ["cute_anime_light.mp3"],
+      "mediumClips": ["cute_anime_medium.mp3"],
+      "hardClips": ["cute_anime_hard.mp3"],
+      "comboClips": ["cute_anime_hard.mp3"],
+      "previewClip": "cute_anime_light.mp3"
+    },
+    {
+      "id": "jasmin",
+      "name": "Jasmin",
+      "softClips": ["jasmin_light.mp3"],
+      "mediumClips": ["jasmin_medium.mp3"],
+      "hardClips": ["jasmin_hard.mp3"],
+      "comboClips": ["jasmin_hard.mp3"],
+      "previewClip": "jasmin_light.mp3"
+    },
+    {
+      "id": "jenny",
+      "name": "Jenny",
+      "comingSoon": true,
+      "softClips": ["jenny_light.mp3"],
+      "mediumClips": ["jenny_medium.mp3"],
+      "hardClips": ["jenny_hard.mp3"],
+      "comboClips": ["jenny_hard.mp3"],
+      "previewClip": "jenny_light.mp3"
+    },
+    {
+      "id": "dilara",
+      "name": "Dilara",
+      "softClips": ["dilara_light.mp3"],
+      "mediumClips": ["dilara_medium.mp3"],
+      "hardClips": ["dilara_hard.mp3"],
+      "comboClips": ["dilara_hard.mp3"],
+      "previewClip": "dilara_light.mp3"
+    },
+    {
+      "id": "drama_queen",
+      "name": "Drama Queen",
+      "comingSoon": true,
+      "softClips": ["drama_queen_light.mp3"],
+      "mediumClips": ["drama_queen_medium.mp3"],
+      "hardClips": ["drama_queen_hard.mp3"],
+      "comboClips": ["drama_queen_hard.mp3"],
+      "previewClip": "drama_queen_light.mp3"
+    },
+    {
+      "id": "kawaii_softgirl",
+      "name": "Kawaii Softgirl",
+      "comingSoon": true,
+      "softClips": ["kawaii_softgirl_light.mp3"],
+      "mediumClips": ["kawaii_softgirl_medium.mp3"],
+      "hardClips": ["kawaii_softgirl_hard.mp3"],
+      "comboClips": ["kawaii_softgirl_hard.mp3"],
+      "previewClip": "kawaii_softgirl_light.mp3"
+    },
+    {
+      "id": "gentleman_lady",
+      "name": "Gentleman Lady",
+      "softClips": ["gentleman_lady_light.mp3"],
+      "mediumClips": ["gentleman_lady_medium.mp3"],
+      "hardClips": ["gentleman_lady_hard.mp3"],
+      "comboClips": ["gentleman_lady_hard.mp3"],
+      "previewClip": "gentleman_lady_light.mp3"
+    },
+    {
+      "id": "hanna",
+      "name": "Hanna",
+      "softClips": ["hanna_light.mp3"],
+      "mediumClips": ["hanna_medium.mp3"],
+      "hardClips": ["hanna_hard.mp3"],
+      "comboClips": ["hanna_hard.mp3"],
+      "previewClip": "hanna_light.mp3"
+    },
+    {
+      "id": "mature_woman",
+      "name": "Mature Woman",
+      "softClips": ["mature_woman_light.mp3"],
+      "mediumClips": ["mature_woman_medium.mp3"],
+      "hardClips": ["mature_woman_hard.mp3"],
+      "comboClips": ["mature_woman_hard.mp3"],
+      "previewClip": "mature_woman_light.mp3"
+    },
+    {
+      "id": "merve",
+      "name": "Merve",
+      "comingSoon": true,
+      "softClips": ["merve_light.mp3"],
+      "mediumClips": ["merve_medium.mp3"],
+      "hardClips": ["merve_hard.mp3"],
+      "comboClips": ["merve_hard.mp3"],
+      "previewClip": "merve_light.mp3"
+    }
+  ]
+}

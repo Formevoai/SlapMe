@@ -1,0 +1,19 @@
+{
+  "id": "funny",
+  "title": "Funny",
+  "icon": "face.smiling.fill",
+  "isPremium": false,
+  "soundFolder": "funny",
+  "themeColor": "#6DBE45",
+  "characters": [
+    {
+      "id": "funny",
+      "name": "Gremlin",
+      "softClips": ["fart_01.mp3", "fart_02.mp3", "fart_03.mp3", "fart_04.mp3"],
+      "mediumClips": ["fart_05.mp3", "fart_06.mp3", "fart_07.mp3", "fart_08.mp3", "fart_09.mp3"],
+      "hardClips": ["fart_10.mp3", "fart_11.mp3", "fart_12.mp3", "fart_13.mp3"],
+      "comboClips": ["fart_12.mp3", "fart_13.mp3"],
+      "previewClip": "fart_05.mp3"
+    }
+  ]
+}

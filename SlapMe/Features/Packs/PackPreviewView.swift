@@ -1,0 +1,108 @@
+import SwiftUI
+
+struct PackPreviewView: View {
+    let pack: SoundPack
+    @ObservedObject var audioManager: AudioManager
+    var onSelect: () -> Void
+    var onDismiss: () -> Void
+
+    @State private var isPlaying = false
+
+    var body: some View {
+        VStack(spacing: 24) {
+            // Handle
+            Capsule()
+                .fill(Color(.systemGray4))
+                .frame(width: 40, height: 4)
+                .padding(.top, 12)
+
+            // Karakter emoji
+            Text(characterEmoji)
+                .font(.system(size: 80))
+                .scaleEffect(isPlaying ? 1.3 : 1.0)
+                .animation(.spring(response: 0.2, dampingFraction: 0.4), value: isPlaying)
+
+            // Pack bilgisi
+            VStack(spacing: 6) {
+                HStack {
+                    Text(pack.title)
+                        .font(.title2.bold())
+                    if pack.isPremium {
+                        Text("PRO")
+                            .font(.caption.bold())
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 3)
+                            .background(Color.yellow.opacity(0.85))
+                            .clipShape(Capsule())
+                    }
+                }
+                Text(pack.title)
+                    .foregroundStyle(.secondary)
+            }
+
+            // Clip sayısı
+            HStack(spacing: 24) {
+                statItem(label: "Soft",  count: pack.softClips.count)
+                statItem(label: "Medium", count: pack.mediumClips.count)
+                statItem(label: "Hard",  count: pack.hardClips.count)
+                statItem(label: "Combo", count: pack.comboClips.count)
+            }
+            .padding()
+            .background(Color(.secondarySystemBackground))
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+
+            Spacer()
+
+            // Butonlar
+            VStack(spacing: 12) {
+                Button(action: {
+                    isPlaying = true
+                    audioManager.playPreview(pack: pack)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { isPlaying = false }
+                }) {
+                    Label("Önizle", systemImage: "play.fill")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color(.secondarySystemBackground))
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                }
+
+                Button(action: onSelect) {
+                    Text("Bu Paketi Seç")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.accentColor)
+                        .foregroundStyle(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                }
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 32)
+        }
+        .padding(.horizontal)
+    }
+
+    private var characterEmoji: String {
+        switch pack.categoryID {
+        case "goat":       return "🐐"
+        case "yamete":     return "😳"
+        case "sexy":       return "😏"
+        case "funny":      return "😂"
+        case "pain":       return "😱"
+        case "gentleman":  return "🎩"
+        default:           return "😐"
+        }
+    }
+
+    private func statItem(label: String, count: Int) -> some View {
+        VStack(spacing: 4) {
+            Text("\(count)")
+                .font(.title3.bold())
+            Text(label)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "pain",
+  "title": "Pain",
+  "icon": "exclamationmark.triangle.fill",
+  "isPremium": false,
+  "soundFolder": "pain",
+  "themeColor": "#D93B3B",
+  "characters": [
+    {
+      "id": "pain",
+      "name": "Screamer",
+      "softClips": ["wtf_01.mp3", "wtf_02.mp3"],
+      "mediumClips": ["wtf_03.mp3", "wtf_04.mp3", "wtf_05.mp3"],
+      "hardClips": ["wtf_06.mp3", "wtf_07.mp3"],
+      "comboClips": ["wtf_06.mp3", "wtf_07.mp3"],
+      "previewClip": "wtf_03.mp3"
+    }
+  ]
+}
