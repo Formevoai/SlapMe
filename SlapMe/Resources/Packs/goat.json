@@ -18,38 +18,38 @@
     {
       "id": "cat",
       "name": "Kedi",
-      "softClips": [],
-      "mediumClips": [],
-      "hardClips": [],
-      "comboClips": [],
-      "previewClip": ""
+      "softClips": ["cat_1.mp3", "cat_2.mp3"],
+      "mediumClips": ["cat_3.mp3", "cat_4.mp3"],
+      "hardClips": ["cat_5.mp3", "cat_6.mp3"],
+      "comboClips": ["cat_5.mp3", "cat_6.mp3"],
+      "previewClip": "cat_3.mp3"
     },
     {
       "id": "dog",
       "name": "Köpek",
-      "softClips": [],
-      "mediumClips": [],
-      "hardClips": [],
-      "comboClips": [],
-      "previewClip": ""
+      "softClips": ["dog_1.mp3"],
+      "mediumClips": ["dog_2.mp3"],
+      "hardClips": ["dog_3.mp3"],
+      "comboClips": ["dog_3.mp3"],
+      "previewClip": "dog_2.mp3"
     },
     {
       "id": "monkey",
       "name": "Maymun",
-      "softClips": [],
-      "mediumClips": [],
-      "hardClips": [],
-      "comboClips": [],
-      "previewClip": ""
+      "softClips": ["monkey_1.mp3", "monkey_2.mp3"],
+      "mediumClips": ["monkey_3.mp3", "monkey_4.mp3"],
+      "hardClips": ["monkey_5.mp3"],
+      "comboClips": ["monkey_4.mp3", "monkey_5.mp3"],
+      "previewClip": "monkey_3.mp3"
     },
     {
       "id": "esek",
       "name": "Eşek",
-      "softClips": [],
-      "mediumClips": [],
-      "hardClips": [],
-      "comboClips": [],
-      "previewClip": ""
+      "softClips": ["esek_1.mp3"],
+      "mediumClips": ["esek_2.mp3"],
+      "hardClips": ["esek_3.mp3"],
+      "comboClips": ["esek_3.mp3"],
+      "previewClip": "esek_2.mp3"
     }
   ]
 }
