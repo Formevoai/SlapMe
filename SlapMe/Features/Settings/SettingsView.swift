@@ -157,7 +157,7 @@ struct SettingsView: View {
 
                 // Yasal & Hesap
                 Section {
-                    Link(destination: URL(string: "https://eminsahan.github.io/SlapMe/privacy-policy.html")!) {
+                    Link(destination: URL(string: "https://formevoai.github.io/SlapMe/privacy-policy.html")!) {
                         Label("Gizlilik Politikası", systemImage: "hand.raised.fill")
                     }
 
