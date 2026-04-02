@@ -1,0 +1,103 @@
+/* ============================================
+   SlapMe – Türkçe
+   ============================================ */
+
+// MARK: - Common
+"app_name" = "SlapMe";
+"pro_badge" = "PRO";
+"free_badge" = "ÜCRETSİZ";
+"coming_soon" = "Yakında";
+"button_done" = "Tamam";
+"button_close" = "Kapat";
+"button_continue" = "Devam";
+"button_skip" = "Atla";
+"button_start" = "Başla";
+
+// MARK: - Home
+"home_slap_hint" = "Telefona vur!";
+"safe_mode_on" = "Güvenli Mod Açık";
+"safe_mode_off" = "Güvenli Mod Kapalı";
+"safe_mode_description" = "Arka planda tetiklenme engellenir";
+"slap_meter_label" = "TOKAT ÖLÇERİ";
+
+// MARK: - Tags
+"tag_sexy" = "Sexy";
+"tag_yamete" = "Yamete";
+"tag_animal" = "Hayvan";
+"tag_funny" = "Komik";
+
+// MARK: - Settings
+"settings_title" = "Ayarlar";
+"section_sound_pack" = "Ses Paketi";
+"settings_selected_pack" = "Seçili Paket";
+"section_detection" = "Algılama";
+"settings_sensitivity" = "Hassasiyet";
+"sensitivity_low" = "Düşük";
+"sensitivity_high" = "Yüksek";
+"settings_cooldown" = "Cooldown";
+"cooldown_fast" = "Hızlı";
+"cooldown_slow" = "Yavaş";
+"cooldown_seconds_format" = "%.1f saniye";
+"section_sound" = "Ses";
+"settings_master_volume" = "Ana Ses";
+"settings_dynamic_volume" = "Dinamik Ses";
+"section_feedback" = "Geri Bildirim";
+"settings_haptics" = "Titreşim";
+"settings_screen_flash" = "Ekran Flaşı";
+"settings_charger_sound" = "Şarj Sesi";
+"charger_sound_description" = "Şarj kablosu takılınca seçtiğin karakterden rastgele bir ses çalar ⚡";
+"charger_trial_warning" = "🔒 Deneme: Bu karakterden sadece 1 ses çalar. Tüm sesler için PRO'ya geç!";
+"section_security" = "Güvenlik";
+"settings_safe_mode" = "Güvenli Mod";
+"safe_mode_explanation" = "Uygulama arka planda iken tetiklenme engellenir.";
+"section_appearance" = "Görünüm";
+"settings_dark_mode" = "Koyu Tema";
+"section_language" = "Dil";
+"settings_language" = "Dil";
+"language_system" = "Sistem Varsayılanı";
+"section_legal" = "Yasal";
+"settings_privacy_policy" = "Gizlilik Politikası";
+"settings_restore_purchases" = "Satın Alımları Geri Yükle";
+
+// MARK: - Store
+"store_title" = "Ses Paketleri";
+"store_pro_title" = "SlapMe PRO";
+"store_pro_subtitle" = "Tüm ses paketlerini ve karakterleri\ntek seferde aç!";
+"feature_all_premium_sounds" = "Tüm premium ses paketleri";
+"feature_all_characters" = "Tüm karakterler açık";
+"feature_one_time_payment" = "Tek seferlik ödeme, sonsuza kadar";
+"feature_future_updates" = "Gelecek güncellemeler dahil";
+"feature_charger_sounds" = "Şarj takma sesleri";
+"feature_all_future_updates" = "Gelecek tüm güncellemeler dahil";
+"feature_unlimited_usage" = "Tek ödeme, sınırsız kullanım";
+"purchasing_in_progress" = "İşleniyor...";
+"upgrade_to_pro" = "PRO'ya Geç";
+"restore_purchases" = "Satın Almaları Geri Yükle";
+"character_count_format" = "%d karakter";
+
+// MARK: - Paywall
+"paywall_subtitle" = "Tek ödeme, sonsuza kadar seninle 👋";
+"one_time_payment_label" = "Tek seferlik ödeme";
+
+// MARK: - Onboarding
+"welcome_subtitle" = "Telefonuna vur.\nO da tepki versin.";
+"sensor_ready" = "iPhone Hazır!";
+"sensor_not_found" = "Sensör Bulunamadı";
+"sensor_active_description" = "Hareket sensörün aktif ve çalışıyor.";
+"sensor_not_supported" = "Bu cihazda akselerometre sensörü desteklenmiyor.";
+"reaction_felt_it" = "Hissettim!";
+"reaction_tap_phone" = "Telefona hafifçe vur";
+"reaction_success" = "Mükemmel, her şey çalışıyor!";
+"reaction_testing_sensor" = "Sensörünü test ediyoruz.";
+"button_great_continue" = "Harika, Devam Et";
+"pack_selection_title" = "Karakterini Seç";
+"pack_selection_subtitle" = "İstediğin zaman değiştirebilirsin.";
+"button_start_exclamation" = "Başla!";
+
+// MARK: - Pack Preview
+"clip_level_soft" = "Hafif";
+"clip_level_medium" = "Orta";
+"clip_level_hard" = "Sert";
+"clip_level_combo" = "Kombo";
+"button_preview" = "Önizle";
+"button_select_pack" = "Bu Paketi Seç";

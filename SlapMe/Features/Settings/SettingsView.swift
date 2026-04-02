@@ -3,6 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     @ObservedObject var settingsStore: SettingsStore
     @ObservedObject var storeManager: StoreManager
+    @ObservedObject var localizationManager: LocalizationManager = .shared
     let categories: [SoundCategory]
     @Environment(\.dismiss) private var dismiss
 
@@ -18,65 +19,65 @@ struct SettingsView: View {
                 // Seçili Pack
                 Section {
                     HStack {
-                        Label("Seçili Paket", systemImage: "music.note.list")
+                        Label(L("settings_selected_pack"), systemImage: "music.note.list")
                         Spacer()
                         Text(settingsStore.settings.selectedPackID.capitalized)
                             .foregroundStyle(.secondary)
                     }
-                } header: { Text("Ses Paketi") }
+                } header: { Text(L("section_sound_pack")) }
 
                 // Hassasiyet
                 Section {
                     VStack(alignment: .leading, spacing: 8) {
-                        Label("Hassasiyet", systemImage: "waveform")
+                        Label(L("settings_sensitivity"), systemImage: "waveform")
                         HStack {
-                            Text("Düşük")
+                            Text(L("sensitivity_low"))
                                 .font(.caption).foregroundStyle(.secondary)
                             Slider(value: s.sensitivity, in: 0.1...1.0, step: 0.05)
-                            Text("Yüksek")
+                            Text(L("sensitivity_high"))
                                 .font(.caption).foregroundStyle(.secondary)
                         }
                     }
 
                     VStack(alignment: .leading, spacing: 8) {
-                        Label("Cooldown", systemImage: "timer")
+                        Label(L("settings_cooldown"), systemImage: "timer")
                         HStack {
-                            Text("Hızlı")
+                            Text(L("cooldown_fast"))
                                 .font(.caption).foregroundStyle(.secondary)
                             Slider(value: s.cooldown, in: 0.3...3.0, step: 0.1)
-                            Text("Yavaş")
+                            Text(L("cooldown_slow"))
                                 .font(.caption).foregroundStyle(.secondary)
                         }
-                        Text(String(format: "%.1f saniye", settingsStore.settings.cooldown))
+                        Text(L("cooldown_seconds_format", settingsStore.settings.cooldown))
                             .font(.caption).foregroundStyle(.secondary)
                     }
-                } header: { Text("Algılama") }
+                } header: { Text(L("section_detection")) }
 
                 // Ses
                 Section {
                     VStack(alignment: .leading, spacing: 8) {
-                        Label("Ana Ses", systemImage: "speaker.wave.2")
+                        Label(L("settings_master_volume"), systemImage: "speaker.wave.2")
                         Slider(value: s.masterVolume, in: 0.0...1.0, step: 0.05)
                     }
 
                     Toggle(isOn: s.dynamicVolume) {
-                        Label("Dinamik Ses", systemImage: "waveform.path.ecg")
+                        Label(L("settings_dynamic_volume"), systemImage: "waveform.path.ecg")
                     }
-                } header: { Text("Ses") }
+                } header: { Text(L("section_sound")) }
 
                 // Görsel & Haptik
                 Section {
                     Toggle(isOn: s.hapticsEnabled) {
-                        Label("Titreşim", systemImage: "iphone.radiowaves.left.and.right")
+                        Label(L("settings_haptics"), systemImage: "iphone.radiowaves.left.and.right")
                     }
                     Toggle(isOn: s.screenFlashEnabled) {
-                        Label("Ekran Flaşı", systemImage: "bolt.fill")
+                        Label(L("settings_screen_flash"), systemImage: "bolt.fill")
                     }
                     Toggle(isOn: s.chargerSoundEnabled) {
-                        Label("Şarj Sesi", systemImage: "bolt.fill.batteryblock")
+                        Label(L("settings_charger_sound"), systemImage: "bolt.fill.batteryblock")
                     }
                     if settingsStore.settings.chargerSoundEnabled {
-                        Text("Şarj kablosu takılınca seçtiğin karakterden rastgele bir ses çalar ⚡")
+                        Text(L("charger_sound_description"))
                             .font(.caption).foregroundStyle(.secondary)
 
                         ForEach(categories) { category in
@@ -95,7 +96,7 @@ struct SettingsView: View {
                                             Text(pack.title)
                                                 .foregroundColor(locked ? .secondary : .primary)
                                             if isFreeSexy && !storeManager.isPremium {
-                                                Text("ÜCRETSİZ")
+                                                Text(L("free_badge"))
                                                     .font(.caption2.bold())
                                                     .foregroundColor(.green)
                                             }
@@ -104,7 +105,7 @@ struct SettingsView: View {
                                                 Image(systemName: "lock.fill")
                                                     .font(.caption)
                                                     .foregroundColor(.orange)
-                                                Text("PRO")
+                                                Text(L("pro_badge"))
                                                     .font(.caption2.bold())
                                                     .foregroundColor(.orange)
                                             }
@@ -122,7 +123,7 @@ struct SettingsView: View {
                                     Image(systemName: category.icon)
                                     Text(category.title)
                                     if category.id == "yamete" && !storeManager.isPremium {
-                                        Text("PRO")
+                                        Text(L("pro_badge"))
                                             .font(.caption2.bold())
                                             .foregroundColor(.orange)
                                     }
@@ -131,50 +132,59 @@ struct SettingsView: View {
                         }
 
                         if isChargerPackTrial() {
-                            Text("🔒 Deneme: Bu karakterden sadece 1 ses çalar. Tüm sesler için PRO'ya geç!")
+                            Text(L("charger_trial_warning"))
                                 .font(.caption).foregroundStyle(.orange)
                         }
                     }
-                } header: { Text("Geri Bildirim") }
+                } header: { Text(L("section_feedback")) }
 
                 // Güvenlik
                 Section {
                     Toggle(isOn: s.safeModeEnabled) {
-                        Label("Güvenli Mod", systemImage: "shield.fill")
+                        Label(L("settings_safe_mode"), systemImage: "shield.fill")
                     }
                     if settingsStore.settings.safeModeEnabled {
-                        Text("Uygulama arka planda iken tetiklenme engellenir.")
+                        Text(L("safe_mode_explanation"))
                             .font(.caption).foregroundStyle(.secondary)
                     }
-                } header: { Text("Güvenlik") }
+                } header: { Text(L("section_security")) }
 
                 // Görünüm
                 Section {
                     Toggle(isOn: s.darkMode) {
-                        Label("Koyu Tema", systemImage: "moon.fill")
+                        Label(L("settings_dark_mode"), systemImage: "moon.fill")
                     }
-                } header: { Text("Görünüm") }
+                } header: { Text(L("section_appearance")) }
 
                 // Yasal & Hesap
+                // Language
+                Section {
+                    Picker(L("settings_language"), selection: $localizationManager.selectedLanguage) {
+                        ForEach(LocalizationManager.supportedLanguages, id: \.code) { lang in
+                            Text(lang.name).tag(lang.code)
+                        }
+                    }
+                } header: { Text(L("section_language")) }
+
                 Section {
                     Link(destination: URL(string: "https://formevoai.github.io/SlapMe/privacy-policy.html")!) {
-                        Label("Gizlilik Politikası", systemImage: "hand.raised.fill")
+                        Label(L("settings_privacy_policy"), systemImage: "hand.raised.fill")
                     }
 
                     Button {
                         Task { await storeManager.restore() }
                     } label: {
-                        Label("Satın Alımları Geri Yükle", systemImage: "arrow.clockwise")
+                        Label(L("settings_restore_purchases"), systemImage: "arrow.clockwise")
                     }
-                } header: { Text("Yasal") }
+                } header: { Text(L("section_legal")) }
 
 
             }
-            .navigationTitle("Ayarlar")
+            .navigationTitle(L("settings_title"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Tamam") { dismiss() }
+                    Button(L("button_done")) { dismiss() }
                 }
             }
 

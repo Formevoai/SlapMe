@@ -1,0 +1,103 @@
+/* ============================================
+   SlapMe – Polski
+   ============================================ */
+
+// MARK: - Common
+"app_name" = "SlapMe";
+"pro_badge" = "PRO";
+"free_badge" = "BEZPŁATNE";
+"coming_soon" = "Wkrótce";
+"button_done" = "Gotowe";
+"button_close" = "Zamknij";
+"button_continue" = "Kontynuuj";
+"button_skip" = "Pomiń";
+"button_start" = "Start";
+
+// MARK: - Home
+"home_slap_hint" = "Uderz w telefon!";
+"safe_mode_on" = "Tryb Bezpieczny Włączony";
+"safe_mode_off" = "Tryb Bezpieczny Wyłączony";
+"safe_mode_description" = "Wyzwalanie w tle jest zablokowane";
+"slap_meter_label" = "KLAPSO-METR";
+
+// MARK: - Tags
+"tag_sexy" = "Sexy";
+"tag_yamete" = "Yamete";
+"tag_animal" = "Zwierzę";
+"tag_funny" = "Śmieszne";
+
+// MARK: - Settings
+"settings_title" = "Ustawienia";
+"section_sound_pack" = "Pakiet Dźwięków";
+"settings_selected_pack" = "Wybrany Pakiet";
+"section_detection" = "Wykrywanie";
+"settings_sensitivity" = "Czułość";
+"sensitivity_low" = "Niska";
+"sensitivity_high" = "Wysoka";
+"settings_cooldown" = "Czas odnowienia";
+"cooldown_fast" = "Szybko";
+"cooldown_slow" = "Wolno";
+"cooldown_seconds_format" = "%.1f sekund";
+"section_sound" = "Dźwięk";
+"settings_master_volume" = "Głośność Główna";
+"settings_dynamic_volume" = "Głośność Dynamiczna";
+"section_feedback" = "Reakcja";
+"settings_haptics" = "Wibracje";
+"settings_screen_flash" = "Błysk Ekranu";
+"settings_charger_sound" = "Dźwięk Ładowarki";
+"charger_sound_description" = "Po podłączeniu ładowarki odtwarzany jest losowy dźwięk Twojej postaci ⚡";
+"charger_trial_warning" = "🔒 Próba: Tylko 1 dźwięk z tej postaci. Przejdź na PRO po wszystkie!";
+"section_security" = "Bezpieczeństwo";
+"settings_safe_mode" = "Tryb Bezpieczny";
+"safe_mode_explanation" = "Wyzwalanie w tle jest zablokowane.";
+"section_appearance" = "Wygląd";
+"settings_dark_mode" = "Ciemny Motyw";
+"section_language" = "Język";
+"settings_language" = "Język";
+"language_system" = "Domyślny Systemowy";
+"section_legal" = "Informacje Prawne";
+"settings_privacy_policy" = "Polityka Prywatności";
+"settings_restore_purchases" = "Przywróć Zakupy";
+
+// MARK: - Store
+"store_title" = "Pakiety Dźwięków";
+"store_pro_title" = "SlapMe PRO";
+"store_pro_subtitle" = "Odblokuj wszystkie pakiety dźwięków\ni postacie za jednym razem!";
+"feature_all_premium_sounds" = "Wszystkie pakiety premium";
+"feature_all_characters" = "Wszystkie postacie odblokowane";
+"feature_one_time_payment" = "Jednorazowa płatność, na zawsze";
+"feature_future_updates" = "Przyszłe aktualizacje w cenie";
+"feature_charger_sounds" = "Dźwięki ładowarki";
+"feature_all_future_updates" = "Wszystkie przyszłe aktualizacje w cenie";
+"feature_unlimited_usage" = "Jednorazowa płatność, bez limitów";
+"purchasing_in_progress" = "Przetwarzanie...";
+"upgrade_to_pro" = "Przejdź na PRO";
+"restore_purchases" = "Przywróć Zakupy";
+"character_count_format" = "%d postaci";
+
+// MARK: - Paywall
+"paywall_subtitle" = "Jedna płatność, Twoje na zawsze 👋";
+"one_time_payment_label" = "Jednorazowa płatność";
+
+// MARK: - Onboarding
+"welcome_subtitle" = "Uderz w telefon.\nOn zareaguje.";
+"sensor_ready" = "iPhone Gotowy!";
+"sensor_not_found" = "Czujnik Nie Znaleziony";
+"sensor_active_description" = "Czujnik ruchu jest aktywny i działa prawidłowo.";
+"sensor_not_supported" = "Akcelerometr nie jest obsługiwany na tym urządzeniu.";
+"reaction_felt_it" = "Poczułem!";
+"reaction_tap_phone" = "Delikatnie stuknij w telefon";
+"reaction_success" = "Świetnie, wszystko działa!";
+"reaction_testing_sensor" = "Testujemy Twój czujnik.";
+"button_great_continue" = "Świetnie, dalej";
+"pack_selection_title" = "Wybierz swoją Postać";
+"pack_selection_subtitle" = "Możesz zmienić w dowolnym momencie.";
+"button_start_exclamation" = "Zaczynamy!";
+
+// MARK: - Pack Preview
+"clip_level_soft" = "Lekki";
+"clip_level_medium" = "Średni";
+"clip_level_hard" = "Mocny";
+"clip_level_combo" = "Kombo";
+"button_preview" = "Podgląd";
+"button_select_pack" = "Wybierz Pakiet";

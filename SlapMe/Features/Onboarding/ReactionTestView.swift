@@ -68,14 +68,14 @@ struct ReactionTestView: View {
                 Spacer().frame(height: 32)
 
                 // Status text
-                Text(didSlap ? "Hissettim!" : "Telefona hafifçe vur")
+                Text(didSlap ? L("reaction_felt_it") : L("reaction_tap_phone"))
                     .font(.title2.bold())
                     .foregroundColor(.black)
                     .animation(.easeInOut, value: didSlap)
 
                 Text(didSlap
-                     ? "Mükemmel, her şey çalışıyor!"
-                     : "Sensörünü test ediyoruz.")
+                     ? L("reaction_success")
+                     : L("reaction_testing_sensor"))
                     .font(.body)
                     .foregroundColor(didSlap ? .green : .black.opacity(0.45))
                     .padding(.top, 8)
@@ -87,7 +87,7 @@ struct ReactionTestView: View {
                     .padding(.bottom, 24)
 
                 OnboardingButton(
-                    title: didSlap ? "Harika, Devam Et" : "Atla",
+                    title: didSlap ? L("button_great_continue") : L("button_skip"),
                     isActive: didSlap,
                     action: onContinue
                 )

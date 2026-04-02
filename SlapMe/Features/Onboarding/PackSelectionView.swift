@@ -20,11 +20,11 @@ struct PackSelectionView: View {
             VStack(spacing: 0) {
                 // Header
                 VStack(spacing: 8) {
-                    Text("Karakterini Seç")
+                    Text(L("pack_selection_title"))
                         .font(.title.bold())
                         .foregroundColor(.black)
 
-                    Text("İstediğin zaman değiştirebilirsin.")
+                    Text(L("pack_selection_subtitle"))
                         .font(.subheadline)
                         .foregroundColor(.black.opacity(0.45))
                 }
@@ -64,7 +64,7 @@ struct PackSelectionView: View {
                 VStack(spacing: 16) {
                     OnboardingPageIndicator(currentPage: 3)
 
-                    OnboardingButton(title: "Başla!", action: { onFinish(selectedPackID) })
+                    OnboardingButton(title: L("button_start_exclamation"), action: { onFinish(selectedPackID) })
                 }
                 .opacity(appeared ? 1 : 0)
                 .offset(y: appeared ? 0 : 20)
@@ -144,7 +144,7 @@ private struct CharacterThumbnail: View {
                 if pack.isPremium {
                     VStack {
                         HStack {
-                            Text("PRO")
+                            Text(L("pro_badge"))
                                 .font(.system(size: 9, weight: .heavy))
                                 .padding(.horizontal, 5)
                                 .padding(.vertical, 2)

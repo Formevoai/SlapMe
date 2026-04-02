@@ -103,7 +103,7 @@ struct PaywallView: View {
                 .opacity(appear ? 1 : 0)
                 .offset(y: appear ? 0 : 10)
 
-                Text("Tek ödeme, sonsuza kadar seninle 👋")
+                Text(L("paywall_subtitle"))
                     .font(.subheadline)
                     .foregroundColor(.black.opacity(0.4))
                     .padding(.top, 6)
@@ -112,11 +112,11 @@ struct PaywallView: View {
 
                 // Features
                 VStack(alignment: .leading, spacing: 14) {
-                    featureRow(icon: "hand.raised.fill", color: .pink, text: "Tüm premium ses paketleri")
-                    featureRow(icon: "person.3.fill", color: .purple, text: "Tüm karakterler açık")
-                    featureRow(icon: "bolt.fill", color: .green, text: "Şarj takma sesleri")
-                    featureRow(icon: "sparkles", color: .yellow, text: "Gelecek tüm güncellemeler dahil")
-                    featureRow(icon: "infinity", color: .cyan, text: "Tek ödeme, sınırsız kullanım")
+                    featureRow(icon: "hand.raised.fill", color: .pink, text: L("feature_all_premium_sounds"))
+                    featureRow(icon: "person.3.fill", color: .purple, text: L("feature_all_characters"))
+                    featureRow(icon: "bolt.fill", color: .green, text: L("feature_charger_sounds"))
+                    featureRow(icon: "sparkles", color: .yellow, text: L("feature_all_future_updates"))
+                    featureRow(icon: "infinity", color: .cyan, text: L("feature_unlimited_usage"))
                 }
                 .padding(.horizontal, 36)
                 .padding(.bottom, 36)
@@ -127,7 +127,7 @@ struct PaywallView: View {
                     .foregroundColor(.black)
                     .padding(.bottom, 4)
 
-                Text("Tek seferlik ödeme")
+                Text(L("one_time_payment_label"))
                     .font(.caption)
                     .foregroundColor(.black.opacity(0.3))
                     .padding(.bottom, 20)
@@ -146,7 +146,7 @@ struct PaywallView: View {
                         }
                         Image(systemName: "crown.fill")
                             .font(.subheadline.bold())
-                        Text(storeManager.isPurchasing ? "İşleniyor..." : "PRO'ya Geç")
+                        Text(storeManager.isPurchasing ? L("purchasing_in_progress") : L("upgrade_to_pro"))
                             .font(.headline.bold())
                     }
                     .frame(maxWidth: .infinity)
@@ -173,7 +173,7 @@ struct PaywallView: View {
                         if storeManager.isPremium { dismiss() }
                     }
                 } label: {
-                    Text("Satın Almaları Geri Yükle")
+                    Text(L("restore_purchases"))
                         .font(.caption)
                         .foregroundColor(.black.opacity(0.3))
                 }

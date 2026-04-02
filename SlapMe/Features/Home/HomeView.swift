@@ -141,7 +141,7 @@ struct HomeView: View {
                         Image(systemName: storeManager.isPremium ? "crown.fill" : "crown")
                             .font(.caption.weight(.bold))
                         if !storeManager.isPremium {
-                            Text("PRO")
+                            Text(L("pro_badge"))
                                 .font(.system(size: 11, weight: .heavy))
                         }
                     }
@@ -401,7 +401,7 @@ struct HomeView: View {
                 HStack(spacing: 6) {
                     Text("👋")
                         .font(.subheadline)
-                    Text("Telefona vur!")
+                    Text(L("home_slap_hint"))
                         .font(.caption.weight(.medium))
                 }
                 .foregroundStyle(textColor.opacity(hintOpacity))
@@ -419,7 +419,7 @@ struct HomeView: View {
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(settingsStore.settings.safeModeEnabled ? .green : textColor.opacity(0.5))
 
-                    Text(settingsStore.settings.safeModeEnabled ? "Güvenli Mod Açık" : "Güvenli Mod Kapalı")
+                    Text(settingsStore.settings.safeModeEnabled ? L("safe_mode_on") : L("safe_mode_off"))
                         .font(.caption.weight(.medium))
                         .foregroundStyle(textColor.opacity(0.7))
                 }
@@ -430,7 +430,7 @@ struct HomeView: View {
             }
 
             if settingsStore.settings.safeModeEnabled {
-                Text("Arka planda tetiklenme engellenir")
+                Text(L("safe_mode_description"))
                     .font(.caption2)
                     .foregroundStyle(textColor.opacity(0.4))
                     .transition(.opacity.combined(with: .move(edge: .top)))

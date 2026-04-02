@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		29DABBC9FBB21B9ECEF57FEA /* CounterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF55173BCD40C8150BC0EDDE /* CounterStore.swift */; };
 		363AC2C10F5F9D7A8C4F2841 /* SoundCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D07C533B2CD4296477C83D /* SoundCategory.swift */; };
 		584E6A7B4B90C99A53E353B1 /* ImpactEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A537FE999CFCB60B90504D4 /* ImpactEvent.swift */; };
+		5F12D53CA8BCABAC395CD1BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39870A293B709452BDF036BB /* Localizable.strings */; };
 		5F872EF52C268C69471F5804 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131935148225E06A92A057D6 /* StoreView.swift */; };
 		68BC760EB66E2FDF73D860B0 /* SlapMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E590D5B4467E5635AACCE078 /* SlapMeApp.swift */; };
 		70095856FC16A0C4CDF9D00B /* ImpactDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D8580C08B34D567B696835 /* ImpactDetector.swift */; };
@@ -38,6 +39,7 @@
 		D5657E8DC09D486AACBB5472 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DFA86E4972892BFE5A84 /* SettingsStore.swift */; };
 		D83F90637EF25BD507783536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB5E81B57B541EC267514699 /* Assets.xcassets */; };
 		DC447B4B21AE1ED3B3CED723 /* SoundCategoryLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955591A22BC23CE9ABC3D28 /* SoundCategoryLoader.swift */; };
+		DDFA51A8D696A182B7C3CFEF /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8582A1BA8FB4B751607B04 /* LocalizationManager.swift */; };
 		E6D1EFBD45845E5363F6AA08 /* GIFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702DC6ADC73C7B16EDA113E1 /* GIFImage.swift */; };
 		EB1F542806F7708BA0127B4E /* PackSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F40A767FCD641A855D9655 /* PackSelectionView.swift */; };
 		F86B724122F610E639B4AF29 /* SlapMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5D748F84BD74BD1DA112E0 /* SlapMeterView.swift */; };
@@ -50,20 +52,33 @@
 		11CEAD8C2FCBFF86FE3AD1E4 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		12D9B514DD829030C6A6A5AF /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = SlapMe/Resources/Sounds; sourceTree = SOURCE_ROOT; };
 		131935148225E06A92A057D6 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
-		1A6A620F2C928430107846E1 /* Configuration.storekit */ = {isa = PBXFileReference; path = Configuration.storekit; sourceTree = "<group>"; };
+		18A6B1C6F7C7F8F6190F7DA6 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1A6A620F2C928430107846E1 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		272D94B293FB956923A923CF /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CA6FD9DF05B57A34E6402E7 /* ReactionTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionTestView.swift; sourceTree = "<group>"; };
+		30D2ACA95E4DA2314FFDA769 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3C6136F86E04A9939445767F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3DCFC1FDC4FE1620ABBC24B0 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		41A734B13F9573D373D45230 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4AAE2D75F4F336056AF3130C /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		51A338B6D00446BD4845DA19 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		51B66FDDA4152589491C9BF7 /* SoundPackLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPackLoader.swift; sourceTree = "<group>"; };
-		52378ACF283B7625C5101688 /* SlapMe.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SlapMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52378ACF283B7625C5101688 /* SlapMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlapMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EB594F0804AB29A15CB1A35 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		702DC6ADC73C7B16EDA113E1 /* GIFImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFImage.swift; sourceTree = "<group>"; };
 		71C9485CD2072125FF716687 /* PackPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackPreviewView.swift; sourceTree = "<group>"; };
+		77E05B7E6FEFC59EDE2696CB /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7A537FE999CFCB60B90504D4 /* ImpactEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpactEvent.swift; sourceTree = "<group>"; };
 		7D0FAC1A77158D0EACCB16BF /* ClipSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipSelector.swift; sourceTree = "<group>"; };
 		7F184AFD3339F54C2451412C /* OnboardingComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingComponents.swift; sourceTree = "<group>"; };
 		95F40A767FCD641A855D9655 /* PackSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackSelectionView.swift; sourceTree = "<group>"; };
+		9B7DBBC167F40E9298A040E0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9EBA5A2896AF25A1ACE0E2E4 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9F257764FD18F59486BF4229 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9F295E639491E736EC238A9B /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AED7A118016B72EDBC3CF72B /* Packs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Packs; path = SlapMe/Resources/Packs; sourceTree = SOURCE_ROOT; };
 		B236F3266F69E8DCA7D8AEE4 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		B2CFD9311092A44E4A871FA1 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B3C2134C3087D1CFCE418A5D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		B8D07C533B2CD4296477C83D /* SoundCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCategory.swift; sourceTree = "<group>"; };
 		C030A114F3D001BFFE4B0CE8 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
@@ -71,6 +86,7 @@
 		CB4923D7674E62BD8B652B33 /* MotionPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionPermissionService.swift; sourceTree = "<group>"; };
 		CEF24F99B5BA33897906DCA3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CFF573A0257332EA6A4DCC55 /* SensorCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorCheckView.swift; sourceTree = "<group>"; };
+		D5217A3F150C91AF432521DA /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D62EFA416B4676FF703FFA0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D955591A22BC23CE9ABC3D28 /* SoundCategoryLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCategoryLoader.swift; sourceTree = "<group>"; };
 		DCB4DFA86E4972892BFE5A84 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
@@ -79,9 +95,12 @@
 		E1B690003F5AF87B3F0AAF92 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E590D5B4467E5635AACCE078 /* SlapMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlapMeApp.swift; sourceTree = "<group>"; };
 		E95F1A231A872C9507A822D3 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		EA8582A1BA8FB4B751607B04 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		EB5E81B57B541EC267514699 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EECCEFD8F3B288DFD55E01F8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F7EFC67B208E860A5B91802D /* SoundPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPack.swift; sourceTree = "<group>"; };
 		FA0195E0D3456DD8507F5849 /* Characters */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Characters; path = SlapMe/Resources/Characters; sourceTree = SOURCE_ROOT; };
+		FE95F79C3047E08BA66C17B8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -117,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				FA0195E0D3456DD8507F5849 /* Characters */,
+				39870A293B709452BDF036BB /* Localizable.strings */,
 				AED7A118016B72EDBC3CF72B /* Packs */,
 				12D9B514DD829030C6A6A5AF /* Sounds */,
 			);
@@ -254,6 +274,7 @@
 			children = (
 				ADCD5A50CE126C3BB8C59A3F /* Audio */,
 				770763D86D1CC14E2814D336 /* Haptics */,
+				F4445480CCB46EB00A5A2F21 /* Managers */,
 				943E7E91BD265099860E5E34 /* Models */,
 				68EFEF378A377D19D066C14F /* Motion */,
 				EEA538ED43DD5F368A3C84F4 /* Storage */,
@@ -270,6 +291,14 @@
 				DCB4DFA86E4972892BFE5A84 /* SettingsStore.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		F4445480CCB46EB00A5A2F21 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EA8582A1BA8FB4B751607B04 /* LocalizationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +329,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 2630;
 			};
 			buildConfigurationList = D8231474D7AAC299083E1F5B /* Build configuration list for PBXProject "SlapMe" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -308,11 +337,25 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				ar,
+				de,
 				en,
+				es,
+				fr,
+				hi,
+				id,
+				it,
+				ja,
+				ko,
+				nl,
+				pl,
+				"pt-BR",
+				ru,
+				tr,
+				"zh-Hans",
 			);
 			mainGroup = 1ACDFE480E512328E610DCEC;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -329,6 +372,7 @@
 				D83F90637EF25BD507783536 /* Assets.xcassets in Resources */,
 				CFCBB6EEDA86B69369AC1E23 /* Characters in Resources */,
 				BAD0B484204511BA3A820877 /* Configuration.storekit in Resources */,
+				5F12D53CA8BCABAC395CD1BB /* Localizable.strings in Resources */,
 				C176A301720AD72E06F584E0 /* Packs in Resources */,
 				71B9B46DE5EBBA840B6E7B89 /* Sounds in Resources */,
 			);
@@ -352,6 +396,7 @@
 				2129EB1B5D4CE67CA4A64B8F /* HomeView.swift in Sources */,
 				70095856FC16A0C4CDF9D00B /* ImpactDetector.swift in Sources */,
 				584E6A7B4B90C99A53E353B1 /* ImpactEvent.swift in Sources */,
+				DDFA51A8D696A182B7C3CFEF /* LocalizationManager.swift in Sources */,
 				8040EDDBAC882B43802CD48F /* MotionManager.swift in Sources */,
 				70ECE20F9BEAE5924D11DA25 /* MotionPermissionService.swift in Sources */,
 				9C94672D0291ED809485CDEB /* OnboardingComponents.swift in Sources */,
@@ -376,11 +421,38 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		39870A293B709452BDF036BB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18A6B1C6F7C7F8F6190F7DA6 /* ar */,
+				9F257764FD18F59486BF4229 /* de */,
+				41A734B13F9573D373D45230 /* en */,
+				9B7DBBC167F40E9298A040E0 /* es */,
+				51A338B6D00446BD4845DA19 /* fr */,
+				272D94B293FB956923A923CF /* hi */,
+				D5217A3F150C91AF432521DA /* id */,
+				77E05B7E6FEFC59EDE2696CB /* it */,
+				3C6136F86E04A9939445767F /* ja */,
+				FE95F79C3047E08BA66C17B8 /* ko */,
+				9EBA5A2896AF25A1ACE0E2E4 /* nl */,
+				B2CFD9311092A44E4A871FA1 /* pl */,
+				EECCEFD8F3B288DFD55E01F8 /* pt-BR */,
+				6EB594F0804AB29A15CB1A35 /* ru */,
+				9F295E639491E736EC238A9B /* tr */,
+				30D2ACA95E4DA2314FFDA769 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		0B782DCB0C7ECA3EA101771C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -414,6 +486,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -434,6 +507,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.9;
@@ -445,6 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Z8LNR73NY4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SlapMe/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -465,6 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Z8LNR73NY4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SlapMe/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -484,6 +560,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -517,6 +594,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -530,6 +608,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.9;

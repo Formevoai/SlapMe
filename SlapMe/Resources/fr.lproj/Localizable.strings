@@ -1,0 +1,103 @@
+/* ============================================
+   SlapMe – Français
+   ============================================ */
+
+// MARK: - Common
+"app_name" = "SlapMe";
+"pro_badge" = "PRO";
+"free_badge" = "GRATUIT";
+"coming_soon" = "Bientôt disponible";
+"button_done" = "Terminé";
+"button_close" = "Fermer";
+"button_continue" = "Continuer";
+"button_skip" = "Passer";
+"button_start" = "Commencer";
+
+// MARK: - Home
+"home_slap_hint" = "Frappe ton téléphone !";
+"safe_mode_on" = "Mode Sécurisé Activé";
+"safe_mode_off" = "Mode Sécurisé Désactivé";
+"safe_mode_description" = "Le déclenchement en arrière-plan est bloqué";
+"slap_meter_label" = "GIFLO-MÈTRE";
+
+// MARK: - Tags
+"tag_sexy" = "Sexy";
+"tag_yamete" = "Yamete";
+"tag_animal" = "Animal";
+"tag_funny" = "Drôle";
+
+// MARK: - Settings
+"settings_title" = "Paramètres";
+"section_sound_pack" = "Pack de Sons";
+"settings_selected_pack" = "Pack Sélectionné";
+"section_detection" = "Détection";
+"settings_sensitivity" = "Sensibilité";
+"sensitivity_low" = "Faible";
+"sensitivity_high" = "Élevée";
+"settings_cooldown" = "Temps de recharge";
+"cooldown_fast" = "Rapide";
+"cooldown_slow" = "Lent";
+"cooldown_seconds_format" = "%.1f secondes";
+"section_sound" = "Son";
+"settings_master_volume" = "Volume Principal";
+"settings_dynamic_volume" = "Volume Dynamique";
+"section_feedback" = "Retour";
+"settings_haptics" = "Vibration";
+"settings_screen_flash" = "Flash d'Écran";
+"settings_charger_sound" = "Son du Chargeur";
+"charger_sound_description" = "Quand le chargeur est branché, un son aléatoire de ton personnage est joué ⚡";
+"charger_trial_warning" = "🔒 Essai : 1 seul son de ce personnage. Passe à PRO pour tous !";
+"section_security" = "Sécurité";
+"settings_safe_mode" = "Mode Sécurisé";
+"safe_mode_explanation" = "Le déclenchement est bloqué quand l'app est en arrière-plan.";
+"section_appearance" = "Apparence";
+"settings_dark_mode" = "Mode Sombre";
+"section_language" = "Langue";
+"settings_language" = "Langue";
+"language_system" = "Par défaut du système";
+"section_legal" = "Mentions Légales";
+"settings_privacy_policy" = "Politique de Confidentialité";
+"settings_restore_purchases" = "Restaurer les Achats";
+
+// MARK: - Store
+"store_title" = "Packs de Sons";
+"store_pro_title" = "SlapMe PRO";
+"store_pro_subtitle" = "Débloque tous les packs de sons\net personnages d'un coup !";
+"feature_all_premium_sounds" = "Tous les packs de sons premium";
+"feature_all_characters" = "Tous les personnages débloqués";
+"feature_one_time_payment" = "Paiement unique, pour toujours";
+"feature_future_updates" = "Mises à jour futures incluses";
+"feature_charger_sounds" = "Sons du chargeur";
+"feature_all_future_updates" = "Toutes les mises à jour futures incluses";
+"feature_unlimited_usage" = "Paiement unique, utilisation illimitée";
+"purchasing_in_progress" = "En cours...";
+"upgrade_to_pro" = "Passer à PRO";
+"restore_purchases" = "Restaurer les Achats";
+"character_count_format" = "%d personnages";
+
+// MARK: - Paywall
+"paywall_subtitle" = "Un seul paiement, à toi pour toujours 👋";
+"one_time_payment_label" = "Paiement unique";
+
+// MARK: - Onboarding
+"welcome_subtitle" = "Frappe ton téléphone.\nIl réagira.";
+"sensor_ready" = "iPhone Prêt !";
+"sensor_not_found" = "Capteur Non Trouvé";
+"sensor_active_description" = "Ton capteur de mouvement est actif et fonctionne.";
+"sensor_not_supported" = "L'accéléromètre n'est pas supporté sur cet appareil.";
+"reaction_felt_it" = "Je l'ai senti !";
+"reaction_tap_phone" = "Tape doucement sur ton téléphone";
+"reaction_success" = "Parfait, tout fonctionne !";
+"reaction_testing_sensor" = "On teste ton capteur.";
+"button_great_continue" = "Super, continuer";
+"pack_selection_title" = "Choisis ton Personnage";
+"pack_selection_subtitle" = "Tu peux changer quand tu veux.";
+"button_start_exclamation" = "C'est parti !";
+
+// MARK: - Pack Preview
+"clip_level_soft" = "Doux";
+"clip_level_medium" = "Moyen";
+"clip_level_hard" = "Fort";
+"clip_level_combo" = "Combo";
+"button_preview" = "Aperçu";
+"button_select_pack" = "Choisir ce Pack";

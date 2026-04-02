@@ -1,0 +1,103 @@
+/* ============================================
+   SlapMe – Русский
+   ============================================ */
+
+// MARK: - Common
+"app_name" = "SlapMe";
+"pro_badge" = "PRO";
+"free_badge" = "БЕСПЛАТНО";
+"coming_soon" = "Скоро";
+"button_done" = "Готово";
+"button_close" = "Закрыть";
+"button_continue" = "Продолжить";
+"button_skip" = "Пропустить";
+"button_start" = "Начать";
+
+// MARK: - Home
+"home_slap_hint" = "Ударь по телефону!";
+"safe_mode_on" = "Безопасный режим Вкл";
+"safe_mode_off" = "Безопасный режим Выкл";
+"safe_mode_description" = "Срабатывание в фоне заблокировано";
+"slap_meter_label" = "ШЛЕПКО-МЕТР";
+
+// MARK: - Tags
+"tag_sexy" = "Сексуальный";
+"tag_yamete" = "Ямете";
+"tag_animal" = "Животное";
+"tag_funny" = "Смешной";
+
+// MARK: - Settings
+"settings_title" = "Настройки";
+"section_sound_pack" = "Звуковой пакет";
+"settings_selected_pack" = "Выбранный пакет";
+"section_detection" = "Обнаружение";
+"settings_sensitivity" = "Чувствительность";
+"sensitivity_low" = "Низкая";
+"sensitivity_high" = "Высокая";
+"settings_cooldown" = "Перезарядка";
+"cooldown_fast" = "Быстро";
+"cooldown_slow" = "Медленно";
+"cooldown_seconds_format" = "%.1f секунд";
+"section_sound" = "Звук";
+"settings_master_volume" = "Общая громкость";
+"settings_dynamic_volume" = "Динамическая громкость";
+"section_feedback" = "Отклик";
+"settings_haptics" = "Вибрация";
+"settings_screen_flash" = "Вспышка экрана";
+"settings_charger_sound" = "Звук зарядки";
+"charger_sound_description" = "При подключении зарядки воспроизводится случайный звук вашего персонажа ⚡";
+"charger_trial_warning" = "🔒 Пробная версия: Только 1 звук от этого персонажа. Перейди на PRO для всех!";
+"section_security" = "Безопасность";
+"settings_safe_mode" = "Безопасный режим";
+"safe_mode_explanation" = "Срабатывание в фоновом режиме заблокировано.";
+"section_appearance" = "Внешний вид";
+"settings_dark_mode" = "Тёмная тема";
+"section_language" = "Язык";
+"settings_language" = "Язык";
+"language_system" = "Системный";
+"section_legal" = "Правовая информация";
+"settings_privacy_policy" = "Политика конфиденциальности";
+"settings_restore_purchases" = "Восстановить покупки";
+
+// MARK: - Store
+"store_title" = "Звуковые пакеты";
+"store_pro_title" = "SlapMe PRO";
+"store_pro_subtitle" = "Разблокируй все звуковые пакеты\nи персонажей сразу!";
+"feature_all_premium_sounds" = "Все премиум звуковые пакеты";
+"feature_all_characters" = "Все персонажи разблокированы";
+"feature_one_time_payment" = "Одноразовый платёж, навсегда";
+"feature_future_updates" = "Будущие обновления включены";
+"feature_charger_sounds" = "Звуки зарядки";
+"feature_all_future_updates" = "Все будущие обновления включены";
+"feature_unlimited_usage" = "Одноразовый платёж, безлимит";
+"purchasing_in_progress" = "Обработка...";
+"upgrade_to_pro" = "Перейти на PRO";
+"restore_purchases" = "Восстановить покупки";
+"character_count_format" = "%d персонажей";
+
+// MARK: - Paywall
+"paywall_subtitle" = "Один платёж — навсегда твоё 👋";
+"one_time_payment_label" = "Одноразовый платёж";
+
+// MARK: - Onboarding
+"welcome_subtitle" = "Ударь по телефону.\nОн отреагирует.";
+"sensor_ready" = "iPhone Готов!";
+"sensor_not_found" = "Датчик не найден";
+"sensor_active_description" = "Датчик движения активен и работает.";
+"sensor_not_supported" = "Акселерометр не поддерживается на этом устройстве.";
+"reaction_felt_it" = "Почувствовал!";
+"reaction_tap_phone" = "Слегка тапни по телефону";
+"reaction_success" = "Отлично, всё работает!";
+"reaction_testing_sensor" = "Тестируем твой датчик.";
+"button_great_continue" = "Отлично, продолжить";
+"pack_selection_title" = "Выбери персонажа";
+"pack_selection_subtitle" = "Можешь сменить когда угодно.";
+"button_start_exclamation" = "Поехали!";
+
+// MARK: - Pack Preview
+"clip_level_soft" = "Лёгкий";
+"clip_level_medium" = "Средний";
+"clip_level_hard" = "Сильный";
+"clip_level_combo" = "Комбо";
+"button_preview" = "Пред. просмотр";
+"button_select_pack" = "Выбрать пакет";

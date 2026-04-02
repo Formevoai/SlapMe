@@ -16,7 +16,7 @@ struct SlapMeterView: View {
 
     var body: some View {
         VStack(spacing: 8) {
-            Text("SLAP METER")
+            Text(L("slap_meter_label"))
                 .font(.system(size: 9, weight: .bold, design: .rounded))
                 .foregroundStyle(labelColor)
 

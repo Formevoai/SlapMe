@@ -1,0 +1,103 @@
+/* ============================================
+   SlapMe – English (Base)
+   ============================================ */
+
+// MARK: - Common
+"app_name" = "SlapMe";
+"pro_badge" = "PRO";
+"free_badge" = "FREE";
+"coming_soon" = "Coming Soon";
+"button_done" = "Done";
+"button_close" = "Close";
+"button_continue" = "Continue";
+"button_skip" = "Skip";
+"button_start" = "Start";
+
+// MARK: - Home
+"home_slap_hint" = "Slap the phone!";
+"safe_mode_on" = "Safe Mode On";
+"safe_mode_off" = "Safe Mode Off";
+"safe_mode_description" = "Prevents triggering in background";
+"slap_meter_label" = "SLAP METER";
+
+// MARK: - Tags
+"tag_sexy" = "Sexy";
+"tag_yamete" = "Yamete";
+"tag_animal" = "Animal";
+"tag_funny" = "Funny";
+
+// MARK: - Settings
+"settings_title" = "Settings";
+"section_sound_pack" = "Sound Pack";
+"settings_selected_pack" = "Selected Pack";
+"section_detection" = "Detection";
+"settings_sensitivity" = "Sensitivity";
+"sensitivity_low" = "Low";
+"sensitivity_high" = "High";
+"settings_cooldown" = "Cooldown";
+"cooldown_fast" = "Fast";
+"cooldown_slow" = "Slow";
+"cooldown_seconds_format" = "%.1f seconds";
+"section_sound" = "Sound";
+"settings_master_volume" = "Master Volume";
+"settings_dynamic_volume" = "Dynamic Volume";
+"section_feedback" = "Feedback";
+"settings_haptics" = "Haptics";
+"settings_screen_flash" = "Screen Flash";
+"settings_charger_sound" = "Charger Sound";
+"charger_sound_description" = "Plays a random sound from the selected character when you plug in the charger ⚡";
+"charger_trial_warning" = "🔒 Trial: Only 1 sound from this character. Go PRO for all sounds!";
+"section_security" = "Security";
+"settings_safe_mode" = "Safe Mode";
+"safe_mode_explanation" = "Prevents triggering when the app is in background.";
+"section_appearance" = "Appearance";
+"settings_dark_mode" = "Dark Mode";
+"section_language" = "Language";
+"settings_language" = "Language";
+"language_system" = "System Default";
+"section_legal" = "Legal";
+"settings_privacy_policy" = "Privacy Policy";
+"settings_restore_purchases" = "Restore Purchases";
+
+// MARK: - Store
+"store_title" = "Sound Packs";
+"store_pro_title" = "SlapMe PRO";
+"store_pro_subtitle" = "Unlock all sound packs and characters\nin one go!";
+"feature_all_premium_sounds" = "All premium sound packs";
+"feature_all_characters" = "All characters unlocked";
+"feature_one_time_payment" = "One-time payment, forever";
+"feature_future_updates" = "Future updates included";
+"feature_charger_sounds" = "Charger plug sounds";
+"feature_all_future_updates" = "All future updates included";
+"feature_unlimited_usage" = "One-time payment, unlimited use";
+"purchasing_in_progress" = "Processing...";
+"upgrade_to_pro" = "Upgrade to PRO";
+"restore_purchases" = "Restore Purchases";
+"character_count_format" = "%d characters";
+
+// MARK: - Paywall
+"paywall_subtitle" = "One payment, yours forever 👋";
+"one_time_payment_label" = "One-time payment";
+
+// MARK: - Onboarding
+"welcome_subtitle" = "Slap your phone.\nLet it react.";
+"sensor_ready" = "iPhone Ready!";
+"sensor_not_found" = "Sensor Not Found";
+"sensor_active_description" = "Your motion sensor is active and working.";
+"sensor_not_supported" = "Accelerometer sensor is not supported on this device.";
+"reaction_felt_it" = "Felt it!";
+"reaction_tap_phone" = "Tap the phone gently";
+"reaction_success" = "Perfect, everything is working!";
+"reaction_testing_sensor" = "Testing your sensor.";
+"button_great_continue" = "Great, Continue";
+"pack_selection_title" = "Choose Your Character";
+"pack_selection_subtitle" = "You can change it anytime.";
+"button_start_exclamation" = "Start!";
+
+// MARK: - Pack Preview
+"clip_level_soft" = "Soft";
+"clip_level_medium" = "Medium";
+"clip_level_hard" = "Hard";
+"clip_level_combo" = "Combo";
+"button_preview" = "Preview";
+"button_select_pack" = "Select This Pack";

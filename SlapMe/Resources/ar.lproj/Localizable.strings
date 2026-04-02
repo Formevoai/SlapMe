@@ -1,0 +1,103 @@
+/* ============================================
+   SlapMe – العربية
+   ============================================ */
+
+// MARK: - Common
+"app_name" = "SlapMe";
+"pro_badge" = "PRO";
+"free_badge" = "مجاني";
+"coming_soon" = "قريباً";
+"button_done" = "تم";
+"button_close" = "إغلاق";
+"button_continue" = "متابعة";
+"button_skip" = "تخطي";
+"button_start" = "ابدأ";
+
+// MARK: - Home
+"home_slap_hint" = "اصفع هاتفك!";
+"safe_mode_on" = "الوضع الآمن مُفعّل";
+"safe_mode_off" = "الوضع الآمن مُعطّل";
+"safe_mode_description" = "يمنع التشغيل في الخلفية";
+"slap_meter_label" = "مقياس الصفعة";
+
+// MARK: - Tags
+"tag_sexy" = "مثير";
+"tag_yamete" = "ياميته";
+"tag_animal" = "حيوان";
+"tag_funny" = "مضحك";
+
+// MARK: - Settings
+"settings_title" = "الإعدادات";
+"section_sound_pack" = "حزمة الأصوات";
+"settings_selected_pack" = "الحزمة المختارة";
+"section_detection" = "الاستشعار";
+"settings_sensitivity" = "الحساسية";
+"sensitivity_low" = "منخفضة";
+"sensitivity_high" = "عالية";
+"settings_cooldown" = "فترة الانتظار";
+"cooldown_fast" = "سريع";
+"cooldown_slow" = "بطيء";
+"cooldown_seconds_format" = "%.1f ثانية";
+"section_sound" = "الصوت";
+"settings_master_volume" = "مستوى الصوت الرئيسي";
+"settings_dynamic_volume" = "الصوت الديناميكي";
+"section_feedback" = "الاستجابة";
+"settings_haptics" = "الاهتزاز";
+"settings_screen_flash" = "وميض الشاشة";
+"settings_charger_sound" = "صوت الشاحن";
+"charger_sound_description" = "عند توصيل الشاحن، يتم تشغيل صوت عشوائي من شخصيتك ⚡";
+"charger_trial_warning" = "🔒 تجربة: صوت واحد فقط من هذه الشخصية. احصل على PRO للجميع!";
+"section_security" = "الأمان";
+"settings_safe_mode" = "الوضع الآمن";
+"safe_mode_explanation" = "يمنع التشغيل عندما يكون التطبيق في الخلفية.";
+"section_appearance" = "المظهر";
+"settings_dark_mode" = "الوضع الداكن";
+"section_language" = "اللغة";
+"settings_language" = "اللغة";
+"language_system" = "الافتراضي للنظام";
+"section_legal" = "قانوني";
+"settings_privacy_policy" = "سياسة الخصوصية";
+"settings_restore_purchases" = "استعادة المشتريات";
+
+// MARK: - Store
+"store_title" = "حزم الأصوات";
+"store_pro_title" = "SlapMe PRO";
+"store_pro_subtitle" = "افتح جميع حزم الأصوات\nوالشخصيات دفعة واحدة!";
+"feature_all_premium_sounds" = "جميع حزم الأصوات المميزة";
+"feature_all_characters" = "جميع الشخصيات مفتوحة";
+"feature_one_time_payment" = "دفعة واحدة، للأبد";
+"feature_future_updates" = "التحديثات المستقبلية مشمولة";
+"feature_charger_sounds" = "أصوات الشاحن";
+"feature_all_future_updates" = "جميع التحديثات المستقبلية مشمولة";
+"feature_unlimited_usage" = "دفعة واحدة، استخدام غير محدود";
+"purchasing_in_progress" = "جارٍ المعالجة...";
+"upgrade_to_pro" = "الترقية إلى PRO";
+"restore_purchases" = "استعادة المشتريات";
+"character_count_format" = "%d شخصية";
+
+// MARK: - Paywall
+"paywall_subtitle" = "دفعة واحدة، ملكك للأبد 👋";
+"one_time_payment_label" = "دفعة واحدة";
+
+// MARK: - Onboarding
+"welcome_subtitle" = "اصفع هاتفك.\nسيستجيب لك.";
+"sensor_ready" = "iPhone جاهز!";
+"sensor_not_found" = "لم يتم العثور على المستشعر";
+"sensor_active_description" = "مستشعر الحركة نشط ويعمل بشكل طبيعي.";
+"sensor_not_supported" = "مستشعر التسارع غير مدعوم في هذا الجهاز.";
+"reaction_felt_it" = "أحسست بها!";
+"reaction_tap_phone" = "اضغط بلطف على هاتفك";
+"reaction_success" = "ممتاز، كل شيء يعمل!";
+"reaction_testing_sensor" = "نحن نختبر المستشعر الخاص بك.";
+"button_great_continue" = "رائع، تابع";
+"pack_selection_title" = "اختر شخصيتك";
+"pack_selection_subtitle" = "يمكنك التغيير في أي وقت.";
+"button_start_exclamation" = "ابدأ!";
+
+// MARK: - Pack Preview
+"clip_level_soft" = "خفيف";
+"clip_level_medium" = "متوسط";
+"clip_level_hard" = "قوي";
+"clip_level_combo" = "كومبو";
+"button_preview" = "معاينة";
+"button_select_pack" = "اختر هذه الحزمة";

@@ -38,10 +38,10 @@ struct CharacterView: View {
 
     private var tagText: String {
         switch pack.categoryID {
-        case "sexy":   return "Sexy"
-        case "yamete": return "Yamete"
-        case "goat":   return "Animal"
-        case "funny":  return "Funny"
+        case "sexy":   return L("tag_sexy")
+        case "yamete": return L("tag_yamete")
+        case "goat":   return L("tag_animal")
+        case "funny":  return L("tag_funny")
         default:       return pack.categoryID.capitalized
         }
     }
@@ -94,7 +94,7 @@ struct CharacterView: View {
                         Image(systemName: "clock.fill")
                             .font(.system(size: 32))
                             .foregroundColor(.white.opacity(0.9))
-                        Text("Yakında")
+                        Text(L("coming_soon"))
                             .font(.system(size: 13, weight: .bold, design: .rounded))
                             .foregroundColor(.white.opacity(0.85))
                     }
@@ -106,7 +106,7 @@ struct CharacterView: View {
                         Image(systemName: "lock.fill")
                             .font(.system(size: 36))
                             .foregroundColor(.white.opacity(0.9))
-                        Text("PRO")
+                        Text(L("pro_badge"))
                             .font(.caption.bold())
                             .foregroundColor(.orange)
                     }

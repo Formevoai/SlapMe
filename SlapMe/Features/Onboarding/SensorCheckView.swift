@@ -51,15 +51,15 @@ struct SensorCheckView: View {
                 .padding(.bottom, 36)
 
                 // Status text
-                Text(available ? "iPhone Hazır!" : "Sensör Bulunamadı")
+                Text(available ? L("sensor_ready") : L("sensor_not_found"))
                     .font(.title.bold())
                     .foregroundColor(.black)
                     .opacity(appeared ? 1 : 0)
                     .offset(y: appeared ? 0 : 10)
 
                 Text(available
-                     ? "Hareket sensörün aktif ve çalışıyor."
-                     : "Bu cihazda akselerometre sensörü desteklenmiyor.")
+                     ? L("sensor_active_description")
+                     : L("sensor_not_supported"))
                     .font(.body)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.black.opacity(0.45))
@@ -73,7 +73,7 @@ struct SensorCheckView: View {
                 OnboardingPageIndicator(currentPage: 1)
                     .padding(.bottom, 24)
 
-                OnboardingButton(title: "Devam", isActive: available, action: onContinue)
+                OnboardingButton(title: L("button_continue"), isActive: available, action: onContinue)
                     .opacity(appeared ? 1 : 0)
                     .offset(y: appeared ? 0 : 20)
                     .padding(.bottom, 48)

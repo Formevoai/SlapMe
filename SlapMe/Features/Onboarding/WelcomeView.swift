@@ -42,7 +42,7 @@ struct WelcomeView: View {
                 .scaleEffect(appeared ? 1 : 0.8)
                 .opacity(appeared ? 1 : 0)
 
-                Text("Telefonuna vur.\nO da tepki versin.")
+                Text(L("welcome_subtitle"))
                     .font(.title3)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.black.opacity(0.45))
@@ -57,7 +57,7 @@ struct WelcomeView: View {
                     .padding(.bottom, 24)
 
                 // CTA
-                OnboardingButton(title: "Başla", action: onContinue)
+                OnboardingButton(title: L("button_start"), action: onContinue)
                     .opacity(appeared ? 1 : 0)
                     .offset(y: appeared ? 0 : 20)
                     .padding(.bottom, 48)

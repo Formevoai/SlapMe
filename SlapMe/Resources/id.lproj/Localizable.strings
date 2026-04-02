@@ -1,0 +1,103 @@
+/* ============================================
+   SlapMe – Bahasa Indonesia
+   ============================================ */
+
+// MARK: - Common
+"app_name" = "SlapMe";
+"pro_badge" = "PRO";
+"free_badge" = "GRATIS";
+"coming_soon" = "Segera hadir";
+"button_done" = "Selesai";
+"button_close" = "Tutup";
+"button_continue" = "Lanjutkan";
+"button_skip" = "Lewati";
+"button_start" = "Mulai";
+
+// MARK: - Home
+"home_slap_hint" = "Tampar HP-mu!";
+"safe_mode_on" = "Mode Aman Aktif";
+"safe_mode_off" = "Mode Aman Nonaktif";
+"safe_mode_description" = "Mencegah pemicuan di latar belakang";
+"slap_meter_label" = "METERAN TAMPARAN";
+
+// MARK: - Tags
+"tag_sexy" = "Seksi";
+"tag_yamete" = "Yamete";
+"tag_animal" = "Hewan";
+"tag_funny" = "Lucu";
+
+// MARK: - Settings
+"settings_title" = "Pengaturan";
+"section_sound_pack" = "Paket Suara";
+"settings_selected_pack" = "Paket Terpilih";
+"section_detection" = "Deteksi";
+"settings_sensitivity" = "Sensitivitas";
+"sensitivity_low" = "Rendah";
+"sensitivity_high" = "Tinggi";
+"settings_cooldown" = "Cooldown";
+"cooldown_fast" = "Cepat";
+"cooldown_slow" = "Lambat";
+"cooldown_seconds_format" = "%.1f detik";
+"section_sound" = "Suara";
+"settings_master_volume" = "Volume Utama";
+"settings_dynamic_volume" = "Volume Dinamis";
+"section_feedback" = "Umpan Balik";
+"settings_haptics" = "Getaran";
+"settings_screen_flash" = "Kilatan Layar";
+"settings_charger_sound" = "Suara Pengisi Daya";
+"charger_sound_description" = "Saat pengisi daya dihubungkan, suara acak dari karaktermu akan diputar ⚡";
+"charger_trial_warning" = "🔒 Uji coba: Hanya 1 suara dari karakter ini. Upgrade ke PRO untuk semua!";
+"section_security" = "Keamanan";
+"settings_safe_mode" = "Mode Aman";
+"safe_mode_explanation" = "Mencegah pemicuan saat aplikasi di latar belakang.";
+"section_appearance" = "Tampilan";
+"settings_dark_mode" = "Mode Gelap";
+"section_language" = "Bahasa";
+"settings_language" = "Bahasa";
+"language_system" = "Default Sistem";
+"section_legal" = "Hukum";
+"settings_privacy_policy" = "Kebijakan Privasi";
+"settings_restore_purchases" = "Pulihkan Pembelian";
+
+// MARK: - Store
+"store_title" = "Paket Suara";
+"store_pro_title" = "SlapMe PRO";
+"store_pro_subtitle" = "Buka semua paket suara\ndan karakter sekaligus!";
+"feature_all_premium_sounds" = "Semua paket suara premium";
+"feature_all_characters" = "Semua karakter terbuka";
+"feature_one_time_payment" = "Bayar sekali, selamanya";
+"feature_future_updates" = "Termasuk update masa depan";
+"feature_charger_sounds" = "Suara pengisi daya";
+"feature_all_future_updates" = "Semua update masa depan termasuk";
+"feature_unlimited_usage" = "Bayar sekali, penggunaan tanpa batas";
+"purchasing_in_progress" = "Memproses...";
+"upgrade_to_pro" = "Upgrade ke PRO";
+"restore_purchases" = "Pulihkan Pembelian";
+"character_count_format" = "%d karakter";
+
+// MARK: - Paywall
+"paywall_subtitle" = "Bayar sekali, milikmu selamanya 👋";
+"one_time_payment_label" = "Pembayaran sekali";
+
+// MARK: - Onboarding
+"welcome_subtitle" = "Tampar HP-mu.\nDia akan bereaksi.";
+"sensor_ready" = "iPhone Siap!";
+"sensor_not_found" = "Sensor Tidak Ditemukan";
+"sensor_active_description" = "Sensor gerakmu aktif dan berfungsi dengan baik.";
+"sensor_not_supported" = "Akselerometer tidak didukung pada perangkat ini.";
+"reaction_felt_it" = "Terasa!";
+"reaction_tap_phone" = "Ketuk pelan HP-mu";
+"reaction_success" = "Sempurna, semuanya berfungsi!";
+"reaction_testing_sensor" = "Kami sedang menguji sensormu.";
+"button_great_continue" = "Mantap, lanjut";
+"pack_selection_title" = "Pilih Karaktermu";
+"pack_selection_subtitle" = "Bisa diganti kapan saja.";
+"button_start_exclamation" = "Mulai!";
+
+// MARK: - Pack Preview
+"clip_level_soft" = "Lembut";
+"clip_level_medium" = "Sedang";
+"clip_level_hard" = "Keras";
+"clip_level_combo" = "Kombo";
+"button_preview" = "Pratinjau";
+"button_select_pack" = "Pilih Paket Ini";

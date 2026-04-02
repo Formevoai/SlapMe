@@ -1,0 +1,103 @@
+/* ============================================
+   SlapMe – Nederlands
+   ============================================ */
+
+// MARK: - Common
+"app_name" = "SlapMe";
+"pro_badge" = "PRO";
+"free_badge" = "GRATIS";
+"coming_soon" = "Binnenkort";
+"button_done" = "Klaar";
+"button_close" = "Sluiten";
+"button_continue" = "Doorgaan";
+"button_skip" = "Overslaan";
+"button_start" = "Start";
+
+// MARK: - Home
+"home_slap_hint" = "Sla op je telefoon!";
+"safe_mode_on" = "Veilige Modus Aan";
+"safe_mode_off" = "Veilige Modus Uit";
+"safe_mode_description" = "Activering op de achtergrond wordt geblokkeerd";
+"slap_meter_label" = "KLAP-METER";
+
+// MARK: - Tags
+"tag_sexy" = "Sexy";
+"tag_yamete" = "Yamete";
+"tag_animal" = "Dier";
+"tag_funny" = "Grappig";
+
+// MARK: - Settings
+"settings_title" = "Instellingen";
+"section_sound_pack" = "Geluidspakket";
+"settings_selected_pack" = "Geselecteerd Pakket";
+"section_detection" = "Detectie";
+"settings_sensitivity" = "Gevoeligheid";
+"sensitivity_low" = "Laag";
+"sensitivity_high" = "Hoog";
+"settings_cooldown" = "Afkoelperiode";
+"cooldown_fast" = "Snel";
+"cooldown_slow" = "Langzaam";
+"cooldown_seconds_format" = "%.1f seconden";
+"section_sound" = "Geluid";
+"settings_master_volume" = "Hoofdvolume";
+"settings_dynamic_volume" = "Dynamisch Volume";
+"section_feedback" = "Feedback";
+"settings_haptics" = "Trillingen";
+"settings_screen_flash" = "Schermflits";
+"settings_charger_sound" = "Opladergeluid";
+"charger_sound_description" = "Als de oplader wordt aangesloten, speelt een willekeurig geluid van je karakter af ⚡";
+"charger_trial_warning" = "🔒 Proef: Slechts 1 geluid van dit karakter. Upgrade naar PRO voor alles!";
+"section_security" = "Beveiliging";
+"settings_safe_mode" = "Veilige Modus";
+"safe_mode_explanation" = "Activering op de achtergrond wordt geblokkeerd.";
+"section_appearance" = "Uiterlijk";
+"settings_dark_mode" = "Donker Thema";
+"section_language" = "Taal";
+"settings_language" = "Taal";
+"language_system" = "Systeemstandaard";
+"section_legal" = "Juridisch";
+"settings_privacy_policy" = "Privacybeleid";
+"settings_restore_purchases" = "Aankopen Herstellen";
+
+// MARK: - Store
+"store_title" = "Geluidspakketten";
+"store_pro_title" = "SlapMe PRO";
+"store_pro_subtitle" = "Ontgrendel alle geluidspakketten\nen karakters in één keer!";
+"feature_all_premium_sounds" = "Alle premium geluidspakketten";
+"feature_all_characters" = "Alle karakters ontgrendeld";
+"feature_one_time_payment" = "Eenmalige betaling, voor altijd";
+"feature_future_updates" = "Toekomstige updates inbegrepen";
+"feature_charger_sounds" = "Opladergeluiden";
+"feature_all_future_updates" = "Alle toekomstige updates inbegrepen";
+"feature_unlimited_usage" = "Eenmalige betaling, onbeperkt gebruik";
+"purchasing_in_progress" = "Bezig met verwerken...";
+"upgrade_to_pro" = "Upgrade naar PRO";
+"restore_purchases" = "Aankopen Herstellen";
+"character_count_format" = "%d karakters";
+
+// MARK: - Paywall
+"paywall_subtitle" = "Eenmalige betaling, voor altijd van jou 👋";
+"one_time_payment_label" = "Eenmalige betaling";
+
+// MARK: - Onboarding
+"welcome_subtitle" = "Sla op je telefoon.\nHij reageert.";
+"sensor_ready" = "iPhone Klaar!";
+"sensor_not_found" = "Sensor Niet Gevonden";
+"sensor_active_description" = "Je bewegingssensor is actief en werkt.";
+"sensor_not_supported" = "De versnellingsmeter wordt niet ondersteund op dit apparaat.";
+"reaction_felt_it" = "Ik voelde het!";
+"reaction_tap_phone" = "Tik zachtjes op je telefoon";
+"reaction_success" = "Perfect, alles werkt!";
+"reaction_testing_sensor" = "We testen je sensor.";
+"button_great_continue" = "Super, doorgaan";
+"pack_selection_title" = "Kies je Karakter";
+"pack_selection_subtitle" = "Je kunt altijd wisselen.";
+"button_start_exclamation" = "Starten!";
+
+// MARK: - Pack Preview
+"clip_level_soft" = "Zacht";
+"clip_level_medium" = "Gemiddeld";
+"clip_level_hard" = "Hard";
+"clip_level_combo" = "Combo";
+"button_preview" = "Voorbeeld";
+"button_select_pack" = "Pakket Selecteren";

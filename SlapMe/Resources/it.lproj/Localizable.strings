@@ -1,0 +1,103 @@
+/* ============================================
+   SlapMe – Italiano
+   ============================================ */
+
+// MARK: - Common
+"app_name" = "SlapMe";
+"pro_badge" = "PRO";
+"free_badge" = "GRATIS";
+"coming_soon" = "Prossimamente";
+"button_done" = "Fatto";
+"button_close" = "Chiudi";
+"button_continue" = "Continua";
+"button_skip" = "Salta";
+"button_start" = "Inizia";
+
+// MARK: - Home
+"home_slap_hint" = "Dai uno schiaffo al telefono!";
+"safe_mode_on" = "Modalità Sicura Attiva";
+"safe_mode_off" = "Modalità Sicura Disattiva";
+"safe_mode_description" = "L'attivazione in background è bloccata";
+"slap_meter_label" = "SCHIAFFO-METRO";
+
+// MARK: - Tags
+"tag_sexy" = "Sexy";
+"tag_yamete" = "Yamete";
+"tag_animal" = "Animale";
+"tag_funny" = "Divertente";
+
+// MARK: - Settings
+"settings_title" = "Impostazioni";
+"section_sound_pack" = "Pacchetto Suoni";
+"settings_selected_pack" = "Pacchetto Selezionato";
+"section_detection" = "Rilevamento";
+"settings_sensitivity" = "Sensibilità";
+"sensitivity_low" = "Bassa";
+"sensitivity_high" = "Alta";
+"settings_cooldown" = "Tempo di ricarica";
+"cooldown_fast" = "Veloce";
+"cooldown_slow" = "Lento";
+"cooldown_seconds_format" = "%.1f secondi";
+"section_sound" = "Suono";
+"settings_master_volume" = "Volume Principale";
+"settings_dynamic_volume" = "Volume Dinamico";
+"section_feedback" = "Feedback";
+"settings_haptics" = "Vibrazione";
+"settings_screen_flash" = "Flash Schermo";
+"settings_charger_sound" = "Suono del Caricatore";
+"charger_sound_description" = "Quando il caricatore è collegato, viene riprodotto un suono casuale del tuo personaggio ⚡";
+"charger_trial_warning" = "🔒 Prova: Solo 1 suono da questo personaggio. Passa a PRO per tutti!";
+"section_security" = "Sicurezza";
+"settings_safe_mode" = "Modalità Sicura";
+"safe_mode_explanation" = "L'attivazione in background è bloccata.";
+"section_appearance" = "Aspetto";
+"settings_dark_mode" = "Tema Scuro";
+"section_language" = "Lingua";
+"settings_language" = "Lingua";
+"language_system" = "Predefinito di sistema";
+"section_legal" = "Legale";
+"settings_privacy_policy" = "Informativa sulla Privacy";
+"settings_restore_purchases" = "Ripristina Acquisti";
+
+// MARK: - Store
+"store_title" = "Pacchetti Suoni";
+"store_pro_title" = "SlapMe PRO";
+"store_pro_subtitle" = "Sblocca tutti i pacchetti suoni\ne i personaggi in una volta!";
+"feature_all_premium_sounds" = "Tutti i pacchetti suoni premium";
+"feature_all_characters" = "Tutti i personaggi sbloccati";
+"feature_one_time_payment" = "Pagamento unico, per sempre";
+"feature_future_updates" = "Aggiornamenti futuri inclusi";
+"feature_charger_sounds" = "Suoni del caricatore";
+"feature_all_future_updates" = "Tutti gli aggiornamenti futuri inclusi";
+"feature_unlimited_usage" = "Pagamento unico, uso illimitato";
+"purchasing_in_progress" = "In elaborazione...";
+"upgrade_to_pro" = "Passa a PRO";
+"restore_purchases" = "Ripristina Acquisti";
+"character_count_format" = "%d personaggi";
+
+// MARK: - Paywall
+"paywall_subtitle" = "Un solo pagamento, tuo per sempre 👋";
+"one_time_payment_label" = "Pagamento unico";
+
+// MARK: - Onboarding
+"welcome_subtitle" = "Dai uno schiaffo al telefono.\nLui reagirà.";
+"sensor_ready" = "iPhone Pronto!";
+"sensor_not_found" = "Sensore Non Trovato";
+"sensor_active_description" = "Il tuo sensore di movimento è attivo e funzionante.";
+"sensor_not_supported" = "L'accelerometro non è supportato su questo dispositivo.";
+"reaction_felt_it" = "L'ho sentito!";
+"reaction_tap_phone" = "Tocca leggermente il telefono";
+"reaction_success" = "Perfetto, tutto funziona!";
+"reaction_testing_sensor" = "Stiamo testando il tuo sensore.";
+"button_great_continue" = "Ottimo, continua";
+"pack_selection_title" = "Scegli il tuo Personaggio";
+"pack_selection_subtitle" = "Puoi cambiarlo quando vuoi.";
+"button_start_exclamation" = "Iniziamo!";
+
+// MARK: - Pack Preview
+"clip_level_soft" = "Leggero";
+"clip_level_medium" = "Medio";
+"clip_level_hard" = "Forte";
+"clip_level_combo" = "Combo";
+"button_preview" = "Anteprima";
+"button_select_pack" = "Seleziona Pacchetto";

@@ -5,6 +5,23 @@ options:
     iOS: "15.0"
   xcodeVersion: "15"
   createIntermediateGroups: true
+  knownRegions:
+    - en
+    - tr
+    - de
+    - es
+    - fr
+    - pt-BR
+    - it
+    - nl
+    - ru
+    - ja
+    - ko
+    - zh-Hans
+    - ar
+    - hi
+    - pl
+    - id
 
 settings:
   base:

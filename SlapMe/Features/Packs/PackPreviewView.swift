@@ -28,7 +28,7 @@ struct PackPreviewView: View {
                     Text(pack.title)
                         .font(.title2.bold())
                     if pack.isPremium {
-                        Text("PRO")
+                        Text(L("pro_badge"))
                             .font(.caption.bold())
                             .padding(.horizontal, 8)
                             .padding(.vertical, 3)
@@ -42,10 +42,10 @@ struct PackPreviewView: View {
 
             // Clip sayısı
             HStack(spacing: 24) {
-                statItem(label: "Soft",  count: pack.softClips.count)
-                statItem(label: "Medium", count: pack.mediumClips.count)
-                statItem(label: "Hard",  count: pack.hardClips.count)
-                statItem(label: "Combo", count: pack.comboClips.count)
+                statItem(label: L("clip_level_soft"),  count: pack.softClips.count)
+                statItem(label: L("clip_level_medium"), count: pack.mediumClips.count)
+                statItem(label: L("clip_level_hard"),  count: pack.hardClips.count)
+                statItem(label: L("clip_level_combo"), count: pack.comboClips.count)
             }
             .padding()
             .background(Color(.secondarySystemBackground))
@@ -60,7 +60,7 @@ struct PackPreviewView: View {
                     audioManager.playPreview(pack: pack)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { isPlaying = false }
                 }) {
-                    Label("Önizle", systemImage: "play.fill")
+                    Label(L("button_preview"), systemImage: "play.fill")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -69,7 +69,7 @@ struct PackPreviewView: View {
                 }
 
                 Button(action: onSelect) {
-                    Text("Bu Paketi Seç")
+                    Text(L("button_select_pack"))
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()

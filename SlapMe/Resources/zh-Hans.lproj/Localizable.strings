@@ -1,0 +1,103 @@
+/* ============================================
+   SlapMe – 简体中文
+   ============================================ */
+
+// MARK: - Common
+"app_name" = "SlapMe";
+"pro_badge" = "PRO";
+"free_badge" = "免费";
+"coming_soon" = "即将推出";
+"button_done" = "完成";
+"button_close" = "关闭";
+"button_continue" = "继续";
+"button_skip" = "跳过";
+"button_start" = "开始";
+
+// MARK: - Home
+"home_slap_hint" = "拍打手机！";
+"safe_mode_on" = "安全模式 开";
+"safe_mode_off" = "安全模式 关";
+"safe_mode_description" = "后台运行时不会被触发";
+"slap_meter_label" = "巴掌力度计";
+
+// MARK: - Tags
+"tag_sexy" = "性感";
+"tag_yamete" = "雅蠛蝶";
+"tag_animal" = "动物";
+"tag_funny" = "搞笑";
+
+// MARK: - Settings
+"settings_title" = "设置";
+"section_sound_pack" = "音效包";
+"settings_selected_pack" = "当前音效包";
+"section_detection" = "检测";
+"settings_sensitivity" = "灵敏度";
+"sensitivity_low" = "低";
+"sensitivity_high" = "高";
+"settings_cooldown" = "冷却时间";
+"cooldown_fast" = "快";
+"cooldown_slow" = "慢";
+"cooldown_seconds_format" = "%.1f 秒";
+"section_sound" = "声音";
+"settings_master_volume" = "主音量";
+"settings_dynamic_volume" = "动态音量";
+"section_feedback" = "反馈";
+"settings_haptics" = "触觉反馈";
+"settings_screen_flash" = "屏幕闪光";
+"settings_charger_sound" = "充电音效";
+"charger_sound_description" = "连接充电器时，会随机播放你所选角色的音效 ⚡";
+"charger_trial_warning" = "🔒 试用：此角色仅1个音效。升级PRO解锁全部！";
+"section_security" = "安全";
+"settings_safe_mode" = "安全模式";
+"safe_mode_explanation" = "后台运行时不会被触发。";
+"section_appearance" = "外观";
+"settings_dark_mode" = "深色模式";
+"section_language" = "语言";
+"settings_language" = "语言";
+"language_system" = "系统默认";
+"section_legal" = "法律信息";
+"settings_privacy_policy" = "隐私政策";
+"settings_restore_purchases" = "恢复购买";
+
+// MARK: - Store
+"store_title" = "音效包";
+"store_pro_title" = "SlapMe PRO";
+"store_pro_subtitle" = "一次解锁所有音效包\n和角色！";
+"feature_all_premium_sounds" = "所有高级音效包";
+"feature_all_characters" = "所有角色已解锁";
+"feature_one_time_payment" = "一次付费，永久使用";
+"feature_future_updates" = "包含未来更新";
+"feature_charger_sounds" = "充电音效";
+"feature_all_future_updates" = "包含所有未来更新";
+"feature_unlimited_usage" = "一次付费，无限使用";
+"purchasing_in_progress" = "处理中...";
+"upgrade_to_pro" = "升级为PRO";
+"restore_purchases" = "恢复购买";
+"character_count_format" = "%d 个角色";
+
+// MARK: - Paywall
+"paywall_subtitle" = "一次付款，永远拥有 👋";
+"one_time_payment_label" = "一次性付款";
+
+// MARK: - Onboarding
+"welcome_subtitle" = "拍打你的手机。\n它会做出反应。";
+"sensor_ready" = "iPhone 准备就绪！";
+"sensor_not_found" = "未找到传感器";
+"sensor_active_description" = "运动传感器已激活，工作正常。";
+"sensor_not_supported" = "此设备不支持加速度传感器。";
+"reaction_felt_it" = "感觉到了！";
+"reaction_tap_phone" = "轻轻拍打手机";
+"reaction_success" = "完美，一切正常！";
+"reaction_testing_sensor" = "正在测试你的传感器。";
+"button_great_continue" = "太好了，继续";
+"pack_selection_title" = "选择你的角色";
+"pack_selection_subtitle" = "随时可以更换。";
+"button_start_exclamation" = "开始！";
+
+// MARK: - Pack Preview
+"clip_level_soft" = "轻柔";
+"clip_level_medium" = "中等";
+"clip_level_hard" = "强力";
+"clip_level_combo" = "连击";
+"button_preview" = "预览";
+"button_select_pack" = "选择此包";

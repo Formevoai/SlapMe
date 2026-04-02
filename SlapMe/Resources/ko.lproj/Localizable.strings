@@ -1,0 +1,103 @@
+/* ============================================
+   SlapMe – 한국어
+   ============================================ */
+
+// MARK: - Common
+"app_name" = "SlapMe";
+"pro_badge" = "PRO";
+"free_badge" = "무료";
+"coming_soon" = "곧 출시";
+"button_done" = "완료";
+"button_close" = "닫기";
+"button_continue" = "계속";
+"button_skip" = "건너뛰기";
+"button_start" = "시작";
+
+// MARK: - Home
+"home_slap_hint" = "폰을 때려봐!";
+"safe_mode_on" = "안전 모드 켜짐";
+"safe_mode_off" = "안전 모드 꺼짐";
+"safe_mode_description" = "백그라운드에서 작동 방지";
+"slap_meter_label" = "싸다구 미터";
+
+// MARK: - Tags
+"tag_sexy" = "섹시";
+"tag_yamete" = "야메테";
+"tag_animal" = "동물";
+"tag_funny" = "웃긴";
+
+// MARK: - Settings
+"settings_title" = "설정";
+"section_sound_pack" = "사운드팩";
+"settings_selected_pack" = "선택된 팩";
+"section_detection" = "감지";
+"settings_sensitivity" = "민감도";
+"sensitivity_low" = "낮음";
+"sensitivity_high" = "높음";
+"settings_cooldown" = "쿨다운";
+"cooldown_fast" = "빠름";
+"cooldown_slow" = "느림";
+"cooldown_seconds_format" = "%.1f 초";
+"section_sound" = "소리";
+"settings_master_volume" = "마스터 볼륨";
+"settings_dynamic_volume" = "다이나믹 볼륨";
+"section_feedback" = "피드백";
+"settings_haptics" = "진동";
+"settings_screen_flash" = "화면 플래시";
+"settings_charger_sound" = "충전 소리";
+"charger_sound_description" = "충전기를 연결하면 캐릭터의 랜덤 사운드가 재생됩니다 ⚡";
+"charger_trial_warning" = "🔒 체험: 이 캐릭터에서 1개의 소리만. 모두 잠금 해제하려면 PRO로!";
+"section_security" = "보안";
+"settings_safe_mode" = "안전 모드";
+"safe_mode_explanation" = "앱이 백그라운드에 있을 때 작동이 방지됩니다.";
+"section_appearance" = "외관";
+"settings_dark_mode" = "다크 모드";
+"section_language" = "언어";
+"settings_language" = "언어";
+"language_system" = "시스템 기본값";
+"section_legal" = "법적 정보";
+"settings_privacy_policy" = "개인정보 처리방침";
+"settings_restore_purchases" = "구매 복원";
+
+// MARK: - Store
+"store_title" = "사운드팩";
+"store_pro_title" = "SlapMe PRO";
+"store_pro_subtitle" = "모든 사운드팩과 캐릭터를\n한 번에 잠금 해제!";
+"feature_all_premium_sounds" = "모든 프리미엄 사운드팩";
+"feature_all_characters" = "모든 캐릭터 잠금 해제";
+"feature_one_time_payment" = "한 번 결제, 영구 사용";
+"feature_future_updates" = "향후 업데이트 포함";
+"feature_charger_sounds" = "충전 사운드";
+"feature_all_future_updates" = "모든 향후 업데이트 포함";
+"feature_unlimited_usage" = "한 번 결제, 무제한 사용";
+"purchasing_in_progress" = "처리 중...";
+"upgrade_to_pro" = "PRO로 업그레이드";
+"restore_purchases" = "구매 복원";
+"character_count_format" = "%d 캐릭터";
+
+// MARK: - Paywall
+"paywall_subtitle" = "한 번 결제, 영원히 당신의 것 👋";
+"one_time_payment_label" = "일회성 결제";
+
+// MARK: - Onboarding
+"welcome_subtitle" = "폰을 때려봐.\n반응이 돌아올 거야.";
+"sensor_ready" = "iPhone 준비 완료!";
+"sensor_not_found" = "센서를 찾을 수 없음";
+"sensor_active_description" = "모션 센서가 활성화되어 정상 작동 중입니다.";
+"sensor_not_supported" = "이 기기에서는 가속도 센서가 지원되지 않습니다.";
+"reaction_felt_it" = "느꼈어!";
+"reaction_tap_phone" = "폰을 가볍게 탭해봐";
+"reaction_success" = "완벽해, 다 잘 돼!";
+"reaction_testing_sensor" = "센서를 테스트 중입니다.";
+"button_great_continue" = "좋아, 계속";
+"pack_selection_title" = "캐릭터를 선택하세요";
+"pack_selection_subtitle" = "언제든 변경할 수 있습니다.";
+"button_start_exclamation" = "시작!";
+
+// MARK: - Pack Preview
+"clip_level_soft" = "약하게";
+"clip_level_medium" = "보통";
+"clip_level_hard" = "강하게";
+"clip_level_combo" = "콤보";
+"button_preview" = "미리보기";
+"button_select_pack" = "이 팩 선택";

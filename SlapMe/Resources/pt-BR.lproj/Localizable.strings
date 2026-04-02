@@ -1,0 +1,103 @@
+/* ============================================
+   SlapMe – Português (Brasil)
+   ============================================ */
+
+// MARK: - Common
+"app_name" = "SlapMe";
+"pro_badge" = "PRO";
+"free_badge" = "GRÁTIS";
+"coming_soon" = "Em breve";
+"button_done" = "Pronto";
+"button_close" = "Fechar";
+"button_continue" = "Continuar";
+"button_skip" = "Pular";
+"button_start" = "Iniciar";
+
+// MARK: - Home
+"home_slap_hint" = "Dê um tapa no celular!";
+"safe_mode_on" = "Modo Seguro Ligado";
+"safe_mode_off" = "Modo Seguro Desligado";
+"safe_mode_description" = "O acionamento em segundo plano é bloqueado";
+"slap_meter_label" = "MEDIDOR DE TAPA";
+
+// MARK: - Tags
+"tag_sexy" = "Sexy";
+"tag_yamete" = "Yamete";
+"tag_animal" = "Animal";
+"tag_funny" = "Engraçado";
+
+// MARK: - Settings
+"settings_title" = "Configurações";
+"section_sound_pack" = "Pacote de Sons";
+"settings_selected_pack" = "Pacote Selecionado";
+"section_detection" = "Detecção";
+"settings_sensitivity" = "Sensibilidade";
+"sensitivity_low" = "Baixa";
+"sensitivity_high" = "Alta";
+"settings_cooldown" = "Cooldown";
+"cooldown_fast" = "Rápido";
+"cooldown_slow" = "Lento";
+"cooldown_seconds_format" = "%.1f segundos";
+"section_sound" = "Som";
+"settings_master_volume" = "Volume Geral";
+"settings_dynamic_volume" = "Volume Dinâmico";
+"section_feedback" = "Retorno";
+"settings_haptics" = "Vibração";
+"settings_screen_flash" = "Flash de Tela";
+"settings_charger_sound" = "Som do Carregador";
+"charger_sound_description" = "Quando o carregador é conectado, toca um som aleatório do seu personagem ⚡";
+"charger_trial_warning" = "🔒 Teste: Apenas 1 som deste personagem. Atualize para PRO para todos!";
+"section_security" = "Segurança";
+"settings_safe_mode" = "Modo Seguro";
+"safe_mode_explanation" = "O acionamento em segundo plano é bloqueado.";
+"section_appearance" = "Aparência";
+"settings_dark_mode" = "Modo Escuro";
+"section_language" = "Idioma";
+"settings_language" = "Idioma";
+"language_system" = "Padrão do sistema";
+"section_legal" = "Legal";
+"settings_privacy_policy" = "Política de Privacidade";
+"settings_restore_purchases" = "Restaurar Compras";
+
+// MARK: - Store
+"store_title" = "Pacotes de Sons";
+"store_pro_title" = "SlapMe PRO";
+"store_pro_subtitle" = "Desbloqueie todos os pacotes de sons\ne personagens de uma vez!";
+"feature_all_premium_sounds" = "Todos os pacotes de sons premium";
+"feature_all_characters" = "Todos os personagens desbloqueados";
+"feature_one_time_payment" = "Pagamento único, para sempre";
+"feature_future_updates" = "Atualizações futuras incluídas";
+"feature_charger_sounds" = "Sons do carregador";
+"feature_all_future_updates" = "Todas as atualizações futuras incluídas";
+"feature_unlimited_usage" = "Pagamento único, uso ilimitado";
+"purchasing_in_progress" = "Processando...";
+"upgrade_to_pro" = "Upgrade para PRO";
+"restore_purchases" = "Restaurar Compras";
+"character_count_format" = "%d personagens";
+
+// MARK: - Paywall
+"paywall_subtitle" = "Pagamento único, seu para sempre 👋";
+"one_time_payment_label" = "Pagamento único";
+
+// MARK: - Onboarding
+"welcome_subtitle" = "Dê um tapa no celular.\nEle vai reagir.";
+"sensor_ready" = "iPhone Pronto!";
+"sensor_not_found" = "Sensor Não Encontrado";
+"sensor_active_description" = "Seu sensor de movimento está ativo e funcionando.";
+"sensor_not_supported" = "O acelerômetro não é suportado neste dispositivo.";
+"reaction_felt_it" = "Eu senti!";
+"reaction_tap_phone" = "Bata levemente no celular";
+"reaction_success" = "Perfeito, tudo funcionando!";
+"reaction_testing_sensor" = "Estamos testando seu sensor.";
+"button_great_continue" = "Ótimo, continuar";
+"pack_selection_title" = "Escolha seu Personagem";
+"pack_selection_subtitle" = "Você pode mudar quando quiser.";
+"button_start_exclamation" = "Começar!";
+
+// MARK: - Pack Preview
+"clip_level_soft" = "Suave";
+"clip_level_medium" = "Médio";
+"clip_level_hard" = "Forte";
+"clip_level_combo" = "Combo";
+"button_preview" = "Pré-visualizar";
+"button_select_pack" = "Selecionar Pacote";

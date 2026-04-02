@@ -1,0 +1,103 @@
+/* ============================================
+   SlapMe – हिन्दी
+   ============================================ */
+
+// MARK: - Common
+"app_name" = "SlapMe";
+"pro_badge" = "PRO";
+"free_badge" = "मुफ़्त";
+"coming_soon" = "जल्द आ रहा है";
+"button_done" = "हो गया";
+"button_close" = "बंद करें";
+"button_continue" = "जारी रखें";
+"button_skip" = "छोड़ें";
+"button_start" = "शुरू करें";
+
+// MARK: - Home
+"home_slap_hint" = "फ़ोन पर थप्पड़ मारो!";
+"safe_mode_on" = "सेफ़ मोड चालू";
+"safe_mode_off" = "सेफ़ मोड बंद";
+"safe_mode_description" = "बैकग्राउंड में ट्रिगर रोका जाता है";
+"slap_meter_label" = "थप्पड़ मीटर";
+
+// MARK: - Tags
+"tag_sexy" = "सेक्सी";
+"tag_yamete" = "यामेते";
+"tag_animal" = "जानवर";
+"tag_funny" = "मज़ेदार";
+
+// MARK: - Settings
+"settings_title" = "सेटिंग्स";
+"section_sound_pack" = "साउंड पैक";
+"settings_selected_pack" = "चुना हुआ पैक";
+"section_detection" = "पहचान";
+"settings_sensitivity" = "संवेदनशीलता";
+"sensitivity_low" = "कम";
+"sensitivity_high" = "ज़्यादा";
+"settings_cooldown" = "कूलडाउन";
+"cooldown_fast" = "तेज़";
+"cooldown_slow" = "धीमा";
+"cooldown_seconds_format" = "%.1f सेकंड";
+"section_sound" = "आवाज़";
+"settings_master_volume" = "मुख्य वॉल्यूम";
+"settings_dynamic_volume" = "डायनामिक वॉल्यूम";
+"section_feedback" = "फ़ीडबैक";
+"settings_haptics" = "वाइब्रेशन";
+"settings_screen_flash" = "स्क्रीन फ़्लैश";
+"settings_charger_sound" = "चार्जर साउंड";
+"charger_sound_description" = "चार्जर लगाने पर आपके कैरेक्टर की रैंडम आवाज़ बजती है ⚡";
+"charger_trial_warning" = "🔒 ट्रायल: इस कैरेक्टर से सिर्फ़ 1 आवाज़। सभी के लिए PRO लें!";
+"section_security" = "सुरक्षा";
+"settings_safe_mode" = "सेफ़ मोड";
+"safe_mode_explanation" = "बैकग्राउंड में होने पर ट्रिगर रोका जाता है।";
+"section_appearance" = "दिखावट";
+"settings_dark_mode" = "डार्क मोड";
+"section_language" = "भाषा";
+"settings_language" = "भाषा";
+"language_system" = "सिस्टम डिफ़ॉल्ट";
+"section_legal" = "कानूनी";
+"settings_privacy_policy" = "गोपनीयता नीति";
+"settings_restore_purchases" = "ख़रीदारी बहाल करें";
+
+// MARK: - Store
+"store_title" = "साउंड पैक";
+"store_pro_title" = "SlapMe PRO";
+"store_pro_subtitle" = "सभी साउंड पैक और कैरेक्टर\nएक बार में अनलॉक करें!";
+"feature_all_premium_sounds" = "सभी प्रीमियम साउंड पैक";
+"feature_all_characters" = "सभी कैरेक्टर अनलॉक";
+"feature_one_time_payment" = "एक बार भुगतान, हमेशा के लिए";
+"feature_future_updates" = "भविष्य के अपडेट शामिल";
+"feature_charger_sounds" = "चार्जर साउंड";
+"feature_all_future_updates" = "सभी भविष्य के अपडेट शामिल";
+"feature_unlimited_usage" = "एक बार भुगतान, असीमित उपयोग";
+"purchasing_in_progress" = "प्रोसेस हो रहा है...";
+"upgrade_to_pro" = "PRO में अपग्रेड करें";
+"restore_purchases" = "ख़रीदारी बहाल करें";
+"character_count_format" = "%d कैरेक्टर";
+
+// MARK: - Paywall
+"paywall_subtitle" = "एक बार भुगतान, हमेशा आपका 👋";
+"one_time_payment_label" = "एकमुश्त भुगतान";
+
+// MARK: - Onboarding
+"welcome_subtitle" = "अपने फ़ोन पर मारो।\nवो रिएक्ट करेगा।";
+"sensor_ready" = "iPhone तैयार!";
+"sensor_not_found" = "सेंसर नहीं मिला";
+"sensor_active_description" = "आपका मोशन सेंसर एक्टिव और काम कर रहा है।";
+"sensor_not_supported" = "इस डिवाइस पर एक्सेलेरोमीटर सपोर्टेड नहीं है।";
+"reaction_felt_it" = "महसूस किया!";
+"reaction_tap_phone" = "फ़ोन पर हल्के से टैप करो";
+"reaction_success" = "बढ़िया, सब काम कर रहा है!";
+"reaction_testing_sensor" = "आपके सेंसर को टेस्ट कर रहे हैं।";
+"button_great_continue" = "शानदार, जारी रखें";
+"pack_selection_title" = "अपना कैरेक्टर चुनें";
+"pack_selection_subtitle" = "कभी भी बदल सकते हैं।";
+"button_start_exclamation" = "शुरू!";
+
+// MARK: - Pack Preview
+"clip_level_soft" = "हल्का";
+"clip_level_medium" = "मध्यम";
+"clip_level_hard" = "तेज़";
+"clip_level_combo" = "कॉम्बो";
+"button_preview" = "प्रीव्यू";
+"button_select_pack" = "यह पैक चुनें";

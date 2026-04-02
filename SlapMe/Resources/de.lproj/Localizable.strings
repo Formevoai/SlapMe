@@ -1,0 +1,103 @@
+/* ============================================
+   SlapMe – Deutsch
+   ============================================ */
+
+// MARK: - Common
+"app_name" = "SlapMe";
+"pro_badge" = "PRO";
+"free_badge" = "KOSTENLOS";
+"coming_soon" = "Bald verfügbar";
+"button_done" = "Fertig";
+"button_close" = "Schließen";
+"button_continue" = "Weiter";
+"button_skip" = "Überspringen";
+"button_start" = "Start";
+
+// MARK: - Home
+"home_slap_hint" = "Schlage auf dein Handy!";
+"safe_mode_on" = "Sicherheitsmodus An";
+"safe_mode_off" = "Sicherheitsmodus Aus";
+"safe_mode_description" = "Im Hintergrund wird keine Auslösung erkannt";
+"slap_meter_label" = "OHRFEIGEN-METER";
+
+// MARK: - Tags
+"tag_sexy" = "Sexy";
+"tag_yamete" = "Yamete";
+"tag_animal" = "Tier";
+"tag_funny" = "Lustig";
+
+// MARK: - Settings
+"settings_title" = "Einstellungen";
+"section_sound_pack" = "Soundpaket";
+"settings_selected_pack" = "Ausgewähltes Paket";
+"section_detection" = "Erkennung";
+"settings_sensitivity" = "Empfindlichkeit";
+"sensitivity_low" = "Niedrig";
+"sensitivity_high" = "Hoch";
+"settings_cooldown" = "Abklingzeit";
+"cooldown_fast" = "Schnell";
+"cooldown_slow" = "Langsam";
+"cooldown_seconds_format" = "%.1f Sekunden";
+"section_sound" = "Ton";
+"settings_master_volume" = "Hauptlautstärke";
+"settings_dynamic_volume" = "Dynamische Lautstärke";
+"section_feedback" = "Feedback";
+"settings_haptics" = "Haptik";
+"settings_screen_flash" = "Bildschirmblitz";
+"settings_charger_sound" = "Ladegeräusch";
+"charger_sound_description" = "Wenn das Ladekabel eingesteckt wird, ertönt ein zufälliger Sound deines Charakters ⚡";
+"charger_trial_warning" = "🔒 Test: Nur 1 Sound von diesem Charakter. Hole PRO für alle!";
+"section_security" = "Sicherheit";
+"settings_safe_mode" = "Sicherheitsmodus";
+"safe_mode_explanation" = "Die Auslösung im Hintergrund wird verhindert.";
+"section_appearance" = "Erscheinungsbild";
+"settings_dark_mode" = "Dunkles Design";
+"section_language" = "Sprache";
+"settings_language" = "Sprache";
+"language_system" = "Systemstandard";
+"section_legal" = "Rechtliches";
+"settings_privacy_policy" = "Datenschutzrichtlinie";
+"settings_restore_purchases" = "Käufe wiederherstellen";
+
+// MARK: - Store
+"store_title" = "Soundpakete";
+"store_pro_title" = "SlapMe PRO";
+"store_pro_subtitle" = "Schalte alle Soundpakete und\nCharaktere auf einmal frei!";
+"feature_all_premium_sounds" = "Alle Premium-Soundpakete";
+"feature_all_characters" = "Alle Charaktere freigeschaltet";
+"feature_one_time_payment" = "Einmalzahlung, für immer";
+"feature_future_updates" = "Zukünftige Updates inklusive";
+"feature_charger_sounds" = "Ladegeräusche";
+"feature_all_future_updates" = "Alle zukünftigen Updates inklusive";
+"feature_unlimited_usage" = "Einmalzahlung, unbegrenzte Nutzung";
+"purchasing_in_progress" = "Wird bearbeitet...";
+"upgrade_to_pro" = "Auf PRO upgraden";
+"restore_purchases" = "Käufe wiederherstellen";
+"character_count_format" = "%d Charaktere";
+
+// MARK: - Paywall
+"paywall_subtitle" = "Einmalzahlung, für immer deins 👋";
+"one_time_payment_label" = "Einmalzahlung";
+
+// MARK: - Onboarding
+"welcome_subtitle" = "Schlage auf dein Handy.\nEs reagiert.";
+"sensor_ready" = "iPhone Bereit!";
+"sensor_not_found" = "Sensor nicht gefunden";
+"sensor_active_description" = "Dein Bewegungssensor ist aktiv und funktioniert.";
+"sensor_not_supported" = "Der Beschleunigungssensor wird auf diesem Gerät nicht unterstützt.";
+"reaction_felt_it" = "Ich hab's gespürt!";
+"reaction_tap_phone" = "Tippe leicht auf dein Handy";
+"reaction_success" = "Perfekt, alles funktioniert!";
+"reaction_testing_sensor" = "Wir testen deinen Sensor.";
+"button_great_continue" = "Super, weiter";
+"pack_selection_title" = "Wähle deinen Charakter";
+"pack_selection_subtitle" = "Du kannst jederzeit wechseln.";
+"button_start_exclamation" = "Los geht's!";
+
+// MARK: - Pack Preview
+"clip_level_soft" = "Leicht";
+"clip_level_medium" = "Mittel";
+"clip_level_hard" = "Stark";
+"clip_level_combo" = "Kombo";
+"button_preview" = "Vorschau";
+"button_select_pack" = "Paket auswählen";

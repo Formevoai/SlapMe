@@ -46,11 +46,11 @@ struct StoreView: View {
                 }
             }
             .preferredColorScheme(.dark)
-            .navigationTitle("Ses Paketleri")
+            .navigationTitle(L("store_title"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Kapat") { dismiss() }
+                    Button(L("button_close")) { dismiss() }
                         .foregroundColor(.white)
                 }
             }
@@ -88,17 +88,17 @@ struct StoreView: View {
                 .font(.title2.bold())
                 .foregroundColor(.white)
 
-            Text("Tüm ses paketlerini ve karakterleri\ntek seferde aç!")
+            Text(L("store_pro_subtitle"))
                 .font(.subheadline)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white.opacity(0.6))
 
             // Features
             VStack(alignment: .leading, spacing: 8) {
-                proFeatureRow(icon: "speaker.wave.3.fill", text: "Tüm premium ses paketleri")
-                proFeatureRow(icon: "person.3.fill", text: "Tüm karakterler açık")
-                proFeatureRow(icon: "infinity", text: "Tek seferlik ödeme, sonsuza kadar")
-                proFeatureRow(icon: "arrow.up.circle.fill", text: "Gelecek güncellemeler dahil")
+                proFeatureRow(icon: "speaker.wave.3.fill", text: L("feature_all_premium_sounds"))
+                proFeatureRow(icon: "person.3.fill", text: L("feature_all_characters"))
+                proFeatureRow(icon: "infinity", text: L("feature_one_time_payment"))
+                proFeatureRow(icon: "arrow.up.circle.fill", text: L("feature_future_updates"))
             }
             .padding(.vertical, 8)
 
@@ -111,7 +111,7 @@ struct StoreView: View {
                         ProgressView()
                             .tint(.white)
                     }
-                    Text(storeManager.isPurchasing ? "İşleniyor..." : "PRO'ya Geç — \(storeManager.priceText)")
+                    Text(storeManager.isPurchasing ? L("purchasing_in_progress") : "\(L("upgrade_to_pro")) — \(storeManager.priceText)")
                         .font(.headline.bold())
                 }
                 .frame(maxWidth: .infinity)
@@ -133,7 +133,7 @@ struct StoreView: View {
             Button {
                 Task { await storeManager.restore() }
             } label: {
-                Text("Satın Almaları Geri Yükle")
+                Text(L("restore_purchases"))
                     .font(.caption)
                     .foregroundColor(.white.opacity(0.4))
             }
@@ -220,7 +220,7 @@ private struct CategoryStoreCard: View {
                             .font(.headline)
                             .foregroundColor(.white)
                         if category.isPremium {
-                            Text("PRO")
+                            Text(L("pro_badge"))
                                 .font(.caption2.bold())
                                 .padding(.horizontal, 6)
                                 .padding(.vertical, 2)
@@ -237,7 +237,7 @@ private struct CategoryStoreCard: View {
                     }
                     Text(category.packs.count == 1
                          ? category.packs[0].title
-                         : "\(category.packs.count) karakter")
+                         : L("character_count_format", category.packs.count))
                         .font(.caption)
                         .foregroundColor(.white.opacity(0.45))
                 }
@@ -298,7 +298,7 @@ private struct CategoryStoreCard: View {
                             .foregroundColor(locked ? .white.opacity(0.35) : .white.opacity(0.8))
 
                         if isFreeOne {
-                            Text("ÜCRETSİZ")
+                            Text(L("free_badge"))
                                 .font(.system(size: 9, weight: .heavy))
                                 .padding(.horizontal, 5)
                                 .padding(.vertical, 2)
