@@ -1,11 +1,12 @@
-import SwiftUI
 import StoreKit
+import SwiftUI
 
 struct StoreView: View {
     let categories: [SoundCategory]
     @ObservedObject var settingsStore: SettingsStore
     @ObservedObject var audioManager: AudioManager
     @ObservedObject var storeManager: StoreManager
+    @ObservedObject private var localizationManager = LocalizationManager.shared
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -15,7 +16,7 @@ struct StoreView: View {
                 LinearGradient(
                     colors: [
                         Color(red: 0.05, green: 0.05, blue: 0.12),
-                        Color(red: 0.08, green: 0.03, blue: 0.18)
+                        Color(red: 0.08, green: 0.03, blue: 0.18),
                     ],
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
@@ -111,8 +112,12 @@ struct StoreView: View {
                         ProgressView()
                             .tint(.white)
                     }
-                    Text(storeManager.isPurchasing ? L("purchasing_in_progress") : "\(L("upgrade_to_pro")) — \(storeManager.priceText)")
-                        .font(.headline.bold())
+                    Text(
+                        storeManager.isPurchasing
+                            ? L("purchasing_in_progress")
+                            : "\(L("upgrade_to_pro")) — \(storeManager.priceText)"
+                    )
+                    .font(.headline.bold())
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 16)
@@ -235,11 +240,13 @@ private struct CategoryStoreCard: View {
                                 .clipShape(Capsule())
                         }
                     }
-                    Text(category.packs.count == 1
-                         ? category.packs[0].title
-                         : L("character_count_format", category.packs.count))
-                        .font(.caption)
-                        .foregroundColor(.white.opacity(0.45))
+                    Text(
+                        category.packs.count == 1
+                            ? category.packs[0].title
+                            : L("character_count_format", category.packs.count)
+                    )
+                    .font(.caption)
+                    .foregroundColor(.white.opacity(0.45))
                 }
 
                 Spacer()
@@ -251,7 +258,9 @@ private struct CategoryStoreCard: View {
                         .foregroundColor(.white.opacity(0.4))
                 } else if isFullyUnlocked {
                     // Single pack unlocked: preview + select
-                    Button { audioManager.playPreview(pack: category.packs[0]) } label: {
+                    Button {
+                        audioManager.playPreview(pack: category.packs[0])
+                    } label: {
                         Image(systemName: "play.circle.fill")
                             .font(.title2)
                             .foregroundColor(.white.opacity(0.4))
@@ -316,7 +325,9 @@ private struct CategoryStoreCard: View {
                         Spacer()
 
                         if !locked {
-                            Button { audioManager.playPreview(pack: pack) } label: {
+                            Button {
+                                audioManager.playPreview(pack: pack)
+                            } label: {
                                 Image(systemName: "play.circle.fill")
                                     .font(.title2)
                                     .foregroundColor(.white.opacity(0.4))
@@ -346,17 +357,19 @@ private struct CategoryStoreCard: View {
         }
         .background(
             RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .fill(isCategoryActive
-                      ? Color.purple.opacity(0.15)
-                      : Color.white.opacity(0.06))
+                .fill(
+                    isCategoryActive
+                        ? Color.purple.opacity(0.15)
+                        : Color.white.opacity(0.06)
+                )
                 .overlay(
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
                         .stroke(
-                            isCategoryActive ? Color.purple.opacity(0.5) : Color.white.opacity(0.08),
+                            isCategoryActive
+                                ? Color.purple.opacity(0.5) : Color.white.opacity(0.08),
                             lineWidth: 1
                         )
                 )
         )
     }
 }
-

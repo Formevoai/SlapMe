@@ -5,6 +5,7 @@ struct HomeView: View {
     @ObservedObject var motionManager: MotionManager
     @ObservedObject var audioManager: AudioManager
     @ObservedObject var storeManager: StoreManager
+    @ObservedObject private var localizationManager = LocalizationManager.shared
     let impactDetector: ImpactDetector
     let hapticManager: HapticManager
     let packs: [SoundPack]
@@ -24,8 +25,6 @@ struct HomeView: View {
     @State private var characterIndex = 0
     @State private var continuousOffsetY: CGFloat = 0
 
-
-
     private var currentCategory: SoundCategory? {
         guard !categories.isEmpty, categoryIndex < categories.count else { return nil }
         return categories[categoryIndex]
@@ -33,8 +32,9 @@ struct HomeView: View {
 
     private var currentPack: SoundPack? {
         guard let cat = currentCategory,
-              !cat.packs.isEmpty,
-              characterIndex < cat.packs.count else { return nil }
+            !cat.packs.isEmpty,
+            characterIndex < cat.packs.count
+        else { return nil }
         return cat.packs[characterIndex]
     }
 
@@ -53,11 +53,11 @@ struct HomeView: View {
 
     private var flashColor: Color {
         switch currentCategory?.id ?? "" {
-        case "sexy":   return Color(red: 1, green: 0.4, blue: 0.7)
+        case "sexy": return Color(red: 1, green: 0.4, blue: 0.7)
         case "yamete": return Color(red: 1, green: 0.6, blue: 0.8)
-        case "goat":   return .yellow
-        case "funny":  return .green
-        default:       return .white
+        case "goat": return .yellow
+        case "funny": return .green
+        default: return .white
         }
     }
 
@@ -94,7 +94,8 @@ struct HomeView: View {
         }
         .preferredColorScheme(.light)
         .sheet(isPresented: $showSettings) {
-            SettingsView(settingsStore: settingsStore, storeManager: storeManager, categories: categories)
+            SettingsView(
+                settingsStore: settingsStore, storeManager: storeManager, categories: categories)
         }
         .sheet(isPresented: $showPaywall) {
             PaywallView(storeManager: storeManager)
@@ -193,11 +194,11 @@ struct HomeView: View {
 
     private var accentColor: Color {
         switch currentCategory?.id ?? "" {
-        case "sexy":   return Color(red: 1, green: 0.35, blue: 0.65)
+        case "sexy": return Color(red: 1, green: 0.35, blue: 0.65)
         case "yamete": return Color(red: 0.9, green: 0.4, blue: 0.7)
-        case "goat":   return Color(red: 1, green: 0.7, blue: 0.25)
-        case "funny":  return Color(red: 0.3, green: 0.85, blue: 0.4)
-        default:       return .blue
+        case "goat": return Color(red: 1, green: 0.7, blue: 0.25)
+        case "funny": return Color(red: 0.3, green: 0.85, blue: 0.4)
+        default: return .blue
         }
     }
 
@@ -251,7 +252,10 @@ struct HomeView: View {
                                         )
                                         .frame(width: cardWidth)
                                         .scaleEffect(vScale)
-                                        .rotation3DEffect(.degrees(vRotation), axis: (x: 1, y: 0, z: 0), perspective: 0.4)
+                                        .rotation3DEffect(
+                                            .degrees(vRotation), axis: (x: 1, y: 0, z: 0),
+                                            perspective: 0.4
+                                        )
                                         .offset(y: totalY)
                                         .opacity(vOpacity)
                                         .zIndex(pi == characterIndex ? 1 : 0)
@@ -272,7 +276,9 @@ struct HomeView: View {
                             }
                         }
                         .scaleEffect(hScale)
-                        .rotation3DEffect(.degrees(rotation), axis: (x: 0, y: 1, z: 0), perspective: 0.4)
+                        .rotation3DEffect(
+                            .degrees(rotation), axis: (x: 0, y: 1, z: 0), perspective: 0.4
+                        )
                         .offset(x: totalX)
                         .opacity(hOpacity)
                         .zIndex(isCurrent ? 1 : 0)
@@ -289,7 +295,9 @@ struct HomeView: View {
                         if abs(h) > abs(v) * 0.6 {
                             // Horizontal — category carousel
                             let raw = h
-                            if (categoryIndex == 0 && raw > 0) || (categoryIndex == categories.count - 1 && raw < 0) {
+                            if (categoryIndex == 0 && raw > 0)
+                                || (categoryIndex == categories.count - 1 && raw < 0)
+                            {
                                 continuousOffsetX = raw * 0.2
                             } else {
                                 continuousOffsetX = raw
@@ -299,7 +307,9 @@ struct HomeView: View {
                             // Vertical — character carousel
                             let raw = v
                             let cat = categories[categoryIndex]
-                            if (characterIndex == 0 && raw > 0) || (characterIndex == cat.packs.count - 1 && raw < 0) {
+                            if (characterIndex == 0 && raw > 0)
+                                || (characterIndex == cat.packs.count - 1 && raw < 0)
+                            {
                                 continuousOffsetY = raw * 0.2
                             } else {
                                 continuousOffsetY = raw
@@ -323,7 +333,11 @@ struct HomeView: View {
                             if shouldSwipe {
                                 let target = categoryIndex + dir
                                 if target >= 0, target < categories.count {
-                                    withAnimation(.interpolatingSpring(mass: 0.8, stiffness: 180, damping: 22, initialVelocity: -Double(hVel) * 0.003)) {
+                                    withAnimation(
+                                        .interpolatingSpring(
+                                            mass: 0.8, stiffness: 180, damping: 22,
+                                            initialVelocity: -Double(hVel) * 0.003)
+                                    ) {
                                         categoryIndex = target
                                         characterIndex = 0
                                         continuousOffsetX = 0
@@ -331,12 +345,16 @@ struct HomeView: View {
                                     }
                                     onPackChanged()
                                 } else {
-                                    withAnimation(.interpolatingSpring(mass: 0.6, stiffness: 200, damping: 18)) {
+                                    withAnimation(
+                                        .interpolatingSpring(mass: 0.6, stiffness: 200, damping: 18)
+                                    ) {
                                         continuousOffsetX = 0
                                     }
                                 }
                             } else {
-                                withAnimation(.interpolatingSpring(mass: 0.6, stiffness: 200, damping: 18)) {
+                                withAnimation(
+                                    .interpolatingSpring(mass: 0.6, stiffness: 200, damping: 18)
+                                ) {
                                     continuousOffsetX = 0
                                 }
                             }
@@ -351,18 +369,26 @@ struct HomeView: View {
                                 let cat = categories[categoryIndex]
                                 let target = characterIndex + dir
                                 if target >= 0, target < cat.packs.count {
-                                    withAnimation(.interpolatingSpring(mass: 0.8, stiffness: 180, damping: 22, initialVelocity: -Double(vVel) * 0.003)) {
+                                    withAnimation(
+                                        .interpolatingSpring(
+                                            mass: 0.8, stiffness: 180, damping: 22,
+                                            initialVelocity: -Double(vVel) * 0.003)
+                                    ) {
                                         characterIndex = target
                                         continuousOffsetY = 0
                                     }
                                     onPackChanged()
                                 } else {
-                                    withAnimation(.interpolatingSpring(mass: 0.6, stiffness: 200, damping: 18)) {
+                                    withAnimation(
+                                        .interpolatingSpring(mass: 0.6, stiffness: 200, damping: 18)
+                                    ) {
                                         continuousOffsetY = 0
                                     }
                                 }
                             } else {
-                                withAnimation(.interpolatingSpring(mass: 0.6, stiffness: 200, damping: 18)) {
+                                withAnimation(
+                                    .interpolatingSpring(mass: 0.6, stiffness: 200, damping: 18)
+                                ) {
                                     continuousOffsetY = 0
                                 }
                             }
@@ -371,8 +397,6 @@ struct HomeView: View {
             )
         }
     }
-
-
 
     // MARK: - Bottom Section
 
@@ -396,13 +420,20 @@ struct HomeView: View {
                 }
             } label: {
                 HStack(spacing: 8) {
-                    Image(systemName: settingsStore.settings.safeModeEnabled ? "shield.fill" : "shield")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(settingsStore.settings.safeModeEnabled ? .green : textColor.opacity(0.5))
+                    Image(
+                        systemName: settingsStore.settings.safeModeEnabled
+                            ? "shield.fill" : "shield"
+                    )
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(
+                        settingsStore.settings.safeModeEnabled ? .green : textColor.opacity(0.5))
 
-                    Text(settingsStore.settings.safeModeEnabled ? L("safe_mode_on") : L("safe_mode_off"))
-                        .font(.caption.weight(.medium))
-                        .foregroundStyle(textColor.opacity(0.7))
+                    Text(
+                        settingsStore.settings.safeModeEnabled
+                            ? L("safe_mode_on") : L("safe_mode_off")
+                    )
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(textColor.opacity(0.7))
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 10)

@@ -4,6 +4,7 @@ struct PackSelectionView: View {
     var onFinish: (String) -> Void
     let categories: [SoundCategory]
     @ObservedObject var audioManager: AudioManager
+    @ObservedObject private var localizationManager = LocalizationManager.shared
 
     @State private var selectedPackID: String = "alice"
     @State private var appeared = false
@@ -39,7 +40,7 @@ struct PackSelectionView: View {
                         columns: [
                             GridItem(.flexible(), spacing: 12),
                             GridItem(.flexible(), spacing: 12),
-                            GridItem(.flexible(), spacing: 12)
+                            GridItem(.flexible(), spacing: 12),
                         ],
                         spacing: 12
                     ) {
@@ -48,7 +49,8 @@ struct PackSelectionView: View {
                                 pack: pack,
                                 isSelected: selectedPackID == pack.id,
                                 onSelect: {
-                                    withAnimation(.interpolatingSpring(stiffness: 300, damping: 18)) {
+                                    withAnimation(.interpolatingSpring(stiffness: 300, damping: 18))
+                                    {
                                         selectedPackID = pack.id
                                     }
                                 }
@@ -64,7 +66,8 @@ struct PackSelectionView: View {
                 VStack(spacing: 16) {
                     OnboardingPageIndicator(currentPage: 3)
 
-                    OnboardingButton(title: L("button_start_exclamation"), action: { onFinish(selectedPackID) })
+                    OnboardingButton(
+                        title: L("button_start_exclamation"), action: { onFinish(selectedPackID) })
                 }
                 .opacity(appeared ? 1 : 0)
                 .offset(y: appeared ? 0 : 20)
@@ -90,20 +93,27 @@ private struct CharacterThumbnail: View {
     private var characterImage: UIImage? {
         let filename = "char_\(pack.id)"
         if let img = UIImage(named: filename) { return img }
-        if let url = Bundle.main.url(forResource: filename, withExtension: "png", subdirectory: "Characters"),
-           let img = UIImage(contentsOfFile: url.path) { return img }
+        if let url = Bundle.main.url(
+            forResource: filename, withExtension: "png", subdirectory: "Characters"),
+            let img = UIImage(contentsOfFile: url.path)
+        {
+            return img
+        }
         if let url = Bundle.main.url(forResource: filename, withExtension: "png"),
-           let img = UIImage(contentsOfFile: url.path) { return img }
+            let img = UIImage(contentsOfFile: url.path)
+        {
+            return img
+        }
         return nil
     }
 
     private var tagColor: Color {
         switch pack.categoryID {
-        case "sexy":   return Color(red: 1, green: 0.4, blue: 0.7)
+        case "sexy": return Color(red: 1, green: 0.4, blue: 0.7)
         case "yamete": return Color(red: 0.85, green: 0.35, blue: 0.55)
-        case "goat":   return Color(red: 1, green: 0.55, blue: 0.65)
-        case "funny":  return Color(red: 0.4, green: 0.75, blue: 0.3)
-        default:       return .gray
+        case "goat": return Color(red: 1, green: 0.55, blue: 0.65)
+        case "funny": return Color(red: 0.4, green: 0.75, blue: 0.3)
+        default: return .gray
         }
     }
 
@@ -164,7 +174,7 @@ private struct CharacterThumbnail: View {
                     }
                 }
             }
-            .aspectRatio(2/3, contentMode: .fit)
+            .aspectRatio(2 / 3, contentMode: .fit)
             .overlay(
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
                     .stroke(isSelected ? tagColor : Color.clear, lineWidth: 2.5)

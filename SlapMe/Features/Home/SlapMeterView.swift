@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SlapMeterView: View {
     let intensity: Double
+    @ObservedObject private var localizationManager = LocalizationManager.shared
     private var trackColor: Color { .black.opacity(0.06) }
     private var labelColor: Color { .black.opacity(0.35) }
     private var tickColor: Color { .black.opacity(0.1) }
@@ -47,9 +48,9 @@ struct SlapMeterView: View {
 
     private var meterColor: Color {
         switch intensity {
-        case 0.0 ..< 0.4:  return Color(red: 0.2, green: 1.0, blue: 0.5)
-        case 0.4 ..< 0.75: return Color(red: 1.0, green: 0.65, blue: 0.1)
-        default:            return Color(red: 1.0, green: 0.25, blue: 0.35)
+        case 0.0..<0.4: return Color(red: 0.2, green: 1.0, blue: 0.5)
+        case 0.4..<0.75: return Color(red: 1.0, green: 0.65, blue: 0.1)
+        default: return Color(red: 1.0, green: 0.25, blue: 0.35)
         }
     }
 

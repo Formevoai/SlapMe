@@ -2,6 +2,7 @@ import SwiftUI
 
 struct PaywallView: View {
     @ObservedObject var storeManager: StoreManager
+    @ObservedObject private var localizationManager = LocalizationManager.shared
     @Environment(\.dismiss) private var dismiss
     @State private var glowPulse = false
     @State private var appear = false
@@ -26,7 +27,9 @@ struct PaywallView: View {
                 // Close button
                 HStack {
                     Spacer()
-                    Button { dismiss() } label: {
+                    Button {
+                        dismiss()
+                    } label: {
                         Image(systemName: "xmark")
                             .font(.subheadline.bold())
                             .foregroundColor(.black.opacity(0.4))
@@ -112,10 +115,14 @@ struct PaywallView: View {
 
                 // Features
                 VStack(alignment: .leading, spacing: 14) {
-                    featureRow(icon: "hand.raised.fill", color: .pink, text: L("feature_all_premium_sounds"))
-                    featureRow(icon: "person.3.fill", color: .purple, text: L("feature_all_characters"))
+                    featureRow(
+                        icon: "hand.raised.fill", color: .pink,
+                        text: L("feature_all_premium_sounds"))
+                    featureRow(
+                        icon: "person.3.fill", color: .purple, text: L("feature_all_characters"))
                     featureRow(icon: "bolt.fill", color: .green, text: L("feature_charger_sounds"))
-                    featureRow(icon: "sparkles", color: .yellow, text: L("feature_all_future_updates"))
+                    featureRow(
+                        icon: "sparkles", color: .yellow, text: L("feature_all_future_updates"))
                     featureRow(icon: "infinity", color: .cyan, text: L("feature_unlimited_usage"))
                 }
                 .padding(.horizontal, 36)
@@ -146,8 +153,11 @@ struct PaywallView: View {
                         }
                         Image(systemName: "crown.fill")
                             .font(.subheadline.bold())
-                        Text(storeManager.isPurchasing ? L("purchasing_in_progress") : L("upgrade_to_pro"))
-                            .font(.headline.bold())
+                        Text(
+                            storeManager.isPurchasing
+                                ? L("purchasing_in_progress") : L("upgrade_to_pro")
+                        )
+                        .font(.headline.bold())
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 16)
@@ -198,7 +208,8 @@ struct PaywallView: View {
                 .font(.subheadline.weight(.semibold))
                 .foregroundColor(color)
                 .frame(width: 28, height: 28)
-                .background(color.opacity(0.12), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                .background(
+                    color.opacity(0.12), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
             Text(text)
                 .font(.subheadline)
                 .foregroundColor(.black.opacity(0.7))

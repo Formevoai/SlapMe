@@ -3,6 +3,7 @@ import SwiftUI
 struct PackPreviewView: View {
     let pack: SoundPack
     @ObservedObject var audioManager: AudioManager
+    @ObservedObject private var localizationManager = LocalizationManager.shared
     var onSelect: () -> Void
     var onDismiss: () -> Void
 
@@ -42,9 +43,9 @@ struct PackPreviewView: View {
 
             // Clip sayısı
             HStack(spacing: 24) {
-                statItem(label: L("clip_level_soft"),  count: pack.softClips.count)
+                statItem(label: L("clip_level_soft"), count: pack.softClips.count)
                 statItem(label: L("clip_level_medium"), count: pack.mediumClips.count)
-                statItem(label: L("clip_level_hard"),  count: pack.hardClips.count)
+                statItem(label: L("clip_level_hard"), count: pack.hardClips.count)
                 statItem(label: L("clip_level_combo"), count: pack.comboClips.count)
             }
             .padding()
@@ -86,13 +87,13 @@ struct PackPreviewView: View {
 
     private var characterEmoji: String {
         switch pack.categoryID {
-        case "goat":       return "🐐"
-        case "yamete":     return "😳"
-        case "sexy":       return "😏"
-        case "funny":      return "😂"
-        case "pain":       return "😱"
-        case "gentleman":  return "🎩"
-        default:           return "😐"
+        case "goat": return "🐐"
+        case "yamete": return "😳"
+        case "sexy": return "😏"
+        case "funny": return "😂"
+        case "pain": return "😱"
+        case "gentleman": return "🎩"
+        default: return "😐"
         }
     }
 

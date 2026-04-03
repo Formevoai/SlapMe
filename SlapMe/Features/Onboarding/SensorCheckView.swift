@@ -1,8 +1,9 @@
-import SwiftUI
 import CoreMotion
+import SwiftUI
 
 struct SensorCheckView: View {
     var onContinue: () -> Void
+    @ObservedObject private var localizationManager = LocalizationManager.shared
 
     private let available = CMMotionManager().isAccelerometerAvailable
     @State private var appeared = false
@@ -57,26 +58,30 @@ struct SensorCheckView: View {
                     .opacity(appeared ? 1 : 0)
                     .offset(y: appeared ? 0 : 10)
 
-                Text(available
-                     ? L("sensor_active_description")
-                     : L("sensor_not_supported"))
-                    .font(.body)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.black.opacity(0.45))
-                    .padding(.horizontal, 32)
-                    .padding(.top, 12)
-                    .opacity(appeared ? 1 : 0)
-                    .offset(y: appeared ? 0 : 10)
+                Text(
+                    available
+                        ? L("sensor_active_description")
+                        : L("sensor_not_supported")
+                )
+                .font(.body)
+                .multilineTextAlignment(.center)
+                .foregroundColor(.black.opacity(0.45))
+                .padding(.horizontal, 32)
+                .padding(.top, 12)
+                .opacity(appeared ? 1 : 0)
+                .offset(y: appeared ? 0 : 10)
 
                 Spacer()
 
                 OnboardingPageIndicator(currentPage: 1)
                     .padding(.bottom, 24)
 
-                OnboardingButton(title: L("button_continue"), isActive: available, action: onContinue)
-                    .opacity(appeared ? 1 : 0)
-                    .offset(y: appeared ? 0 : 20)
-                    .padding(.bottom, 48)
+                OnboardingButton(
+                    title: L("button_continue"), isActive: available, action: onContinue
+                )
+                .opacity(appeared ? 1 : 0)
+                .offset(y: appeared ? 0 : 20)
+                .padding(.bottom, 48)
             }
         }
         .preferredColorScheme(.light)

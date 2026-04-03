@@ -2,6 +2,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     var onContinue: () -> Void
+    @ObservedObject private var localizationManager = LocalizationManager.shared
 
     @State private var appeared = false
     @State private var handRotation: Double = -12

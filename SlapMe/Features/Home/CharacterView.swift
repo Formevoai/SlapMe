@@ -7,6 +7,7 @@ struct CharacterView: View {
     let isLocked: Bool
     var isBackground: Bool = false
     var isComingSoon: Bool = false
+    @ObservedObject private var localizationManager = LocalizationManager.shared
 
     @State private var breathe: CGFloat = 1.0
     @State private var impactShake: CGFloat = 0
@@ -14,10 +15,17 @@ struct CharacterView: View {
     private var characterImage: UIImage? {
         let filename = "char_\(pack.id)"
         if let img = UIImage(named: filename) { return img }
-        if let url = Bundle.main.url(forResource: filename, withExtension: "png", subdirectory: "Characters"),
-           let img = UIImage(contentsOfFile: url.path) { return img }
+        if let url = Bundle.main.url(
+            forResource: filename, withExtension: "png", subdirectory: "Characters"),
+            let img = UIImage(contentsOfFile: url.path)
+        {
+            return img
+        }
         if let url = Bundle.main.url(forResource: filename, withExtension: "png"),
-           let img = UIImage(contentsOfFile: url.path) { return img }
+            let img = UIImage(contentsOfFile: url.path)
+        {
+            return img
+        }
         return nil
     }
 
@@ -25,21 +33,21 @@ struct CharacterView: View {
 
     private var tagColor: Color {
         switch pack.categoryID {
-        case "sexy":   return Color(red: 1, green: 0.4, blue: 0.7)
+        case "sexy": return Color(red: 1, green: 0.4, blue: 0.7)
         case "yamete": return Color(red: 0.85, green: 0.35, blue: 0.55)
-        case "goat":   return Color(red: 1, green: 0.55, blue: 0.65)
-        case "funny":  return Color(red: 0.4, green: 0.75, blue: 0.3)
-        default:       return .gray
+        case "goat": return Color(red: 1, green: 0.55, blue: 0.65)
+        case "funny": return Color(red: 0.4, green: 0.75, blue: 0.3)
+        default: return .gray
         }
     }
 
     private var tagText: String {
         switch pack.categoryID {
-        case "sexy":   return L("tag_sexy")
+        case "sexy": return L("tag_sexy")
         case "yamete": return L("tag_yamete")
-        case "goat":   return L("tag_animal")
-        case "funny":  return L("tag_funny")
-        default:       return pack.categoryID.capitalized
+        case "goat": return L("tag_animal")
+        case "funny": return L("tag_funny")
+        default: return pack.categoryID.capitalized
         }
     }
 
@@ -78,9 +86,11 @@ struct CharacterView: View {
                 .fill(cardBg)
         )
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .shadow(color: .black.opacity(0.08),
-                radius: isBackground ? 6 : 12,
-                y: isBackground ? 2 : 4)
+        .shadow(
+            color: .black.opacity(0.08),
+            radius: isBackground ? 6 : 12,
+            y: isBackground ? 2 : 4
+        )
         .overlay(
             ZStack {
                 if isComingSoon {
@@ -110,7 +120,9 @@ struct CharacterView: View {
                 }
             }
         )
-        .scaleEffect(isReacting && !isBackground ? 1.0 + intensity * 0.15 : (isBackground ? 1.0 : breathe))
+        .scaleEffect(
+            isReacting && !isBackground ? 1.0 + intensity * 0.15 : (isBackground ? 1.0 : breathe)
+        )
         .offset(x: isReacting && !isBackground ? impactShake : 0)
         .rotationEffect(.degrees(isReacting && !isBackground ? Double(impactShake) * 0.4 : 0))
         .overlay(
@@ -119,8 +131,10 @@ struct CharacterView: View {
                 .scaleEffect(isReacting && !isBackground ? 1.02 : 1.0)
                 .animation(.easeOut(duration: 0.3), value: isReacting)
         )
-        .shadow(color: isReacting && !isBackground ? tagColor.opacity(0.5) : .clear,
-                radius: isReacting ? 20 : 0, y: 0)
+        .shadow(
+            color: isReacting && !isBackground ? tagColor.opacity(0.5) : .clear,
+            radius: isReacting ? 20 : 0, y: 0
+        )
         .animation(.interpolatingSpring(stiffness: 400, damping: 10), value: isReacting)
         .onChange(of: isReacting) { reacting in
             guard reacting, !isBackground else { return }
@@ -143,11 +157,11 @@ struct CharacterView: View {
 
     private var fallbackEmoji: String {
         switch pack.categoryID {
-        case "goat":    return "🐐"
-        case "yamete":  return "😳"
-        case "sexy":    return "😏"
-        case "funny":   return "😂"
-        default:        return "😐"
+        case "goat": return "🐐"
+        case "yamete": return "😳"
+        case "sexy": return "😏"
+        case "funny": return "😂"
+        default: return "😐"
         }
     }
 }

@@ -5,6 +5,7 @@ struct ReactionTestView: View {
     @ObservedObject var motionManager: MotionManager
     @ObservedObject var impactDetector: ImpactDetector
     @ObservedObject var audioManager: AudioManager
+    @ObservedObject private var localizationManager = LocalizationManager.shared
     let categories: [SoundCategory]
 
     @State private var didSlap = false
@@ -44,7 +45,9 @@ struct ReactionTestView: View {
                             .frame(width: 180, height: 180)
                             .scaleEffect(pulseAmount)
                             .onAppear {
-                                withAnimation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) {
+                                withAnimation(
+                                    .easeInOut(duration: 1.5).repeatForever(autoreverses: true)
+                                ) {
                                     pulseAmount = 1.12
                                 }
                             }
@@ -55,11 +58,15 @@ struct ReactionTestView: View {
                         .font(.system(size: 80, weight: .medium))
                         .foregroundStyle(
                             didSlap
-                            ? LinearGradient(colors: [.green, .mint], startPoint: .topLeading, endPoint: .bottomTrailing)
-                            : onboardingAccent
+                                ? LinearGradient(
+                                    colors: [.green, .mint], startPoint: .topLeading,
+                                    endPoint: .bottomTrailing)
+                                : onboardingAccent
                         )
                         .scaleEffect(iconScale)
-                        .shadow(color: didSlap ? .green.opacity(0.3) : .orange.opacity(0.3), radius: 20)
+                        .shadow(
+                            color: didSlap ? .green.opacity(0.3) : .orange.opacity(0.3), radius: 20
+                        )
                         .scaleEffect(appeared ? 1 : 0.4)
                         .opacity(appeared ? 1 : 0)
                 }
@@ -73,13 +80,15 @@ struct ReactionTestView: View {
                     .foregroundColor(.black)
                     .animation(.easeInOut, value: didSlap)
 
-                Text(didSlap
-                     ? L("reaction_success")
-                     : L("reaction_testing_sensor"))
-                    .font(.body)
-                    .foregroundColor(didSlap ? .green : .black.opacity(0.45))
-                    .padding(.top, 8)
-                    .animation(.easeInOut, value: didSlap)
+                Text(
+                    didSlap
+                        ? L("reaction_success")
+                        : L("reaction_testing_sensor")
+                )
+                .font(.body)
+                .foregroundColor(didSlap ? .green : .black.opacity(0.45))
+                .padding(.top, 8)
+                .animation(.easeInOut, value: didSlap)
 
                 Spacer()
 
@@ -105,8 +114,9 @@ struct ReactionTestView: View {
 
             // Play demo sound on first slap
             if slapCount == 1,
-               let goatCategory = categories.first(where: { $0.id == "goat" }),
-               let firstPack = goatCategory.packs.first {
+                let goatCategory = categories.first(where: { $0.id == "goat" }),
+                let firstPack = goatCategory.packs.first
+            {
                 audioManager.playChargerSound(from: firstPack, isTrial: true)
             }
 

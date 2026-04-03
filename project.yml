@@ -83,3 +83,4 @@ targets:
         NSMotionUsageDescription: "SlapMe uses motion sensors to detect slaps and play sound effects. / SlapMe hareket sensörlerini kullanarak vuruşları algılar ve ses efektleri çalar."
         UIBackgroundModes:
           - audio
+        ITSAppUsesNonExemptEncryption: false
