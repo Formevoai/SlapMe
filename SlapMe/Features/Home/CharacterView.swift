@@ -5,7 +5,6 @@ struct CharacterView: View {
     let isReacting: Bool
     let intensity: Double
     let isLocked: Bool
-    let isDarkMode: Bool
     var isBackground: Bool = false
     var isComingSoon: Bool = false
 
@@ -22,9 +21,7 @@ struct CharacterView: View {
         return nil
     }
 
-    private var cardBg: Color {
-        isDarkMode ? Color(white: 0.14) : .white
-    }
+    private var cardBg: Color { .white }
 
     private var tagColor: Color {
         switch pack.categoryID {
@@ -63,7 +60,7 @@ struct CharacterView: View {
             HStack(spacing: 8) {
                 Text(pack.title)
                     .font(.system(size: 15, weight: .bold, design: .rounded))
-                    .foregroundColor(isDarkMode ? .white : Color(white: 0.15))
+                    .foregroundColor(Color(white: 0.15))
                     .lineLimit(1)
 
                 Text(tagText)
@@ -81,7 +78,7 @@ struct CharacterView: View {
                 .fill(cardBg)
         )
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .shadow(color: .black.opacity(isDarkMode ? 0.4 : 0.08),
+        .shadow(color: .black.opacity(0.08),
                 radius: isBackground ? 6 : 12,
                 y: isBackground ? 2 : 4)
         .overlay(

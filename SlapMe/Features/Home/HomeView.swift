@@ -24,7 +24,7 @@ struct HomeView: View {
     @State private var characterIndex = 0
     @State private var continuousOffsetY: CGFloat = 0
 
-    private var isDarkMode: Bool { settingsStore.settings.darkMode }
+
 
     private var currentCategory: SoundCategory? {
         guard !categories.isEmpty, categoryIndex < categories.count else { return nil }
@@ -61,29 +61,12 @@ struct HomeView: View {
         }
     }
 
-    private var bgColor: Color {
-        isDarkMode ? Color(white: 0.06) : Color(white: 0.94)
-    }
-
-    private var textColor: Color {
-        isDarkMode ? .white : .black
-    }
-
-    private var secondaryTextColor: Color {
-        isDarkMode ? .white.opacity(0.5) : .black.opacity(0.45)
-    }
-
-    private var cardBgColor: Color {
-        isDarkMode ? .white.opacity(0.07) : .black.opacity(0.05)
-    }
-
-    private var borderColor: Color {
-        isDarkMode ? .white.opacity(0.12) : .black.opacity(0.08)
-    }
-
-    private var pillBgColor: Color {
-        isDarkMode ? .white.opacity(0.12) : .black.opacity(0.08)
-    }
+    private var bgColor: Color { Color(white: 0.94) }
+    private var textColor: Color { .black }
+    private var secondaryTextColor: Color { .black.opacity(0.45) }
+    private var cardBgColor: Color { .black.opacity(0.05) }
+    private var borderColor: Color { .black.opacity(0.08) }
+    private var pillBgColor: Color { .black.opacity(0.08) }
 
     var body: some View {
         ZStack {
@@ -109,7 +92,7 @@ struct HomeView: View {
                     .padding(.bottom, 36)
             }
         }
-        .preferredColorScheme(isDarkMode ? .dark : .light)
+        .preferredColorScheme(.light)
         .sheet(isPresented: $showSettings) {
             SettingsView(settingsStore: settingsStore, storeManager: storeManager, categories: categories)
         }
@@ -263,7 +246,6 @@ struct HomeView: View {
                                             isReacting: pi == characterIndex ? isReacting : false,
                                             intensity: pi == characterIndex ? lastIntensity : 0,
                                             isLocked: isPackLocked(cat.packs[pi]),
-                                            isDarkMode: isDarkMode,
                                             isBackground: pi != characterIndex,
                                             isComingSoon: cat.packs[pi].comingSoon
                                         )
@@ -283,7 +265,6 @@ struct HomeView: View {
                                     isReacting: false,
                                     intensity: 0,
                                     isLocked: isPackLocked(cat.packs[0]),
-                                    isDarkMode: isDarkMode,
                                     isBackground: true,
                                     isComingSoon: cat.packs[0].comingSoon
                                 )

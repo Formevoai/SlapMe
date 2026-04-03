@@ -149,12 +149,7 @@ struct SettingsView: View {
                     }
                 } header: { Text(L("section_security")) }
 
-                // Görünüm
-                Section {
-                    Toggle(isOn: s.darkMode) {
-                        Label(L("settings_dark_mode"), systemImage: "moon.fill")
-                    }
-                } header: { Text(L("section_appearance")) }
+
 
                 // Yasal & Hesap
                 // Language

@@ -11,7 +11,6 @@ struct AppSettings: Codable, Equatable {
     var selectedPackID: String
     var chargerSoundEnabled: Bool
     var chargerSoundPackID: String
-    var darkMode: Bool
 
     static let `default` = AppSettings(
         sensitivity: 0.5,
@@ -23,7 +22,6 @@ struct AppSettings: Codable, Equatable {
         safeModeEnabled: false,
         selectedPackID: "alice",
         chargerSoundEnabled: true,
-        chargerSoundPackID: "alice",
-        darkMode: true
+        chargerSoundPackID: "alice"
     )
 }

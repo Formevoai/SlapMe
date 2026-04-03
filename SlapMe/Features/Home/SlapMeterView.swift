@@ -2,17 +2,9 @@ import SwiftUI
 
 struct SlapMeterView: View {
     let intensity: Double
-    @Environment(\.colorScheme) private var colorScheme
-
-    private var trackColor: Color {
-        colorScheme == .dark ? .white.opacity(0.08) : .black.opacity(0.06)
-    }
-    private var labelColor: Color {
-        colorScheme == .dark ? .white.opacity(0.45) : .black.opacity(0.35)
-    }
-    private var tickColor: Color {
-        colorScheme == .dark ? .white.opacity(0.15) : .black.opacity(0.1)
-    }
+    private var trackColor: Color { .black.opacity(0.06) }
+    private var labelColor: Color { .black.opacity(0.35) }
+    private var tickColor: Color { .black.opacity(0.1) }
 
     var body: some View {
         VStack(spacing: 8) {

@@ -45,7 +45,7 @@ struct StoreView: View {
                     .padding(.bottom, 32)
                 }
             }
-            .preferredColorScheme(.dark)
+            .preferredColorScheme(.light)
             .navigationTitle(L("store_title"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

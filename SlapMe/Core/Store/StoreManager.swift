@@ -78,14 +78,18 @@ final class StoreManager: ObservableObject {
 
     private func listenForTransactions() -> Task<Void, Never> {
         let pid = Self.productID
-        return Task.detached { [weak self] in
+        return Task { [weak self] in
             for await result in Transaction.updates {
                 if case .verified(let tx) = result,
                    tx.productID == pid {
-                    await MainActor.run { self?.isPremium = true }
+                    await MainActor.run {
+                        guard let strongSelf = self else { return }
+                        strongSelf.isPremium = true
+                    }
                     await tx.finish()
                 }
             }
         }
     }
 }
+
