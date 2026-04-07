@@ -101,3 +101,17 @@
 "clip_level_combo" = "Kombo";
 "button_preview" = "Pratinjau";
 "button_select_pack" = "Pilih Paket Ini";
+
+// Disclaimer
+"settings_disclaimer" = "Penyangkalan & Keselamatan";
+"disclaimer_title_safety" = "Gunakan dengan risiko sendiri";
+"disclaimer_text_safety" = "SlapMe adalah aplikasi hiburan. Memukul, menggoyangkan, atau membenturkan ponsel Anda dapat menyebabkan kerusakan fisik pada perangkat Anda. Selalu gunakan gerakan lembut dan berhati-hati.";
+"disclaimer_title_device" = "Peringatan kerusakan perangkat";
+"disclaimer_text_device" = "Kami tidak bertanggung jawab atas kerusakan pada perangkat Anda, termasuk layar retak, komponen rusak, atau kerusakan perangkat keras apa pun yang diakibatkan oleh penggunaan aplikasi ini.";
+"disclaimer_title_usage" = "Penggunaan yang dimaksudkan";
+"disclaimer_text_usage" = "Aplikasi ini dirancang hanya untuk hiburan. Menggunakan sensor gerak. Anda tidak perlu benar-benar memukul ponsel dengan keras — ketukan ringan dan gerakan lembut sudah cukup untuk memicu suara.";
+"disclaimer_title_consent" = "Hormati orang lain";
+"disclaimer_text_consent" = "Jangan gunakan aplikasi ini untuk mengganggu, melecehkan, atau menyinggung orang lain. Selalu perhatikan lingkungan sekitar dan orang-orang di sekitar Anda.";
+"disclaimer_title_liability" = "Batasan tanggung jawab";
+"disclaimer_text_liability" = "Pengembang SlapMe tidak bertanggung jawab atas segala kerugian langsung, tidak langsung, insidental, atau konsekuensial yang timbul dari penggunaan atau penyalahgunaan aplikasi ini.";
+"disclaimer_footer" = "Dengan menggunakan SlapMe, Anda menyetujui ketentuan ini. Selamat bersenang-senang dan tetap aman! 🎉";

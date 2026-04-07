@@ -101,3 +101,17 @@
 "clip_level_combo" = "Combo";
 "button_preview" = "Voorbeeld";
 "button_select_pack" = "Pakket Selecteren";
+
+// Disclaimer
+"settings_disclaimer" = "Disclaimer & Veiligheid";
+"disclaimer_title_safety" = "Gebruik op eigen risico";
+"disclaimer_text_safety" = "SlapMe is een entertainment-app. Slaan, schudden of stoten van je telefoon kan fysieke schade aan je apparaat veroorzaken. Gebruik altijd zachte bewegingen en wees voorzichtig.";
+"disclaimer_title_device" = "Waarschuwing apparaatschade";
+"disclaimer_text_device" = "Wij zijn niet verantwoordelijk voor schade aan je apparaat, inclusief gebarsten schermen, kapotte onderdelen of andere hardwarestoringen als gevolg van het gebruik van deze app.";
+"disclaimer_title_usage" = "Beoogd gebruik";
+"disclaimer_text_usage" = "Deze app is uitsluitend bedoeld voor entertainment. Het gebruikt bewegingssensoren. Je hoeft niet hard op je telefoon te slaan — lichte tikjes en zachte bewegingen zijn voldoende.";
+"disclaimer_title_consent" = "Respecteer anderen";
+"disclaimer_text_consent" = "Gebruik deze app niet om anderen te storen, lastig te vallen of te beledigen. Let altijd op je omgeving en de mensen om je heen.";
+"disclaimer_title_liability" = "Beperking van aansprakelijkheid";
+"disclaimer_text_liability" = "De ontwikkelaars van SlapMe zijn niet aansprakelijk voor directe, indirecte, incidentele of gevolgschade die voortvloeit uit het gebruik of misbruik van deze applicatie.";
+"disclaimer_footer" = "Door SlapMe te gebruiken, accepteer je deze voorwaarden. Veel plezier en wees voorzichtig! 🎉";

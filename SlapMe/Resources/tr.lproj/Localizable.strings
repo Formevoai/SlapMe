@@ -101,3 +101,17 @@
 "clip_level_combo" = "Kombo";
 "button_preview" = "Önizle";
 "button_select_pack" = "Bu Paketi Seç";
+
+// Disclaimer
+"settings_disclaimer" = "Uyarılar ve Güvenlik";
+"disclaimer_title_safety" = "Riski Kendiniz Üstlenirsiniz";
+"disclaimer_text_safety" = "SlapMe bir eğlence uygulamasıdır. Telefonunuza vurmak, sallamak veya çarpmak cihazınıza fiziksel hasar verebilir. Her zaman hafif hareketler kullanın ve dikkatli olun.";
+"disclaimer_title_device" = "Cihaz Hasar Uyarısı";
+"disclaimer_text_device" = "Cihazınıza gelebilecek kırık ekran, bozulan parça veya herhangi bir donanım arızası dahil olmak üzere hiçbir hasardan sorumlu değiliz. Cihazınızı dikkatli kullanın.";
+"disclaimer_title_usage" = "Kullanım Amacı";
+"disclaimer_text_usage" = "Bu uygulama yalnızca eğlence amaçlıdır. Hareket sensörlerini kullanarak hareketi algılar. Telefonunuza gerçekten sert vurmanıza gerek yok — hafif dokunuşlar ve nazik hareketler sesleri tetiklemek için yeterlidir.";
+"disclaimer_title_consent" = "Başkalarına Saygı";
+"disclaimer_text_consent" = "Bu uygulamayı başkalarını rahatsız etmek, taciz etmek veya kırmak için kullanmayın. Çevrenize ve etrafınızdaki insanlara her zaman dikkat edin. Sorumlu ve saygılı kullanın.";
+"disclaimer_title_liability" = "Sorumluluk Sınırlaması";
+"disclaimer_text_liability" = "SlapMe geliştiricileri, bu uygulamanın kullanımından veya yanlış kullanımından kaynaklanan cihaz hasarı, kişisel yaralanma veya diğer kayıplar dahil olmak üzere doğrudan, dolaylı, arızi veya sonuç olarak ortaya çıkan zararlardan sorumlu tutulamaz.";
+"disclaimer_footer" = "SlapMe'yi kullanarak bu şartları kabul etmiş olursunuz. İyi eğlenceler ve dikkatli olun! 🎉";

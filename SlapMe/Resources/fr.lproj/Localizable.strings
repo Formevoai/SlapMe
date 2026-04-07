@@ -101,3 +101,17 @@
 "clip_level_combo" = "Combo";
 "button_preview" = "Aperçu";
 "button_select_pack" = "Choisir ce Pack";
+
+// Disclaimer
+"settings_disclaimer" = "Avertissement et Sécurité";
+"disclaimer_title_safety" = "Utilisation à vos risques";
+"disclaimer_text_safety" = "SlapMe est une application de divertissement. Frapper, secouer ou heurter votre téléphone peut causer des dommages physiques à votre appareil. Utilisez toujours des mouvements doux et soyez prudent.";
+"disclaimer_title_device" = "Avertissement de dommages";
+"disclaimer_text_device" = "Nous ne sommes pas responsables des dommages causés à votre appareil, y compris les écrans fissurés, les composants cassés ou tout dysfonctionnement matériel résultant de l'utilisation de cette application.";
+"disclaimer_title_usage" = "Utilisation prévue";
+"disclaimer_text_usage" = "Cette application est conçue uniquement à des fins de divertissement. Elle utilise des capteurs de mouvement. Vous n'avez pas besoin de frapper fort votre téléphone — de légers tapotements suffisent pour déclencher les sons.";
+"disclaimer_title_consent" = "Respectez les autres";
+"disclaimer_text_consent" = "N'utilisez pas cette application pour déranger, harceler ou offenser les autres. Soyez toujours attentif à votre entourage et aux personnes autour de vous.";
+"disclaimer_title_liability" = "Limitation de responsabilité";
+"disclaimer_text_liability" = "Les développeurs de SlapMe ne pourront être tenus responsables de tout dommage direct, indirect, accessoire ou consécutif résultant de l'utilisation ou de la mauvaise utilisation de cette application.";
+"disclaimer_footer" = "En utilisant SlapMe, vous acceptez ces conditions. Amusez-vous bien et restez prudent ! 🎉";

@@ -24,6 +24,7 @@
 		8040EDDBAC882B43802CD48F /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95F1A231A872C9507A822D3 /* MotionManager.swift */; };
 		8F902928FC01C91D87C4B21E /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7D2CEF6740CD6642C542B6 /* StoreManager.swift */; };
 		9C94672D0291ED809485CDEB /* OnboardingComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F184AFD3339F54C2451412C /* OnboardingComponents.swift */; };
+		9EACD4CF98264D915992E9DA /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B3B1C05B913931858B070 /* DisclaimerView.swift */; };
 		A96C755A9B1E4BE743F0F4C1 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCFC1FDC4FE1620ABBC24B0 /* HapticManager.swift */; };
 		AACAAB18ABCCEDC5B4BB74E8 /* PackPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9485CD2072125FF716687 /* PackPreviewView.swift */; };
 		B471E31218B3B76DC211924C /* SoundPackLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B66FDDA4152589491C9BF7 /* SoundPackLoader.swift */; };
@@ -77,6 +78,7 @@
 		9F257764FD18F59486BF4229 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9F295E639491E736EC238A9B /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AED7A118016B72EDBC3CF72B /* Packs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Packs; path = SlapMe/Resources/Packs; sourceTree = SOURCE_ROOT; };
+		B04B3B1C05B913931858B070 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		B236F3266F69E8DCA7D8AEE4 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		B2CFD9311092A44E4A871FA1 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B3C2134C3087D1CFCE418A5D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		7773937DE626D2593245D165 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				B04B3B1C05B913931858B070 /* DisclaimerView.swift */,
 				CEF24F99B5BA33897906DCA3 /* SettingsView.swift */,
 			);
 			path = Settings;
@@ -398,6 +401,7 @@
 				CB61F1AD54349A7531969E83 /* CharacterView.swift in Sources */,
 				7DC9FCBAA417E46E005AC565 /* ClipSelector.swift in Sources */,
 				29DABBC9FBB21B9ECEF57FEA /* CounterStore.swift in Sources */,
+				9EACD4CF98264D915992E9DA /* DisclaimerView.swift in Sources */,
 				E6D1EFBD45845E5363F6AA08 /* GIFImage.swift in Sources */,
 				A96C755A9B1E4BE743F0F4C1 /* HapticManager.swift in Sources */,
 				2129EB1B5D4CE67CA4A64B8F /* HomeView.swift in Sources */,

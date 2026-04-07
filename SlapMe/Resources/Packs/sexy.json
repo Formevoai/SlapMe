@@ -9,37 +9,37 @@
     {
       "id": "alice",
       "name": "Alice",
-      "softClips": ["alice_light.mp3"],
-      "mediumClips": ["alice_medium.mp3"],
-      "hardClips": ["alice_hard.mp3"],
-      "comboClips": ["alice_hard.mp3"],
+      "softClips": ["alice_light.mp3", "alice_soft2.mp3", "alice_soft3.mp3"],
+      "mediumClips": ["alice_medium.mp3", "alice_medium2.mp3", "alice_medium3.mp3"],
+      "hardClips": ["alice_hard.mp3", "alice_hard2.mp3", "alice_hard3.mp3"],
+      "comboClips": ["alice_hard.mp3", "alice_combo2.mp3", "alice_combo3.mp3"],
       "previewClip": "alice_light.mp3"
     },
     {
       "id": "isabell",
       "name": "Isabell",
-      "softClips": ["isabell_light.mp3"],
-      "mediumClips": ["isabell_medium.mp3"],
-      "hardClips": ["isabell_hard.mp3"],
-      "comboClips": ["isabell_hard.mp3"],
+      "softClips": ["isabell_light.mp3", "isabell_soft2.mp3", "isabell_soft3.mp3"],
+      "mediumClips": ["isabell_medium.mp3", "isabell_medium2.mp3", "isabell_medium3.mp3"],
+      "hardClips": ["isabell_hard.mp3", "isabell_hard2.mp3", "isabell_hard3.mp3"],
+      "comboClips": ["isabell_hard.mp3", "isabell_combo2.mp3", "isabell_combo3.mp3"],
       "previewClip": "isabell_light.mp3"
     },
     {
       "id": "cute_anime",
       "name": "Cute Anime",
-      "softClips": ["cute_anime_light.mp3"],
-      "mediumClips": ["cute_anime_medium.mp3"],
-      "hardClips": ["cute_anime_hard.mp3"],
-      "comboClips": ["cute_anime_hard.mp3"],
+      "softClips": ["cute_anime_light.mp3", "cute_anime_soft2.mp3", "cute_anime_soft3.mp3"],
+      "mediumClips": ["cute_anime_medium.mp3", "cute_anime_medium2.mp3", "cute_anime_medium3.mp3"],
+      "hardClips": ["cute_anime_hard.mp3", "cute_anime_hard2.mp3", "cute_anime_hard3.mp3"],
+      "comboClips": ["cute_anime_hard.mp3", "cute_anime_combo2.mp3", "cute_anime_combo3.mp3"],
       "previewClip": "cute_anime_light.mp3"
     },
     {
       "id": "jasmin",
       "name": "Jasmin",
-      "softClips": ["jasmin_light.mp3"],
-      "mediumClips": ["jasmin_medium.mp3"],
-      "hardClips": ["jasmin_hard.mp3"],
-      "comboClips": ["jasmin_hard.mp3"],
+      "softClips": ["jasmin_light.mp3", "jasmin_soft2.mp3", "jasmin_soft3.mp3"],
+      "mediumClips": ["jasmin_medium.mp3", "jasmin_medium2.mp3", "jasmin_medium3.mp3"],
+      "hardClips": ["jasmin_hard.mp3", "jasmin_hard2.mp3", "jasmin_hard3.mp3"],
+      "comboClips": ["jasmin_hard.mp3", "jasmin_combo2.mp3", "jasmin_combo3.mp3"],
       "previewClip": "jasmin_light.mp3"
     },
     {
@@ -55,10 +55,10 @@
     {
       "id": "dilara",
       "name": "Dilara",
-      "softClips": ["dilara_light.mp3"],
-      "mediumClips": ["dilara_medium.mp3"],
-      "hardClips": ["dilara_hard.mp3"],
-      "comboClips": ["dilara_hard.mp3"],
+      "softClips": ["dilara_light.mp3", "dilara_soft2.mp3", "dilara_soft3.mp3"],
+      "mediumClips": ["dilara_medium.mp3", "dilara_medium2.mp3", "dilara_medium3.mp3"],
+      "hardClips": ["dilara_hard.mp3", "dilara_hard2.mp3", "dilara_hard3.mp3"],
+      "comboClips": ["dilara_hard.mp3", "dilara_combo2.mp3"],
       "previewClip": "dilara_light.mp3"
     },
     {
@@ -84,28 +84,28 @@
     {
       "id": "gentleman_lady",
       "name": "Gentleman Lady",
-      "softClips": ["gentleman_lady_light.mp3"],
-      "mediumClips": ["gentleman_lady_medium.mp3"],
-      "hardClips": ["gentleman_lady_hard.mp3"],
-      "comboClips": ["gentleman_lady_hard.mp3"],
+      "softClips": ["gentleman_lady_light.mp3", "gentleman_lady_soft2.mp3", "gentleman_lady_soft3.mp3"],
+      "mediumClips": ["gentleman_lady_medium.mp3", "gentleman_lady_medium2.mp3", "gentleman_lady_medium3.mp3"],
+      "hardClips": ["gentleman_lady_hard.mp3", "gentleman_lady_hard2.mp3"],
+      "comboClips": ["gentleman_lady_hard.mp3", "gentleman_lady_combo2.mp3", "gentleman_lady_combo3.mp3"],
       "previewClip": "gentleman_lady_light.mp3"
     },
     {
       "id": "hanna",
       "name": "Hanna",
-      "softClips": ["hanna_light.mp3"],
-      "mediumClips": ["hanna_medium.mp3"],
-      "hardClips": ["hanna_hard.mp3"],
-      "comboClips": ["hanna_hard.mp3"],
+      "softClips": ["hanna_light.mp3", "hanna_soft2.mp3", "hanna_soft3.mp3"],
+      "mediumClips": ["hanna_medium.mp3", "hanna_medium2.mp3"],
+      "hardClips": ["hanna_hard.mp3", "hanna_hard2.mp3", "hanna_hard3.mp3"],
+      "comboClips": ["hanna_hard.mp3", "hanna_combo2.mp3", "hanna_combo3.mp3"],
       "previewClip": "hanna_light.mp3"
     },
     {
       "id": "mature_woman",
       "name": "Mature Woman",
-      "softClips": ["mature_woman_light.mp3"],
-      "mediumClips": ["mature_woman_medium.mp3"],
-      "hardClips": ["mature_woman_hard.mp3"],
-      "comboClips": ["mature_woman_hard.mp3"],
+      "softClips": ["mature_woman_light.mp3", "mature_woman_soft2.mp3"],
+      "mediumClips": ["mature_woman_medium.mp3", "mature_woman_medium2.mp3", "mature_woman_medium3.mp3"],
+      "hardClips": ["mature_woman_hard.mp3", "mature_woman_hard2.mp3", "mature_woman_hard3.mp3"],
+      "comboClips": ["mature_woman_hard.mp3", "mature_woman_combo2.mp3", "mature_woman_combo3.mp3"],
       "previewClip": "mature_woman_light.mp3"
     },
     {

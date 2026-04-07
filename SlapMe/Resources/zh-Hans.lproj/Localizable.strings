@@ -101,3 +101,17 @@
 "clip_level_combo" = "连击";
 "button_preview" = "预览";
 "button_select_pack" = "选择此包";
+
+// Disclaimer
+"settings_disclaimer" = "免责声明与安全";
+"disclaimer_title_safety" = "使用风险自负";
+"disclaimer_text_safety" = "SlapMe是一款娱乐应用。拍打、摇晃或撞击手机可能会对设备造成物理损坏。请始终使用轻柔的动作并小心谨慎。";
+"disclaimer_title_device" = "设备损坏警告";
+"disclaimer_text_device" = "我们不对因使用本应用而导致的任何设备损坏负责，包括屏幕破裂、零件损坏或任何硬件故障。";
+"disclaimer_title_usage" = "预期用途";
+"disclaimer_text_usage" = "本应用仅供娱乐目的。它使用运动传感器检测运动。您不需要真的用力拍打手机——轻触和轻柔的运动就足以触发声音。";
+"disclaimer_title_consent" = "尊重他人";
+"disclaimer_text_consent" = "请勿使用本应用打扰、骚扰或冒犯他人。请始终注意周围环境和身边的人。";
+"disclaimer_title_liability" = "责任限制";
+"disclaimer_text_liability" = "SlapMe开发者不对因使用或误用本应用而产生的任何直接、间接、附带或后果性损害承担责任，包括但不限于设备损坏、人身伤害或其他损失。";
+"disclaimer_footer" = "使用SlapMe即表示您接受这些条款。玩得开心，注意安全！🎉";

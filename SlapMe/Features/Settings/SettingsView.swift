@@ -24,7 +24,9 @@ struct SettingsView: View {
                         Text(settingsStore.settings.selectedPackID.capitalized)
                             .foregroundStyle(.secondary)
                     }
-                } header: { Text(L("section_sound_pack")) }
+                } header: {
+                    Text(L("section_sound_pack"))
+                }
 
                 // Hassasiyet
                 Section {
@@ -51,7 +53,9 @@ struct SettingsView: View {
                         Text(L("cooldown_seconds_format", settingsStore.settings.cooldown))
                             .font(.caption).foregroundStyle(.secondary)
                     }
-                } header: { Text(L("section_detection")) }
+                } header: {
+                    Text(L("section_detection"))
+                }
 
                 // Ses
                 Section {
@@ -63,12 +67,15 @@ struct SettingsView: View {
                     Toggle(isOn: s.dynamicVolume) {
                         Label(L("settings_dynamic_volume"), systemImage: "waveform.path.ecg")
                     }
-                } header: { Text(L("section_sound")) }
+                } header: {
+                    Text(L("section_sound"))
+                }
 
                 // Görsel & Haptik
                 Section {
                     Toggle(isOn: s.hapticsEnabled) {
-                        Label(L("settings_haptics"), systemImage: "iphone.radiowaves.left.and.right")
+                        Label(
+                            L("settings_haptics"), systemImage: "iphone.radiowaves.left.and.right")
                     }
                     Toggle(isOn: s.screenFlashEnabled) {
                         Label(L("settings_screen_flash"), systemImage: "bolt.fill")
@@ -84,8 +91,10 @@ struct SettingsView: View {
                             DisclosureGroup {
                                 ForEach(category.packs) { pack in
                                     let locked = isChargerPackLocked(category: category, pack: pack)
-                                    let selected = settingsStore.settings.chargerSoundPackID == pack.id
-                                    let isFreeSexy = category.id == "sexy" && pack.id == category.packs.first?.id
+                                    let selected =
+                                        settingsStore.settings.chargerSoundPackID == pack.id
+                                    let isFreeSexy =
+                                        category.id == "sexy" && pack.id == category.packs.first?.id
 
                                     Button {
                                         if !locked {
@@ -136,7 +145,9 @@ struct SettingsView: View {
                                 .font(.caption).foregroundStyle(.orange)
                         }
                     }
-                } header: { Text(L("section_feedback")) }
+                } header: {
+                    Text(L("section_feedback"))
+                }
 
                 // Güvenlik
                 Section {
@@ -147,23 +158,36 @@ struct SettingsView: View {
                         Text(L("safe_mode_explanation"))
                             .font(.caption).foregroundStyle(.secondary)
                     }
-                } header: { Text(L("section_security")) }
-
-
+                } header: {
+                    Text(L("section_security"))
+                }
 
                 // Yasal & Hesap
                 // Language
                 Section {
-                    Picker(L("settings_language"), selection: $localizationManager.selectedLanguage) {
+                    Picker(L("settings_language"), selection: $localizationManager.selectedLanguage)
+                    {
                         ForEach(LocalizationManager.supportedLanguages, id: \.code) { lang in
                             Text(lang.name).tag(lang.code)
                         }
                     }
-                } header: { Text(L("section_language")) }
+                } header: {
+                    Text(L("section_language"))
+                }
 
                 Section {
-                    Link(destination: URL(string: "https://formevoai.github.io/SlapMe/privacy-policy.html")!) {
+                    Link(
+                        destination: URL(
+                            string: "https://formevoai.github.io/SlapMe/privacy-policy.html")!
+                    ) {
                         Label(L("settings_privacy_policy"), systemImage: "hand.raised.fill")
+                    }
+
+                    NavigationLink {
+                        DisclaimerView()
+                    } label: {
+                        Label(
+                            L("settings_disclaimer"), systemImage: "exclamationmark.triangle.fill")
                     }
 
                     Button {
@@ -171,8 +195,9 @@ struct SettingsView: View {
                     } label: {
                         Label(L("settings_restore_purchases"), systemImage: "arrow.clockwise")
                     }
-                } header: { Text(L("section_legal")) }
-
+                } header: {
+                    Text(L("section_legal"))
+                }
 
             }
             .navigationTitle(L("settings_title"))
@@ -200,7 +225,10 @@ struct SettingsView: View {
     private func isChargerPackTrial() -> Bool {
         guard !storeManager.isPremium else { return false }
         let packID = settingsStore.settings.chargerSoundPackID
-        guard let category = categories.first(where: { $0.packs.contains(where: { $0.id == packID }) }) else { return false }
+        guard
+            let category = categories.first(where: { $0.packs.contains(where: { $0.id == packID }) }
+            )
+        else { return false }
         return category.id == "sexy" && packID == category.packs.first?.id
     }
 }

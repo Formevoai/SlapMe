@@ -101,3 +101,17 @@
 "clip_level_combo" = "콤보";
 "button_preview" = "미리보기";
 "button_select_pack" = "이 팩 선택";
+
+// Disclaimer
+"settings_disclaimer" = "면책 조항 및 안전";
+"disclaimer_title_safety" = "본인 책임 하에 사용하세요";
+"disclaimer_text_safety" = "SlapMe는 엔터테인먼트 앱입니다. 휴대폰을 때리거나, 흔들거나, 부딪히면 기기에 물리적 손상을 줄 수 있습니다. 항상 부드러운 동작을 사용하고 주의하세요.";
+"disclaimer_title_device" = "기기 손상 경고";
+"disclaimer_text_device" = "화면 파손, 부품 고장 또는 이 앱 사용으로 인한 하드웨어 오작동을 포함한 기기 손상에 대해 책임지지 않습니다.";
+"disclaimer_title_usage" = "사용 목적";
+"disclaimer_text_usage" = "이 앱은 오락 목적으로만 설계되었습니다. 모션 센서를 사용합니다. 휴대폰을 세게 칠 필요가 없습니다 — 가벼운 탭과 부드러운 움직임으로 소리가 재생됩니다.";
+"disclaimer_title_consent" = "타인을 존중하세요";
+"disclaimer_text_consent" = "이 앱을 사용하여 다른 사람을 방해하거나, 괴롭히거나, 기분 나쁘게 하지 마세요. 항상 주변 환경과 주위 사람들을 배려하세요.";
+"disclaimer_title_liability" = "책임 제한";
+"disclaimer_text_liability" = "SlapMe 개발자는 이 애플리케이션의 사용 또는 오용으로 인한 기기 손상, 신체 부상 또는 기타 손실을 포함한 직접적, 간접적, 우발적 또는 결과적 손해에 대해 책임지지 않습니다.";
+"disclaimer_footer" = "SlapMe를 사용함으로써 이 약관에 동의하는 것입니다. 즐기고 안전하게! 🎉";
