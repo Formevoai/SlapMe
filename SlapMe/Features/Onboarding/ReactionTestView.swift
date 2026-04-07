@@ -97,7 +97,7 @@ struct ReactionTestView: View {
 
                 OnboardingButton(
                     title: didSlap ? L("button_great_continue") : L("button_skip"),
-                    isActive: didSlap,
+                    isActive: true,
                     action: onContinue
                 )
                 .padding(.bottom, 48)
