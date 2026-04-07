@@ -77,7 +77,7 @@ struct SensorCheckView: View {
                     .padding(.bottom, 24)
 
                 OnboardingButton(
-                    title: L("button_continue"), isActive: available, action: onContinue
+                    title: L("button_continue"), isActive: true, action: onContinue
                 )
                 .opacity(appeared ? 1 : 0)
                 .offset(y: appeared ? 0 : 20)
