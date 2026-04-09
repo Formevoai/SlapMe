@@ -12,4 +12,6 @@ struct SoundPack: Identifiable {
     let comingSoon: Bool
     let clips: [String]
     let previewClip: String
+    var isCustom: Bool = false
+    var customPackID: String? = nil
 }

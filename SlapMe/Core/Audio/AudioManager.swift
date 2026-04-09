@@ -69,9 +69,14 @@ final class AudioManager: ObservableObject {
 
         // Yeni clip'leri yükle
         var seen = Set<String>()
-        let clips = (pack.clips + [pack.previewClip]).filter { seen.insert($0).inserted }
+        let allClipsToLoad = pack.clips + (pack.previewClip.isEmpty ? [] : [pack.previewClip])
+        let clips = allClipsToLoad.filter { seen.insert($0).inserted }
+        let customBase: URL? =
+            (pack.isCustom && !(pack.customPackID ?? "").isEmpty)
+            ? CustomPackManager.customSoundsDir.appendingPathComponent(pack.customPackID!)
+            : nil
         for clip in clips {
-            preload(clip: clip, soundFolder: pack.soundFolder)
+            preload(clip: clip, soundFolder: pack.soundFolder, customBaseURL: customBase)
         }
 
         // Session aktif et ve engine'i yeniden başlat
@@ -103,22 +108,26 @@ final class AudioManager: ObservableObject {
         audioBuffers.removeAll()
     }
 
-    private func preload(clip: String, soundFolder: String) {
-        let name = (clip as NSString).deletingPathExtension
-        let ext =
-            (clip as NSString).pathExtension.isEmpty ? "mp3" : (clip as NSString).pathExtension
-
+    private func preload(clip: String, soundFolder: String, customBaseURL: URL? = nil) {
         let url: URL?
-        if let u = Bundle.main.url(
-            forResource: name, withExtension: ext, subdirectory: "Sounds/\(soundFolder)")
-        {
-            url = u
-        } else if let u = Bundle.main.url(
-            forResource: name, withExtension: ext, subdirectory: soundFolder)
-        {
-            url = u
+        if let base = customBaseURL {
+            let fileURL = base.appendingPathComponent(clip)
+            url = FileManager.default.fileExists(atPath: fileURL.path) ? fileURL : nil
         } else {
-            url = Bundle.main.url(forResource: name, withExtension: ext)
+            let name = (clip as NSString).deletingPathExtension
+            let ext =
+                (clip as NSString).pathExtension.isEmpty ? "mp3" : (clip as NSString).pathExtension
+            if let u = Bundle.main.url(
+                forResource: name, withExtension: ext, subdirectory: "Sounds/\(soundFolder)")
+            {
+                url = u
+            } else if let u = Bundle.main.url(
+                forResource: name, withExtension: ext, subdirectory: soundFolder)
+            {
+                url = u
+            } else {
+                url = Bundle.main.url(forResource: name, withExtension: ext)
+            }
         }
 
         guard let resolvedURL = url,

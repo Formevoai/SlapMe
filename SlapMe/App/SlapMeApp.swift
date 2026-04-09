@@ -18,6 +18,7 @@ struct RootView: View {
     @StateObject private var motionManager = MotionManager()
     @StateObject private var audioManager = AudioManager()
     @StateObject private var storeManager = StoreManager()
+    @StateObject private var customPackManager = CustomPackManager()
 
     private let impactDetector = ImpactDetector()
     private let hapticManager = HapticManager()
@@ -29,6 +30,12 @@ struct RootView: View {
     private let categories: [SoundCategory] = SoundCategoryLoader.loadAll()
     private var allPacks: [SoundPack] { categories.flatMap { $0.packs } }
 
+    private func findPack(id: String) -> SoundPack? {
+        allPacks.first { $0.id == id }
+            ?? customPackManager.packs.first(where: { $0.id == id })
+            .map { customPackManager.toSoundPack($0) }
+    }
+
     var body: some View {
         ZStack {
             if onboardingDone {
@@ -37,6 +44,7 @@ struct RootView: View {
                     motionManager: motionManager,
                     audioManager: audioManager,
                     storeManager: storeManager,
+                    customPackManager: customPackManager,
                     impactDetector: impactDetector,
                     hapticManager: hapticManager,
                     packs: allPacks,
@@ -67,8 +75,7 @@ struct RootView: View {
             motionManager.startMonitoring()
             startBatteryMonitoring()
             // İlk pack yükle
-            if let pack = allPacks.first(where: { $0.id == settingsStore.settings.selectedPackID })
-            {
+            if let pack = findPack(id: settingsStore.settings.selectedPackID) {
                 audioManager.loadPack(pack)
             }
         }
@@ -76,7 +83,7 @@ struct RootView: View {
             syncDetector()
             // Pack sadece ID değişince yüklenir — slider/toggle fiddle etmesin
             if audioManager.currentPackID != newSettings.selectedPackID,
-                let pack = allPacks.first(where: { $0.id == newSettings.selectedPackID })
+                let pack = findPack(id: newSettings.selectedPackID)
             {
                 audioManager.loadPack(pack)
             }

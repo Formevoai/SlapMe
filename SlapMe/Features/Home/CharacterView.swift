@@ -8,6 +8,7 @@ struct CharacterView: View {
     var isBackground: Bool = false
     var isComingSoon: Bool = false
     var onLockTap: (() -> Void)? = nil
+    var onAddNewTap: (() -> Void)? = nil
     @ObservedObject private var localizationManager = LocalizationManager.shared
 
     @State private var breathe: CGFloat = 1.0
@@ -38,6 +39,7 @@ struct CharacterView: View {
         case "yamete": return Color(red: 0.85, green: 0.35, blue: 0.55)
         case "goat": return Color(red: 1, green: 0.55, blue: 0.65)
         case "funny": return Color(red: 0.4, green: 0.75, blue: 0.3)
+        case "custom": return Color.purple
         default: return .gray
         }
     }
@@ -48,14 +50,33 @@ struct CharacterView: View {
         case "yamete": return L("tag_yamete")
         case "goat": return L("tag_animal")
         case "funny": return L("tag_funny")
+        case "custom": return "Custom"
         default: return pack.categoryID.capitalized
         }
     }
 
     var body: some View {
         VStack(spacing: 0) {
-            // Character image — scaledToFit so full character is visible
-            if let uiImage = characterImage {
+            // Character image
+            if pack.id == "custom_add_new" {
+                // "Ekle" slotu - sadece boş alan, overlay halleder
+                Color.clear.frame(height: 160)
+            } else if pack.isCustom {
+                // Custom karakter: ses dalgası placeholder
+                ZStack {
+                    LinearGradient(
+                        colors: [Color.purple.opacity(0.25), Color.purple.opacity(0.1)],
+                        startPoint: .topLeading, endPoint: .bottomTrailing
+                    )
+                    Image(systemName: "waveform.path.ecg")
+                        .font(.system(size: 56))
+                        .foregroundStyle(Color.purple.opacity(0.6))
+                }
+                .frame(height: 160)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .padding(.horizontal, 12)
+                .padding(.top, 12)
+            } else if let uiImage = characterImage {
                 Image(uiImage: uiImage)
                     .resizable()
                     .scaledToFit()
@@ -109,7 +130,25 @@ struct CharacterView: View {
         )
         .overlay(
             ZStack {
-                if isComingSoon {
+                if pack.id == "custom_add_new" && !isLocked {
+                    // Pro kullanıcı: yeni karakter ekle
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(Color.purple.opacity(0.05))
+                    VStack(spacing: 10) {
+                        Image(systemName: "plus.circle.fill")
+                            .font(.system(size: 54))
+                            .foregroundStyle(Color.purple.opacity(0.75))
+                        Text("Karakter Ekle")
+                            .font(.system(size: 15, weight: .bold, design: .rounded))
+                            .foregroundStyle(Color(white: 0.2))
+                        Text("Kendi seslerini yükle")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .contentShape(Rectangle())
+                    .onTapGesture { onAddNewTap?() }
+                } else if isComingSoon {
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
                         .fill(.black.opacity(0.5))
 
@@ -179,6 +218,7 @@ struct CharacterView: View {
         case "yamete": return "😳"
         case "sexy": return "😏"
         case "funny": return "😂"
+        case "custom": return "🎵"
         default: return "😐"
         }
     }

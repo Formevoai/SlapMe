@@ -5,6 +5,7 @@ struct HomeView: View {
     @ObservedObject var motionManager: MotionManager
     @ObservedObject var audioManager: AudioManager
     @ObservedObject var storeManager: StoreManager
+    @ObservedObject var customPackManager: CustomPackManager
     @ObservedObject private var localizationManager = LocalizationManager.shared
     let impactDetector: ImpactDetector
     let hapticManager: HapticManager
@@ -16,6 +17,7 @@ struct HomeView: View {
     @State private var screenFlash = false
     @State private var showSettings = false
     @State private var showPaywall = false
+    @State private var showCreateCustom = false
     @AppStorage("onboarding_done") private var onboardingDone = true
     @State private var hasSlapped = false
     @State private var hintOpacity: Double = 0.6
@@ -26,7 +28,7 @@ struct HomeView: View {
     @State private var continuousOffsetY: CGFloat = 0
 
     private var visibleCategories: [SoundCategory] {
-        categories.map { cat in
+        var result = categories.map { cat in
             SoundCategory(
                 id: cat.id,
                 title: cat.title,
@@ -35,6 +37,8 @@ struct HomeView: View {
                 packs: cat.packs.filter { !$0.comingSoon }
             )
         }.filter { !$0.packs.isEmpty }
+        result.append(customPackManager.toSoundCategory)
+        return result
     }
 
     private var currentCategory: SoundCategory? {
@@ -61,6 +65,7 @@ struct HomeView: View {
         guard !storeManager.isPremium else { return false }
         let cat = visibleCategories.first { $0.id == pack.categoryID }
         if pack.categoryID == "yamete" { return true }
+        if pack.categoryID == "custom" { return true }  // tüm custom = pro
         if pack.categoryID == "sexy" { return pack.id != cat?.packs.first?.id }
         return false
     }
@@ -113,6 +118,9 @@ struct HomeView: View {
         }
         .sheet(isPresented: $showPaywall) {
             PaywallView(storeManager: storeManager)
+        }
+        .sheet(isPresented: $showCreateCustom) {
+            CreateCustomCharacterView(customPackManager: customPackManager)
         }
         .onReceive(impactDetector.impactPublisher) { event in
             handleImpact(event)
@@ -263,7 +271,8 @@ struct HomeView: View {
                                             isLocked: isPackLocked(cat.packs[pi]),
                                             isBackground: pi != characterIndex,
                                             isComingSoon: cat.packs[pi].comingSoon,
-                                            onLockTap: { showPaywall = true }
+                                            onLockTap: { showPaywall = true },
+                                            onAddNewTap: { showCreateCustom = true }
                                         )
                                         .frame(width: cardWidth)
                                         .scaleEffect(vScale)
@@ -286,7 +295,8 @@ struct HomeView: View {
                                     isLocked: isPackLocked(cat.packs[0]),
                                     isBackground: true,
                                     isComingSoon: cat.packs[0].comingSoon,
-                                    onLockTap: { showPaywall = true }
+                                    onLockTap: { showPaywall = true },
+                                    onAddNewTap: { showCreateCustom = true }
                                 )
                                 .frame(width: cardWidth)
                             }
@@ -487,6 +497,7 @@ struct HomeView: View {
 
     private func onPackChanged() {
         guard let pack = currentPack else { return }
+        guard pack.id != "custom_add_new" else { return }
         settingsStore.settings.selectedPackID = pack.id
         if !isCurrentLocked {
             audioManager.loadPack(pack)
@@ -498,6 +509,9 @@ struct HomeView: View {
 
         // Coming soon characters — no interaction
         if pack.comingSoon { return }
+
+        // Add-new slotu — ses yok
+        if pack.id == "custom_add_new" { return }
 
         // Gate premium content — sexy ilk karakter free, yamete tamamen PRO
         if isCurrentLocked {
