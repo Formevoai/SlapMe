@@ -12,20 +12,17 @@
 "button_continue" = "जारी रखें";
 "button_skip" = "छोड़ें";
 "button_start" = "शुरू करें";
-
 // MARK: - Home
 "home_slap_hint" = "फ़ोन पर थप्पड़ मारो!";
 "safe_mode_on" = "सेफ़ मोड चालू";
 "safe_mode_off" = "सेफ़ मोड बंद";
 "safe_mode_description" = "बैकग्राउंड में ट्रिगर रोका जाता है";
 "slap_meter_label" = "थप्पड़ मीटर";
-
 // MARK: - Tags
 "tag_sexy" = "फ़्लर्टी";
 "tag_yamete" = "यामेते";
 "tag_animal" = "जानवर";
 "tag_funny" = "मज़ेदार";
-
 // MARK: - Settings
 "settings_title" = "सेटिंग्स";
 "section_sound_pack" = "साउंड पैक";
@@ -58,7 +55,6 @@
 "section_legal" = "कानूनी";
 "settings_privacy_policy" = "गोपनीयता नीति";
 "settings_restore_purchases" = "ख़रीदारी बहाल करें";
-
 // MARK: - Store
 "store_title" = "साउंड पैक";
 "store_pro_title" = "SlapMe PRO";
@@ -75,11 +71,9 @@
 "upgrade_to_pro" = "PRO में अपग्रेड करें";
 "restore_purchases" = "ख़रीदारी बहाल करें";
 "character_count_format" = "%d कैरेक्टर";
-
 // MARK: - Paywall
 "paywall_subtitle" = "एक बार भुगतान, हमेशा आपका 👋";
 "one_time_payment_label" = "एकमुश्त भुगतान";
-
 // MARK: - Onboarding
 "welcome_subtitle" = "अपने फ़ोन पर मारो।\nवो रिएक्ट करेगा।";
 "sensor_ready" = "iPhone तैयार!";
@@ -94,7 +88,6 @@
 "pack_selection_title" = "अपना कैरेक्टर चुनें";
 "pack_selection_subtitle" = "कभी भी बदल सकते हैं।";
 "button_start_exclamation" = "शुरू!";
-
 // MARK: - Pack Preview
 "clip_level_soft" = "हल्का";
 "clip_level_medium" = "मध्यम";
@@ -102,7 +95,6 @@
 "clip_level_combo" = "कॉम्बो";
 "button_preview" = "प्रीव्यू";
 "button_select_pack" = "यह पैक चुनें";
-
 // Disclaimer
 "settings_disclaimer" = "अस्वीकरण और सुरक्षा";
 "disclaimer_title_safety" = "अपने जोखिम पर उपयोग करें";
@@ -116,3 +108,12 @@
 "disclaimer_title_liability" = "दायित्व की सीमा";
 "disclaimer_text_liability" = "SlapMe के डेवलपर्स इस एप्लिकेशन के उपयोग या दुरुपयोग से उत्पन्न होने वाले किसी भी प्रत्यक्ष, अप्रत्यक्ष, आकस्मिक या परिणामी नुकसान के लिए उत्तरदायी नहीं होंगे।";
 "disclaimer_footer" = "SlapMe का उपयोग करके, आप इन शर्तों को स्वीकार करते हैं। मज़े करें और सुरक्षित रहें! 🎉";
+"custom_add_slot_title" = "साउंड पैक जोड़ें";
+"custom_add_slot_hint" = "अपनी आवाज़ें
+अपलोड करें";
+"custom_add_slot_desc" = "MP3, WAV या M4A अपलोड करें
+और अपना पैक बनाएं";
+"custom_slot_locked_hint" = "अपना खुद का साउंड पैक बनाएं";
+"custom_category_title" = "मेरी आवाज़ें";
+"custom_add_slot_hint" = "अपनी आवाज़ें अपलोड करें";
+"custom_add_slot_desc" = "MP3, WAV या M4A अपलोड करें और अपना पैक बनाएं";

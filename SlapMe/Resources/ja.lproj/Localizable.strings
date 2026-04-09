@@ -12,20 +12,17 @@
 "button_continue" = "続ける";
 "button_skip" = "スキップ";
 "button_start" = "スタート";
-
 // MARK: - Home
 "home_slap_hint" = "スマホを叩いて！";
 "safe_mode_on" = "セーフモード オン";
 "safe_mode_off" = "セーフモード オフ";
 "safe_mode_description" = "バックグラウンドでの反応を防止";
 "slap_meter_label" = "ビンタメーター";
-
 // MARK: - Tags
 "tag_sexy" = "フラーティ";
 "tag_yamete" = "やめて";
 "tag_animal" = "動物";
 "tag_funny" = "おもしろ";
-
 // MARK: - Settings
 "settings_title" = "設定";
 "section_sound_pack" = "サウンドパック";
@@ -58,7 +55,6 @@
 "section_legal" = "法的情報";
 "settings_privacy_policy" = "プライバシーポリシー";
 "settings_restore_purchases" = "購入を復元";
-
 // MARK: - Store
 "store_title" = "サウンドパック";
 "store_pro_title" = "SlapMe PRO";
@@ -75,11 +71,9 @@
 "upgrade_to_pro" = "PROにアップグレード";
 "restore_purchases" = "購入を復元";
 "character_count_format" = "%d キャラクター";
-
 // MARK: - Paywall
 "paywall_subtitle" = "一度のお支払いで、ずっとあなたのもの 👋";
 "one_time_payment_label" = "一回限りのお支払い";
-
 // MARK: - Onboarding
 "welcome_subtitle" = "スマホを叩こう。\nリアクションが返ってくるよ。";
 "sensor_ready" = "iPhone 準備完了！";
@@ -94,7 +88,6 @@
 "pack_selection_title" = "キャラを選ぼう";
 "pack_selection_subtitle" = "いつでも変更できます。";
 "button_start_exclamation" = "スタート！";
-
 // MARK: - Pack Preview
 "clip_level_soft" = "やさしい";
 "clip_level_medium" = "ふつう";
@@ -102,7 +95,6 @@
 "clip_level_combo" = "コンボ";
 "button_preview" = "プレビュー";
 "button_select_pack" = "このパックを選択";
-
 // Disclaimer
 "settings_disclaimer" = "免責事項と安全性";
 "disclaimer_title_safety" = "自己責任でご利用ください";
@@ -116,3 +108,12 @@
 "disclaimer_title_liability" = "責任の制限";
 "disclaimer_text_liability" = "SlapMeの開発者は、このアプリケーションの使用または誤用から生じるデバイスの損傷、人身事故、その他の損失を含む、直接的、間接的、偶発的、または結果的な損害について一切責任を負いません。";
 "disclaimer_footer" = "SlapMeを使用することにより、これらの条件に同意したことになります。楽しんで、安全に！🎉";
+"custom_add_slot_title" = "サウンドパックを追加";
+"custom_add_slot_hint" = "自分のサウンドを
+アップロード";
+"custom_add_slot_desc" = "MP3、WAV、M4Aを
+アップロードしてパックを作成";
+"custom_slot_locked_hint" = "自分だけのサウンドパックを作成";
+"custom_category_title" = "マイサウンド";
+"custom_add_slot_hint" = "自分のサウンドをアップロード";
+"custom_add_slot_desc" = "MP3・WAV・M4Aをアップロードしてパックを作成";

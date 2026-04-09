@@ -12,20 +12,17 @@
 "button_continue" = "Продолжить";
 "button_skip" = "Пропустить";
 "button_start" = "Начать";
-
 // MARK: - Home
 "home_slap_hint" = "Ударь по телефону!";
 "safe_mode_on" = "Безопасный режим Вкл";
 "safe_mode_off" = "Безопасный режим Выкл";
 "safe_mode_description" = "Срабатывание в фоне заблокировано";
 "slap_meter_label" = "ШЛЕПКО-МЕТР";
-
 // MARK: - Tags
 "tag_sexy" = "Флирт";
 "tag_yamete" = "Ямете";
 "tag_animal" = "Животное";
 "tag_funny" = "Смешной";
-
 // MARK: - Settings
 "settings_title" = "Настройки";
 "section_sound_pack" = "Звуковой пакет";
@@ -58,7 +55,6 @@
 "section_legal" = "Правовая информация";
 "settings_privacy_policy" = "Политика конфиденциальности";
 "settings_restore_purchases" = "Восстановить покупки";
-
 // MARK: - Store
 "store_title" = "Звуковые пакеты";
 "store_pro_title" = "SlapMe PRO";
@@ -75,11 +71,9 @@
 "upgrade_to_pro" = "Перейти на PRO";
 "restore_purchases" = "Восстановить покупки";
 "character_count_format" = "%d персонажей";
-
 // MARK: - Paywall
 "paywall_subtitle" = "Один платёж — навсегда твоё 👋";
 "one_time_payment_label" = "Одноразовый платёж";
-
 // MARK: - Onboarding
 "welcome_subtitle" = "Ударь по телефону.\nОн отреагирует.";
 "sensor_ready" = "iPhone Готов!";
@@ -94,7 +88,6 @@
 "pack_selection_title" = "Выбери персонажа";
 "pack_selection_subtitle" = "Можешь сменить когда угодно.";
 "button_start_exclamation" = "Поехали!";
-
 // MARK: - Pack Preview
 "clip_level_soft" = "Лёгкий";
 "clip_level_medium" = "Средний";
@@ -102,7 +95,6 @@
 "clip_level_combo" = "Комбо";
 "button_preview" = "Пред. просмотр";
 "button_select_pack" = "Выбрать пакет";
-
 // Disclaimer
 "settings_disclaimer" = "Отказ от ответственности";
 "disclaimer_title_safety" = "Используйте на свой страх и риск";
@@ -116,3 +108,12 @@
 "disclaimer_title_liability" = "Ограничение ответственности";
 "disclaimer_text_liability" = "Разработчики SlapMe не несут ответственности за любые прямые, косвенные, случайные или косвенные убытки, возникающие в результате использования или неправильного использования этого приложения.";
 "disclaimer_footer" = "Используя SlapMe, вы принимаете эти условия. Веселитесь и будьте осторожны! 🎉";
+"custom_add_slot_title" = "Добавить звуковой пакет";
+"custom_add_slot_hint" = "Загрузи свои
+звуки";
+"custom_add_slot_desc" = "Загрузи MP3, WAV или M4A
+и создай свой пакет";
+"custom_slot_locked_hint" = "Создай свой звуковой пакет";
+"custom_category_title" = "Мои звуки";
+"custom_add_slot_hint" = "Загрузи свои звуки";
+"custom_add_slot_desc" = "Загрузи MP3, WAV или M4A и создай свой пакет";

@@ -12,20 +12,17 @@
 "button_continue" = "Weiter";
 "button_skip" = "Überspringen";
 "button_start" = "Start";
-
 // MARK: - Home
 "home_slap_hint" = "Schlage auf dein Handy!";
 "safe_mode_on" = "Sicherheitsmodus An";
 "safe_mode_off" = "Sicherheitsmodus Aus";
 "safe_mode_description" = "Im Hintergrund wird keine Auslösung erkannt";
 "slap_meter_label" = "OHRFEIGEN-METER";
-
 // MARK: - Tags
 "tag_sexy" = "Flirty";
 "tag_yamete" = "Yamete";
 "tag_animal" = "Tier";
 "tag_funny" = "Lustig";
-
 // MARK: - Settings
 "settings_title" = "Einstellungen";
 "section_sound_pack" = "Soundpaket";
@@ -58,7 +55,6 @@
 "section_legal" = "Rechtliches";
 "settings_privacy_policy" = "Datenschutzrichtlinie";
 "settings_restore_purchases" = "Käufe wiederherstellen";
-
 // MARK: - Store
 "store_title" = "Soundpakete";
 "store_pro_title" = "SlapMe PRO";
@@ -75,11 +71,9 @@
 "upgrade_to_pro" = "Auf PRO upgraden";
 "restore_purchases" = "Käufe wiederherstellen";
 "character_count_format" = "%d Charaktere";
-
 // MARK: - Paywall
 "paywall_subtitle" = "Einmalzahlung, für immer deins 👋";
 "one_time_payment_label" = "Einmalzahlung";
-
 // MARK: - Onboarding
 "welcome_subtitle" = "Schlage auf dein Handy.\nEs reagiert.";
 "sensor_ready" = "iPhone Bereit!";
@@ -94,7 +88,6 @@
 "pack_selection_title" = "Wähle deinen Charakter";
 "pack_selection_subtitle" = "Du kannst jederzeit wechseln.";
 "button_start_exclamation" = "Los geht's!";
-
 // MARK: - Pack Preview
 "clip_level_soft" = "Leicht";
 "clip_level_medium" = "Mittel";
@@ -102,7 +95,6 @@
 "clip_level_combo" = "Kombo";
 "button_preview" = "Vorschau";
 "button_select_pack" = "Paket auswählen";
-
 // Disclaimer
 "settings_disclaimer" = "Haftungsausschluss & Sicherheit";
 "disclaimer_title_safety" = "Nutzung auf eigene Gefahr";
@@ -116,3 +108,12 @@
 "disclaimer_title_liability" = "Haftungsbeschränkung";
 "disclaimer_text_liability" = "Die Entwickler von SlapMe haften nicht für direkte, indirekte, zufällige oder Folgeschäden, die sich aus der Nutzung oder dem Missbrauch dieser Anwendung ergeben, einschließlich Geräteschäden, Personenschäden oder sonstiger Verluste.";
 "disclaimer_footer" = "Durch die Nutzung von SlapMe akzeptieren Sie diese Bedingungen. Viel Spaß und bleiben Sie sicher! 🎉";
+"custom_add_slot_title" = "Soundpaket hinzufügen";
+"custom_add_slot_hint" = "Eigene Sounds
+hochladen";
+"custom_add_slot_desc" = "MP3, WAV oder M4A hochladen
+und eigenes Paket erstellen";
+"custom_slot_locked_hint" = "Eigenes Soundpaket erstellen";
+"custom_category_title" = "Meine Sounds";
+"custom_add_slot_hint" = "Eigene Sounds hochladen";
+"custom_add_slot_desc" = "MP3, WAV oder M4A hochladen und eigenes Paket erstellen";

@@ -12,20 +12,17 @@
 "button_continue" = "متابعة";
 "button_skip" = "تخطي";
 "button_start" = "ابدأ";
-
 // MARK: - Home
 "home_slap_hint" = "اصفع هاتفك!";
 "safe_mode_on" = "الوضع الآمن مُفعّل";
 "safe_mode_off" = "الوضع الآمن مُعطّل";
 "safe_mode_description" = "يمنع التشغيل في الخلفية";
 "slap_meter_label" = "مقياس الصفعة";
-
 // MARK: - Tags
 "tag_sexy" = "مغازل";
 "tag_yamete" = "ياميته";
 "tag_animal" = "حيوان";
 "tag_funny" = "مضحك";
-
 // MARK: - Settings
 "settings_title" = "الإعدادات";
 "section_sound_pack" = "حزمة الأصوات";
@@ -58,7 +55,6 @@
 "section_legal" = "قانوني";
 "settings_privacy_policy" = "سياسة الخصوصية";
 "settings_restore_purchases" = "استعادة المشتريات";
-
 // MARK: - Store
 "store_title" = "حزم الأصوات";
 "store_pro_title" = "SlapMe PRO";
@@ -75,11 +71,9 @@
 "upgrade_to_pro" = "الترقية إلى PRO";
 "restore_purchases" = "استعادة المشتريات";
 "character_count_format" = "%d شخصية";
-
 // MARK: - Paywall
 "paywall_subtitle" = "دفعة واحدة، ملكك للأبد 👋";
 "one_time_payment_label" = "دفعة واحدة";
-
 // MARK: - Onboarding
 "welcome_subtitle" = "اصفع هاتفك.\nسيستجيب لك.";
 "sensor_ready" = "iPhone جاهز!";
@@ -94,7 +88,6 @@
 "pack_selection_title" = "اختر شخصيتك";
 "pack_selection_subtitle" = "يمكنك التغيير في أي وقت.";
 "button_start_exclamation" = "ابدأ!";
-
 // MARK: - Pack Preview
 "clip_level_soft" = "خفيف";
 "clip_level_medium" = "متوسط";
@@ -102,7 +95,6 @@
 "clip_level_combo" = "كومبو";
 "button_preview" = "معاينة";
 "button_select_pack" = "اختر هذه الحزمة";
-
 // Disclaimer
 "settings_disclaimer" = "إخلاء المسؤولية والسلامة";
 "disclaimer_title_safety" = "الاستخدام على مسؤوليتك";
@@ -116,3 +108,12 @@
 "disclaimer_title_liability" = "حدود المسؤولية";
 "disclaimer_text_liability" = "لا يتحمل مطورو SlapMe المسؤولية عن أي أضرار مباشرة أو غير مباشرة أو عرضية أو تبعية ناشئة عن استخدام أو سوء استخدام هذا التطبيق.";
 "disclaimer_footer" = "باستخدام SlapMe، فإنك تقبل هذه الشروط. استمتع وكن حذراً! 🎉";
+"custom_add_slot_title" = "إضافة حزمة صوتية";
+"custom_add_slot_hint" = "تحميل أصواتك
+الخاصة";
+"custom_add_slot_desc" = "ارفع ملفات MP3 أو WAV أو M4A
+وأنشئ حزمتك الخاصة";
+"custom_slot_locked_hint" = "أنشئ حزمة صوتية خاصة بك";
+"custom_category_title" = "أصواتي";
+"custom_add_slot_hint" = "تحميل أصواتك الخاصة";
+"custom_add_slot_desc" = "ارفع ملفات MP3 أو WAV أو M4A وأنشئ حزمتك الخاصة";

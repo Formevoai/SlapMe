@@ -12,20 +12,17 @@
 "button_continue" = "Devam";
 "button_skip" = "Atla";
 "button_start" = "Başla";
-
 // MARK: - Home
 "home_slap_hint" = "Telefona vur!";
 "safe_mode_on" = "Güvenli Mod Açık";
 "safe_mode_off" = "Güvenli Mod Kapalı";
 "safe_mode_description" = "Arka planda tetiklenme engellenir";
 "slap_meter_label" = "TOKAT ÖLÇERİ";
-
 // MARK: - Tags
 "tag_sexy" = "Flörtçü";
 "tag_yamete" = "Yamete";
 "tag_animal" = "Hayvan";
 "tag_funny" = "Komik";
-
 // MARK: - Settings
 "settings_title" = "Ayarlar";
 "section_sound_pack" = "Ses Paketi";
@@ -58,7 +55,6 @@
 "section_legal" = "Yasal";
 "settings_privacy_policy" = "Gizlilik Politikası";
 "settings_restore_purchases" = "Satın Alımları Geri Yükle";
-
 // MARK: - Store
 "store_title" = "Ses Paketleri";
 "store_pro_title" = "SlapMe PRO";
@@ -75,11 +71,9 @@
 "upgrade_to_pro" = "PRO'ya Geç";
 "restore_purchases" = "Satın Almaları Geri Yükle";
 "character_count_format" = "%d karakter";
-
 // MARK: - Paywall
 "paywall_subtitle" = "Tek ödeme, sonsuza kadar seninle 👋";
 "one_time_payment_label" = "Tek seferlik ödeme";
-
 // MARK: - Onboarding
 "welcome_subtitle" = "Telefonuna vur.\nO da tepki versin.";
 "sensor_ready" = "iPhone Hazır!";
@@ -94,7 +88,6 @@
 "pack_selection_title" = "Karakterini Seç";
 "pack_selection_subtitle" = "İstediğin zaman değiştirebilirsin.";
 "button_start_exclamation" = "Başla!";
-
 // MARK: - Pack Preview
 "clip_level_soft" = "Hafif";
 "clip_level_medium" = "Orta";
@@ -102,7 +95,6 @@
 "clip_level_combo" = "Kombo";
 "button_preview" = "Önizle";
 "button_select_pack" = "Bu Paketi Seç";
-
 // Disclaimer
 "settings_disclaimer" = "Uyarılar ve Güvenlik";
 "disclaimer_title_safety" = "Riski Kendiniz Üstlenirsiniz";
@@ -116,3 +108,12 @@
 "disclaimer_title_liability" = "Sorumluluk Sınırlaması";
 "disclaimer_text_liability" = "SlapMe geliştiricileri, bu uygulamanın kullanımından veya yanlış kullanımından kaynaklanan cihaz hasarı, kişisel yaralanma veya diğer kayıplar dahil olmak üzere doğrudan, dolaylı, arızi veya sonuç olarak ortaya çıkan zararlardan sorumlu tutulamaz.";
 "disclaimer_footer" = "SlapMe'yi kullanarak bu şartları kabul etmiş olursunuz. İyi eğlenceler ve dikkatli olun! 🎉";
+"custom_add_slot_title" = "Ses Paketi Ekle";
+"custom_add_slot_hint" = "Kendi seslerini
+yükle";
+"custom_add_slot_desc" = "MP3, WAV veya M4A seslerini
+yükleyip kendi paketini oluştur";
+"custom_slot_locked_hint" = "Kendi ses paketini oluştur";
+"custom_category_title" = "Benim Seslerim";
+"custom_add_slot_hint" = "Kendi seslerini yükle";
+"custom_add_slot_desc" = "MP3, WAV veya M4A seslerini yükleyip kendi paketini oluştur";

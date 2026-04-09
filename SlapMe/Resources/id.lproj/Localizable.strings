@@ -12,20 +12,17 @@
 "button_continue" = "Lanjutkan";
 "button_skip" = "Lewati";
 "button_start" = "Mulai";
-
 // MARK: - Home
 "home_slap_hint" = "Tampar HP-mu!";
 "safe_mode_on" = "Mode Aman Aktif";
 "safe_mode_off" = "Mode Aman Nonaktif";
 "safe_mode_description" = "Mencegah pemicuan di latar belakang";
 "slap_meter_label" = "METERAN TAMPARAN";
-
 // MARK: - Tags
 "tag_sexy" = "Genit";
 "tag_yamete" = "Yamete";
 "tag_animal" = "Hewan";
 "tag_funny" = "Lucu";
-
 // MARK: - Settings
 "settings_title" = "Pengaturan";
 "section_sound_pack" = "Paket Suara";
@@ -58,7 +55,6 @@
 "section_legal" = "Hukum";
 "settings_privacy_policy" = "Kebijakan Privasi";
 "settings_restore_purchases" = "Pulihkan Pembelian";
-
 // MARK: - Store
 "store_title" = "Paket Suara";
 "store_pro_title" = "SlapMe PRO";
@@ -75,11 +71,9 @@
 "upgrade_to_pro" = "Upgrade ke PRO";
 "restore_purchases" = "Pulihkan Pembelian";
 "character_count_format" = "%d karakter";
-
 // MARK: - Paywall
 "paywall_subtitle" = "Bayar sekali, milikmu selamanya 👋";
 "one_time_payment_label" = "Pembayaran sekali";
-
 // MARK: - Onboarding
 "welcome_subtitle" = "Tampar HP-mu.\nDia akan bereaksi.";
 "sensor_ready" = "iPhone Siap!";
@@ -94,7 +88,6 @@
 "pack_selection_title" = "Pilih Karaktermu";
 "pack_selection_subtitle" = "Bisa diganti kapan saja.";
 "button_start_exclamation" = "Mulai!";
-
 // MARK: - Pack Preview
 "clip_level_soft" = "Lembut";
 "clip_level_medium" = "Sedang";
@@ -102,7 +95,6 @@
 "clip_level_combo" = "Kombo";
 "button_preview" = "Pratinjau";
 "button_select_pack" = "Pilih Paket Ini";
-
 // Disclaimer
 "settings_disclaimer" = "Penyangkalan & Keselamatan";
 "disclaimer_title_safety" = "Gunakan dengan risiko sendiri";
@@ -116,3 +108,12 @@
 "disclaimer_title_liability" = "Batasan tanggung jawab";
 "disclaimer_text_liability" = "Pengembang SlapMe tidak bertanggung jawab atas segala kerugian langsung, tidak langsung, insidental, atau konsekuensial yang timbul dari penggunaan atau penyalahgunaan aplikasi ini.";
 "disclaimer_footer" = "Dengan menggunakan SlapMe, Anda menyetujui ketentuan ini. Selamat bersenang-senang dan tetap aman! 🎉";
+"custom_add_slot_title" = "Tambah paket suara";
+"custom_add_slot_hint" = "Upload suara
+kamu sendiri";
+"custom_add_slot_desc" = "Upload MP3, WAV atau M4A
+dan buat paket kamu sendiri";
+"custom_slot_locked_hint" = "Buat paket suara kamu sendiri";
+"custom_category_title" = "Suara saya";
+"custom_add_slot_hint" = "Upload suara kamu sendiri";
+"custom_add_slot_desc" = "Upload MP3, WAV atau M4A dan buat paket kamu sendiri";

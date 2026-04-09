@@ -12,20 +12,17 @@
 "button_continue" = "Kontynuuj";
 "button_skip" = "Pomiń";
 "button_start" = "Start";
-
 // MARK: - Home
 "home_slap_hint" = "Uderz w telefon!";
 "safe_mode_on" = "Tryb Bezpieczny Włączony";
 "safe_mode_off" = "Tryb Bezpieczny Wyłączony";
 "safe_mode_description" = "Wyzwalanie w tle jest zablokowane";
 "slap_meter_label" = "KLAPSO-METR";
-
 // MARK: - Tags
 "tag_sexy" = "Flirciarski";
 "tag_yamete" = "Yamete";
 "tag_animal" = "Zwierzę";
 "tag_funny" = "Śmieszne";
-
 // MARK: - Settings
 "settings_title" = "Ustawienia";
 "section_sound_pack" = "Pakiet Dźwięków";
@@ -58,7 +55,6 @@
 "section_legal" = "Informacje Prawne";
 "settings_privacy_policy" = "Polityka Prywatności";
 "settings_restore_purchases" = "Przywróć Zakupy";
-
 // MARK: - Store
 "store_title" = "Pakiety Dźwięków";
 "store_pro_title" = "SlapMe PRO";
@@ -75,11 +71,9 @@
 "upgrade_to_pro" = "Przejdź na PRO";
 "restore_purchases" = "Przywróć Zakupy";
 "character_count_format" = "%d postaci";
-
 // MARK: - Paywall
 "paywall_subtitle" = "Jedna płatność, Twoje na zawsze 👋";
 "one_time_payment_label" = "Jednorazowa płatność";
-
 // MARK: - Onboarding
 "welcome_subtitle" = "Uderz w telefon.\nOn zareaguje.";
 "sensor_ready" = "iPhone Gotowy!";
@@ -94,7 +88,6 @@
 "pack_selection_title" = "Wybierz swoją Postać";
 "pack_selection_subtitle" = "Możesz zmienić w dowolnym momencie.";
 "button_start_exclamation" = "Zaczynamy!";
-
 // MARK: - Pack Preview
 "clip_level_soft" = "Lekki";
 "clip_level_medium" = "Średni";
@@ -102,7 +95,6 @@
 "clip_level_combo" = "Kombo";
 "button_preview" = "Podgląd";
 "button_select_pack" = "Wybierz Pakiet";
-
 // Disclaimer
 "settings_disclaimer" = "Zastrzeżenia i Bezpieczeństwo";
 "disclaimer_title_safety" = "Używaj na własne ryzyko";
@@ -116,3 +108,12 @@
 "disclaimer_title_liability" = "Ograniczenie odpowiedzialności";
 "disclaimer_text_liability" = "Twórcy SlapMe nie ponoszą odpowiedzialności za jakiekolwiek bezpośrednie, pośrednie, przypadkowe lub wynikowe szkody wynikające z użytkowania lub niewłaściwego użytkowania tej aplikacji.";
 "disclaimer_footer" = "Korzystając z SlapMe, akceptujesz te warunki. Baw się dobrze i bądź ostrożny! 🎉";
+"custom_add_slot_title" = "Dodaj pakiet dźwięków";
+"custom_add_slot_hint" = "Prześlij swoje
+własne dźwięki";
+"custom_add_slot_desc" = "Prześlij MP3, WAV lub M4A
+i utwórz własny pakiet";
+"custom_slot_locked_hint" = "Utwórz własny pakiet dźwięków";
+"custom_category_title" = "Moje dźwięki";
+"custom_add_slot_hint" = "Prześlij własne dźwięki";
+"custom_add_slot_desc" = "Prześlij MP3, WAV lub M4A i utwórz własny pakiet";

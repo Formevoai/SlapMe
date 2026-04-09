@@ -12,20 +12,17 @@
 "button_continue" = "继续";
 "button_skip" = "跳过";
 "button_start" = "开始";
-
 // MARK: - Home
 "home_slap_hint" = "拍打手机！";
 "safe_mode_on" = "安全模式 开";
 "safe_mode_off" = "安全模式 关";
 "safe_mode_description" = "后台运行时不会被触发";
 "slap_meter_label" = "巴掌力度计";
-
 // MARK: - Tags
 "tag_sexy" = "调情";
 "tag_yamete" = "雅蠛蝶";
 "tag_animal" = "动物";
 "tag_funny" = "搞笑";
-
 // MARK: - Settings
 "settings_title" = "设置";
 "section_sound_pack" = "音效包";
@@ -58,7 +55,6 @@
 "section_legal" = "法律信息";
 "settings_privacy_policy" = "隐私政策";
 "settings_restore_purchases" = "恢复购买";
-
 // MARK: - Store
 "store_title" = "音效包";
 "store_pro_title" = "SlapMe PRO";
@@ -75,11 +71,9 @@
 "upgrade_to_pro" = "升级为PRO";
 "restore_purchases" = "恢复购买";
 "character_count_format" = "%d 个角色";
-
 // MARK: - Paywall
 "paywall_subtitle" = "一次付款，永远拥有 👋";
 "one_time_payment_label" = "一次性付款";
-
 // MARK: - Onboarding
 "welcome_subtitle" = "拍打你的手机。\n它会做出反应。";
 "sensor_ready" = "iPhone 准备就绪！";
@@ -94,7 +88,6 @@
 "pack_selection_title" = "选择你的角色";
 "pack_selection_subtitle" = "随时可以更换。";
 "button_start_exclamation" = "开始！";
-
 // MARK: - Pack Preview
 "clip_level_soft" = "轻柔";
 "clip_level_medium" = "中等";
@@ -102,7 +95,6 @@
 "clip_level_combo" = "连击";
 "button_preview" = "预览";
 "button_select_pack" = "选择此包";
-
 // Disclaimer
 "settings_disclaimer" = "免责声明与安全";
 "disclaimer_title_safety" = "使用风险自负";
@@ -116,3 +108,12 @@
 "disclaimer_title_liability" = "责任限制";
 "disclaimer_text_liability" = "SlapMe开发者不对因使用或误用本应用而产生的任何直接、间接、附带或后果性损害承担责任，包括但不限于设备损坏、人身伤害或其他损失。";
 "disclaimer_footer" = "使用SlapMe即表示您接受这些条款。玩得开心，注意安全！🎉";
+"custom_add_slot_title" = "添加声音包";
+"custom_add_slot_hint" = "上传你自己
+的声音";
+"custom_add_slot_desc" = "上传MP3、WAV或M4A文件
+创建你自己的包";
+"custom_slot_locked_hint" = "创建你自己的声音包";
+"custom_category_title" = "我的声音";
+"custom_add_slot_hint" = "上传你自己的声音";
+"custom_add_slot_desc" = "上传MP3、WAV或M4A文件创建你自己的包";

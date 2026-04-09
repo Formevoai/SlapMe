@@ -12,20 +12,17 @@
 "button_continue" = "Doorgaan";
 "button_skip" = "Overslaan";
 "button_start" = "Start";
-
 // MARK: - Home
 "home_slap_hint" = "Sla op je telefoon!";
 "safe_mode_on" = "Veilige Modus Aan";
 "safe_mode_off" = "Veilige Modus Uit";
 "safe_mode_description" = "Activering op de achtergrond wordt geblokkeerd";
 "slap_meter_label" = "KLAP-METER";
-
 // MARK: - Tags
 "tag_sexy" = "Flirterig";
 "tag_yamete" = "Yamete";
 "tag_animal" = "Dier";
 "tag_funny" = "Grappig";
-
 // MARK: - Settings
 "settings_title" = "Instellingen";
 "section_sound_pack" = "Geluidspakket";
@@ -58,7 +55,6 @@
 "section_legal" = "Juridisch";
 "settings_privacy_policy" = "Privacybeleid";
 "settings_restore_purchases" = "Aankopen Herstellen";
-
 // MARK: - Store
 "store_title" = "Geluidspakketten";
 "store_pro_title" = "SlapMe PRO";
@@ -75,11 +71,9 @@
 "upgrade_to_pro" = "Upgrade naar PRO";
 "restore_purchases" = "Aankopen Herstellen";
 "character_count_format" = "%d karakters";
-
 // MARK: - Paywall
 "paywall_subtitle" = "Eenmalige betaling, voor altijd van jou 👋";
 "one_time_payment_label" = "Eenmalige betaling";
-
 // MARK: - Onboarding
 "welcome_subtitle" = "Sla op je telefoon.\nHij reageert.";
 "sensor_ready" = "iPhone Klaar!";
@@ -94,7 +88,6 @@
 "pack_selection_title" = "Kies je Karakter";
 "pack_selection_subtitle" = "Je kunt altijd wisselen.";
 "button_start_exclamation" = "Starten!";
-
 // MARK: - Pack Preview
 "clip_level_soft" = "Zacht";
 "clip_level_medium" = "Gemiddeld";
@@ -102,7 +95,6 @@
 "clip_level_combo" = "Combo";
 "button_preview" = "Voorbeeld";
 "button_select_pack" = "Pakket Selecteren";
-
 // Disclaimer
 "settings_disclaimer" = "Disclaimer & Veiligheid";
 "disclaimer_title_safety" = "Gebruik op eigen risico";
@@ -116,3 +108,12 @@
 "disclaimer_title_liability" = "Beperking van aansprakelijkheid";
 "disclaimer_text_liability" = "De ontwikkelaars van SlapMe zijn niet aansprakelijk voor directe, indirecte, incidentele of gevolgschade die voortvloeit uit het gebruik of misbruik van deze applicatie.";
 "disclaimer_footer" = "Door SlapMe te gebruiken, accepteer je deze voorwaarden. Veel plezier en wees voorzichtig! 🎉";
+"custom_add_slot_title" = "Geluidspakket toevoegen";
+"custom_add_slot_hint" = "Upload je
+eigen geluiden";
+"custom_add_slot_desc" = "Upload MP3, WAV of M4A
+en maak je eigen pakket";
+"custom_slot_locked_hint" = "Maak je eigen geluidspakket";
+"custom_category_title" = "Mijn geluiden";
+"custom_add_slot_hint" = "Upload je eigen geluiden";
+"custom_add_slot_desc" = "Upload MP3, WAV of M4A en maak je eigen pakket";

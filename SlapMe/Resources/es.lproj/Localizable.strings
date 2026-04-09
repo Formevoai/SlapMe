@@ -12,20 +12,17 @@
 "button_continue" = "Continuar";
 "button_skip" = "Omitir";
 "button_start" = "Iniciar";
-
 // MARK: - Home
 "home_slap_hint" = "¡Dale un golpe al teléfono!";
 "safe_mode_on" = "Modo Seguro Activado";
 "safe_mode_off" = "Modo Seguro Desactivado";
 "safe_mode_description" = "Se evita la activación en segundo plano";
 "slap_meter_label" = "MEDIDOR DE BOFETADAS";
-
 // MARK: - Tags
 "tag_sexy" = "Coqueto";
 "tag_yamete" = "Yamete";
 "tag_animal" = "Animal";
 "tag_funny" = "Gracioso";
-
 // MARK: - Settings
 "settings_title" = "Ajustes";
 "section_sound_pack" = "Pack de Sonidos";
@@ -58,7 +55,6 @@
 "section_legal" = "Legal";
 "settings_privacy_policy" = "Política de Privacidad";
 "settings_restore_purchases" = "Restaurar Compras";
-
 // MARK: - Store
 "store_title" = "Packs de Sonidos";
 "store_pro_title" = "SlapMe PRO";
@@ -75,11 +71,9 @@
 "upgrade_to_pro" = "Pasar a PRO";
 "restore_purchases" = "Restaurar Compras";
 "character_count_format" = "%d personajes";
-
 // MARK: - Paywall
 "paywall_subtitle" = "Un pago, tuyo para siempre 👋";
 "one_time_payment_label" = "Pago único";
-
 // MARK: - Onboarding
 "welcome_subtitle" = "Golpea tu teléfono.\nY reaccionará.";
 "sensor_ready" = "¡iPhone Listo!";
@@ -94,7 +88,6 @@
 "pack_selection_title" = "Elige tu Personaje";
 "pack_selection_subtitle" = "Puedes cambiarlo cuando quieras.";
 "button_start_exclamation" = "¡Empezar!";
-
 // MARK: - Pack Preview
 "clip_level_soft" = "Suave";
 "clip_level_medium" = "Medio";
@@ -102,7 +95,6 @@
 "clip_level_combo" = "Combo";
 "button_preview" = "Vista Previa";
 "button_select_pack" = "Seleccionar Pack";
-
 // Disclaimer
 "settings_disclaimer" = "Aviso y Seguridad";
 "disclaimer_title_safety" = "Uso bajo su propio riesgo";
@@ -116,3 +108,12 @@
 "disclaimer_title_liability" = "Limitación de responsabilidad";
 "disclaimer_text_liability" = "Los desarrolladores de SlapMe no serán responsables de ningún daño directo, indirecto, incidental o consecuente que surja del uso o mal uso de esta aplicación.";
 "disclaimer_footer" = "Al usar SlapMe, aceptas estos términos. ¡Diviértete y cuídate! 🎉";
+"custom_add_slot_title" = "Agregar paquete de sonido";
+"custom_add_slot_hint" = "Sube tus
+propios sonidos";
+"custom_add_slot_desc" = "Sube MP3, WAV o M4A
+y crea tu propio paquete";
+"custom_slot_locked_hint" = "Crea tu propio paquete de sonido";
+"custom_category_title" = "Mis sonidos";
+"custom_add_slot_hint" = "Sube tus propios sonidos";
+"custom_add_slot_desc" = "Sube MP3, WAV o M4A y crea tu propio paquete";
