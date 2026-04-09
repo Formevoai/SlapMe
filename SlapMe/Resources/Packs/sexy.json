@@ -29,10 +29,7 @@
     {
       "id": "cute_anime",
       "name": "Cute Anime",
-      "softClips": ["cute_anime_light.mp3", "anime1.mp3", "anime2.mp3", "anime3.mp3", "anime4.mp3", "anime5.mp3", "anime6.mp3"],
-      "mediumClips": ["cute_anime_medium.mp3", "anime7.mp3", "anime8.mp3", "anime9.mp3", "anime10.mp3", "anime11.mp3"],
-      "hardClips": ["cute_anime_hard.mp3", "anime12.mp3", "anime13.mp3", "anime14.mp3", "anime15.mp3", "anime16.mp3", "anime17.mp3"],
-      "comboClips": ["cute_anime_hard.mp3", "anime12.mp3", "anime13.mp3", "anime14.mp3", "anime15.mp3", "anime16.mp3", "anime17.mp3"],
+      "clips": ["cute_anime_light.mp3", "cute_anime_medium.mp3", "cute_anime_hard.mp3", "anime1.mp3", "anime2.mp3", "anime3.mp3", "anime4.mp3", "anime5.mp3", "anime6.mp3", "anime7.mp3", "anime8.mp3", "anime9.mp3", "anime10.mp3", "anime11.mp3", "anime12.mp3", "anime13.mp3", "anime14.mp3", "anime15.mp3", "anime16.mp3", "anime17.mp3"],
       "previewClip": "cute_anime_light.mp3"
     },
     {
@@ -58,10 +55,7 @@
     {
       "id": "dilara",
       "name": "Dilara",
-      "softClips": ["dilara_light.mp3"],
-      "mediumClips": ["dilara_medium.mp3"],
-      "hardClips": ["dilara_hard.mp3"],
-      "comboClips": ["dilara_hard.mp3"],
+      "clips": ["dilara_light.mp3", "dilara_medium.mp3", "dilara_hard.mp3", "dilara1.mp3", "dilara2.mp3", "dilara3.mp3", "dilara4.mp3", "dilara5.mp3", "dilara6.mp3", "dilara7.mp3", "dilara8.mp3", "dilara9.mp3", "dilara10.mp3", "dilara11.mp3", "dilara12.mp3", "dilara13.mp3", "dilara14.mp3", "dilara15.mp3", "dilara16.mp3", "dilara17.mp3"],
       "previewClip": "dilara_light.mp3"
     },
     {
