@@ -59,8 +59,38 @@ struct CharacterView: View {
         VStack(spacing: 0) {
             // Character image
             if pack.id == "custom_add_new" {
-                // "Ekle" slotu - sadece boş alan, overlay halleder
-                Color.clear.frame(height: 160)
+                // "Ekle" slotu - ses paketi görseli
+                ZStack {
+                    LinearGradient(
+                        colors: [Color.purple.opacity(0.18), Color.indigo.opacity(0.10)],
+                        startPoint: .topLeading, endPoint: .bottomTrailing
+                    )
+                    VStack(spacing: 8) {
+                        ZStack {
+                            Circle()
+                                .fill(Color.purple.opacity(0.15))
+                                .frame(width: 72, height: 72)
+                            Image(systemName: "waveform.badge.microphone")
+                                .font(.system(size: 36))
+                                .foregroundStyle(
+                                    LinearGradient(
+                                        colors: [
+                                            Color.purple.opacity(0.7), Color.indigo.opacity(0.7),
+                                        ],
+                                        startPoint: .top, endPoint: .bottom
+                                    )
+                                )
+                        }
+                        Text("Kendi seslerini\nyükle")
+                            .font(.system(size: 11, weight: .medium))
+                            .foregroundStyle(Color.purple.opacity(0.7))
+                            .multilineTextAlignment(.center)
+                    }
+                }
+                .frame(height: 160)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .padding(.horizontal, 12)
+                .padding(.top, 12)
             } else if pack.isCustom {
                 // Custom karakter: ses dalgası placeholder
                 ZStack {
@@ -131,19 +161,21 @@ struct CharacterView: View {
         .overlay(
             ZStack {
                 if pack.id == "custom_add_new" && !isLocked {
-                    // Pro kullanıcı: yeni karakter ekle
+                    // Pro kullanıcı: yeni ses paketi ekle
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
                         .fill(Color.purple.opacity(0.05))
-                    VStack(spacing: 10) {
+                    VStack(spacing: 8) {
                         Image(systemName: "plus.circle.fill")
-                            .font(.system(size: 54))
+                            .font(.system(size: 44))
                             .foregroundStyle(Color.purple.opacity(0.75))
-                        Text("Karakter Ekle")
+                        Text("Ses Paketi Ekle")
                             .font(.system(size: 15, weight: .bold, design: .rounded))
                             .foregroundStyle(Color(white: 0.2))
-                        Text("Kendi seslerini yükle")
-                            .font(.caption)
+                        Text("MP3, WAV veya M4A seslerini\nyükleyip kendi paketini oluştur")
+                            .font(.system(size: 11))
                             .foregroundStyle(.secondary)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 12)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .contentShape(Rectangle())
@@ -162,15 +194,23 @@ struct CharacterView: View {
                     }
                 } else if isLocked {
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .fill(.black.opacity(0.45))
+                        .fill(.black.opacity(pack.id == "custom_add_new" ? 0.55 : 0.45))
 
-                    VStack(spacing: 8) {
+                    VStack(spacing: pack.id == "custom_add_new" ? 6 : 8) {
                         Image(systemName: "lock.fill")
-                            .font(.system(size: 36))
+                            .font(.system(size: 32))
                             .foregroundColor(.white.opacity(0.9))
                         Text(L("pro_badge"))
                             .font(.caption.bold())
                             .foregroundColor(.orange)
+                        if pack.id == "custom_add_new" {
+                            Text("Kendi ses paketini oluştur")
+                                .font(.system(size: 11, weight: .medium))
+                                .foregroundColor(.white.opacity(0.75))
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 16)
+                                .padding(.top, 2)
+                        }
                     }
                     .contentShape(Rectangle())
                     .onTapGesture { onLockTap?() }

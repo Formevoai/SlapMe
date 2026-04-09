@@ -97,7 +97,7 @@ final class CustomPackManager: ObservableObject {
         let userPacks = packs.map { toSoundPack($0) }
         let addSlot = SoundPack(
             id: "custom_add_new",
-            title: "Karakter Ekle",
+            title: "Ses Paketi Ekle",
             categoryID: "custom",
             soundFolder: "",
             isPremium: true,
