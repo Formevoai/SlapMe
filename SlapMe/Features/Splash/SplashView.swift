@@ -61,7 +61,7 @@ struct SplashView: View {
                         .blur(radius: glowRadius)
 
                     // Icon with rounded corners
-                    Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+                    Image("AppIcon")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 112, height: 112)
