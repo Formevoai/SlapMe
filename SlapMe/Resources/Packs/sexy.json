@@ -9,6 +9,7 @@
     {
       "id": "alice",
       "name": "Alice",
+      "comingSoon": true,
       "softClips": ["alice_light.mp3"],
       "mediumClips": ["alice_medium.mp3"],
       "hardClips": ["alice_hard.mp3"],
@@ -18,6 +19,7 @@
     {
       "id": "isabell",
       "name": "Isabell",
+      "comingSoon": true,
       "softClips": ["isabell_light.mp3"],
       "mediumClips": ["isabell_medium.mp3"],
       "hardClips": ["isabell_hard.mp3"],
@@ -36,6 +38,7 @@
     {
       "id": "jasmin",
       "name": "Jasmin",
+      "comingSoon": true,
       "softClips": ["jasmin_light.mp3"],
       "mediumClips": ["jasmin_medium.mp3"],
       "hardClips": ["jasmin_hard.mp3"],
@@ -84,6 +87,7 @@
     {
       "id": "gentleman_lady",
       "name": "Gentleman Lady",
+      "comingSoon": true,
       "softClips": ["gentleman_lady_light.mp3"],
       "mediumClips": ["gentleman_lady_medium.mp3"],
       "hardClips": ["gentleman_lady_hard.mp3"],
