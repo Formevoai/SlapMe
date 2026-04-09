@@ -146,7 +146,7 @@ struct CreateCustomCharacterView: View {
                         characterName.trimmingCharacters(in: .whitespaces).isEmpty
                             || (currentPack?.clips.isEmpty ?? true)
                     )
-                    .fontWeight(.semibold)
+                    .font(.body.weight(.semibold))
                 }
             }
             .sheet(isPresented: $showDocPicker) {
