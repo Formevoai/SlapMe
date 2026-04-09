@@ -91,10 +91,7 @@
     {
       "id": "hanna",
       "name": "Hanna",
-      "softClips": ["hanna_light.mp3"],
-      "mediumClips": ["hanna_medium.mp3"],
-      "hardClips": ["hanna_hard.mp3"],
-      "comboClips": ["hanna_hard.mp3"],
+      "clips": ["hanna_light.mp3", "hanna_medium.mp3", "hanna_hard.mp3", "hanna1.mp3", "hanna2.mp3", "hanna3.mp3", "hanna4.mp3", "hanna5.mp3", "hanna6.mp3", "hanna8.mp3", "hanna9.mp3", "hanna10.mp3", "hanna11.mp3", "hanna12.mp3", "hanna13.mp3"],
       "previewClip": "hanna_light.mp3"
     },
     {
