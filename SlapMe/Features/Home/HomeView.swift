@@ -59,7 +59,7 @@ struct HomeView: View {
 
     private func isPackLocked(_ pack: SoundPack) -> Bool {
         guard !storeManager.isPremium else { return false }
-        let cat = categories.first { $0.id == pack.categoryID }
+        let cat = visibleCategories.first { $0.id == pack.categoryID }
         if pack.categoryID == "yamete" { return true }
         if pack.categoryID == "sexy" { return pack.id != cat?.packs.first?.id }
         return false

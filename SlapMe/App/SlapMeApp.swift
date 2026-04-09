@@ -202,10 +202,10 @@ struct RootView: View {
         // Yamete tamamen PRO — PRO değilse çalma
         if pack.categoryID == "yamete" && !userIsPremium { return }
 
-        // Sexy: sadece ilk karakter free (trial 1 ses), geri kalanlar locked
+        // Sexy: sadece ilk görünür karakter free (trial 1 ses), geri kalanlar locked
         if pack.categoryID == "sexy" && !userIsPremium {
             let sexyCategory = categories.first(where: { $0.id == "sexy" })
-            let freeCharacterID = sexyCategory?.packs.first?.id
+            let freeCharacterID = sexyCategory?.packs.first(where: { !$0.comingSoon })?.id
             if pack.id == freeCharacterID {
                 audioManager.playChargerSound(from: pack, isTrial: true)
             }
