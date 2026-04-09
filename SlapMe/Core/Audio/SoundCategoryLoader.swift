@@ -7,10 +7,11 @@ final class SoundCategoryLoader {
 
     static func loadAll() -> [SoundCategory] {
         let urls = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: "Packs") ?? []
-        return urls
+        return
+            urls
             .compactMap { url -> SoundCategory? in
                 guard let data = try? Data(contentsOf: url),
-                      let file = try? JSONDecoder().decode(SoundCategoryFile.self, from: data)
+                    let file = try? JSONDecoder().decode(SoundCategoryFile.self, from: data)
                 else {
                     print("[SoundCategoryLoader] JSON yüklenemedi: \(url.lastPathComponent)")
                     return nil
@@ -27,7 +28,18 @@ final class SoundCategoryLoader {
 
     private static func category(from file: SoundCategoryFile) -> SoundCategory {
         let packs = file.characters.map { char in
-            SoundPack(
+            // JSON'da ya yeni `clips` array'i ya da eski soft/medium/hard/combo format
+            let allClips: [String]
+            if let c = char.clips, !c.isEmpty {
+                allClips = c
+            } else {
+                var seen = Set<String>()
+                allClips =
+                    ((char.softClips ?? []) + (char.mediumClips ?? []) + (char.hardClips ?? [])
+                    + (char.comboClips ?? []))
+                    .filter { seen.insert($0).inserted }
+            }
+            return SoundPack(
                 id: char.id,
                 title: char.name,
                 categoryID: file.id,
@@ -35,10 +47,7 @@ final class SoundCategoryLoader {
                 isPremium: file.isPremium,
                 themeColor: file.themeColor,
                 comingSoon: char.comingSoon ?? false,
-                softClips: char.softClips,
-                mediumClips: char.mediumClips,
-                hardClips: char.hardClips,
-                comboClips: char.comboClips ?? [],
+                clips: allClips,
                 previewClip: char.previewClip
             )
         }

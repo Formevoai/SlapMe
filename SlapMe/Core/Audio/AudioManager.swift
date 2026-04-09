@@ -69,11 +69,7 @@ final class AudioManager: ObservableObject {
 
         // Yeni clip'leri yükle
         var seen = Set<String>()
-        let clips =
-            (pack.softClips + pack.mediumClips + pack.hardClips + pack.comboClips + [
-                pack.previewClip
-            ])
-            .filter { seen.insert($0).inserted }
+        let clips = (pack.clips + [pack.previewClip]).filter { seen.insert($0).inserted }
         for clip in clips {
             preload(clip: clip, soundFolder: pack.soundFolder)
         }
@@ -210,7 +206,7 @@ final class AudioManager: ObservableObject {
     private var oneShotPlayer: AVAudioPlayer?
 
     func playChargerSound(from pack: SoundPack, isTrial: Bool = false) {
-        let allClips = pack.softClips + pack.mediumClips + pack.hardClips
+        let allClips = pack.clips
         guard !allClips.isEmpty else { return }
 
         // Trial mode: sadece ilk clip (deneme); full: rastgele

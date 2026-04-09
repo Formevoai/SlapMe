@@ -66,7 +66,7 @@ struct CharacterView: View {
             }
 
             // Name + tag row
-            HStack(spacing: 8) {
+            HStack(spacing: 6) {
                 Text(pack.title)
                     .font(.system(size: 15, weight: .bold, design: .rounded))
                     .foregroundColor(Color(white: 0.15))
@@ -78,8 +78,23 @@ struct CharacterView: View {
                     .padding(.horizontal, 8)
                     .padding(.vertical, 3)
                     .background(tagColor.opacity(0.12), in: Capsule())
+
+                Spacer()
+
+                if !pack.clips.isEmpty {
+                    HStack(spacing: 2) {
+                        Image(systemName: "waveform")
+                            .font(.system(size: 8, weight: .bold))
+                        Text("\(pack.clips.count)")
+                            .font(.system(size: 10, weight: .bold, design: .rounded))
+                    }
+                    .foregroundColor(.white.opacity(0.85))
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 3)
+                    .background(Color(white: 0.3).opacity(0.75), in: Capsule())
+                }
             }
-            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 10)
             .padding(.vertical, 10)
         }
         .background(

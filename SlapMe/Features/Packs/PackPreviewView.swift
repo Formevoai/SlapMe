@@ -43,10 +43,7 @@ struct PackPreviewView: View {
 
             // Clip sayısı
             HStack(spacing: 24) {
-                statItem(label: L("clip_level_soft"), count: pack.softClips.count)
-                statItem(label: L("clip_level_medium"), count: pack.mediumClips.count)
-                statItem(label: L("clip_level_hard"), count: pack.hardClips.count)
-                statItem(label: L("clip_level_combo"), count: pack.comboClips.count)
+                statItem(label: L("total_clips"), count: pack.clips.count)
             }
             .padding()
             .background(Color(.secondarySystemBackground))

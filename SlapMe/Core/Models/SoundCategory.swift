@@ -5,7 +5,7 @@ import Foundation
 struct SoundCategory: Identifiable {
     let id: String
     let title: String
-    let icon: String     // SF Symbol adı
+    let icon: String  // SF Symbol adı
     let isPremium: Bool
     let packs: [SoundPack]
 }
@@ -25,10 +25,11 @@ struct SoundCategoryFile: Codable {
         let id: String
         let name: String
         let comingSoon: Bool?
-        let softClips: [String]
-        let mediumClips: [String]
-        let hardClips: [String]
+        let softClips: [String]?
+        let mediumClips: [String]?
+        let hardClips: [String]?
         let comboClips: [String]?
+        let clips: [String]?
         let previewClip: String
     }
 }
