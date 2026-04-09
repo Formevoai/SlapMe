@@ -5,6 +5,7 @@ final class AudioManager: ObservableObject {
     // Engine hiçbir zaman yeniden oluşturulmaz — sadece node'lar değişir.
     private let engine = AVAudioEngine()
     private var playerNodes: [String: AVAudioPlayerNode] = [:]
+    private var pitchNodes: [String: AVAudioUnitTimePitch] = [:]
     private var audioBuffers: [String: AVAudioPCMBuffer] = [:]
 
     // Arka planda iOS'un uygulamayı öldürmemesi için sessiz loop
@@ -34,8 +35,8 @@ final class AudioManager: ObservableObject {
 
     @objc private func handleInterruption(_ notification: Notification) {
         guard let info = notification.userInfo,
-              let typeValue = info[AVAudioSessionInterruptionTypeKey] as? UInt,
-              let type = AVAudioSession.InterruptionType(rawValue: typeValue)
+            let typeValue = info[AVAudioSessionInterruptionTypeKey] as? UInt,
+            let type = AVAudioSession.InterruptionType(rawValue: typeValue)
         else { return }
 
         if type == .ended {
@@ -61,12 +62,17 @@ final class AudioManager: ObservableObject {
 
         // Eski player node'larını ayır (silentNode'a dokunma!)
         playerNodes.values.forEach { engine.detach($0) }
+        pitchNodes.values.forEach { engine.detach($0) }
         playerNodes.removeAll()
+        pitchNodes.removeAll()
         audioBuffers.removeAll()
 
         // Yeni clip'leri yükle
         var seen = Set<String>()
-        let clips = (pack.softClips + pack.mediumClips + pack.hardClips + pack.comboClips + [pack.previewClip])
+        let clips =
+            (pack.softClips + pack.mediumClips + pack.hardClips + pack.comboClips + [
+                pack.previewClip
+            ])
             .filter { seen.insert($0).inserted }
         for clip in clips {
             preload(clip: clip, soundFolder: pack.soundFolder)
@@ -92,39 +98,54 @@ final class AudioManager: ObservableObject {
             engine.disconnectNodeOutput($0)
             engine.detach($0)
         }
+        pitchNodes.values.forEach {
+            engine.disconnectNodeOutput($0)
+            engine.detach($0)
+        }
         playerNodes.removeAll()
+        pitchNodes.removeAll()
         audioBuffers.removeAll()
     }
 
     private func preload(clip: String, soundFolder: String) {
         let name = (clip as NSString).deletingPathExtension
-        let ext  = (clip as NSString).pathExtension.isEmpty ? "mp3" : (clip as NSString).pathExtension
+        let ext =
+            (clip as NSString).pathExtension.isEmpty ? "mp3" : (clip as NSString).pathExtension
 
         let url: URL?
-        if let u = Bundle.main.url(forResource: name, withExtension: ext, subdirectory: "Sounds/\(soundFolder)") {
+        if let u = Bundle.main.url(
+            forResource: name, withExtension: ext, subdirectory: "Sounds/\(soundFolder)")
+        {
             url = u
-        } else if let u = Bundle.main.url(forResource: name, withExtension: ext, subdirectory: soundFolder) {
+        } else if let u = Bundle.main.url(
+            forResource: name, withExtension: ext, subdirectory: soundFolder)
+        {
             url = u
         } else {
             url = Bundle.main.url(forResource: name, withExtension: ext)
         }
 
         guard let resolvedURL = url,
-              let file = try? AVAudioFile(forReading: resolvedURL),
-              let buffer = AVAudioPCMBuffer(pcmFormat: file.processingFormat,
-                                            frameCapacity: AVAudioFrameCount(file.length)),
-              (try? file.read(into: buffer)) != nil
+            let file = try? AVAudioFile(forReading: resolvedURL),
+            let buffer = AVAudioPCMBuffer(
+                pcmFormat: file.processingFormat,
+                frameCapacity: AVAudioFrameCount(file.length)),
+            (try? file.read(into: buffer)) != nil
         else {
             print("[AudioManager] YÜKLENEMEDI: \(clip) (folder: \(soundFolder))")
             return
         }
 
         let node = AVAudioPlayerNode()
+        let pitchNode = AVAudioUnitTimePitch()
         engine.attach(node)
-        engine.connect(node, to: engine.mainMixerNode, format: file.processingFormat)
+        engine.attach(pitchNode)
+        engine.connect(node, to: pitchNode, format: file.processingFormat)
+        engine.connect(pitchNode, to: engine.mainMixerNode, format: file.processingFormat)
 
         audioBuffers[clip] = buffer
         playerNodes[clip] = node
+        pitchNodes[clip] = pitchNode
     }
 
     private func ensureEngineRunning() {
@@ -148,7 +169,7 @@ final class AudioManager: ObservableObject {
         }
 
         guard let node = playerNodes[clipName],
-              let buffer = audioBuffers[clipName]
+            let buffer = audioBuffers[clipName]
         else { return }
 
         if !engine.isRunning {
@@ -158,17 +179,23 @@ final class AudioManager: ObservableObject {
         }
 
         if node.isPlaying { node.stop() }
-        let volume: Float = dynamicVolume
+        let volume: Float =
+            dynamicVolume
             ? masterVolume * Float(0.3 + event.intensity * 0.7)
             : masterVolume
         node.volume = volume
+        // Her çalmada hafif pitch + hız varyasyonu — aynı dosya farklı his verir
+        if let pitchNode = pitchNodes[clipName] {
+            pitchNode.pitch = Float.random(in: -200...200)  // ±2 yarı ton
+            pitchNode.rate = Float.random(in: 0.94...1.06)  // ±6% hız
+        }
         node.scheduleBuffer(buffer, completionHandler: nil)
         node.play()
     }
 
     func playPreview(pack: SoundPack) {
         guard let node = playerNodes[pack.previewClip],
-              let buffer = audioBuffers[pack.previewClip]
+            let buffer = audioBuffers[pack.previewClip]
         else { return }
         if node.isPlaying { node.stop() }
         node.volume = masterVolume
@@ -190,11 +217,14 @@ final class AudioManager: ObservableObject {
         let clip = isTrial ? allClips[0] : allClips.randomElement()!
 
         let name = (clip as NSString).deletingPathExtension
-        let ext  = (clip as NSString).pathExtension.isEmpty ? "mp3" : (clip as NSString).pathExtension
+        let ext =
+            (clip as NSString).pathExtension.isEmpty ? "mp3" : (clip as NSString).pathExtension
 
-        guard let url = Bundle.main.url(forResource: name, withExtension: ext,
-                                        subdirectory: "Sounds/\(pack.soundFolder)")
-               ?? Bundle.main.url(forResource: name, withExtension: ext)
+        guard
+            let url = Bundle.main.url(
+                forResource: name, withExtension: ext,
+                subdirectory: "Sounds/\(pack.soundFolder)")
+                ?? Bundle.main.url(forResource: name, withExtension: ext)
         else {
             print("[AudioManager] Charger sound bulunamadı: \(clip)")
             return
@@ -225,7 +255,9 @@ final class AudioManager: ObservableObject {
         let format = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 1)!
         let frameCount: AVAudioFrameCount = 4096
 
-        guard let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: frameCount) else { return }
+        guard let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: frameCount) else {
+            return
+        }
         buffer.frameLength = frameCount
         // Sıfır PCM — tamamen sessiz
         if let ch0 = buffer.floatChannelData?[0] {
