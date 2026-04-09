@@ -122,6 +122,9 @@ struct PaywallView: View {
                         icon: "person.3.fill", color: .purple, text: L("feature_all_characters"))
                     featureRow(icon: "bolt.fill", color: .green, text: L("feature_charger_sounds"))
                     featureRow(
+                        icon: "waveform.badge.plus", color: Color(red: 0.5, green: 0.2, blue: 0.9),
+                        text: L("feature_custom_character"))
+                    featureRow(
                         icon: "sparkles", color: .yellow, text: L("feature_all_future_updates"))
                     featureRow(icon: "infinity", color: .cyan, text: L("feature_unlimited_usage"))
                 }

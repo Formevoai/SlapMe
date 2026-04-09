@@ -69,6 +69,7 @@
 "feature_future_updates" = "包含未来更新";
 "feature_charger_sounds" = "充电音效";
 "feature_all_future_updates" = "包含所有未来更新";
+"feature_custom_character" = "创建你自己的角色和声音";
 "feature_unlimited_usage" = "一次付费，无限使用";
 "purchasing_in_progress" = "处理中...";
 "upgrade_to_pro" = "升级为PRO";

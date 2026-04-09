@@ -69,6 +69,7 @@
 "feature_future_updates" = "Mises à jour futures incluses";
 "feature_charger_sounds" = "Sons du chargeur";
 "feature_all_future_updates" = "Toutes les mises à jour futures incluses";
+"feature_custom_character" = "Crée ton propre personnage et sons";
 "feature_unlimited_usage" = "Paiement unique, utilisation illimitée";
 "purchasing_in_progress" = "En cours...";
 "upgrade_to_pro" = "Passer à PRO";

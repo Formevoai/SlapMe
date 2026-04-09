@@ -69,6 +69,7 @@
 "feature_future_updates" = "Будущие обновления включены";
 "feature_charger_sounds" = "Звуки зарядки";
 "feature_all_future_updates" = "Все будущие обновления включены";
+"feature_custom_character" = "Создай своего персонажа и звуки";
 "feature_unlimited_usage" = "Одноразовый платёж, безлимит";
 "purchasing_in_progress" = "Обработка...";
 "upgrade_to_pro" = "Перейти на PRO";
