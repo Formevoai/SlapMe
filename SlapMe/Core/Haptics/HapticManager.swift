@@ -19,10 +19,13 @@ final class HapticManager {
         switch event.level {
         case .hard, .combo:
             heavyGenerator.impactOccurred(intensity: intensity)
+            heavyGenerator.prepare()
         case .medium:
             mediumGenerator.impactOccurred(intensity: intensity)
+            mediumGenerator.prepare()
         case .soft:
             lightGenerator.impactOccurred(intensity: intensity)
+            lightGenerator.prepare()
         }
     }
 }
