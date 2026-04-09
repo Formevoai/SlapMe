@@ -97,10 +97,7 @@
     {
       "id": "mature_woman",
       "name": "Mature Woman",
-      "softClips": ["mature_woman_light.mp3"],
-      "mediumClips": ["mature_woman_medium.mp3"],
-      "hardClips": ["mature_woman_hard.mp3"],
-      "comboClips": ["mature_woman_hard.mp3"],
+      "clips": ["mature_woman_light.mp3", "mature_woman_medium.mp3", "mature_woman_hard.mp3", "mature1.mp3", "mature2.mp3", "mature3.mp3", "mature4.mp3", "mature5.mp3", "mature6.mp3", "mature7.mp3", "mature8.mp3", "mature9.mp3", "mature10.mp3", "mature11.mp3", "mature12.mp3", "mature13.mp3", "mature14.mp3", "mature15.mp3", "mature16.mp3", "mature17.mp3"],
       "previewClip": "mature_woman_light.mp3"
     },
     {
