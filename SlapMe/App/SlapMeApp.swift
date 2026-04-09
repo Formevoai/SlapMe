@@ -24,6 +24,7 @@ struct RootView: View {
 
     @AppStorage("onboarding_done") private var onboardingDone = false
     @State private var onboardingStep = 0
+    @State private var showSplash = true
 
     private let categories: [SoundCategory] = SoundCategoryLoader.loadAll()
     private var allPacks: [SoundPack] { categories.flatMap { $0.packs } }
@@ -44,6 +45,13 @@ struct RootView: View {
                 .transition(.move(edge: .trailing).combined(with: .opacity))
             } else {
                 onboardingFlow
+            }
+
+            if showSplash {
+                SplashView {
+                    showSplash = false
+                }
+                .zIndex(10)
             }
         }
         .animation(.easeInOut(duration: 0.35), value: onboardingDone)

@@ -22,6 +22,7 @@
 		71B9B46DE5EBBA840B6E7B89 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 12D9B514DD829030C6A6A5AF /* Sounds */; };
 		7DC9FCBAA417E46E005AC565 /* ClipSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0FAC1A77158D0EACCB16BF /* ClipSelector.swift */; };
 		8040EDDBAC882B43802CD48F /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95F1A231A872C9507A822D3 /* MotionManager.swift */; };
+		819B703A7BC6B787CEE0DDED /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836976CA818D328FEA65313E /* SplashView.swift */; };
 		8F902928FC01C91D87C4B21E /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7D2CEF6740CD6642C542B6 /* StoreManager.swift */; };
 		9C94672D0291ED809485CDEB /* OnboardingComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F184AFD3339F54C2451412C /* OnboardingComponents.swift */; };
 		9EACD4CF98264D915992E9DA /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B3B1C05B913931858B070 /* DisclaimerView.swift */; };
@@ -72,6 +73,7 @@
 		7A537FE999CFCB60B90504D4 /* ImpactEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpactEvent.swift; sourceTree = "<group>"; };
 		7D0FAC1A77158D0EACCB16BF /* ClipSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipSelector.swift; sourceTree = "<group>"; };
 		7F184AFD3339F54C2451412C /* OnboardingComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingComponents.swift; sourceTree = "<group>"; };
+		836976CA818D328FEA65313E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		95F40A767FCD641A855D9655 /* PackSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackSelectionView.swift; sourceTree = "<group>"; };
 		9B7DBBC167F40E9298A040E0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EBA5A2896AF25A1ACE0E2E4 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				796134D867B526AEB491AC20 /* Onboarding */,
 				7445A6D612C5F0837FF5C18F /* Packs */,
 				7773937DE626D2593245D165 /* Settings */,
+				73DD7A5151944FDA430F5804 /* Splash */,
 				AC9DB71D467C820F67E4C658 /* Store */,
 			);
 			path = Features;
@@ -201,6 +204,14 @@
 				DE5D748F84BD74BD1DA112E0 /* SlapMeterView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		73DD7A5151944FDA430F5804 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				836976CA818D328FEA65313E /* SplashView.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		7445A6D612C5F0837FF5C18F /* Packs */ = {
@@ -424,6 +435,7 @@
 				DC447B4B21AE1ED3B3CED723 /* SoundCategoryLoader.swift in Sources */,
 				0869BE2CF496A62B770A2A61 /* SoundPack.swift in Sources */,
 				B471E31218B3B76DC211924C /* SoundPackLoader.swift in Sources */,
+				819B703A7BC6B787CEE0DDED /* SplashView.swift in Sources */,
 				8F902928FC01C91D87C4B21E /* StoreManager.swift in Sources */,
 				5F872EF52C268C69471F5804 /* StoreView.swift in Sources */,
 				C9C8F0A8F8A1F844A247BD57 /* WelcomeView.swift in Sources */,
