@@ -1,45 +1,28 @@
-import CoreHaptics
-import Foundation
+import UIKit
 
 final class HapticManager {
-    private var engine: CHHapticEngine?
     var isEnabled: Bool = true
 
-    init() {
-        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
-        engine = try? CHHapticEngine()
-        try? engine?.start()
+    private let lightGenerator = UIImpactFeedbackGenerator(style: .light)
+    private let mediumGenerator = UIImpactFeedbackGenerator(style: .medium)
+    private let heavyGenerator = UIImpactFeedbackGenerator(style: .heavy)
 
-        engine?.resetHandler = { [weak self] in
-            try? self?.engine?.start()
-        }
-        engine?.stoppedHandler = { _ in }
+    init() {
+        lightGenerator.prepare()
+        mediumGenerator.prepare()
+        heavyGenerator.prepare()
     }
 
     func play(for event: ImpactEvent) {
-        guard isEnabled,
-              CHHapticEngine.capabilitiesForHardware().supportsHaptics,
-              let engine else { return }
-
-        let intensity = CHHapticEventParameter(
-            parameterID: .hapticIntensity,
-            value: Float(max(0.2, event.intensity))
-        )
-        let sharpness = CHHapticEventParameter(
-            parameterID: .hapticSharpness,
-            value: event.level == .hard ? 0.9 : 0.5
-        )
-
-        let hapticEvent = CHHapticEvent(
-            eventType: .hapticTransient,
-            parameters: [intensity, sharpness],
-            relativeTime: 0
-        )
-
-        guard let pattern = try? CHHapticPattern(events: [hapticEvent], parameters: []),
-              let player = try? engine.makePlayer(with: pattern)
-        else { return }
-
-        try? player.start(atTime: CHHapticTimeImmediate)
+        guard isEnabled else { return }
+        let intensity = CGFloat(max(0.2, event.intensity))
+        switch event.level {
+        case .hard, .combo:
+            heavyGenerator.impactOccurred(intensity: intensity)
+        case .medium:
+            mediumGenerator.impactOccurred(intensity: intensity)
+        case .soft:
+            lightGenerator.impactOccurred(intensity: intensity)
+        }
     }
 }
