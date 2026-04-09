@@ -2,13 +2,15 @@ import Foundation
 
 final class ClipSelector {
     static func select(for event: ImpactEvent, from pack: SoundPack) -> String? {
-        let pool: [String]
-        switch event.level {
-        case .soft:   pool = pack.softClips
-        case .medium: pool = pack.mediumClips
-        case .hard:   pool = pack.hardClips
-        case .combo:  pool = pack.comboClips.isEmpty ? pack.hardClips : pack.comboClips
-        }
+        let pool = (pack.softClips + pack.mediumClips + pack.hardClips + pack.comboClips)
+            .uniqued()
         return pool.randomElement()
+    }
+}
+
+extension Array where Element: Hashable {
+    fileprivate func uniqued() -> [Element] {
+        var seen = Set<Element>()
+        return filter { seen.insert($0).inserted }
     }
 }
