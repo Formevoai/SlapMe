@@ -29,7 +29,7 @@
     {
       "id": "cute_anime",
       "name": "Cute Anime",
-      "clips": ["cute_anime_light.mp3", "cute_anime_medium.mp3", "cute_anime_hard.mp3", "anime1.mp3", "anime2.mp3", "anime3.mp3", "anime4.mp3", "anime5.mp3", "anime6.mp3", "anime7.mp3", "anime8.mp3", "anime9.mp3", "anime10.mp3", "anime11.mp3", "anime12.mp3", "anime13.mp3", "anime14.mp3", "anime15.mp3", "anime16.mp3", "anime17.mp3"],
+      "clips": ["cute_anime_light.mp3", "cute_anime_medium.mp3", "cute_anime_hard.mp3", "anime1.wav", "anime2.wav", "anime3.wav", "anime4.wav", "anime5.wav", "anime6.wav", "anime7.wav", "anime8.wav", "anime9.wav", "anime10.wav", "anime11.wav", "anime12.wav", "anime13.wav", "anime14.wav", "anime15.wav", "anime16.wav", "anime17.wav"],
       "previewClip": "cute_anime_light.mp3"
     },
     {
@@ -55,7 +55,7 @@
     {
       "id": "dilara",
       "name": "Dilara",
-      "clips": ["dilara_light.mp3", "dilara_medium.mp3", "dilara_hard.mp3", "dilara1.mp3", "dilara2.mp3", "dilara3.mp3", "dilara4.mp3", "dilara5.mp3", "dilara6.mp3", "dilara7.mp3", "dilara8.mp3", "dilara9.mp3", "dilara10.mp3", "dilara11.mp3", "dilara12.mp3", "dilara13.mp3", "dilara14.mp3", "dilara15.mp3", "dilara16.mp3", "dilara17.mp3"],
+      "clips": ["dilara_light.mp3", "dilara_medium.mp3", "dilara_hard.mp3", "dilara1.wav", "dilara2.wav", "dilara3.wav", "dilara4.wav", "dilara5.wav", "dilara6.wav", "dilara7.wav", "dilara8.wav", "dilara9.wav", "dilara10.wav", "dilara11.wav", "dilara12.wav", "dilara13.wav", "dilara14.wav", "dilara15.wav", "dilara16.wav", "dilara17.wav"],
       "previewClip": "dilara_light.mp3"
     },
     {
@@ -91,13 +91,13 @@
     {
       "id": "hanna",
       "name": "Hanna",
-      "clips": ["hanna_light.mp3", "hanna_medium.mp3", "hanna_hard.mp3", "hanna1.mp3", "hanna2.mp3", "hanna3.mp3", "hanna4.mp3", "hanna5.mp3", "hanna6.mp3", "hanna8.mp3", "hanna9.mp3", "hanna10.mp3", "hanna11.mp3", "hanna12.mp3", "hanna13.mp3"],
+      "clips": ["hanna_light.mp3", "hanna_medium.mp3", "hanna_hard.mp3", "hanna1.wav", "hanna2.wav", "hanna3.wav", "hanna4.wav", "hanna5.wav", "hanna6.wav", "hanna7.wav", "hanna8.wav", "hanna9.wav", "hanna10.wav", "hanna11.wav", "hanna12.wav", "hanna13.wav"],
       "previewClip": "hanna_light.mp3"
     },
     {
       "id": "mature_woman",
       "name": "Mature Woman",
-      "clips": ["mature_woman_light.mp3", "mature_woman_medium.mp3", "mature_woman_hard.mp3", "mature1.mp3", "mature2.mp3", "mature3.mp3", "mature4.mp3", "mature5.mp3", "mature6.mp3", "mature7.mp3", "mature8.mp3", "mature9.mp3", "mature10.mp3", "mature11.mp3", "mature12.mp3", "mature13.mp3", "mature14.mp3", "mature15.mp3", "mature16.mp3", "mature17.mp3"],
+      "clips": ["mature_woman_light.mp3", "mature_woman_medium.mp3", "mature_woman_hard.mp3", "mature1.wav", "mature2.wav", "mature3.wav", "mature4.wav", "mature5.wav", "mature6.wav", "mature7.wav", "mature8.wav", "mature9.wav", "mature10.wav", "mature11.wav", "mature12.wav", "mature13.wav", "mature14.wav", "mature15.wav", "mature16.wav", "mature17.wav"],
       "previewClip": "mature_woman_light.mp3"
     },
     {
