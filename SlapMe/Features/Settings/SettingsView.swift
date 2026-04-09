@@ -139,6 +139,12 @@ struct SettingsView: View {
                     }
                 } header: {
                     Text(L("section_legal"))
+                } footer: {
+                    Text(
+                        "Some sound effects by magicalmysticva & jackiecalistahhh via freesound.org (CC BY 4.0)"
+                    )
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
                 }
 
             }
