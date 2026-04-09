@@ -86,64 +86,6 @@ struct SettingsView: View {
                     if settingsStore.settings.chargerSoundEnabled {
                         Text(L("charger_sound_description"))
                             .font(.caption).foregroundStyle(.secondary)
-
-                        ForEach(categories) { category in
-                            DisclosureGroup {
-                                ForEach(category.packs) { pack in
-                                    let locked = isChargerPackLocked(category: category, pack: pack)
-                                    let selected =
-                                        settingsStore.settings.chargerSoundPackID == pack.id
-                                    let isFreeSexy =
-                                        category.id == "sexy" && pack.id == category.packs.first?.id
-
-                                    Button {
-                                        if !locked {
-                                            settingsStore.settings.chargerSoundPackID = pack.id
-                                        }
-                                    } label: {
-                                        HStack(spacing: 8) {
-                                            Text(pack.title)
-                                                .foregroundColor(locked ? .secondary : .primary)
-                                            if isFreeSexy && !storeManager.isPremium {
-                                                Text(L("free_badge"))
-                                                    .font(.caption2.bold())
-                                                    .foregroundColor(.green)
-                                            }
-                                            if locked {
-                                                Spacer()
-                                                Image(systemName: "lock.fill")
-                                                    .font(.caption)
-                                                    .foregroundColor(.orange)
-                                                Text(L("pro_badge"))
-                                                    .font(.caption2.bold())
-                                                    .foregroundColor(.orange)
-                                            }
-                                            Spacer()
-                                            if selected {
-                                                Image(systemName: "checkmark.circle.fill")
-                                                    .foregroundColor(.blue)
-                                            }
-                                        }
-                                    }
-                                    .disabled(locked)
-                                }
-                            } label: {
-                                HStack(spacing: 6) {
-                                    Image(systemName: category.icon)
-                                    Text(category.title)
-                                    if category.id == "yamete" && !storeManager.isPremium {
-                                        Text(L("pro_badge"))
-                                            .font(.caption2.bold())
-                                            .foregroundColor(.orange)
-                                    }
-                                }
-                            }
-                        }
-
-                        if isChargerPackTrial() {
-                            Text(L("charger_trial_warning"))
-                                .font(.caption).foregroundStyle(.orange)
-                        }
                     }
                 } header: {
                     Text(L("section_feedback"))
@@ -211,24 +153,4 @@ struct SettingsView: View {
         }
     }
 
-    // MARK: - Charger pack lock helpers
-
-    /// Sexy: sadece ilk karakter free, geri kalan locked. Yamete: tamamen locked.
-    private func isChargerPackLocked(category: SoundCategory, pack: SoundPack) -> Bool {
-        guard !storeManager.isPremium else { return false }
-        if category.id == "yamete" { return true }
-        if category.id == "sexy" { return pack.id != category.packs.first?.id }
-        return false
-    }
-
-    /// Seçili pack sexy'nin free karakteri ise (PRO değilse) → trial (1 ses)
-    private func isChargerPackTrial() -> Bool {
-        guard !storeManager.isPremium else { return false }
-        let packID = settingsStore.settings.chargerSoundPackID
-        guard
-            let category = categories.first(where: { $0.packs.contains(where: { $0.id == packID }) }
-            )
-        else { return false }
-        return category.id == "sexy" && packID == category.packs.first?.id
-    }
 }

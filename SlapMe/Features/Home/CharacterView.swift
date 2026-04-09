@@ -7,6 +7,7 @@ struct CharacterView: View {
     let isLocked: Bool
     var isBackground: Bool = false
     var isComingSoon: Bool = false
+    var onLockTap: (() -> Void)? = nil
     @ObservedObject private var localizationManager = LocalizationManager.shared
 
     @State private var breathe: CGFloat = 1.0
@@ -117,6 +118,8 @@ struct CharacterView: View {
                             .font(.caption.bold())
                             .foregroundColor(.orange)
                     }
+                    .contentShape(Rectangle())
+                    .onTapGesture { onLockTap?() }
                 }
             }
         )

@@ -1,5 +1,5 @@
-import SwiftUI
 import Combine
+import SwiftUI
 import UIKit
 
 @main
@@ -16,11 +16,11 @@ struct SlapMeApp: App {
 struct RootView: View {
     @StateObject private var settingsStore = SettingsStore()
     @StateObject private var motionManager = MotionManager()
-    @StateObject private var audioManager  = AudioManager()
-    @StateObject private var storeManager  = StoreManager()
+    @StateObject private var audioManager = AudioManager()
+    @StateObject private var storeManager = StoreManager()
 
     private let impactDetector = ImpactDetector()
-    private let hapticManager  = HapticManager()
+    private let hapticManager = HapticManager()
 
     @AppStorage("onboarding_done") private var onboardingDone = false
     @State private var onboardingStep = 0
@@ -59,7 +59,8 @@ struct RootView: View {
             motionManager.startMonitoring()
             startBatteryMonitoring()
             // İlk pack yükle
-            if let pack = allPacks.first(where: { $0.id == settingsStore.settings.selectedPackID }) {
+            if let pack = allPacks.first(where: { $0.id == settingsStore.settings.selectedPackID })
+            {
                 audioManager.loadPack(pack)
             }
         }
@@ -67,7 +68,8 @@ struct RootView: View {
             syncDetector()
             // Pack sadece ID değişince yüklenir — slider/toggle fiddle etmesin
             if audioManager.currentPackID != newSettings.selectedPackID,
-               let pack = allPacks.first(where: { $0.id == newSettings.selectedPackID }) {
+                let pack = allPacks.first(where: { $0.id == newSettings.selectedPackID })
+            {
                 audioManager.loadPack(pack)
             }
         }
@@ -82,20 +84,24 @@ struct RootView: View {
             WelcomeView(onContinue: {
                 withAnimation(.easeInOut(duration: 0.35)) { onboardingStep = 1 }
             })
-            .transition(.asymmetric(
-                insertion: .move(edge: .trailing).combined(with: .opacity),
-                removal:   .move(edge: .leading).combined(with: .opacity)
-            ))
+            .transition(
+                .asymmetric(
+                    insertion: .move(edge: .trailing).combined(with: .opacity),
+                    removal: .move(edge: .leading).combined(with: .opacity)
+                )
+            )
             .id("welcome")
 
         case 1:
             SensorCheckView(onContinue: {
                 withAnimation(.easeInOut(duration: 0.35)) { onboardingStep = 2 }
             })
-            .transition(.asymmetric(
-                insertion: .move(edge: .trailing).combined(with: .opacity),
-                removal:   .move(edge: .leading).combined(with: .opacity)
-            ))
+            .transition(
+                .asymmetric(
+                    insertion: .move(edge: .trailing).combined(with: .opacity),
+                    removal: .move(edge: .leading).combined(with: .opacity)
+                )
+            )
             .id("sensor")
 
         case 2:
@@ -108,10 +114,12 @@ struct RootView: View {
                 audioManager: audioManager,
                 categories: categories
             )
-            .transition(.asymmetric(
-                insertion: .move(edge: .trailing).combined(with: .opacity),
-                removal:   .move(edge: .leading).combined(with: .opacity)
-            ))
+            .transition(
+                .asymmetric(
+                    insertion: .move(edge: .trailing).combined(with: .opacity),
+                    removal: .move(edge: .leading).combined(with: .opacity)
+                )
+            )
             .id("reaction")
             .onAppear { syncDetector() }
 
@@ -127,10 +135,12 @@ struct RootView: View {
                 categories: categories,
                 audioManager: audioManager
             )
-            .transition(.asymmetric(
-                insertion: .move(edge: .trailing).combined(with: .opacity),
-                removal:   .move(edge: .leading).combined(with: .opacity)
-            ))
+            .transition(
+                .asymmetric(
+                    insertion: .move(edge: .trailing).combined(with: .opacity),
+                    removal: .move(edge: .leading).combined(with: .opacity)
+                )
+            )
             .id("packSelection")
         }
     }
@@ -172,10 +182,11 @@ struct RootView: View {
     @MainActor
     private func handleChargerEvent() {
         let state = UIDevice.current.batteryState
-        guard (state == .charging || state == .full),
-              settingsStore.settings.chargerSoundEnabled else { return }
+        guard state == .charging || state == .full,
+            settingsStore.settings.chargerSoundEnabled
+        else { return }
 
-        let chargerPackID = settingsStore.settings.chargerSoundPackID
+        let chargerPackID = settingsStore.settings.selectedPackID
         guard let pack = allPacks.first(where: { $0.id == chargerPackID }) else { return }
 
         let userIsPremium = storeManager.isPremium

@@ -25,9 +25,23 @@ struct HomeView: View {
     @State private var characterIndex = 0
     @State private var continuousOffsetY: CGFloat = 0
 
+    private var visibleCategories: [SoundCategory] {
+        categories.map { cat in
+            SoundCategory(
+                id: cat.id,
+                title: cat.title,
+                icon: cat.icon,
+                isPremium: cat.isPremium,
+                packs: cat.packs.filter { !$0.comingSoon }
+            )
+        }.filter { !$0.packs.isEmpty }
+    }
+
     private var currentCategory: SoundCategory? {
-        guard !categories.isEmpty, categoryIndex < categories.count else { return nil }
-        return categories[categoryIndex]
+        guard !visibleCategories.isEmpty, categoryIndex < visibleCategories.count else {
+            return nil
+        }
+        return visibleCategories[categoryIndex]
     }
 
     private var currentPack: SoundPack? {
@@ -214,7 +228,7 @@ struct HomeView: View {
             let vSpacing = height * 0.42
 
             ZStack {
-                ForEach(0..<categories.count, id: \.self) { ci in
+                ForEach(0..<visibleCategories.count, id: \.self) { ci in
                     let isCurrent = ci == categoryIndex
                     let baseX = CGFloat(ci - categoryIndex) * hSpacing
                     let totalX = baseX + continuousOffsetX
@@ -226,7 +240,7 @@ struct HomeView: View {
                         let hOpacity = max(0.3, 1.0 - distFromCenter * 0.45)
                         let rotation = Double(totalX) * 0.012
 
-                        let cat = categories[ci]
+                        let cat = visibleCategories[ci]
                         let totalChars = cat.packs.count
 
                         // Vertical character carousel (only for current category)
@@ -248,7 +262,8 @@ struct HomeView: View {
                                             intensity: pi == characterIndex ? lastIntensity : 0,
                                             isLocked: isPackLocked(cat.packs[pi]),
                                             isBackground: pi != characterIndex,
-                                            isComingSoon: cat.packs[pi].comingSoon
+                                            isComingSoon: cat.packs[pi].comingSoon,
+                                            onLockTap: { showPaywall = true }
                                         )
                                         .frame(width: cardWidth)
                                         .scaleEffect(vScale)
@@ -270,7 +285,8 @@ struct HomeView: View {
                                     intensity: 0,
                                     isLocked: isPackLocked(cat.packs[0]),
                                     isBackground: true,
-                                    isComingSoon: cat.packs[0].comingSoon
+                                    isComingSoon: cat.packs[0].comingSoon,
+                                    onLockTap: { showPaywall = true }
                                 )
                                 .frame(width: cardWidth)
                             }
@@ -296,7 +312,7 @@ struct HomeView: View {
                             // Horizontal — category carousel
                             let raw = h
                             if (categoryIndex == 0 && raw > 0)
-                                || (categoryIndex == categories.count - 1 && raw < 0)
+                                || (categoryIndex == visibleCategories.count - 1 && raw < 0)
                             {
                                 continuousOffsetX = raw * 0.2
                             } else {
@@ -306,7 +322,7 @@ struct HomeView: View {
                         } else {
                             // Vertical — character carousel
                             let raw = v
-                            let cat = categories[categoryIndex]
+                            let cat = visibleCategories[categoryIndex]
                             if (characterIndex == 0 && raw > 0)
                                 || (characterIndex == cat.packs.count - 1 && raw < 0)
                             {
@@ -332,7 +348,7 @@ struct HomeView: View {
 
                             if shouldSwipe {
                                 let target = categoryIndex + dir
-                                if target >= 0, target < categories.count {
+                                if target >= 0, target < visibleCategories.count {
                                     withAnimation(
                                         .interpolatingSpring(
                                             mass: 0.8, stiffness: 180, damping: 22,
@@ -366,7 +382,7 @@ struct HomeView: View {
                             let dir = (v + vVel * 0.3) < 0 ? 1 : -1
 
                             if shouldSwipe {
-                                let cat = categories[categoryIndex]
+                                let cat = visibleCategories[categoryIndex]
                                 let target = characterIndex + dir
                                 if target >= 0, target < cat.packs.count {
                                     withAnimation(
@@ -455,7 +471,7 @@ struct HomeView: View {
 
     private func syncIndicesFromSettings() {
         let selectedID = settingsStore.settings.selectedPackID
-        for (ci, cat) in categories.enumerated() {
+        for (ci, cat) in visibleCategories.enumerated() {
             for (pi, pack) in cat.packs.enumerated() {
                 if pack.id == selectedID {
                     categoryIndex = ci
