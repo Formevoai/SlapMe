@@ -116,17 +116,28 @@ struct CreateCustomCharacterView: View {
                     }
 
                     // Ses ekle butonu
+                    let clipCount = currentPack?.clips.count ?? 0
+                    let atClipLimit = clipCount >= CustomPackManager.maxClipsPerPack
                     Button {
                         ensurePackExists()
                         showDocPicker = true
                     } label: {
-                        Label("Ses Ekle", systemImage: "plus.circle.fill")
-                            .font(.system(size: 16, weight: .semibold))
-                            .foregroundStyle(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 14)
-                            .background(Color.purple, in: RoundedRectangle(cornerRadius: 14))
+                        Label(
+                            atClipLimit
+                                ? "Limit doldu (\(clipCount)/\(CustomPackManager.maxClipsPerPack))"
+                                : "Ses Ekle",
+                            systemImage: atClipLimit ? "checkmark.circle" : "plus.circle.fill"
+                        )
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                        .background(
+                            atClipLimit ? Color.gray : Color.purple,
+                            in: RoundedRectangle(cornerRadius: 14)
+                        )
                     }
+                    .disabled(atClipLimit)
                     .padding(.horizontal, 20)
 
                     // Edit modunda Paketi Sil butonu
@@ -207,7 +218,11 @@ struct CreateCustomCharacterView: View {
     private func ensurePackExists() {
         guard currentPackID == nil else { return }
         let name = characterName.trimmingCharacters(in: .whitespaces)
-        let pack = customPackManager.createPack(name: name.isEmpty ? "Karakterim" : name)
+        guard let pack = customPackManager.createPack(name: name.isEmpty ? "Karakterim" : name)
+        else {
+            errorMessage = "En fazla \(CustomPackManager.maxPacks) paket oluşturabilirsin."
+            return
+        }
         currentPackID = pack.id
     }
 

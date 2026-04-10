@@ -284,7 +284,15 @@ struct HomeView: View {
                                             isBackground: pi != characterIndex,
                                             isComingSoon: cat.packs[pi].comingSoon,
                                             onLockTap: { showPaywall = true },
-                                            onAddNewTap: { showCreateCustom = true }
+                                            onAddNewTap: {
+                                                if customPackManager.packs.count
+                                                    < CustomPackManager.maxPacks
+                                                {
+                                                    showCreateCustom = true
+                                                }
+                                            },
+                                            isAtPackLimit: customPackManager.packs.count
+                                                >= CustomPackManager.maxPacks
                                         )
                                         .frame(width: cardWidth)
                                         .scaleEffect(vScale)
@@ -308,7 +316,15 @@ struct HomeView: View {
                                     isBackground: true,
                                     isComingSoon: cat.packs[0].comingSoon,
                                     onLockTap: { showPaywall = true },
-                                    onAddNewTap: { showCreateCustom = true }
+                                    onAddNewTap: {
+                                        if customPackManager.packs.count
+                                            < CustomPackManager.maxPacks
+                                        {
+                                            showCreateCustom = true
+                                        }
+                                    },
+                                    isAtPackLimit: customPackManager.packs.count
+                                        >= CustomPackManager.maxPacks
                                 )
                                 .frame(width: cardWidth)
                             }

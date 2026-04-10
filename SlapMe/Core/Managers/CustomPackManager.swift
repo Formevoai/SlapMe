@@ -4,6 +4,9 @@ import Foundation
 final class CustomPackManager: ObservableObject {
     @Published private(set) var packs: [CustomPack] = []
 
+    static let maxPacks = 5
+    static let maxClipsPerPack = 10
+
     private let storageKey = "custom_packs_v1"
 
     /// Documents/CustomSounds/ — tüm custom ses dosyları buraya kopyalanır
@@ -28,7 +31,8 @@ final class CustomPackManager: ObservableObject {
     // MARK: - Pack CRUD
 
     @discardableResult
-    func createPack(name: String) -> CustomPack {
+    func createPack(name: String) -> CustomPack? {
+        guard packs.count < Self.maxPacks else { return nil }
         let pack = CustomPack(id: UUID().uuidString, name: name, clips: [])
         try? FileManager.default.createDirectory(
             at: soundsDirectory(for: pack.id), withIntermediateDirectories: true)
@@ -53,6 +57,9 @@ final class CustomPackManager: ObservableObject {
 
     func addClip(from sourceURL: URL, to packID: String) throws {
         guard let i = packs.firstIndex(where: { $0.id == packID }) else { return }
+        guard packs[i].clips.count < Self.maxClipsPerPack else {
+            throw ClipLimitError.maxReached(Self.maxClipsPerPack)
+        }
         let dir = soundsDirectory(for: packID)
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         let ext = sourceURL.pathExtension.isEmpty ? "m4a" : sourceURL.pathExtension
@@ -127,5 +134,15 @@ final class CustomPackManager: ObservableObject {
             let decoded = try? JSONDecoder().decode([CustomPack].self, from: data)
         else { return }
         packs = decoded
+    }
+}
+
+enum ClipLimitError: LocalizedError {
+    case maxReached(Int)
+    var errorDescription: String? {
+        if case .maxReached(let n) = self {
+            return "Bir pakete en fazla \(n) ses eklenebilir."
+        }
+        return nil
     }
 }

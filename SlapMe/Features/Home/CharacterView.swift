@@ -9,6 +9,7 @@ struct CharacterView: View {
     var isComingSoon: Bool = false
     var onLockTap: (() -> Void)? = nil
     var onAddNewTap: (() -> Void)? = nil
+    var isAtPackLimit: Bool = false
     @ObservedObject private var localizationManager = LocalizationManager.shared
 
     @State private var breathe: CGFloat = 1.0
@@ -160,7 +161,25 @@ struct CharacterView: View {
         )
         .overlay(
             ZStack {
-                if pack.id == "custom_add_new" && !isLocked {
+                if pack.id == "custom_add_new" && !isLocked && isAtPackLimit {
+                    // Limit doldu overlay
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(Color.gray.opacity(0.08))
+                    VStack(spacing: 8) {
+                        Image(systemName: "checkmark.seal.fill")
+                            .font(.system(size: 44))
+                            .foregroundStyle(Color.gray.opacity(0.5))
+                        Text("Maksimum \(CustomPackManager.maxPacks) paket")
+                            .font(.system(size: 14, weight: .bold, design: .rounded))
+                            .foregroundStyle(Color(white: 0.4))
+                        Text("Yeni eklemek için mevcut\nbir paketi silebilirsin")
+                            .font(.system(size: 11))
+                            .foregroundStyle(.secondary)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 12)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else if pack.id == "custom_add_new" && !isLocked {
                     // Pro kullanıcı: yeni ses paketi ekle
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
                         .fill(Color.purple.opacity(0.05))
