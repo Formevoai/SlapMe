@@ -4,6 +4,8 @@ import UniformTypeIdentifiers
 
 struct CreateCustomCharacterView: View {
     @ObservedObject var customPackManager: CustomPackManager
+    /// Dolu gelirse edit modu; nil ise yeni karakter oluşturma modu
+    var editingPackID: String? = nil
     @Environment(\.dismiss) private var dismiss
 
     @State private var characterName = ""
@@ -12,6 +14,9 @@ struct CreateCustomCharacterView: View {
     @State private var errorMessage: String? = nil
     @State private var previewPlayer: AVAudioPlayer? = nil
     @State private var playingClip: String? = nil
+    @State private var showDeleteConfirm = false
+
+    private var isEditMode: Bool { editingPackID != nil }
 
     private var currentPack: CustomPack? {
         guard let id = currentPackID else { return nil }
@@ -123,16 +128,34 @@ struct CreateCustomCharacterView: View {
                             .background(Color.purple, in: RoundedRectangle(cornerRadius: 14))
                     }
                     .padding(.horizontal, 20)
-                    .padding(.bottom, 16)
+
+                    // Edit modunda Paketi Sil butonu
+                    if isEditMode {
+                        Button(role: .destructive) {
+                            showDeleteConfirm = true
+                        } label: {
+                            Label("Paketi Sil", systemImage: "trash")
+                                .font(.system(size: 15, weight: .medium))
+                                .foregroundStyle(.red)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 12)
+                                .background(
+                                    Color.red.opacity(0.08), in: RoundedRectangle(cornerRadius: 14))
+                        }
+                        .padding(.horizontal, 20)
+                    }
+
+                    Spacer().frame(height: 8)
                 }
             }
-            .navigationTitle("Yeni Karakter")
+            .navigationTitle(isEditMode ? "Paketi Düzenle" : "Yeni Karakter")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("İptal") {
+                    Button(isEditMode ? "Kapat" : "İptal") {
                         previewPlayer?.stop()
-                        if let id = currentPackID {
+                        if !isEditMode, let id = currentPackID {
+                            // Yeni oluşturma iptal → geçici paketi sil
                             customPackManager.deletePack(id: id)
                         }
                         dismiss()
@@ -152,6 +175,28 @@ struct CreateCustomCharacterView: View {
             .sheet(isPresented: $showDocPicker) {
                 AudioDocumentPicker { url in
                     importAudio(from: url)
+                }
+            }
+            .confirmationDialog(
+                "Bu paketi silmek istediğinden emin misin?",
+                isPresented: $showDeleteConfirm,
+                titleVisibility: .visible
+            ) {
+                Button("Paketi Sil", role: .destructive) {
+                    previewPlayer?.stop()
+                    if let id = currentPackID {
+                        customPackManager.deletePack(id: id)
+                    }
+                    dismiss()
+                }
+                Button("Vazgeç", role: .cancel) {}
+            }
+            .onAppear {
+                if let id = editingPackID,
+                    let pack = customPackManager.packs.first(where: { $0.id == id })
+                {
+                    currentPackID = id
+                    characterName = pack.name
                 }
             }
         }

@@ -18,6 +18,7 @@ struct HomeView: View {
     @State private var showSettings = false
     @State private var showPaywall = false
     @State private var showCreateCustom = false
+    @State private var editingCustomPackID: String? = nil
     @AppStorage("onboarding_done") private var onboardingDone = true
     @State private var hasSlapped = false
     @State private var hintOpacity: Double = 0.6
@@ -121,6 +122,17 @@ struct HomeView: View {
         }
         .sheet(isPresented: $showCreateCustom) {
             CreateCustomCharacterView(customPackManager: customPackManager)
+        }
+        .sheet(
+            item: Binding(
+                get: { editingCustomPackID.map { EditID(id: $0) } },
+                set: { editingCustomPackID = $0?.id }
+            )
+        ) { editID in
+            CreateCustomCharacterView(
+                customPackManager: customPackManager,
+                editingPackID: editID.id
+            )
         }
         .onReceive(impactDetector.impactPublisher) { event in
             handleImpact(event)
@@ -498,6 +510,11 @@ struct HomeView: View {
     private func onPackChanged() {
         guard let pack = currentPack else { return }
         guard pack.id != "custom_add_new" else { return }
+        // Mevcut custom pakete tıklandığında edit sheet aç
+        if pack.isCustom {
+            editingCustomPackID = pack.id
+            return
+        }
         settingsStore.settings.selectedPackID = pack.id
         if !isCurrentLocked {
             audioManager.loadPack(pack)
@@ -540,4 +557,8 @@ struct HomeView: View {
             withAnimation { isReacting = false }
         }
     }
+}
+
+private struct EditID: Identifiable {
+    let id: String
 }
