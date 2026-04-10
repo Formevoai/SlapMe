@@ -117,3 +117,23 @@
 "custom_category_title" = "أصواتي";
 "custom_add_slot_hint" = "تحميل أصواتك الخاصة";
 "custom_add_slot_desc" = "ارفع ملفات MP3 أو WAV أو M4A وأنشئ حزمتك الخاصة";
+
+"custom_pack_limit_title" = "الحد الأقصى %d حزم";
+"custom_pack_limit_desc" = "احذف حزمة لإضافة حزمة جديدة";
+"custom_clip_limit_btn" = "ممتلئ (%d/%d)";
+"custom_default_name" = "شخصيتي";
+"custom_add_clip_error" = "تعذّر إضافة الصوت: %@";
+"custom_clip_limit_error" = "يمكنك إضافة %d أصوات كحد أقصى لكل حزمة.";
+"custom_empty_title" = "لا توجد أصوات بعد";
+"custom_empty_subtitle" = "تدعم تنسيقات MP3 وWAV وM4A";
+"custom_add_sound_btn" = "إضافة صوت";
+"custom_delete_pack_btn" = "حذف الحزمة";
+"custom_nav_title_new" = "شخصية جديدة";
+"custom_nav_title_edit" = "تعديل الحزمة";
+"custom_close_btn" = "إغلاق";
+"custom_cancel_btn" = "إلغاء";
+"custom_save_btn" = "حفظ";
+"custom_delete_confirm" = "هل أنت متأكد من حذف هذه الحزمة؟";
+"custom_delete_confirm_btn" = "حذف الحزمة";
+"custom_delete_cancel_btn" = "إلغاء";
+"custom_name_placeholder" = "اسم الشخصية";

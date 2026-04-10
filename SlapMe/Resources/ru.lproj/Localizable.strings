@@ -117,3 +117,23 @@
 "custom_category_title" = "Мои звуки";
 "custom_add_slot_hint" = "Загрузи свои звуки";
 "custom_add_slot_desc" = "Загрузи MP3, WAV или M4A и создай свой пакет";
+
+"custom_pack_limit_title" = "Максимум %d пакетов";
+"custom_pack_limit_desc" = "Удали пакет, чтобы добавить новый";
+"custom_clip_limit_btn" = "Лимит (%d/%d)";
+"custom_default_name" = "Мой персонаж";
+"custom_add_clip_error" = "Не удалось добавить звук: %@";
+"custom_clip_limit_error" = "В один пакет можно добавить не более %d звуков.";
+"custom_empty_title" = "Звуков пока нет";
+"custom_empty_subtitle" = "Поддерживаются форматы MP3, WAV, M4A";
+"custom_add_sound_btn" = "Добавить звук";
+"custom_delete_pack_btn" = "Удалить пакет";
+"custom_nav_title_new" = "Новый персонаж";
+"custom_nav_title_edit" = "Изменить пакет";
+"custom_close_btn" = "Закрыть";
+"custom_cancel_btn" = "Отмена";
+"custom_save_btn" = "Сохранить";
+"custom_delete_confirm" = "Ты точно хочешь удалить этот пакет?";
+"custom_delete_confirm_btn" = "Удалить пакет";
+"custom_delete_cancel_btn" = "Отмена";
+"custom_name_placeholder" = "Имя персонажа";

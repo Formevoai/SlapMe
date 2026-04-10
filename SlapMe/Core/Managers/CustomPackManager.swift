@@ -141,7 +141,7 @@ enum ClipLimitError: LocalizedError {
     case maxReached(Int)
     var errorDescription: String? {
         if case .maxReached(let n) = self {
-            return "Bir pakete en fazla \(n) ses eklenebilir."
+            return String(format: L("custom_clip_limit_error"), n)
         }
         return nil
     }

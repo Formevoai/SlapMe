@@ -117,3 +117,23 @@
 "custom_category_title" = "我的声音";
 "custom_add_slot_hint" = "上传你自己的声音";
 "custom_add_slot_desc" = "上传MP3、WAV或M4A文件创建你自己的包";
+
+"custom_pack_limit_title" = "最多%d个包";
+"custom_pack_limit_desc" = "删除现有包即可添加新包";
+"custom_clip_limit_btn" = "已满(%d/%d)";
+"custom_default_name" = "我的角色";
+"custom_add_clip_error" = "无法添加声音：%@";
+"custom_clip_limit_error" = "每个包最多可添加%d个声音。";
+"custom_empty_title" = "暂无声音";
+"custom_empty_subtitle" = "支持MP3、WAV、M4A格式";
+"custom_add_sound_btn" = "添加声音";
+"custom_delete_pack_btn" = "删除包";
+"custom_nav_title_new" = "新角色";
+"custom_nav_title_edit" = "编辑包";
+"custom_close_btn" = "关闭";
+"custom_cancel_btn" = "取消";
+"custom_save_btn" = "保存";
+"custom_delete_confirm" = "确定要删除这个包吗？";
+"custom_delete_confirm_btn" = "删除包";
+"custom_delete_cancel_btn" = "取消";
+"custom_name_placeholder" = "角色名称";

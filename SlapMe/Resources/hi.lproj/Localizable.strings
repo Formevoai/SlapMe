@@ -117,3 +117,23 @@
 "custom_category_title" = "मेरी आवाज़ें";
 "custom_add_slot_hint" = "अपनी आवाज़ें अपलोड करें";
 "custom_add_slot_desc" = "MP3, WAV या M4A अपलोड करें और अपना पैक बनाएं";
+
+"custom_pack_limit_title" = "अधिकतम %d पैक";
+"custom_pack_limit_desc" = "नया पैक जोड़ने के लिए मौजूदा पैक हटाएं";
+"custom_clip_limit_btn" = "सीमा पूरी (%d/%d)";
+"custom_default_name" = "मेरा कैरेक्टर";
+"custom_add_clip_error" = "साउंड नहीं जोड़ा जा सका: %@";
+"custom_clip_limit_error" = "प्रति पैक अधिकतम %d साउंड जोड़े जा सकते हैं।";
+"custom_empty_title" = "अभी कोई साउंड नहीं";
+"custom_empty_subtitle" = "MP3, WAV, M4A फॉर्मेट समर्थित";
+"custom_add_sound_btn" = "साउंड जोड़ें";
+"custom_delete_pack_btn" = "पैक हटाएं";
+"custom_nav_title_new" = "नया कैरेक्टर";
+"custom_nav_title_edit" = "पैक संपादित करें";
+"custom_close_btn" = "बंद करें";
+"custom_cancel_btn" = "रद्द करें";
+"custom_save_btn" = "सहेजें";
+"custom_delete_confirm" = "क्या आप इस पैक को हटाना चाहते हैं?";
+"custom_delete_confirm_btn" = "पैक हटाएं";
+"custom_delete_cancel_btn" = "रद्द करें";
+"custom_name_placeholder" = "कैरेक्टर का नाम";

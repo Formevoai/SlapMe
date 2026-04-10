@@ -117,3 +117,23 @@
 "custom_category_title" = "マイサウンド";
 "custom_add_slot_hint" = "自分のサウンドをアップロード";
 "custom_add_slot_desc" = "MP3・WAV・M4Aをアップロードしてパックを作成";
+
+"custom_pack_limit_title" = "最大%dパック";
+"custom_pack_limit_desc" = "既存のパックを削除して新しいパックを追加";
+"custom_clip_limit_btn" = "上限(%d/%d)";
+"custom_default_name" = "マイキャラ";
+"custom_add_clip_error" = "サウンドを追加できませんでした: %@";
+"custom_clip_limit_error" = "1パックに追加できるサウンドは最大%d個です。";
+"custom_empty_title" = "サウンドがまだありません";
+"custom_empty_subtitle" = "MP3・WAV・M4A対応";
+"custom_add_sound_btn" = "サウンドを追加";
+"custom_delete_pack_btn" = "パックを削除";
+"custom_nav_title_new" = "新しいキャラ";
+"custom_nav_title_edit" = "パックを編集";
+"custom_close_btn" = "閉じる";
+"custom_cancel_btn" = "キャンセル";
+"custom_save_btn" = "保存";
+"custom_delete_confirm" = "このパックを削除しますか?";
+"custom_delete_confirm_btn" = "パックを削除";
+"custom_delete_cancel_btn" = "キャンセル";
+"custom_name_placeholder" = "キャラクター名";

@@ -38,7 +38,7 @@ struct CreateCustomCharacterView: View {
                     }
                     .padding(.top, 24)
 
-                    TextField("Karakter adı", text: $characterName)
+                    TextField(L("custom_name_placeholder"), text: $characterName)
                         .font(.system(size: 22, weight: .bold, design: .rounded))
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 32)
@@ -96,10 +96,10 @@ struct CreateCustomCharacterView: View {
                         Image(systemName: "waveform.badge.plus")
                             .font(.system(size: 44))
                             .foregroundStyle(Color.secondary)
-                        Text("Henüz ses eklenmedi")
+                        Text(L("custom_empty_title"))
                             .font(.callout)
                             .foregroundStyle(.secondary)
-                        Text("MP3, WAV, M4A formatları desteklenir")
+                        Text(L("custom_empty_subtitle"))
                             .font(.caption)
                             .foregroundStyle(Color.secondary.opacity(0.7))
                     }
@@ -124,8 +124,10 @@ struct CreateCustomCharacterView: View {
                     } label: {
                         Label(
                             atClipLimit
-                                ? "Limit doldu (\(clipCount)/\(CustomPackManager.maxClipsPerPack))"
-                                : "Ses Ekle",
+                                ? String(
+                                    format: L("custom_clip_limit_btn"), clipCount,
+                                    CustomPackManager.maxClipsPerPack)
+                                : L("custom_add_sound_btn"),
                             systemImage: atClipLimit ? "checkmark.circle" : "plus.circle.fill"
                         )
                         .font(.system(size: 16, weight: .semibold))
@@ -145,7 +147,7 @@ struct CreateCustomCharacterView: View {
                         Button(role: .destructive) {
                             showDeleteConfirm = true
                         } label: {
-                            Label("Paketi Sil", systemImage: "trash")
+                            Label(L("custom_delete_pack_btn"), systemImage: "trash")
                                 .font(.system(size: 15, weight: .medium))
                                 .foregroundStyle(.red)
                                 .frame(maxWidth: .infinity)
@@ -159,11 +161,11 @@ struct CreateCustomCharacterView: View {
                     Spacer().frame(height: 8)
                 }
             }
-            .navigationTitle(isEditMode ? "Paketi Düzenle" : "Yeni Karakter")
+            .navigationTitle(isEditMode ? L("custom_nav_title_edit") : L("custom_nav_title_new"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(isEditMode ? "Kapat" : "İptal") {
+                    Button(isEditMode ? L("custom_close_btn") : L("custom_cancel_btn")) {
                         previewPlayer?.stop()
                         if !isEditMode, let id = currentPackID {
                             // Yeni oluşturma iptal → geçici paketi sil
@@ -173,7 +175,7 @@ struct CreateCustomCharacterView: View {
                     }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Kaydet") {
+                    Button(L("custom_save_btn")) {
                         save()
                     }
                     .disabled(
@@ -189,18 +191,18 @@ struct CreateCustomCharacterView: View {
                 }
             }
             .confirmationDialog(
-                "Bu paketi silmek istediğinden emin misin?",
+                L("custom_delete_confirm"),
                 isPresented: $showDeleteConfirm,
                 titleVisibility: .visible
             ) {
-                Button("Paketi Sil", role: .destructive) {
+                Button(L("custom_delete_confirm_btn"), role: .destructive) {
                     previewPlayer?.stop()
                     if let id = currentPackID {
                         customPackManager.deletePack(id: id)
                     }
                     dismiss()
                 }
-                Button("Vazgeç", role: .cancel) {}
+                Button(L("custom_delete_cancel_btn"), role: .cancel) {}
             }
             .onAppear {
                 if let id = editingPackID,
@@ -218,9 +220,11 @@ struct CreateCustomCharacterView: View {
     private func ensurePackExists() {
         guard currentPackID == nil else { return }
         let name = characterName.trimmingCharacters(in: .whitespaces)
-        guard let pack = customPackManager.createPack(name: name.isEmpty ? "Karakterim" : name)
+        guard
+            let pack = customPackManager.createPack(
+                name: name.isEmpty ? L("custom_default_name") : name)
         else {
-            errorMessage = "En fazla \(CustomPackManager.maxPacks) paket oluşturabilirsin."
+            errorMessage = String(format: L("custom_clip_limit_error"), CustomPackManager.maxPacks)
             return
         }
         currentPackID = pack.id
@@ -229,7 +233,7 @@ struct CreateCustomCharacterView: View {
     private func save() {
         guard let id = currentPackID else { return }
         let name = characterName.trimmingCharacters(in: .whitespaces)
-        customPackManager.updateName(name.isEmpty ? "Karakterim" : name, for: id)
+        customPackManager.updateName(name.isEmpty ? L("custom_default_name") : name, for: id)
         previewPlayer?.stop()
         dismiss()
     }
@@ -245,7 +249,7 @@ struct CreateCustomCharacterView: View {
             try customPackManager.addClip(from: url, to: id)
             errorMessage = nil
         } catch {
-            errorMessage = "Ses eklenemedi: \(error.localizedDescription)"
+            errorMessage = String(format: L("custom_add_clip_error"), error.localizedDescription)
         }
     }
 
