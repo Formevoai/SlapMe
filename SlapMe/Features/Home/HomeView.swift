@@ -291,6 +291,7 @@ struct HomeView: View {
                                                     showCreateCustom = true
                                                 }
                                             },
+                                            onEditTap: { editingCustomPackID = cat.packs[pi].id },
                                             isAtPackLimit: customPackManager.packs.count
                                                 >= CustomPackManager.maxPacks
                                         )
@@ -323,6 +324,7 @@ struct HomeView: View {
                                             showCreateCustom = true
                                         }
                                     },
+                                    onEditTap: { editingCustomPackID = cat.packs[0].id },
                                     isAtPackLimit: customPackManager.packs.count
                                         >= CustomPackManager.maxPacks
                                 )
@@ -526,11 +528,6 @@ struct HomeView: View {
     private func onPackChanged() {
         guard let pack = currentPack else { return }
         guard pack.id != "custom_add_new" else { return }
-        // Mevcut custom pakete tıklandığında edit sheet aç
-        if pack.isCustom {
-            editingCustomPackID = pack.id
-            return
-        }
         settingsStore.settings.selectedPackID = pack.id
         if !isCurrentLocked {
             audioManager.loadPack(pack)

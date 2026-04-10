@@ -9,6 +9,7 @@ struct CharacterView: View {
     var isComingSoon: Bool = false
     var onLockTap: (() -> Void)? = nil
     var onAddNewTap: (() -> Void)? = nil
+    var onEditTap: (() -> Void)? = nil
     var isAtPackLimit: Bool = false
     @ObservedObject private var localizationManager = LocalizationManager.shared
 
@@ -249,6 +250,19 @@ struct CharacterView: View {
                 .scaleEffect(isReacting && !isBackground ? 1.02 : 1.0)
                 .animation(.easeOut(duration: 0.3), value: isReacting)
         )
+        .overlay(alignment: .topTrailing) {
+            if pack.isCustom && !isBackground && !isLocked {
+                Button(action: { onEditTap?() }) {
+                    Image(systemName: "gearshape.fill")
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(Color.purple.opacity(0.85))
+                        .padding(7)
+                        .background(.ultraThinMaterial, in: Circle())
+                        .overlay(Circle().stroke(Color.purple.opacity(0.2), lineWidth: 1))
+                }
+                .padding(10)
+            }
+        }
         .shadow(
             color: isReacting && !isBackground ? tagColor.opacity(0.5) : .clear,
             radius: isReacting ? 20 : 0, y: 0
