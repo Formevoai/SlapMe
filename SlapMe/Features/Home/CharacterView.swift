@@ -89,35 +89,29 @@ struct CharacterView: View {
                             .multilineTextAlignment(.center)
                     }
                 }
-                .frame(height: 160)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .padding(.horizontal, 12)
-                .padding(.top, 12)
+                .frame(maxWidth: .infinity)
             } else if pack.isCustom {
                 // Custom karakter: kapak resmi varsa göster, yoksa waveform
                 ZStack {
-                    LinearGradient(
-                        colors: [Color.purple.opacity(0.25), Color.purple.opacity(0.1)],
-                        startPoint: .topLeading, endPoint: .bottomTrailing
-                    )
-                    let coverURL = CustomPackManager.coverImageURL(for: pack.id)
-                    if FileManager.default.fileExists(atPath: coverURL.path),
+                    if let coverURL = Optional(CustomPackManager.coverImageURL(for: pack.id)),
+                        FileManager.default.fileExists(atPath: coverURL.path),
                         let img = UIImage(contentsOfFile: coverURL.path)
                     {
                         Image(uiImage: img)
                             .resizable()
                             .scaledToFill()
-                            .clipped()
                     } else {
+                        LinearGradient(
+                            colors: [Color.purple.opacity(0.25), Color.purple.opacity(0.1)],
+                            startPoint: .topLeading, endPoint: .bottomTrailing
+                        )
                         Image(systemName: "waveform.path.ecg")
                             .font(.system(size: 56))
                             .foregroundStyle(Color.purple.opacity(0.6))
                     }
                 }
-                .frame(height: 160)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .padding(.horizontal, 12)
-                .padding(.top, 12)
+                .frame(maxWidth: .infinity)
+                .clipped()
             } else if let uiImage = characterImage {
                 Image(uiImage: uiImage)
                     .resizable()
