@@ -72,7 +72,7 @@ targets:
       properties:
         CFBundleDisplayName: SlapMe
         CFBundleShortVersionString: "1.1"
-        CFBundleVersion: "7"
+        CFBundleVersion: "8"
         LSRequiresIPhoneOS: true
         UILaunchScreen:
           UIColorName: LaunchBG
