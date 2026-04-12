@@ -26,6 +26,8 @@
 	<true/>
 	<key>NSMotionUsageDescription</key>
 	<string>SlapMe uses motion sensors to detect slaps and play sound effects. / SlapMe hareket sensörlerini kullanarak vuruşları algılar ve ses efektleri çalar.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>SlapMe uses your photo library so you can set a cover image for your custom sound pack. / SlapMe, özel ses paketiniz için kapak görseli seçmenizi sağlamak amacıyla fotoğraf kitaplığınıza erişir.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

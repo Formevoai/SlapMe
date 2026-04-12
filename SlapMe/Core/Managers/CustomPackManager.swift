@@ -1,5 +1,6 @@
 import Combine
 import Foundation
+import UIKit
 
 final class CustomPackManager: ObservableObject {
     @Published private(set) var packs: [CustomPack] = []
@@ -14,6 +15,19 @@ final class CustomPackManager: ObservableObject {
         FileManager.default
             .urls(for: .documentDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("CustomSounds")
+    }
+
+    static func coverImageURL(for packID: String) -> URL {
+        customSoundsDir.appendingPathComponent(packID).appendingPathComponent("cover.jpg")
+    }
+
+    func saveCoverImage(_ image: UIImage, for packID: String) {
+        let url = Self.coverImageURL(for: packID)
+        try? FileManager.default.createDirectory(
+            at: soundsDirectory(for: packID), withIntermediateDirectories: true)
+        if let data = image.jpegData(compressionQuality: 0.85) {
+            try? data.write(to: url, options: .atomic)
+        }
     }
 
     init() { load() }

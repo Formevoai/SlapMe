@@ -94,15 +94,25 @@ struct CharacterView: View {
                 .padding(.horizontal, 12)
                 .padding(.top, 12)
             } else if pack.isCustom {
-                // Custom karakter: ses dalgası placeholder
+                // Custom karakter: kapak resmi varsa göster, yoksa waveform
                 ZStack {
                     LinearGradient(
                         colors: [Color.purple.opacity(0.25), Color.purple.opacity(0.1)],
                         startPoint: .topLeading, endPoint: .bottomTrailing
                     )
-                    Image(systemName: "waveform.path.ecg")
-                        .font(.system(size: 56))
-                        .foregroundStyle(Color.purple.opacity(0.6))
+                    let coverURL = CustomPackManager.coverImageURL(for: pack.id)
+                    if FileManager.default.fileExists(atPath: coverURL.path),
+                        let img = UIImage(contentsOfFile: coverURL.path)
+                    {
+                        Image(uiImage: img)
+                            .resizable()
+                            .scaledToFill()
+                            .clipped()
+                    } else {
+                        Image(systemName: "waveform.path.ecg")
+                            .font(.system(size: 56))
+                            .foregroundStyle(Color.purple.opacity(0.6))
+                    }
                 }
                 .frame(height: 160)
                 .clipShape(RoundedRectangle(cornerRadius: 12))

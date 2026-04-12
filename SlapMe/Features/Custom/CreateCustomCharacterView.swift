@@ -11,6 +11,8 @@ struct CreateCustomCharacterView: View {
     @State private var characterName = ""
     @State private var currentPackID: String? = nil
     @State private var showDocPicker = false
+    @State private var showImagePicker = false
+    @State private var selectedImage: UIImage? = nil
     @State private var errorMessage: String? = nil
     @State private var previewPlayer: AVAudioPlayer? = nil
     @State private var playingClip: String? = nil
@@ -28,14 +30,37 @@ struct CreateCustomCharacterView: View {
             VStack(spacing: 0) {
                 // Karakter ikonu + isim alanı
                 VStack(spacing: 14) {
-                    ZStack {
-                        Circle()
-                            .fill(Color.purple.opacity(0.12))
-                            .frame(width: 88, height: 88)
-                        Image(systemName: "person.crop.circle.badge.plus")
-                            .font(.system(size: 44))
-                            .foregroundStyle(Color.purple)
+                    Button {
+                        showImagePicker = true
+                    } label: {
+                        ZStack {
+                            if let img = selectedImage {
+                                Image(uiImage: img)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 88, height: 88)
+                                    .clipShape(Circle())
+                            } else {
+                                Circle()
+                                    .fill(Color.purple.opacity(0.12))
+                                    .frame(width: 88, height: 88)
+                                Image(systemName: "camera.fill")
+                                    .font(.system(size: 30))
+                                    .foregroundStyle(Color.purple.opacity(0.7))
+                            }
+                            // Overlay edit icon
+                            Circle()
+                                .fill(Color.purple)
+                                .frame(width: 24, height: 24)
+                                .overlay(
+                                    Image(systemName: "pencil")
+                                        .font(.system(size: 11, weight: .bold))
+                                        .foregroundStyle(.white)
+                                )
+                                .offset(x: 28, y: 28)
+                        }
                     }
+                    .buttonStyle(.plain)
                     .padding(.top, 24)
 
                     TextField(L("custom_name_placeholder"), text: $characterName)
@@ -190,6 +215,9 @@ struct CreateCustomCharacterView: View {
                     importAudio(from: url)
                 }
             }
+            .sheet(isPresented: $showImagePicker) {
+                ImagePicker(image: $selectedImage)
+            }
             .confirmationDialog(
                 L("custom_delete_confirm"),
                 isPresented: $showDeleteConfirm,
@@ -210,6 +238,10 @@ struct CreateCustomCharacterView: View {
                 {
                     currentPackID = id
                     characterName = pack.name
+                    let imgURL = CustomPackManager.coverImageURL(for: id)
+                    if FileManager.default.fileExists(atPath: imgURL.path) {
+                        selectedImage = UIImage(contentsOfFile: imgURL.path)
+                    }
                 }
             }
         }
@@ -234,6 +266,9 @@ struct CreateCustomCharacterView: View {
         guard let id = currentPackID else { return }
         let name = characterName.trimmingCharacters(in: .whitespaces)
         customPackManager.updateName(name.isEmpty ? L("custom_default_name") : name, for: id)
+        if let img = selectedImage {
+            customPackManager.saveCoverImage(img, for: id)
+        }
         previewPlayer?.stop()
         dismiss()
     }

@@ -82,6 +82,7 @@ targets:
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
         NSMotionUsageDescription: "SlapMe uses motion sensors to detect slaps and play sound effects. / SlapMe hareket sensörlerini kullanarak vuruşları algılar ve ses efektleri çalar."
+        NSPhotoLibraryUsageDescription: "SlapMe uses your photo library so you can set a cover image for your custom sound pack. / SlapMe, özel ses paketiniz için kapak görseli seçmenizi sağlamak amacıyla fotoğraf kitaplığınıza erişir."
         UIBackgroundModes:
           - audio
         ITSAppUsesNonExemptEncryption: false
