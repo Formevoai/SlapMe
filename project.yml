@@ -71,8 +71,8 @@ targets:
       path: SlapMe/App/Info.plist
       properties:
         CFBundleDisplayName: SlapMe
-        CFBundleShortVersionString: "1.1"
-        CFBundleVersion: "8"
+        CFBundleShortVersionString: "1.2"
+        CFBundleVersion: "9"
         LSRequiresIPhoneOS: true
         UILaunchScreen:
           UIColorName: LaunchBG
