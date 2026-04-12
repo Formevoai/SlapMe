@@ -221,6 +221,23 @@ final class AudioManager: ObservableObject {
         // Trial mode: sadece ilk clip (deneme); full: rastgele
         let clip = isTrial ? allClips[0] : allClips.randomElement()!
 
+        // Custom pack: Documents dizininden yükle
+        if pack.isCustom, let packID = pack.customPackID {
+            let url = CustomPackManager.customSoundsDir
+                .appendingPathComponent(packID)
+                .appendingPathComponent(clip)
+            do {
+                let player = try AVAudioPlayer(contentsOf: url)
+                player.volume = masterVolume
+                player.prepareToPlay()
+                player.play()
+                oneShotPlayer = player
+            } catch {
+                print("[AudioManager] Custom charger sound çalınamadı: \(error)")
+            }
+            return
+        }
+
         let name = (clip as NSString).deletingPathExtension
         let ext =
             (clip as NSString).pathExtension.isEmpty ? "mp3" : (clip as NSString).pathExtension

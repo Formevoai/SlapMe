@@ -202,7 +202,7 @@ struct RootView: View {
         else { return }
 
         let chargerPackID = settingsStore.settings.selectedPackID
-        guard let pack = allPacks.first(where: { $0.id == chargerPackID }) else { return }
+        guard let pack = findPack(id: chargerPackID) else { return }
 
         let userIsPremium = storeManager.isPremium
 
