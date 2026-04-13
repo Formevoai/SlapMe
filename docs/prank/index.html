@@ -8,7 +8,189 @@
   <meta property="og:title" content="📦 Something for you">
   <meta property="og:description" content="Tap to open 😏">
   <meta property="og:type" content="website">
-<meta name="apple-itunes-app" content="app-id=6761608427">
+  <meta name="apple-itunes-app" content="app-id=6761608427">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, 'SF Pro Display', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f2f2f7;
+      transition: background 0.4s;
+    }
+
+    /* ── TAP SCREEN ── */
+    #tap-screen {
+      background: #fff;
+      border-radius: 22px;
+      padding: 44px 28px 38px;
+      text-align: center;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.07);
+      width: 88%;
+      max-width: 320px;
+    }
+    #tap-screen .icon { font-size: 64px; margin-bottom: 20px; display: block; }
+    #tap-screen h1 { font-size: 20px; font-weight: 700; color: #1c1c1e; margin-bottom: 8px; }
+    #tap-screen p  { font-size: 14px; color: #8e8e93; margin-bottom: 28px; }
+    #tap-btn {
+      width: 100%;
+      background: #007aff;
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 15px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    /* ── LOADING SCREEN ── */
+    #loading { display: none; text-align: center; width: 88%; max-width: 320px; }
+    #loading .icon { font-size: 56px; margin-bottom: 20px; display: block; }
+    #loading h1 { font-size: 18px; font-weight: 700; color: #1c1c1e; margin-bottom: 6px; }
+    #loading p  { font-size: 13px; color: #8e8e93; margin-bottom: 26px; }
+    .card-wrap {
+      background: #fff;
+      border-radius: 22px;
+      padding: 36px 28px 32px;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.07);
+    }
+    .track { background: #e5e5ea; border-radius: 6px; height: 5px; overflow: hidden; }
+    .fill  { height: 100%; background: #007aff; border-radius: 6px; width: 0%; transition: width 0.4s ease; }
+    #pct   { font-size: 12px; color: #8e8e93; margin-top: 10px; }
+
+    /* ── BOOM SCREEN ── */
+    #boom {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+    #boom .slap  { font-size: 88px; display: block; margin-bottom: 16px;
+                   animation: pop 0.5s cubic-bezier(.36,1.6,.6,1) both; }
+    #boom h1     { font-size: 28px; font-weight: 800; color: #fff;
+                   letter-spacing: -0.5px; margin-bottom: 8px;
+                   animation: pop 0.6s 0.1s cubic-bezier(.36,1.6,.6,1) both; }
+    #boom .sub   { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 36px;
+                   animation: fadeUp 0.5s 0.3s ease both; }
+    #boom .cta   { display: inline-flex; align-items: center; gap: 10px;
+                   background: #fff; color: #1c1c1e; text-decoration: none;
+                   font-size: 16px; font-weight: 700; padding: 15px 28px;
+                   border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+                   animation: fadeUp 0.5s 0.5s ease both; }
+    #boom .cta .badge { font-size: 13px; font-weight: 600; color: #ff2d78;
+                        background: rgba(255,45,120,0.1); padding: 3px 8px;
+                        border-radius: 8px; }
+
+    @keyframes pop    { from { transform: scale(0); opacity: 0 } to { transform: scale(1); opacity: 1 } }
+    @keyframes fadeUp { from { transform: translateY(12px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
+  </style>
+</head>
+<body>
+
+  <!-- Tap screen (required for iOS audio unlock) -->
+  <div id="tap-screen">
+    <span class="icon">📦</span>
+    <h1>You got a gift!</h1>
+    <p>Your friend sent you something special.</p>
+    <button id="tap-btn">Open Gift 🎁</button>
+  </div>
+
+  <!-- Loading screen -->
+  <div id="loading">
+    <div class="card-wrap">
+      <span class="icon">📦</span>
+      <h1>Opening...</h1>
+      <p>Preparing your content,<br>one moment please.</p>
+      <div class="track"><div class="fill" id="bar"></div></div>
+      <div id="pct">0%</div>
+    </div>
+  </div>
+
+  <!-- Boom screen -->
+  <div id="boom">
+    <span class="slap">👋</span>
+    <h1>YOU GOT SLAPPED!</h1>
+    <p class="sub">Your friend used SlapMe to get you 😂</p>
+    <a class="cta" href="https://apps.apple.com/de/app/slapme-slap-sound-app/id6761608427">
+      Get SlapMe — Slap Sound App
+      <span class="badge">Free</span>
+    </a>
+  </div>
+
+  <!-- Preload sounds -->
+  <audio id="snd-boom" src="../sounds/boom.mp3" preload="auto"></audio>
+
+  <script>
+  (function () {
+    var params  = new URLSearchParams(window.location.search);
+    var delay   = Math.max(0, parseInt(params.get('delay') || '5', 10));
+    var bar     = document.getElementById('bar');
+    var pct     = document.getElementById('pct');
+    var tapScreen = document.getElementById('tap-screen');
+    var loading = document.getElementById('loading');
+    var boom    = document.getElementById('boom');
+    var boomSnd = document.getElementById('snd-boom');
+
+    // Tap button — user gesture unlocks audio on iOS
+    document.getElementById('tap-btn').addEventListener('click', function () {
+      // Unlock audio context with user gesture
+      boomSnd.load();
+      // Hide tap screen, show loading
+      tapScreen.style.display = 'none';
+      loading.style.display   = 'block';
+      startLoading();
+    });
+
+    function startLoading() {
+      var start = Date.now();
+      var total = delay * 1000;
+
+      function tick() {
+        var elapsed = Date.now() - start;
+        var progress;
+
+        if (total === 0) {
+          progress = 100;
+        } else {
+          var ratio = Math.min(elapsed / total, 1);
+          if (ratio < 0.5)      progress = ratio * 2 * 76;
+          else if (ratio < 0.9) progress = 76 + (ratio - 0.5) / 0.4 * 17;
+          else                  progress = 93 + (ratio - 0.9) / 0.1 * 7;
+          progress = Math.min(progress, 100);
+        }
+
+        bar.style.width    = progress.toFixed(0) + '%';
+        pct.textContent    = progress.toFixed(0) + '%';
+
+        if (progress < 100) {
+          requestAnimationFrame(tick);
+        } else {
+          setTimeout(showBoom, 300);
+        }
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    function showBoom() {
+      loading.style.display = 'none';
+      boom.style.display    = 'block';
+      document.body.style.background = '#ff2d78';
+
+      boomSnd.volume = 1.0;
+      boomSnd.play().catch(function(){});
+
+      if (navigator.vibrate) navigator.vibrate([200, 100, 400]);
+    }
+  })();
+  </script>
+</body>
+</html>
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
