@@ -89,7 +89,7 @@ struct CharacterView: View {
                             .multilineTextAlignment(.center)
                     }
                 }
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity, minHeight: 160, maxHeight: 160)
             } else if pack.isCustom {
                 // Custom karakter: kapak resmi varsa göster, yoksa waveform
                 ZStack {
@@ -110,7 +110,7 @@ struct CharacterView: View {
                             .foregroundStyle(Color.purple.opacity(0.6))
                     }
                 }
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity, minHeight: 160, maxHeight: 160)
                 .clipped()
             } else if let uiImage = characterImage {
                 Image(uiImage: uiImage)
