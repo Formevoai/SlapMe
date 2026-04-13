@@ -102,13 +102,6 @@
     var start   = Date.now();
     var total   = delay * 1000;
 
-    // Try to open the native app silently (no Safari redirect)
-    var appUrl = 'slapme://prank' + window.location.search;
-    var iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    iframe.src = appUrl;
-    document.body.appendChild(iframe);
-
     function tick() {
       var elapsed = Date.now() - start;
       var progress;
