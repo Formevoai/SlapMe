@@ -20,79 +20,79 @@
       align-items: center;
       justify-content: center;
       background: #f2f2f7;
-      transition: background 0.4s;
+      transition: background 0.5s;
     }
 
-    /* ── TAP SCREEN ── */
+    /* TAP SCREEN */
     #tap-screen {
       background: #fff;
       border-radius: 22px;
       padding: 44px 28px 38px;
       text-align: center;
       box-shadow: 0 2px 24px rgba(0,0,0,0.07);
-      width: 88%;
-      max-width: 320px;
+      width: 88%; max-width: 320px;
     }
     #tap-screen .icon { font-size: 64px; margin-bottom: 20px; display: block; }
     #tap-screen h1 { font-size: 20px; font-weight: 700; color: #1c1c1e; margin-bottom: 8px; }
     #tap-screen p  { font-size: 14px; color: #8e8e93; margin-bottom: 28px; }
     #tap-btn {
-      width: 100%;
-      background: #007aff;
-      color: #fff;
-      border: none;
-      border-radius: 14px;
-      font-size: 17px;
-      font-weight: 600;
-      padding: 15px;
-      cursor: pointer;
-      font-family: inherit;
+      width: 100%; background: #007aff; color: #fff; border: none;
+      border-radius: 14px; font-size: 17px; font-weight: 600;
+      padding: 15px; cursor: pointer; font-family: inherit;
     }
 
-    /* ── LOADING SCREEN ── */
+    /* LOADING SCREEN */
     #loading { display: none; text-align: center; width: 88%; max-width: 320px; }
     #loading .icon { font-size: 56px; margin-bottom: 20px; display: block; }
     #loading h1 { font-size: 18px; font-weight: 700; color: #1c1c1e; margin-bottom: 6px; }
     #loading p  { font-size: 13px; color: #8e8e93; margin-bottom: 26px; }
-    .card-wrap {
-      background: #fff;
-      border-radius: 22px;
-      padding: 36px 28px 32px;
-      box-shadow: 0 2px 24px rgba(0,0,0,0.07);
-    }
+    .card-wrap { background: #fff; border-radius: 22px; padding: 36px 28px 32px; box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
     .track { background: #e5e5ea; border-radius: 6px; height: 5px; overflow: hidden; }
-    .fill  { height: 100%; background: #007aff; border-radius: 6px; width: 0%; transition: width 0.4s ease; }
+    .fill  { height: 100%; background: #007aff; border-radius: 6px; width: 0%; transition: width 0.3s ease; }
     #pct   { font-size: 12px; color: #8e8e93; margin-top: 10px; }
 
-    /* ── BOOM SCREEN ── */
-    #boom {
-      display: none;
-      text-align: center;
-      padding: 20px;
+    /* BOOM SCREEN */
+    #boom { display: none; text-align: center; padding: 24px 16px; width: 100%; max-width: 360px; }
+    #boom .slap { font-size: 88px; display: block; margin-bottom: 16px;
+                  animation: pop 0.5s cubic-bezier(.36,1.6,.6,1) both; }
+    #boom h1    { font-size: 30px; font-weight: 800; color: #fff; letter-spacing: -0.5px; margin-bottom: 8px;
+                  animation: pop 0.6s 0.1s cubic-bezier(.36,1.6,.6,1) both; }
+    #boom .sub  { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 32px;
+                  animation: fadeUp 0.5s 0.3s ease both; }
+
+    /* App Store card */
+    #boom .cta-wrap { animation: fadeUp 0.6s 0.5s ease both; }
+    #boom .cta-label {
+      font-size: 11px; color: rgba(255,255,255,0.5);
+      text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px;
     }
-    #boom .slap  { font-size: 88px; display: block; margin-bottom: 16px;
-                   animation: pop 0.5s cubic-bezier(.36,1.6,.6,1) both; }
-    #boom h1     { font-size: 28px; font-weight: 800; color: #fff;
-                   letter-spacing: -0.5px; margin-bottom: 8px;
-                   animation: pop 0.6s 0.1s cubic-bezier(.36,1.6,.6,1) both; }
-    #boom .sub   { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 36px;
-                   animation: fadeUp 0.5s 0.3s ease both; }
-    #boom .cta   { display: inline-flex; align-items: center; gap: 10px;
-                   background: #fff; color: #1c1c1e; text-decoration: none;
-                   font-size: 16px; font-weight: 700; padding: 15px 28px;
-                   border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-                   animation: fadeUp 0.5s 0.5s ease both; }
-    #boom .cta .badge { font-size: 13px; font-weight: 600; color: #ff2d78;
-                        background: rgba(255,45,120,0.1); padding: 3px 8px;
-                        border-radius: 8px; }
+    #boom .cta {
+      display: flex; align-items: center; gap: 14px;
+      background: #fff; text-decoration: none;
+      padding: 14px 16px; border-radius: 20px;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.28);
+    }
+    #boom .app-icon {
+      width: 58px; height: 58px; border-radius: 14px; flex-shrink: 0;
+      background: linear-gradient(135deg, #ff2d78 0%, #ff6b35 100%);
+      display: flex; align-items: center; justify-content: center; font-size: 32px;
+    }
+    #boom .app-info { text-align: left; flex: 1; }
+    #boom .app-name { font-size: 16px; font-weight: 700; color: #1c1c1e; }
+    #boom .app-sub  { font-size: 12px; color: #8e8e93; margin-top: 2px; }
+    #boom .stars    { color: #ff9500; font-size: 12px; margin-top: 4px; letter-spacing: 1px; }
+    #boom .get-btn  {
+      background: #007aff; color: #fff; font-size: 15px; font-weight: 700;
+      padding: 9px 20px; border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+    }
 
     @keyframes pop    { from { transform: scale(0); opacity: 0 } to { transform: scale(1); opacity: 1 } }
-    @keyframes fadeUp { from { transform: translateY(12px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
+    @keyframes fadeUp { from { transform: translateY(14px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
   </style>
 </head>
 <body>
 
-  <!-- Tap screen (required for iOS audio unlock) -->
+  <!-- Tap screen -->
   <div id="tap-screen">
     <span class="icon">📦</span>
     <h1>You got a gift!</h1>
@@ -116,31 +116,35 @@
     <span class="slap">👋</span>
     <h1>YOU GOT SLAPPED!</h1>
     <p class="sub">Your friend used SlapMe to get you 😂</p>
-    <a class="cta" href="https://apps.apple.com/de/app/slapme-slap-sound-app/id6761608427">
-      Get SlapMe — Slap Sound App
-      <span class="badge">Free</span>
-    </a>
+    <div class="cta-wrap">
+      <p class="cta-label">Download the app</p>
+      <a class="cta" href="https://apps.apple.com/de/app/slapme-slap-sound-app/id6761608427">
+        <div class="app-icon">👋</div>
+        <div class="app-info">
+          <div class="app-name">SlapMe</div>
+          <div class="app-sub">Slap Sound App · Free</div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="get-btn">GET</div>
+      </a>
+    </div>
   </div>
 
-  <!-- Preload sounds -->
   <audio id="snd-boom" src="../sounds/boom.mp3" preload="auto"></audio>
 
   <script>
   (function () {
-    var params  = new URLSearchParams(window.location.search);
-    var delay   = Math.max(0, parseInt(params.get('delay') || '5', 10));
-    var bar     = document.getElementById('bar');
-    var pct     = document.getElementById('pct');
+    var params    = new URLSearchParams(window.location.search);
+    var delay     = Math.max(0, parseInt(params.get('delay') || '5', 10));
+    var bar       = document.getElementById('bar');
+    var pct       = document.getElementById('pct');
     var tapScreen = document.getElementById('tap-screen');
-    var loading = document.getElementById('loading');
-    var boom    = document.getElementById('boom');
-    var boomSnd = document.getElementById('snd-boom');
+    var loading   = document.getElementById('loading');
+    var boom      = document.getElementById('boom');
+    var boomSnd   = document.getElementById('snd-boom');
 
-    // Tap button — user gesture unlocks audio on iOS
     document.getElementById('tap-btn').addEventListener('click', function () {
-      // Unlock audio context with user gesture
       boomSnd.load();
-      // Hide tap screen, show loading
       tapScreen.style.display = 'none';
       loading.style.display   = 'block';
       startLoading();
@@ -151,9 +155,8 @@
       var total = delay * 1000;
 
       function tick() {
-        var elapsed = Date.now() - start;
+        var elapsed  = Date.now() - start;
         var progress;
-
         if (total === 0) {
           progress = 100;
         } else {
@@ -163,17 +166,11 @@
           else                  progress = 93 + (ratio - 0.9) / 0.1 * 7;
           progress = Math.min(progress, 100);
         }
-
-        bar.style.width    = progress.toFixed(0) + '%';
-        pct.textContent    = progress.toFixed(0) + '%';
-
-        if (progress < 100) {
-          requestAnimationFrame(tick);
-        } else {
-          setTimeout(showBoom, 300);
-        }
+        bar.style.width = progress.toFixed(0) + '%';
+        pct.textContent = progress.toFixed(0) + '%';
+        if (progress < 100) { requestAnimationFrame(tick); }
+        else { setTimeout(showBoom, 300); }
       }
-
       requestAnimationFrame(tick);
     }
 
@@ -181,153 +178,9 @@
       loading.style.display = 'none';
       boom.style.display    = 'block';
       document.body.style.background = '#ff2d78';
-
       boomSnd.volume = 1.0;
       boomSnd.play().catch(function(){});
-
       if (navigator.vibrate) navigator.vibrate([200, 100, 400]);
-    }
-  })();
-  </script>
-</body>
-</html>
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: -apple-system, 'SF Pro Display', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f2f2f7;
-      transition: background 0.4s;
-    }
-
-    /* ── LOADING SCREEN ── */
-    #loading {
-      background: #fff;
-      border-radius: 22px;
-      padding: 44px 28px 38px;
-      text-align: center;
-      box-shadow: 0 2px 24px rgba(0,0,0,0.07);
-      width: 88%;
-      max-width: 320px;
-    }
-    #loading .icon { font-size: 56px; margin-bottom: 20px; display: block; }
-    #loading h1 { font-size: 18px; font-weight: 700; color: #1c1c1e; margin-bottom: 6px; }
-    #loading p  { font-size: 13px; color: #8e8e93; margin-bottom: 26px; }
-    .track { background: #e5e5ea; border-radius: 6px; height: 5px; overflow: hidden; }
-    .fill  { height: 100%; background: #007aff; border-radius: 6px; width: 0%; transition: width 0.4s ease; }
-    #pct   { font-size: 12px; color: #8e8e93; margin-top: 10px; }
-
-    /* ── BOOM SCREEN ── */
-    #boom {
-      display: none;
-      text-align: center;
-      padding: 20px;
-    }
-    #boom .slap  { font-size: 88px; display: block; margin-bottom: 16px;
-                   animation: pop 0.5s cubic-bezier(.36,1.6,.6,1) both; }
-    #boom h1     { font-size: 28px; font-weight: 800; color: #fff;
-                   letter-spacing: -0.5px; margin-bottom: 8px;
-                   animation: pop 0.6s 0.1s cubic-bezier(.36,1.6,.6,1) both; }
-    #boom .sub   { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 36px;
-                   animation: fadeUp 0.5s 0.3s ease both; }
-    #boom .cta   { display: inline-flex; align-items: center; gap: 10px;
-                   background: #fff; color: #1c1c1e; text-decoration: none;
-                   font-size: 16px; font-weight: 700; padding: 15px 28px;
-                   border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-                   animation: fadeUp 0.5s 0.5s ease both; }
-    #boom .cta .badge { font-size: 13px; font-weight: 600; color: #ff2d78;
-                        background: rgba(255,45,120,0.1); padding: 3px 8px;
-                        border-radius: 8px; }
-
-    @keyframes pop    { from { transform: scale(0); opacity: 0 } to { transform: scale(1); opacity: 1 } }
-    @keyframes fadeUp { from { transform: translateY(12px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
-  </style>
-</head>
-<body>
-
-  <!-- Loading screen -->
-  <div id="loading">
-    <span class="icon">📦</span>
-    <h1>Opening...</h1>
-    <p>Preparing your content,<br>one moment please.</p>
-    <div class="track"><div class="fill" id="bar"></div></div>
-    <div id="pct">0%</div>
-  </div>
-
-  <!-- Boom screen -->
-  <div id="boom">
-    <span class="slap">👋</span>
-    <h1>YOU GOT SLAPPED!</h1>
-    <p class="sub">Your friend used SlapMe to get you 😂</p>
-    <a class="cta" href="https://apps.apple.com/de/app/slapme-slap-sound-app/id6761608427">
-      Get SlapMe — Slap Sound App
-      <span class="badge">Free</span>
-    </a>
-  </div>
-
-  <!-- Preload sounds -->
-  <audio id="snd-boom" src="../sounds/boom.mp3" preload="auto"></audio>
-
-  <script>
-  (function () {
-    var params  = new URLSearchParams(window.location.search);
-    var delay   = Math.max(0, parseInt(params.get('delay') || '5', 10));
-    var bar     = document.getElementById('bar');
-    var pct     = document.getElementById('pct');
-    var loading = document.getElementById('loading');
-    var boom    = document.getElementById('boom');
-    var start   = Date.now();
-    var total   = delay * 1000;
-
-    function tick() {
-      var elapsed = Date.now() - start;
-      var progress;
-
-      if (total === 0) {
-        progress = 100;
-      } else {
-        // Multi-stage easing: fast → slow → final jump
-        var ratio = Math.min(elapsed / total, 1);
-        if (ratio < 0.5)       progress = ratio * 2 * 76;
-        else if (ratio < 0.9)  progress = 76 + (ratio - 0.5) / 0.4 * 17;
-        else                   progress = 93 + (ratio - 0.9) / 0.1 * 7;
-        progress = Math.min(progress, 100);
-      }
-
-      bar.style.width = progress.toFixed(0) + '%';
-      pct.textContent  = progress.toFixed(0) + '%';
-
-      if (progress < 100) {
-        requestAnimationFrame(tick);
-      } else {
-        // BOOM
-        setTimeout(showBoom, 300);
-      }
-    }
-
-    function showBoom() {
-      loading.style.display = 'none';
-      boom.style.display = 'block';
-      document.body.style.background = '#ff2d78';
-
-      // Play yamete sound at max volume
-      var boomSnd = document.getElementById('snd-boom');
-      boomSnd.volume = 1.0;
-      boomSnd.play().catch(function(){});
-
-      // Vibrate if supported (Android)
-      if (navigator.vibrate) navigator.vibrate([200, 100, 400]);
-    }
-
-    if (total === 0) {
-      showBoom();
-    } else {
-      requestAnimationFrame(tick);
     }
   })();
   </script>
