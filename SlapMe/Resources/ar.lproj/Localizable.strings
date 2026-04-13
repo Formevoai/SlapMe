@@ -137,3 +137,16 @@
 "custom_delete_confirm_btn" = "حذف الحزمة";
 "custom_delete_cancel_btn" = "إلغاء";
 "custom_name_placeholder" = "اسم الشخصية";
+// MARK: - Prank
+"prank_share_btn" = "مزاح لصديق 🎁";
+"prank_sheet_title" = "إرسال مزحة";
+"prank_delay_title" = "متى تنفجر؟";
+"prank_delay_now" = "فوراً";
+"prank_delay_3s" = "بعد 3 ثوانٍ";
+"prank_delay_5s" = "بعد 5 ثوانٍ";
+"prank_delay_10s" = "بعد 10 ثوانٍ";
+"prank_send_btn" = "مشاركة الرابط";
+"prank_share_msg" = "انظر لهذا 👀";
+"prank_loading_title" = "جارٍ التحميل...";
+"prank_loading_subtitle" = "جارٍ تحضير المحتوى...";
+"prank_got_you" = "انكشفت! 👋";

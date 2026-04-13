@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0869BE2CF496A62B770A2A61 /* SoundPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EFC67B208E860A5B91802D /* SoundPack.swift */; };
+		12BFD378CBC2ECE96FE6DE53 /* PrankLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7A5698B0280C0AC70E7B9A /* PrankLandingView.swift */; };
 		2039BD344317085B7012B7CC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABE7E03D7997D1FC1584AC9 /* ImagePicker.swift */; };
 		20C6708D160DF51B1B8DBC82 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99686EB2F8FBE904228205C /* Character.swift */; };
 		2129EB1B5D4CE67CA4A64B8F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B690003F5AF87B3F0AAF92 /* HomeView.swift */; };
@@ -18,6 +19,7 @@
 		5F12D53CA8BCABAC395CD1BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39870A293B709452BDF036BB /* Localizable.strings */; };
 		5F872EF52C268C69471F5804 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131935148225E06A92A057D6 /* StoreView.swift */; };
 		68BC760EB66E2FDF73D860B0 /* SlapMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E590D5B4467E5635AACCE078 /* SlapMeApp.swift */; };
+		6FDA70EA9A92619E06B4CAC6 /* PrankShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971C3521C15588004FAB18AB /* PrankShareSheet.swift */; };
 		70095856FC16A0C4CDF9D00B /* ImpactDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D8580C08B34D567B696835 /* ImpactDetector.swift */; };
 		70ECE20F9BEAE5924D11DA25 /* MotionPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4923D7674E62BD8B652B33 /* MotionPermissionService.swift */; };
 		71B9B46DE5EBBA840B6E7B89 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 12D9B514DD829030C6A6A5AF /* Sounds */; };
@@ -59,17 +61,18 @@
 		12D9B514DD829030C6A6A5AF /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = SlapMe/Resources/Sounds; sourceTree = SOURCE_ROOT; };
 		131935148225E06A92A057D6 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		18A6B1C6F7C7F8F6190F7DA6 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1A6A620F2C928430107846E1 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		1A6A620F2C928430107846E1 /* Configuration.storekit */ = {isa = PBXFileReference; path = Configuration.storekit; sourceTree = "<group>"; };
 		272D94B293FB956923A923CF /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CA6FD9DF05B57A34E6402E7 /* ReactionTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionTestView.swift; sourceTree = "<group>"; };
 		30D2ACA95E4DA2314FFDA769 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3C6136F86E04A9939445767F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3D7A5698B0280C0AC70E7B9A /* PrankLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrankLandingView.swift; sourceTree = "<group>"; };
 		3DCFC1FDC4FE1620ABBC24B0 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		41A734B13F9573D373D45230 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4AAE2D75F4F336056AF3130C /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		51A338B6D00446BD4845DA19 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		51B66FDDA4152589491C9BF7 /* SoundPackLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPackLoader.swift; sourceTree = "<group>"; };
-		52378ACF283B7625C5101688 /* SlapMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlapMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52378ACF283B7625C5101688 /* SlapMe.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SlapMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB594F0804AB29A15CB1A35 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		702DC6ADC73C7B16EDA113E1 /* GIFImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFImage.swift; sourceTree = "<group>"; };
 		71C9485CD2072125FF716687 /* PackPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackPreviewView.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		836976CA818D328FEA65313E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		88B84E45C3895D0F55DA2AA4 /* CustomPackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPackManager.swift; sourceTree = "<group>"; };
 		95F40A767FCD641A855D9655 /* PackSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackSelectionView.swift; sourceTree = "<group>"; };
+		971C3521C15588004FAB18AB /* PrankShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrankShareSheet.swift; sourceTree = "<group>"; };
 		9B7DBBC167F40E9298A040E0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9EBA5A2896AF25A1ACE0E2E4 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9F257764FD18F59486BF4229 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -116,6 +120,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		00C50A0B3029FE20602C5CEA /* Prank */ = {
+			isa = PBXGroup;
+			children = (
+				3D7A5698B0280C0AC70E7B9A /* PrankLandingView.swift */,
+				971C3521C15588004FAB18AB /* PrankShareSheet.swift */,
+			);
+			path = Prank;
+			sourceTree = "<group>";
+		};
 		0F14B2D6120C1164CAA9D806 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +152,7 @@
 				70D592E11C2416A844EC3FDA /* Home */,
 				796134D867B526AEB491AC20 /* Onboarding */,
 				7445A6D612C5F0837FF5C18F /* Packs */,
+				00C50A0B3029FE20602C5CEA /* Prank */,
 				7773937DE626D2593245D165 /* Settings */,
 				73DD7A5151944FDA430F5804 /* Splash */,
 				AC9DB71D467C820F67E4C658 /* Store */,
@@ -363,7 +377,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 2630;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					BD62366F6B137B77842DD0A6 = {
 						DevelopmentTeam = Z8LNR73NY4;
@@ -396,6 +410,7 @@
 			);
 			mainGroup = 1ACDFE480E512328E610DCEC;
 			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -448,6 +463,8 @@
 				AACAAB18ABCCEDC5B4BB74E8 /* PackPreviewView.swift in Sources */,
 				EB1F542806F7708BA0127B4E /* PackSelectionView.swift in Sources */,
 				CF60C507E0EEC9FC1251128E /* PaywallView.swift in Sources */,
+				12BFD378CBC2ECE96FE6DE53 /* PrankLandingView.swift in Sources */,
+				6FDA70EA9A92619E06B4CAC6 /* PrankShareSheet.swift in Sources */,
 				D328F917A189E6981D81AF81 /* ReactionTestView.swift in Sources */,
 				CD4151D58523095FC865D836 /* SensorCheckView.swift in Sources */,
 				D5657E8DC09D486AACBB5472 /* SettingsStore.swift in Sources */,
@@ -498,7 +515,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -530,10 +546,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Z8LNR73NY4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -554,7 +568,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.9;
@@ -567,6 +580,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z8LNR73NY4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SlapMe/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -588,6 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z8LNR73NY4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SlapMe/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -607,7 +622,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -639,10 +653,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z8LNR73NY4;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -656,7 +668,6 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.9;

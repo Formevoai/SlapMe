@@ -137,3 +137,16 @@ to create your own pack";
 "custom_delete_confirm_btn" = "Delete Pack";
 "custom_delete_cancel_btn" = "Cancel";
 "custom_name_placeholder" = "Character name";
+// MARK: - Prank
+"prank_share_btn" = "Prank a Friend 🎁";
+"prank_sheet_title" = "Send a Prank";
+"prank_delay_title" = "When should it explode?";
+"prank_delay_now" = "Immediately";
+"prank_delay_3s" = "After 3 sec";
+"prank_delay_5s" = "After 5 sec";
+"prank_delay_10s" = "After 10 sec";
+"prank_send_btn" = "Share Prank Link";
+"prank_share_msg" = "Hey, open this 👀";
+"prank_loading_title" = "Loading...";
+"prank_loading_subtitle" = "Preparing your content...";
+"prank_got_you" = "YOU GOT SLAPPED! 👋";

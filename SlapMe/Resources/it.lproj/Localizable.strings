@@ -137,3 +137,16 @@ e crea il tuo pacchetto";
 "custom_delete_confirm_btn" = "Elimina pacchetto";
 "custom_delete_cancel_btn" = "Annulla";
 "custom_name_placeholder" = "Nome del personaggio";
+// MARK: - Prank
+"prank_share_btn" = "Fai uno scherzo 🎁";
+"prank_sheet_title" = "Invia scherzo";
+"prank_delay_title" = "Quando esplodere?";
+"prank_delay_now" = "Immediatamente";
+"prank_delay_3s" = "Dopo 3 sec";
+"prank_delay_5s" = "Dopo 5 sec";
+"prank_delay_10s" = "Dopo 10 sec";
+"prank_send_btn" = "Condividi link";
+"prank_share_msg" = "Guarda questo 👀";
+"prank_loading_title" = "Caricamento...";
+"prank_loading_subtitle" = "Preparazione contenuto...";
+"prank_got_you" = "BECCATO! 👋";

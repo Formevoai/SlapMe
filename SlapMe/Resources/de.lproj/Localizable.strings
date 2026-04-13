@@ -137,3 +137,16 @@ und eigenes Paket erstellen";
 "custom_delete_confirm_btn" = "Paket löschen";
 "custom_delete_cancel_btn" = "Abbrechen";
 "custom_name_placeholder" = "Charaktername";
+// MARK: - Prank
+"prank_share_btn" = "Freund verarschen 🎁";
+"prank_sheet_title" = "Streich senden";
+"prank_delay_title" = "Wann soll es explodieren?";
+"prank_delay_now" = "Sofort";
+"prank_delay_3s" = "Nach 3 Sek.";
+"prank_delay_5s" = "Nach 5 Sek.";
+"prank_delay_10s" = "Nach 10 Sek.";
+"prank_send_btn" = "Streich-Link teilen";
+"prank_share_msg" = "Schau mal hier 👀";
+"prank_loading_title" = "Laden...";
+"prank_loading_subtitle" = "Inhalt wird vorbereitet...";
+"prank_got_you" = "ERWISCHT! 👋";

@@ -137,3 +137,16 @@
 "custom_delete_confirm_btn" = "删除包";
 "custom_delete_cancel_btn" = "取消";
 "custom_name_placeholder" = "角色名称";
+// MARK: - Prank
+"prank_share_btn" = "整蛊朋友 🎁";
+"prank_sheet_title" = "发送整蛊";
+"prank_delay_title" = "什么时候爆炸？";
+"prank_delay_now" = "立即";
+"prank_delay_3s" = "3秒后";
+"prank_delay_5s" = "5秒后";
+"prank_delay_10s" = "10秒后";
+"prank_send_btn" = "分享链接";
+"prank_share_msg" = "看看这个 👀";
+"prank_loading_title" = "加载中...";
+"prank_loading_subtitle" = "正在准备内容...";
+"prank_got_you" = "被整到了！ 👋";

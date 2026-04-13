@@ -137,3 +137,16 @@
 "custom_delete_confirm_btn" = "Удалить пакет";
 "custom_delete_cancel_btn" = "Отмена";
 "custom_name_placeholder" = "Имя персонажа";
+// MARK: - Prank
+"prank_share_btn" = "Разыграть друга 🎁";
+"prank_sheet_title" = "Отправить розыгрыш";
+"prank_delay_title" = "Когда взорвётся?";
+"prank_delay_now" = "Сразу";
+"prank_delay_3s" = "Через 3 сек";
+"prank_delay_5s" = "Через 5 сек";
+"prank_delay_10s" = "Через 10 сек";
+"prank_send_btn" = "Поделиться ссылкой";
+"prank_share_msg" = "Посмотри на это 👀";
+"prank_loading_title" = "Загрузка...";
+"prank_loading_subtitle" = "Подготовка контента...";
+"prank_got_you" = "ПОПАЛСЯ! 👋";

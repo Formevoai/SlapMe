@@ -137,3 +137,16 @@ dan buat paket kamu sendiri";
 "custom_delete_confirm_btn" = "Hapus paket";
 "custom_delete_cancel_btn" = "Batal";
 "custom_name_placeholder" = "Nama karakter";
+// MARK: - Prank
+"prank_share_btn" = "Kerjain Teman 🎁";
+"prank_sheet_title" = "Kirim Jebakan";
+"prank_delay_title" = "Kapan meledak?";
+"prank_delay_now" = "Sekarang";
+"prank_delay_3s" = "Setelah 3 dtk";
+"prank_delay_5s" = "Setelah 5 dtk";
+"prank_delay_10s" = "Setelah 10 dtk";
+"prank_send_btn" = "Bagikan Link";
+"prank_share_msg" = "Lihat ini 👀";
+"prank_loading_title" = "Memuat...";
+"prank_loading_subtitle" = "Menyiapkan konten...";
+"prank_got_you" = "KETAHUAN! 👋";

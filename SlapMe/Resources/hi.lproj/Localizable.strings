@@ -137,3 +137,16 @@
 "custom_delete_confirm_btn" = "पैक हटाएं";
 "custom_delete_cancel_btn" = "रद्द करें";
 "custom_name_placeholder" = "कैरेक्टर का नाम";
+// MARK: - Prank
+"prank_share_btn" = "दोस्त को चिढ़ाएं 🎁";
+"prank_sheet_title" = "मज़ाक भेजें";
+"prank_delay_title" = "कब फटे?";
+"prank_delay_now" = "तुरंत";
+"prank_delay_3s" = "3 सेकंड बाद";
+"prank_delay_5s" = "5 सेकंड बाद";
+"prank_delay_10s" = "10 सेकंड बाद";
+"prank_send_btn" = "लिंक शेयर करें";
+"prank_share_msg" = "इसे देखो 👀";
+"prank_loading_title" = "लोड हो रहा है...";
+"prank_loading_subtitle" = "कंटेंट तैयार हो रहा है...";
+"prank_got_you" = "पकड़ा गया! 👋";

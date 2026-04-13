@@ -137,3 +137,16 @@ yükleyip kendi paketini oluştur";
 "custom_delete_confirm_btn" = "Paketi Sil";
 "custom_delete_cancel_btn" = "Vazgeç";
 "custom_name_placeholder" = "Karakter adı";
+// MARK: - Prank
+"prank_share_btn" = "Arkadaşa Şaka Yap 🎁";
+"prank_sheet_title" = "Şaka Gönder";
+"prank_delay_title" = "Ne zaman patlasın?";
+"prank_delay_now" = "Hemen";
+"prank_delay_3s" = "3 saniye sonra";
+"prank_delay_5s" = "5 saniye sonra";
+"prank_delay_10s" = "10 saniye sonra";
+"prank_send_btn" = "Şaka Linkini Gönder";
+"prank_share_msg" = "Buna bir bak 👀";
+"prank_loading_title" = "Yükleniyor...";
+"prank_loading_subtitle" = "İçerik hazırlanıyor...";
+"prank_got_you" = "YAKALANDIN! 👋";

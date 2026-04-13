@@ -86,3 +86,7 @@ targets:
         UIBackgroundModes:
           - audio
         ITSAppUsesNonExemptEncryption: false
+        CFBundleURLTypes:
+          - CFBundleURLSchemes:
+              - slapme
+            CFBundleURLName: com.slapme.SlapMe

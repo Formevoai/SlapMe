@@ -19,6 +19,7 @@ struct HomeView: View {
     @State private var showPaywall = false
     @State private var showCreateCustom = false
     @State private var editingCustomPackID: String? = nil
+    @State private var showPrankSheet = false
     @AppStorage("onboarding_done") private var onboardingDone = true
     @State private var hasSlapped = false
     @State private var hintOpacity: Double = 0.6
@@ -122,6 +123,11 @@ struct HomeView: View {
         }
         .sheet(isPresented: $showCreateCustom) {
             CreateCustomCharacterView(customPackManager: customPackManager)
+        }
+        .sheet(isPresented: $showPrankSheet) {
+            if let pack = currentPack, pack.id != "custom_add_new" {
+                PrankShareSheet(pack: pack)
+            }
         }
         .sheet(
             item: Binding(
@@ -502,6 +508,26 @@ struct HomeView: View {
                     .font(.caption2)
                     .foregroundStyle(textColor.opacity(0.4))
                     .transition(.opacity.combined(with: .move(edge: .top)))
+            }
+
+            // Prank share button
+            if let pack = currentPack, pack.id != "custom_add_new" {
+                Button {
+                    showPrankSheet = true
+                } label: {
+                    HStack(spacing: 6) {
+                        Text("🎁")
+                            .font(.system(size: 14))
+                        Text(L("prank_share_btn"))
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(Color.pink)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 9)
+                    .background(Color.pink.opacity(0.1), in: Capsule())
+                    .overlay(Capsule().stroke(Color.pink.opacity(0.25), lineWidth: 1))
+                }
+                .transition(.opacity)
             }
         }
         .padding(.horizontal, 20)

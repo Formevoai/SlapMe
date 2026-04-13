@@ -137,3 +137,16 @@ en maak je eigen pakket";
 "custom_delete_confirm_btn" = "Pakket verwijderen";
 "custom_delete_cancel_btn" = "Annuleren";
 "custom_name_placeholder" = "Naam van personage";
+// MARK: - Prank
+"prank_share_btn" = "Grap sturen 🎁";
+"prank_sheet_title" = "Grap versturen";
+"prank_delay_title" = "Wanneer ontploffen?";
+"prank_delay_now" = "Meteen";
+"prank_delay_3s" = "Na 3 sec";
+"prank_delay_5s" = "Na 5 sec";
+"prank_delay_10s" = "Na 10 sec";
+"prank_send_btn" = "Link delen";
+"prank_share_msg" = "Kijk hier eens 👀";
+"prank_loading_title" = "Laden...";
+"prank_loading_subtitle" = "Inhoud wordt voorbereid...";
+"prank_got_you" = "BETRAPT! 👋";

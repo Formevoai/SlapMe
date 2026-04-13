@@ -137,3 +137,16 @@
 "custom_delete_confirm_btn" = "팩 삭제";
 "custom_delete_cancel_btn" = "취소";
 "custom_name_placeholder" = "캐릭터 이름";
+// MARK: - Prank
+"prank_share_btn" = "친구에게 장난 🎁";
+"prank_sheet_title" = "장난 보내기";
+"prank_delay_title" = "언제 터뜨릴까요?";
+"prank_delay_now" = "즉시";
+"prank_delay_3s" = "3초 후";
+"prank_delay_5s" = "5초 후";
+"prank_delay_10s" = "10초 후";
+"prank_send_btn" = "링크 공유";
+"prank_share_msg" = "이거 봐봐 👀";
+"prank_loading_title" = "로딩 중...";
+"prank_loading_subtitle" = "콘텐츠 준비 중...";
+"prank_got_you" = "걸렸다! 👋";

@@ -137,3 +137,16 @@
 "custom_delete_confirm_btn" = "パックを削除";
 "custom_delete_cancel_btn" = "キャンセル";
 "custom_name_placeholder" = "キャラクター名";
+// MARK: - Prank
+"prank_share_btn" = "友達にドッキリ 🎁";
+"prank_sheet_title" = "ドッキリを送る";
+"prank_delay_title" = "いつ爆発させる？";
+"prank_delay_now" = "すぐに";
+"prank_delay_3s" = "3秒後";
+"prank_delay_5s" = "5秒後";
+"prank_delay_10s" = "10秒後";
+"prank_send_btn" = "リンクを共有";
+"prank_share_msg" = "これを見て 👀";
+"prank_loading_title" = "読み込み中...";
+"prank_loading_subtitle" = "コンテンツを準備中...";
+"prank_got_you" = "やられた！ 👋";

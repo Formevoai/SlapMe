@@ -26,6 +26,7 @@ struct RootView: View {
     @AppStorage("onboarding_done") private var onboardingDone = false
     @State private var onboardingStep = 0
     @State private var showSplash = true
+    @State private var prankData: PrankLaunchData? = nil
 
     private let categories: [SoundCategory] = SoundCategoryLoader.loadAll()
     private var allPacks: [SoundPack] { categories.flatMap { $0.packs } }
@@ -66,6 +67,14 @@ struct RootView: View {
         .animation(.easeInOut(duration: 0.35), value: onboardingStep)
         .onChange(of: onboardingDone) { done in
             if !done { onboardingStep = 0 }
+        }
+        .onOpenURL { url in
+            handlePrankURL(url)
+        }
+        .fullScreenCover(item: $prankData) { data in
+            PrankLandingView(pack: data.pack, delay: data.delay, audioManager: audioManager) {
+                prankData = nil
+            }
         }
         .onAppear {
             audioManager.configureSession()
@@ -222,4 +231,28 @@ struct RootView: View {
         // Free kategoriler — full erişim
         audioManager.playChargerSound(from: pack, isTrial: false)
     }
+
+    // MARK: - Prank URL Handling
+
+    private func handlePrankURL(_ url: URL) {
+        guard url.scheme == "slapme", url.host == "prank" else { return }
+        let comps = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        let packID = comps?.queryItems?.first(where: { $0.name == "pack" })?.value ?? ""
+        let delay = Int(comps?.queryItems?.first(where: { $0.name == "delay" })?.value ?? "5") ?? 5
+        // Resolve pack — fallback to first available if not found
+        guard let pack = findPack(id: packID) ?? allPacks.first else { return }
+        prankData = PrankLaunchData(
+            id: "\(packID)_\(delay)_\(Date().timeIntervalSince1970)",
+            pack: pack,
+            delay: delay
+        )
+    }
+}
+
+// MARK: - Prank Data Model
+
+struct PrankLaunchData: Identifiable {
+    let id: String
+    let pack: SoundPack
+    let delay: Int
 }
