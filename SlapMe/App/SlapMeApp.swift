@@ -27,6 +27,7 @@ struct RootView: View {
     @State private var onboardingStep = 0
     @State private var showSplash = true
     @State private var prankData: PrankLaunchData? = nil
+    @State private var pendingPrankData: PrankLaunchData? = nil
 
     private let categories: [SoundCategory] = SoundCategoryLoader.loadAll()
     private var allPacks: [SoundPack] { categories.flatMap { $0.packs } }
@@ -59,6 +60,13 @@ struct RootView: View {
             if showSplash {
                 SplashView {
                     showSplash = false
+                    // Eğer splash açılırken prank linki geldiyse şimdi göster
+                    if let pending = pendingPrankData {
+                        pendingPrankData = nil
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                            prankData = pending
+                        }
+                    }
                 }
                 .zIndex(10)
             }
@@ -258,11 +266,17 @@ struct RootView: View {
 
     private func openPrank(packID: String, delay: Int) {
         guard let pack = findPack(id: packID) ?? allPacks.first else { return }
-        prankData = PrankLaunchData(
+        let data = PrankLaunchData(
             id: "\(packID)_\(delay)_\(Date().timeIntervalSince1970)",
             pack: pack,
             delay: delay
         )
+        if showSplash {
+            // Splash hâlâ açık — kapandıktan sonra göster
+            pendingPrankData = data
+        } else {
+            prankData = data
+        }
     }
 }
 
