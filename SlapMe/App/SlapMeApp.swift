@@ -71,6 +71,10 @@ struct RootView: View {
         .onOpenURL { url in
             handlePrankURL(url)
         }
+        .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
+            guard let url = activity.webpageURL else { return }
+            handleUniversalPrankURL(url)
+        }
         .fullScreenCover(item: $prankData) { data in
             PrankLandingView(pack: data.pack, delay: data.delay, audioManager: audioManager) {
                 prankData = nil
@@ -239,7 +243,20 @@ struct RootView: View {
         let comps = URLComponents(url: url, resolvingAgainstBaseURL: false)
         let packID = comps?.queryItems?.first(where: { $0.name == "pack" })?.value ?? ""
         let delay = Int(comps?.queryItems?.first(where: { $0.name == "delay" })?.value ?? "5") ?? 5
-        // Resolve pack — fallback to first available if not found
+        openPrank(packID: packID, delay: delay)
+    }
+
+    private func handleUniversalPrankURL(_ url: URL) {
+        guard url.host == "formevoai.github.io",
+            url.path.hasPrefix("/SlapMe/prank")
+        else { return }
+        let comps = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        let packID = comps?.queryItems?.first(where: { $0.name == "pack" })?.value ?? ""
+        let delay = Int(comps?.queryItems?.first(where: { $0.name == "delay" })?.value ?? "5") ?? 5
+        openPrank(packID: packID, delay: delay)
+    }
+
+    private func openPrank(packID: String, delay: Int) {
         guard let pack = findPack(id: packID) ?? allPacks.first else { return }
         prankData = PrankLaunchData(
             id: "\(packID)_\(delay)_\(Date().timeIntervalSince1970)",

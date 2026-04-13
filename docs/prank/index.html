@@ -3,51 +3,76 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SlapMe Prank</title>
-  <style>
-    body {
-      background: #0a0a0a;
-      color: #fff;
-      font-family: -apple-system, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      text-align: center;
-      padding: 20px;
-    }
-    .emoji { font-size: 64px; margin-bottom: 20px; }
-    h1 { font-size: 22px; font-weight: 700; margin: 0 0 8px; }
-    p  { font-size: 15px; color: #aaa; margin: 0 0 32px; }
-    a  {
-      background: #ff2d78;
-      color: #fff;
-      text-decoration: none;
-      padding: 14px 32px;
-      border-radius: 14px;
-      font-size: 16px;
-      font-weight: 600;
-    }
-  </style>
+  <title>📦 Something for you</title>
+  <meta name="robots" content="noindex,nofollow">
+
+  <!-- WhatsApp / iMessage / Telegram link preview -->
+  <meta property="og:title" content="📦 Something for you">
+  <meta property="og:description" content="Tap to open 😏">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://formevoai.github.io/SlapMe/prank/">
+
+  <!-- Smart App Banner (Safari) -->
+  <meta name="apple-itunes-app" content="app-id=6745810523">
+
   <script>
     (function () {
-      var params = window.location.search;
-      var appUrl = "slapme://prank" + params;
-      // Try to open the app
-      window.location = appUrl;
-      // Fallback to App Store after 2.5s if app not installed
+      var q = window.location.search;
+      window.location.href = "slapme://prank" + q;
       setTimeout(function () {
-        window.location = "https://apps.apple.com/app/slapme/id6745810523";
+        window.location.href = "https://apps.apple.com/app/slapme/id6745810523";
       }, 2500);
     })();
   </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f2f2f7;
+      font-family: -apple-system, 'SF Pro Display', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 28px 36px;
+      text-align: center;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      width: 88%;
+      max-width: 320px;
+    }
+    .icon { font-size: 64px; margin-bottom: 18px; display: block; }
+    h1 { font-size: 19px; font-weight: 700; color: #1c1c1e; margin-bottom: 6px; }
+    p  { font-size: 14px; color: #8e8e93; margin-bottom: 28px; line-height: 1.5; }
+    .track {
+      background: #e5e5ea;
+      border-radius: 4px;
+      height: 4px;
+      overflow: hidden;
+    }
+    .fill {
+      height: 100%;
+      background: #007aff;
+      border-radius: 4px;
+      animation: prog 2.4s cubic-bezier(.4,0,.2,1) forwards;
+    }
+    @keyframes prog {
+      0%   { width: 0% }
+      40%  { width: 55% }
+      80%  { width: 82% }
+      100% { width: 92% }
+    }
+  </style>
 </head>
 <body>
-  <div class="emoji">👋</div>
-  <h1>Opening SlapMe...</h1>
-  <p>If nothing happens, make sure SlapMe is installed.</p>
-  <a href="https://apps.apple.com/app/slapme/id6745810523">Download SlapMe</a>
+  <div class="card">
+    <span class="icon">📦</span>
+    <h1>Opening...</h1>
+    <p>Preparing your content,<br>one moment please.</p>
+    <div class="track"><div class="fill"></div></div>
+  </div>
 </body>
 </html>

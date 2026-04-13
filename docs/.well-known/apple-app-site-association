@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["Z8LNR73NY4.com.slapme.SlapMe"],
+        "components": [
+          { "/": "/SlapMe/prank/*" }
+        ]
+      }
+    ]
+  }
+}
