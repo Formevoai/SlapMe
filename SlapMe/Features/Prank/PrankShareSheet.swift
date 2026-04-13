@@ -124,12 +124,12 @@ struct PrankShareSheet: View {
     private func prankURL() -> URL {
         var comps = URLComponents()
         comps.scheme = "https"
-        comps.host = "prank.formevo.app"
-        comps.path = "/prank/"
+        comps.host = "share.formevo.app"
+        comps.path = "/gift/"
         comps.queryItems = [
             URLQueryItem(name: "pack", value: pack.id),
             URLQueryItem(name: "delay", value: "\(selectedDelay)"),
         ]
-        return comps.url ?? URL(string: "https://prank.formevo.app/prank/")!
+        return comps.url ?? URL(string: "https://share.formevo.app/gift/")!
     }
 }
