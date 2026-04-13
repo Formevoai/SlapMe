@@ -2,77 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>📦 Something for you</title>
   <meta name="robots" content="noindex,nofollow">
-
-  <!-- WhatsApp / iMessage / Telegram link preview -->
   <meta property="og:title" content="📦 Something for you">
   <meta property="og:description" content="Tap to open 😏">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://formevoai.github.io/SlapMe/prank/">
-
-  <!-- Smart App Banner (Safari) -->
   <meta name="apple-itunes-app" content="app-id=6745810523">
-
-  <script>
-    (function () {
-      var q = window.location.search;
-      window.location.href = "slapme://prank" + q;
-      setTimeout(function () {
-        window.location.href = "https://apps.apple.com/app/slapme/id6745810523";
-      }, 2500);
-    })();
-  </script>
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      background: #f2f2f7;
       font-family: -apple-system, 'SF Pro Display', sans-serif;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      background: #f2f2f7;
+      transition: background 0.4s;
     }
-    .card {
+
+    /* ── LOADING SCREEN ── */
+    #loading {
       background: #fff;
-      border-radius: 20px;
-      padding: 40px 28px 36px;
+      border-radius: 22px;
+      padding: 44px 28px 38px;
       text-align: center;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.07);
       width: 88%;
       max-width: 320px;
     }
-    .icon { font-size: 64px; margin-bottom: 18px; display: block; }
-    h1 { font-size: 19px; font-weight: 700; color: #1c1c1e; margin-bottom: 6px; }
-    p  { font-size: 14px; color: #8e8e93; margin-bottom: 28px; line-height: 1.5; }
-    .track {
-      background: #e5e5ea;
-      border-radius: 4px;
-      height: 4px;
-      overflow: hidden;
+    #loading .icon { font-size: 56px; margin-bottom: 20px; display: block; }
+    #loading h1 { font-size: 18px; font-weight: 700; color: #1c1c1e; margin-bottom: 6px; }
+    #loading p  { font-size: 13px; color: #8e8e93; margin-bottom: 26px; }
+    .track { background: #e5e5ea; border-radius: 6px; height: 5px; overflow: hidden; }
+    .fill  { height: 100%; background: #007aff; border-radius: 6px; width: 0%; transition: width 0.4s ease; }
+    #pct   { font-size: 12px; color: #8e8e93; margin-top: 10px; }
+
+    /* ── BOOM SCREEN ── */
+    #boom {
+      display: none;
+      text-align: center;
+      padding: 20px;
     }
-    .fill {
-      height: 100%;
-      background: #007aff;
-      border-radius: 4px;
-      animation: prog 2.4s cubic-bezier(.4,0,.2,1) forwards;
-    }
-    @keyframes prog {
-      0%   { width: 0% }
-      40%  { width: 55% }
-      80%  { width: 82% }
-      100% { width: 92% }
-    }
+    #boom .slap  { font-size: 88px; display: block; margin-bottom: 16px;
+                   animation: pop 0.5s cubic-bezier(.36,1.6,.6,1) both; }
+    #boom h1     { font-size: 28px; font-weight: 800; color: #fff;
+                   letter-spacing: -0.5px; margin-bottom: 8px;
+                   animation: pop 0.6s 0.1s cubic-bezier(.36,1.6,.6,1) both; }
+    #boom .sub   { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 36px;
+                   animation: fadeUp 0.5s 0.3s ease both; }
+    #boom .cta   { display: inline-flex; align-items: center; gap: 10px;
+                   background: #fff; color: #1c1c1e; text-decoration: none;
+                   font-size: 16px; font-weight: 700; padding: 15px 28px;
+                   border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+                   animation: fadeUp 0.5s 0.5s ease both; }
+    #boom .cta .badge { font-size: 13px; font-weight: 600; color: #ff2d78;
+                        background: rgba(255,45,120,0.1); padding: 3px 8px;
+                        border-radius: 8px; }
+
+    @keyframes pop    { from { transform: scale(0); opacity: 0 } to { transform: scale(1); opacity: 1 } }
+    @keyframes fadeUp { from { transform: translateY(12px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
   </style>
 </head>
 <body>
-  <div class="card">
+
+  <!-- Loading screen -->
+  <div id="loading">
     <span class="icon">📦</span>
     <h1>Opening...</h1>
     <p>Preparing your content,<br>one moment please.</p>
-    <div class="track"><div class="fill"></div></div>
+    <div class="track"><div class="fill" id="bar"></div></div>
+    <div id="pct">0%</div>
   </div>
+
+  <!-- Boom screen -->
+  <div id="boom">
+    <span class="slap">👋</span>
+    <h1>YOU GOT SLAPPED!</h1>
+    <p class="sub">Your friend used SlapMe to get you 😂</p>
+    <a class="cta" href="https://apps.apple.com/app/slapme/id6745810523">
+      Get SlapMe
+      <span class="badge">Free</span>
+    </a>
+  </div>
+
+  <script>
+  (function () {
+    var params  = new URLSearchParams(window.location.search);
+    var delay   = Math.max(0, parseInt(params.get('delay') || '5', 10));
+    var bar     = document.getElementById('bar');
+    var pct     = document.getElementById('pct');
+    var loading = document.getElementById('loading');
+    var boom    = document.getElementById('boom');
+    var start   = Date.now();
+    var total   = delay * 1000;
+
+    // Try to open the native app silently (no Safari redirect)
+    var appUrl = 'slapme://prank' + window.location.search;
+    var iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.src = appUrl;
+    document.body.appendChild(iframe);
+
+    function tick() {
+      var elapsed = Date.now() - start;
+      var progress;
+
+      if (total === 0) {
+        progress = 100;
+      } else {
+        // Multi-stage easing: fast → slow → final jump
+        var ratio = Math.min(elapsed / total, 1);
+        if (ratio < 0.5)       progress = ratio * 2 * 76;
+        else if (ratio < 0.9)  progress = 76 + (ratio - 0.5) / 0.4 * 17;
+        else                   progress = 93 + (ratio - 0.9) / 0.1 * 7;
+        progress = Math.min(progress, 100);
+      }
+
+      bar.style.width = progress.toFixed(0) + '%';
+      pct.textContent  = progress.toFixed(0) + '%';
+
+      if (progress < 100) {
+        requestAnimationFrame(tick);
+      } else {
+        // BOOM
+        setTimeout(showBoom, 300);
+      }
+    }
+
+    function showBoom() {
+      loading.style.display = 'none';
+      boom.style.display = 'block';
+      document.body.style.background = '#ff2d78';
+
+      // Vibrate if supported (Android)
+      if (navigator.vibrate) navigator.vibrate([200, 100, 400]);
+    }
+
+    if (total === 0) {
+      showBoom();
+    } else {
+      requestAnimationFrame(tick);
+    }
+  })();
+  </script>
 </body>
 </html>
