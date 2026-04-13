@@ -9,159 +9,58 @@
   <meta property="og:description" content="Someone sent you a file · Tap to view">
   <meta property="og:type" content="website">
   <meta name="apple-itunes-app" content="app-id=6761608427">
-
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --pink: #ff2d78;
-      --blue: #007aff;
-      --bg:   #f2f2f7;
-      --card: #ffffff;
-      --text: #1c1c1e;
-      --sub:  #8e8e93;
-    }
-
+    :root { --pink: #ff2d78; --blue: #007aff; --bg: #f2f2f7; --card: #ffffff; --text: #1c1c1e; --sub: #8e8e93; }
     body {
       font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--bg);
-      transition: background 0.6s ease;
-      -webkit-font-smoothing: antialiased;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: var(--bg); transition: background 0.6s ease; -webkit-font-smoothing: antialiased;
     }
-
-    /* ─── SCREEN BASE ─── */
     .screen { width: 92%; max-width: 360px; }
-
-    /* ─── VOLUME TOAST ─── */
     #vol-toast {
       position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-80px);
-      background: rgba(28,28,30,0.92); color: #fff;
-      padding: 12px 20px; border-radius: 14px;
-      display: flex; align-items: center; gap: 10px;
-      font-size: 14px; font-weight: 500; white-space: nowrap;
+      background: rgba(28,28,30,0.92); color: #fff; padding: 12px 20px; border-radius: 14px;
+      display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; white-space: nowrap;
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      transition: transform 0.4s cubic-bezier(.34,1.56,.64,1);
-      z-index: 100;
+      transition: transform 0.4s cubic-bezier(.34,1.56,.64,1); z-index: 100;
     }
     #vol-toast.show { transform: translateX(-50%) translateY(0); }
     #vol-toast .vol-icon { font-size: 20px; }
-
-    /* ─── TAP SCREEN ─── */
-    #tap-screen .card {
-      background: var(--card);
-      border-radius: 24px;
-      padding: 36px 24px 28px;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
-      text-align: left;
-    }
-    /* File preview header */
-    #tap-screen .file-header {
-      display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
-    }
-    #tap-screen .file-icon {
-      width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;
-      background: linear-gradient(135deg, #5a5fff, #3b82f6);
-      display: flex; align-items: center; justify-content: center; font-size: 26px;
-    }
+    #tap-screen .card { background: var(--card); border-radius: 24px; padding: 36px 24px 28px; box-shadow: 0 4px 32px rgba(0,0,0,0.08); text-align: left; }
+    #tap-screen .file-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+    #tap-screen .file-icon { width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0; background: linear-gradient(135deg,#5a5fff,#3b82f6); display: flex; align-items: center; justify-content: center; font-size: 26px; }
     #tap-screen .file-meta { flex: 1; }
     #tap-screen .file-name { font-size: 15px; font-weight: 600; color: var(--text); }
     #tap-screen .file-size { font-size: 12px; color: var(--sub); margin-top: 3px; }
-    #tap-screen .sender {
-      display: flex; align-items: center; gap: 10px;
-      background: #f2f2f7; border-radius: 12px; padding: 12px 14px;
-      margin-bottom: 20px;
-    }
-    #tap-screen .avatar {
-      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
-      background: linear-gradient(135deg, var(--pink), #ff6b35);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; font-weight: 700; color: #fff;
-    }
+    #tap-screen .sender { display: flex; align-items: center; gap: 10px; background: #f2f2f7; border-radius: 12px; padding: 12px 14px; margin-bottom: 20px; }
+    #tap-screen .avatar { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg,var(--pink),#ff6b35); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: #fff; }
     #tap-screen .sender-info .from { font-size: 11px; color: var(--sub); }
     #tap-screen .sender-info .name { font-size: 14px; font-weight: 600; color: var(--text); }
-    #tap-btn {
-      width: 100%; background: var(--blue); color: #fff; border: none;
-      border-radius: 14px; font-size: 17px; font-weight: 600;
-      padding: 15px; cursor: pointer; font-family: inherit;
-      letter-spacing: -0.2px;
-      transition: opacity 0.15s;
-    }
+    #tap-btn { width: 100%; background: var(--blue); color: #fff; border: none; border-radius: 14px; font-size: 17px; font-weight: 600; padding: 15px; cursor: pointer; font-family: inherit; letter-spacing: -0.2px; transition: opacity 0.15s; }
     #tap-btn:active { opacity: 0.8; }
-
-    /* ─── LOADING SCREEN ─── */
     #loading { display: none; }
-    #loading .card {
-      background: var(--card);
-      border-radius: 24px;
-      padding: 36px 24px 28px;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-    #loading .spinner-wrap { margin-bottom: 24px; position: relative; display: inline-block; }
-    #loading .file-icon-lg {
-      width: 72px; height: 72px; border-radius: 18px;
-      background: linear-gradient(135deg, #5a5fff, #3b82f6);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 36px; margin: 0 auto 20px;
-    }
+    #loading .card { background: var(--card); border-radius: 24px; padding: 36px 24px 28px; box-shadow: 0 4px 32px rgba(0,0,0,0.08); text-align: center; }
+    #loading .file-icon-lg { width: 72px; height: 72px; border-radius: 18px; background: linear-gradient(135deg,#5a5fff,#3b82f6); display: flex; align-items: center; justify-content: center; font-size: 36px; margin: 0 auto 20px; }
     #loading h1 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
     #loading .status { font-size: 13px; color: var(--sub); margin-bottom: 22px; min-height: 18px; }
     .track { background: #e5e5ea; border-radius: 6px; height: 5px; overflow: hidden; }
     .fill  { height: 100%; background: var(--blue); border-radius: 6px; width: 0%; transition: width 0.35s ease; }
     #pct   { font-size: 12px; color: var(--sub); margin-top: 10px; text-align: right; }
-
-    /* ─── BOOM SCREEN ─── */
-    #boom {
-      display: none; text-align: center;
-      padding: 20px 16px; width: 92%; max-width: 360px;
-    }
-    #boom .hand {
-      font-size: 96px; display: block; margin-bottom: 12px;
-      animation: punch 0.5s cubic-bezier(.36,1.56,.64,1) both;
-    }
-    #boom h1 {
-      font-size: 32px; font-weight: 900; color: #fff;
-      letter-spacing: -1px; margin-bottom: 6px;
-      animation: pop 0.5s 0.1s cubic-bezier(.36,1.56,.64,1) both;
-    }
-    #boom .sub {
-      font-size: 15px; color: rgba(255,255,255,0.7);
-      margin-bottom: 36px; line-height: 1.5;
-      animation: fadeUp 0.5s 0.25s ease both;
-    }
-    /* App card */
-    #boom .app-card {
-      animation: fadeUp 0.6s 0.4s ease both;
-    }
-    #boom .app-card-label {
-      font-size: 11px; color: rgba(255,255,255,0.45);
-      text-transform: uppercase; letter-spacing: 1.3px; margin-bottom: 10px;
-    }
-    #boom .app-card a {
-      display: flex; align-items: center; gap: 14px;
-      background: #fff; text-decoration: none;
-      padding: 14px 16px; border-radius: 22px;
-      box-shadow: 0 16px 56px rgba(0,0,0,0.32);
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
+    #boom  { display: none; text-align: center; padding: 20px 16px; width: 92%; max-width: 360px; }
+    #boom .hand { font-size: 96px; display: block; margin-bottom: 12px; animation: punch 0.5s cubic-bezier(.36,1.56,.64,1) both; }
+    #boom h1 { font-size: 32px; font-weight: 900; color: #fff; letter-spacing: -1px; margin-bottom: 6px; animation: pop 0.5s 0.1s cubic-bezier(.36,1.56,.64,1) both; }
+    #boom .sub { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 36px; line-height: 1.5; animation: fadeUp 0.5s 0.25s ease both; }
+    #boom .app-card { animation: fadeUp 0.6s 0.4s ease both; }
+    #boom .app-card-label { font-size: 11px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1.3px; margin-bottom: 10px; }
+    #boom .app-card a { display: flex; align-items: center; gap: 14px; background: #fff; text-decoration: none; padding: 14px 16px; border-radius: 22px; box-shadow: 0 16px 56px rgba(0,0,0,0.32); transition: transform 0.15s, box-shadow 0.15s; }
     #boom .app-card a:active { transform: scale(0.97); box-shadow: 0 8px 28px rgba(0,0,0,0.25); }
-    #boom .app-logo {
-      width: 60px; height: 60px; border-radius: 14px; flex-shrink: 0;
-      background: linear-gradient(135deg, var(--pink) 0%, #ff6b35 100%);
-      display: flex; align-items: center; justify-content: center; font-size: 32px;
-    }
+    #boom .app-logo { width: 60px; height: 60px; border-radius: 14px; flex-shrink: 0; background: linear-gradient(135deg,var(--pink) 0%,#ff6b35 100%); display: flex; align-items: center; justify-content: center; font-size: 32px; }
     #boom .app-details { text-align: left; flex: 1; }
     #boom .app-name { font-size: 16px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
     #boom .app-tagline { font-size: 12px; color: var(--sub); margin-top: 2px; }
     #boom .app-stars { color: #ff9500; font-size: 12px; letter-spacing: 1px; margin-top: 5px; }
-    #boom .dl-btn {
-      background: var(--blue); color: #fff; font-size: 15px; font-weight: 700;
-      padding: 10px 22px; border-radius: 22px; white-space: nowrap; flex-shrink: 0;
-      letter-spacing: -0.2px;
-    }
-
+    #boom .dl-btn { background: var(--blue); color: #fff; font-size: 15px; font-weight: 700; padding: 10px 22px; border-radius: 22px; white-space: nowrap; flex-shrink: 0; letter-spacing: -0.2px; }
     @keyframes punch  { 0% { transform: scale(0) rotate(-30deg); opacity: 0 } 100% { transform: scale(1) rotate(0deg); opacity: 1 } }
     @keyframes pop    { 0% { transform: scale(0.5); opacity: 0 } 100% { transform: scale(1); opacity: 1 } }
     @keyframes fadeUp { 0% { transform: translateY(16px); opacity: 0 } 100% { transform: translateY(0); opacity: 1 } }
@@ -169,59 +68,55 @@
 </head>
 <body>
 
-  <!-- Volume toast -->
   <div id="vol-toast">
     <span class="vol-icon">🔊</span>
-    Turn up your volume!
+    <span id="vol-toast-text">Turn up your volume!</span>
   </div>
 
-  <!-- Tap screen -->
   <div id="tap-screen" class="screen">
     <div class="card">
       <div class="file-header">
         <div class="file-icon">🎬</div>
         <div class="file-meta">
           <div class="file-name">memory_2025.mp4</div>
-          <div class="file-size">84.2 MB · Video</div>
+          <div class="file-size" id="file-size-txt">84.2 MB · Video</div>
         </div>
       </div>
       <div class="sender">
         <div class="avatar">😊</div>
         <div class="sender-info">
-          <div class="from">Shared by</div>
-          <div class="name">Your friend</div>
+          <div class="from" id="sender-from">Shared by</div>
+          <div class="name" id="sender-name">Your friend</div>
         </div>
       </div>
-      <button id="tap-btn">▶ Play Video</button>
+      <button id="tap-btn">&#9654; Play Video</button>
     </div>
   </div>
 
-  <!-- Loading screen -->
   <div id="loading" class="screen">
     <div class="card">
       <div class="file-icon-lg">🎬</div>
-      <h1>Preparing video...</h1>
+      <h1 id="loading-title">Preparing video...</h1>
       <div class="status" id="status-txt">Connecting to server...</div>
       <div class="track"><div class="fill" id="bar"></div></div>
       <div id="pct">0%</div>
     </div>
   </div>
 
-  <!-- Boom screen -->
   <div id="boom">
     <span class="hand">👋</span>
-    <h1>YOU GOT SLAPPED!</h1>
-    <p class="sub">Your friend set you up with SlapMe 😂<br>Now get your revenge!</p>
+    <h1 id="boom-title">YOU GOT SLAPPED!</h1>
+    <p class="sub" id="boom-sub">Your friend set you up with SlapMe 😂<br>Now get your revenge!</p>
     <div class="app-card">
-      <p class="app-card-label">Slap your friends back 👇</p>
+      <p class="app-card-label" id="app-card-label">Slap your friends back 👇</p>
       <a href="https://apps.apple.com/de/app/slapme-slap-sound-app/id6761608427">
         <div class="app-logo">👋</div>
         <div class="app-details">
           <div class="app-name">SlapMe</div>
-          <div class="app-tagline">Slap Sound App · Free</div>
+          <div class="app-tagline" id="app-tagline">Slap Sound App · Free</div>
           <div class="app-stars">★★★★★</div>
         </div>
-        <div class="dl-btn">GET</div>
+        <div class="dl-btn" id="dl-btn">GET</div>
       </a>
     </div>
   </div>
@@ -230,6 +125,289 @@
 
   <script>
   (function () {
+    var T = {
+      en: {
+        title: "📎 Shared with you",
+        fileSize: "84.2 MB · Video",
+        sharedBy: "Shared by",
+        friend: "Your friend",
+        playBtn: "▶  Play Video",
+        loadTitle: "Preparing video...",
+        volume: "Turn up your volume!",
+        statuses: ["Connecting to server...","Authenticating...","Fetching file...","Decrypting content...","Almost ready..."],
+        gotYou: "YOU GOT SLAPPED! 👋",
+        boomSub: "Your friend set you up with SlapMe 😂<br>Now get your revenge!",
+        cta: "SLAP YOUR FRIENDS BACK 👇",
+        appTagline: "Slap Sound App · Free",
+        getBtn: "GET"
+      },
+      de: {
+        title: "📎 Für dich geteilt",
+        fileSize: "84,2 MB · Video",
+        sharedBy: "Geteilt von",
+        friend: "Dein Freund",
+        playBtn: "▶  Video abspielen",
+        loadTitle: "Video wird vorbereitet...",
+        volume: "Lautstärke erhöhen!",
+        statuses: ["Mit Server verbinden...","Authentifizierung...","Datei abrufen...","Inhalt entschlüsseln...","Fast fertig..."],
+        gotYou: "ERWISCHT! 👋",
+        boomSub: "Dein Freund hat dich mit SlapMe reingelegt 😂<br>Jetzt rächst du dich!",
+        cta: "GIB IHM ZURÜCK 👇",
+        appTagline: "Slap Sound App · Kostenlos",
+        getBtn: "LADEN"
+      },
+      tr: {
+        title: "📎 Sana gönderildi",
+        fileSize: "84,2 MB · Video",
+        sharedBy: "Paylaşan",
+        friend: "Arkadaşın",
+        playBtn: "▶  Videoyu Oynat",
+        loadTitle: "Video hazırlanıyor...",
+        volume: "Sesi aç!",
+        statuses: ["Sunucuya bağlanıyor...","Kimlik doğrulanıyor...","Dosya alınıyor...","İçerik çözülüyor...","Neredeyse hazır..."],
+        gotYou: "YAKALANDIN! 👋",
+        boomSub: "Arkadaşın seni SlapMe ile tuzağa düşürdü 😂<br>Şimdi intikamını al!",
+        cta: "SEN DE KAPAT ONLARI 👇",
+        appTagline: "Slap Sound App · Ücretsiz",
+        getBtn: "İNDİR"
+      },
+      fr: {
+        title: "📎 Partagé pour toi",
+        fileSize: "84,2 Mo · Vidéo",
+        sharedBy: "Partagé par",
+        friend: "Ton ami",
+        playBtn: "▶  Lire la vidéo",
+        loadTitle: "Préparation de la vidéo...",
+        volume: "Monte le volume !",
+        statuses: ["Connexion au serveur...","Authentification...","Récupération du fichier...","Déchiffrement...","Presque prêt..."],
+        gotYou: "T'ES EU ! 👋",
+        boomSub: "Ton ami t'a piégé avec SlapMe 😂<br>Maintenant, venge-toi !",
+        cta: "RENDS-LUI LA PAREILLE 👇",
+        appTagline: "Slap Sound App · Gratuit",
+        getBtn: "OBTENIR"
+      },
+      es: {
+        title: "📎 Compartido contigo",
+        fileSize: "84,2 MB · Video",
+        sharedBy: "Compartido por",
+        friend: "Tu amigo",
+        playBtn: "▶  Reproducir video",
+        loadTitle: "Preparando video...",
+        volume: "¡Sube el volumen!",
+        statuses: ["Conectando al servidor...","Autenticando...","Descargando archivo...","Descifrando...","¡Casi listo!"],
+        gotYou: "¡TE PILLARON! 👋",
+        boomSub: "Tu amigo te tendió una trampa con SlapMe 😂<br>¡Ahora toma tu venganza!",
+        cta: "¡DEVUÉLVESELA 👇",
+        appTagline: "Slap Sound App · Gratis",
+        getBtn: "OBTENER"
+      },
+      it: {
+        title: "📎 Condiviso con te",
+        fileSize: "84,2 MB · Video",
+        sharedBy: "Condiviso da",
+        friend: "Il tuo amico",
+        playBtn: "▶  Riproduci video",
+        loadTitle: "Preparazione video...",
+        volume: "Alza il volume!",
+        statuses: ["Connessione al server...","Autenticazione...","Recupero file...","Decrittazione...","Quasi pronto..."],
+        gotYou: "BECCATO! 👋",
+        boomSub: "Il tuo amico ti ha teso una trappola con SlapMe 😂<br>Adesso vendica!",
+        cta: "RENDICI IL FAVORE 👇",
+        appTagline: "Slap Sound App · Gratis",
+        getBtn: "OTTIENI"
+      },
+      pt: {
+        title: "📎 Compartilhado com você",
+        fileSize: "84,2 MB · Vídeo",
+        sharedBy: "Compartilhado por",
+        friend: "Seu amigo",
+        playBtn: "▶  Reproduzir vídeo",
+        loadTitle: "Preparando vídeo...",
+        volume: "Aumente o volume!",
+        statuses: ["Conectando ao servidor...","Autenticando...","Buscando arquivo...","Descriptografando...","Quase pronto..."],
+        gotYou: "TE PEGARAM! 👋",
+        boomSub: "Seu amigo pregou uma peça em você com o SlapMe 😂<br>Agora se vinga!",
+        cta: "DEVOLVA O TAPA 👇",
+        appTagline: "Slap Sound App · Grátis",
+        getBtn: "OBTER"
+      },
+      nl: {
+        title: "📎 Met jou gedeeld",
+        fileSize: "84,2 MB · Video",
+        sharedBy: "Gedeeld door",
+        friend: "Je vriend",
+        playBtn: "▶  Video afspelen",
+        loadTitle: "Video wordt voorbereid...",
+        volume: "Zet het volume harder!",
+        statuses: ["Verbinden met server...","Authenticeren...","Bestand ophalen...","Inhoud ontsleutelen...","Bijna klaar..."],
+        gotYou: "BETRAPT! 👋",
+        boomSub: "Je vriend heeft je in de val gelokt met SlapMe 😂<br>Neem nu je wraak!",
+        cta: "SLA TERUG 👇",
+        appTagline: "Slap Sound App · Gratis",
+        getBtn: "HAAL OP"
+      },
+      pl: {
+        title: "📎 Udostępniono dla ciebie",
+        fileSize: "84,2 MB · Wideo",
+        sharedBy: "Udostępnił/a",
+        friend: "Twój znajomy",
+        playBtn: "▶  Odtwórz wideo",
+        loadTitle: "Przygotowywanie wideo...",
+        volume: "Zwiększ głośność!",
+        statuses: ["Łączenie z serwerem...","Uwierzytelnianie...","Pobieranie pliku...","Odszyfrowywanie...","Prawie gotowe..."],
+        gotYou: "ZŁAPANY! 👋",
+        boomSub: "Twój znajomy wciągnął cię w pułapkę ze SlapMe 😂<br>Teraz się zemścij!",
+        cta: "ODDAJ MU KLAPSEM 👇",
+        appTagline: "Slap Sound App · Bezpłatna",
+        getBtn: "POBIERZ"
+      },
+      ru: {
+        title: "📎 Поделились с тобой",
+        fileSize: "84,2 МБ · Видео",
+        sharedBy: "Поделился",
+        friend: "Твой друг",
+        playBtn: "▶  Смотреть видео",
+        loadTitle: "Подготовка видео...",
+        volume: "Увеличь громкость!",
+        statuses: ["Подключение к серверу...","Аутентификация...","Загрузка файла...","Расшифровка...","Почти готово..."],
+        gotYou: "ПОПАЛСЯ! 👋",
+        boomSub: "Твой друг подставил тебя с SlapMe 😂<br>Теперь отомсти!",
+        cta: "ДАТЬ СДАЧИ 👇",
+        appTagline: "Slap Sound App · Бесплатно",
+        getBtn: "ЗАГРУЗИТЬ"
+      },
+      ar: {
+        title: "📎 مُشارَك معك",
+        fileSize: "84.2 MB · فيديو",
+        sharedBy: "شارك",
+        friend: "صديقك",
+        playBtn: "تشغيل الفيديو ▶",
+        loadTitle: "جارٍ تحضير الفيديو...",
+        volume: "ارفع الصوت!",
+        statuses: ["الاتصال بالخادم...","المصادقة...","جلب الملف...","فك التشفير...","تقريباً جاهز..."],
+        gotYou: "انكشفت! 👋",
+        boomSub: "صديقك نصب لك فخاً مع SlapMe 😂<br>خذ ثأرك الآن!",
+        cta: "رد عليهم الآن 👇",
+        appTagline: "Slap Sound App · مجاني",
+        getBtn: "احصل"
+      },
+      ja: {
+        title: "📎 あなたに共有されました",
+        fileSize: "84.2 MB · 動画",
+        sharedBy: "送り主",
+        friend: "あなたの友達",
+        playBtn: "▶  動画を再生",
+        loadTitle: "動画を準備中...",
+        volume: "音量を上げてください！",
+        statuses: ["サーバーに接続中...","認証中...","ファイルを取得中...","コンテンツを復号中...","もうすぐ準備完了..."],
+        gotYou: "やられた！ 👋",
+        boomSub: "友達にSlapMeでやられた 😂<br>今度はお返しを！",
+        cta: "友達にお返しを 👇",
+        appTagline: "スラップサウンドアプリ · 無料",
+        getBtn: "入手"
+      },
+      ko: {
+        title: "📎 공유된 파일",
+        fileSize: "84.2 MB · 동영상",
+        sharedBy: "공유자",
+        friend: "당신의 친구",
+        playBtn: "▶  동영상 재생",
+        loadTitle: "동영상 준비 중...",
+        volume: "볼륨을 올려주세요!",
+        statuses: ["서버에 연결 중...","인증 중...","파일 가져오는 중...","콘텐츠 복호화 중...","거의 완료..."],
+        gotYou: "걸렸다! 👋",
+        boomSub: "친구가 SlapMe로 함정을 팠어요 😂<br>이제 복수하세요!",
+        cta: "친구에게 복수하세요 👇",
+        appTagline: "슬랩 사운드 앱 · 무료",
+        getBtn: "받기"
+      },
+      zh: {
+        title: "📎 分享给你",
+        fileSize: "84.2 MB · 视频",
+        sharedBy: "分享者",
+        friend: "你的朋友",
+        playBtn: "▶  播放视频",
+        loadTitle: "正在准备视频...",
+        volume: "请调高音量！",
+        statuses: ["正在连接服务器...","正在验证...","正在获取文件...","正在解密内容...","即将就绪..."],
+        gotYou: "被整到了！ 👋",
+        boomSub: "你的朋友用 SlapMe 整了你 😂<br>现在反击！",
+        cta: "还击你的朋友 👇",
+        appTagline: "Slap 音效应用 · 免费",
+        getBtn: "获取"
+      },
+      id: {
+        title: "📎 Dibagikan untukmu",
+        fileSize: "84,2 MB · Video",
+        sharedBy: "Dibagikan oleh",
+        friend: "Temanmu",
+        playBtn: "▶  Putar Video",
+        loadTitle: "Menyiapkan video...",
+        volume: "Naikkan volume!",
+        statuses: ["Menghubungkan ke server...","Mengautentikasi...","Mengambil file...","Mendekripsi konten...","Hampir siap..."],
+        gotYou: "KETAHUAN! 👋",
+        boomSub: "Temanmu menjebakmu dengan SlapMe 😂<br>Sekarang balas dendam!",
+        cta: "BALAS TEMANMU 👇",
+        appTagline: "Slap Sound App · Gratis",
+        getBtn: "UNDUH"
+      },
+      hi: {
+        title: "📎 आपके साथ साझा किया",
+        fileSize: "84.2 MB · वीडियो",
+        sharedBy: "साझा किया",
+        friend: "तुम्हारा दोस्त",
+        playBtn: "▶  वीडियो चलाएं",
+        loadTitle: "वीडियो तैयार हो रहा है...",
+        volume: "आवाज़ बढ़ाएं!",
+        statuses: ["सर्वर से जुड़ रहा है...","प्रमाणित हो रहा है...","फ़ाइल प्राप्त हो रही है...","सामग्री डिक्रिप्ट हो रही है...","लगभग तैयार..."],
+        gotYou: "पकड़ा गया! 👋",
+        boomSub: "तुम्हारे दोस्त ने SlapMe से तुम्हें फंसाया 😂<br>अब बदला लो!",
+        cta: "दोस्तों को वापस थप्पड़ मारो 👇",
+        appTagline: "Slap Sound App · मुफ़्त",
+        getBtn: "पाएं"
+      }
+    };
+
+    function getLang() {
+      var nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      if (nav.startsWith('de')) return 'de';
+      if (nav.startsWith('tr')) return 'tr';
+      if (nav.startsWith('fr')) return 'fr';
+      if (nav.startsWith('es')) return 'es';
+      if (nav.startsWith('it')) return 'it';
+      if (nav.startsWith('pt')) return 'pt';
+      if (nav.startsWith('nl')) return 'nl';
+      if (nav.startsWith('pl')) return 'pl';
+      if (nav.startsWith('ru')) return 'ru';
+      if (nav.startsWith('ar')) return 'ar';
+      if (nav.startsWith('ja')) return 'ja';
+      if (nav.startsWith('ko')) return 'ko';
+      if (nav.startsWith('zh')) return 'zh';
+      if (nav.startsWith('id')) return 'id';
+      if (nav.startsWith('hi')) return 'hi';
+      return 'en';
+    }
+
+    var lang = getLang();
+    var t = T[lang] || T['en'];
+
+    if (lang === 'ar') {
+      document.documentElement.setAttribute('dir', 'rtl');
+    }
+
+    document.title = t.title;
+    document.getElementById('file-size-txt').textContent   = t.fileSize;
+    document.getElementById('sender-from').textContent     = t.sharedBy;
+    document.getElementById('sender-name').textContent     = t.friend;
+    document.getElementById('tap-btn').textContent         = t.playBtn;
+    document.getElementById('loading-title').textContent   = t.loadTitle;
+    document.getElementById('vol-toast-text').textContent  = t.volume;
+    document.getElementById('boom-title').textContent      = t.gotYou;
+    document.getElementById('boom-sub').innerHTML          = t.boomSub;
+    document.getElementById('app-card-label').textContent  = t.cta;
+    document.getElementById('app-tagline').textContent     = t.appTagline;
+    document.getElementById('dl-btn').textContent          = t.getBtn;
+
     var params    = new URLSearchParams(window.location.search);
     var delay     = Math.max(0, parseInt(params.get('delay') || '5', 10));
     var bar       = document.getElementById('bar');
@@ -241,23 +419,12 @@
     var boomSnd   = document.getElementById('snd-boom');
     var volToast  = document.getElementById('vol-toast');
 
-    var statusMsgs = [
-      'Connecting to server...',
-      'Authenticating...',
-      'Fetching file...',
-      'Decrypting content...',
-      'Almost ready...'
-    ];
-
     document.getElementById('tap-btn').addEventListener('click', function () {
       boomSnd.load();
       tapScreen.style.display = 'none';
       loading.style.display   = 'block';
-
-      // Show volume toast
       volToast.classList.add('show');
       setTimeout(function() { volToast.classList.remove('show'); }, 3000);
-
       startLoading();
     });
 
@@ -270,7 +437,6 @@
         var elapsed  = Date.now() - start;
         var ratio    = total === 0 ? 1 : Math.min(elapsed / total, 1);
         var progress;
-
         if (total === 0) { progress = 100; }
         else if (ratio < 0.5) progress = ratio * 2 * 72;
         else if (ratio < 0.9) progress = 72 + (ratio - 0.5) / 0.4 * 20;
@@ -280,9 +446,8 @@
         bar.style.width = progress.toFixed(0) + '%';
         pct.textContent = progress.toFixed(0) + '%';
 
-        // Cycle status messages
-        var si = Math.min(Math.floor(ratio * statusMsgs.length), statusMsgs.length - 1);
-        if (si !== lastStatus) { statusTxt.textContent = statusMsgs[si]; lastStatus = si; }
+        var si = Math.min(Math.floor(ratio * t.statuses.length), t.statuses.length - 1);
+        if (si !== lastStatus) { statusTxt.textContent = t.statuses[si]; lastStatus = si; }
 
         if (progress < 100) { requestAnimationFrame(tick); }
         else { setTimeout(showBoom, 300); }
