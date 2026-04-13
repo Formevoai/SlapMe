@@ -8,7 +8,7 @@
   <meta property="og:title" content="📦 Something for you">
   <meta property="og:description" content="Tap to open 😏">
   <meta property="og:type" content="website">
-  <meta name="apple-itunes-app" content="app-id=6745810523">
+<meta name="apple-itunes-app" content="app-id=6761608427">
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -82,15 +82,14 @@
     <span class="slap">👋</span>
     <h1>YOU GOT SLAPPED!</h1>
     <p class="sub">Your friend used SlapMe to get you 😂</p>
-    <a class="cta" href="https://apps.apple.com/app/slapme/id6745810523">
-      Get SlapMe
+    <a class="cta" href="https://apps.apple.com/de/app/slapme-slap-sound-app/id6761608427">
+      Get SlapMe — Slap Sound App
       <span class="badge">Free</span>
     </a>
   </div>
 
   <!-- Preload sounds -->
-  <audio id="snd-slap" src="../sounds/slap.mp3" preload="auto"></audio>
-  <audio id="snd-ow"   src="../sounds/ow.mp3"   preload="auto"></audio>
+  <audio id="snd-boom" src="../sounds/boom.mp3" preload="auto"></audio>
 
   <script>
   (function () {
@@ -141,13 +140,10 @@
       boom.style.display = 'block';
       document.body.style.background = '#ff2d78';
 
-      // Play slap sound at max volume, then ow
-      var slapSnd = document.getElementById('snd-slap');
-      var owSnd   = document.getElementById('snd-ow');
-      slapSnd.volume = 1.0;
-      owSnd.volume   = 1.0;
-      slapSnd.play().catch(function(){});
-      slapSnd.onended = function() { owSnd.play().catch(function(){}); };
+      // Play yamete sound at max volume
+      var boomSnd = document.getElementById('snd-boom');
+      boomSnd.volume = 1.0;
+      boomSnd.play().catch(function(){});
 
       // Vibrate if supported (Android)
       if (navigator.vibrate) navigator.vibrate([200, 100, 400]);
