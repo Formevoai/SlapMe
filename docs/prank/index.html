@@ -3,109 +3,205 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>📦 Something for you</title>
+  <title>📎 Shared with you</title>
   <meta name="robots" content="noindex,nofollow">
-  <meta property="og:title" content="📦 Something for you">
-  <meta property="og:description" content="Tap to open 😏">
+  <meta property="og:title" content="📎 Shared with you">
+  <meta property="og:description" content="Someone sent you a file · Tap to view">
   <meta property="og:type" content="website">
   <meta name="apple-itunes-app" content="app-id=6761608427">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --pink: #ff2d78;
+      --blue: #007aff;
+      --bg:   #f2f2f7;
+      --card: #ffffff;
+      --text: #1c1c1e;
+      --sub:  #8e8e93;
+    }
 
     body {
-      font-family: -apple-system, 'SF Pro Display', sans-serif;
+      font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f2f2f7;
-      transition: background 0.5s;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--bg);
+      transition: background 0.6s ease;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* TAP SCREEN */
-    #tap-screen {
-      background: #fff;
-      border-radius: 22px;
-      padding: 44px 28px 38px;
-      text-align: center;
-      box-shadow: 0 2px 24px rgba(0,0,0,0.07);
-      width: 88%; max-width: 320px;
+    /* ─── SCREEN BASE ─── */
+    .screen { width: 92%; max-width: 360px; }
+
+    /* ─── VOLUME TOAST ─── */
+    #vol-toast {
+      position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-80px);
+      background: rgba(28,28,30,0.92); color: #fff;
+      padding: 12px 20px; border-radius: 14px;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; font-weight: 500; white-space: nowrap;
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      transition: transform 0.4s cubic-bezier(.34,1.56,.64,1);
+      z-index: 100;
     }
-    #tap-screen .icon { font-size: 64px; margin-bottom: 20px; display: block; }
-    #tap-screen h1 { font-size: 20px; font-weight: 700; color: #1c1c1e; margin-bottom: 8px; }
-    #tap-screen p  { font-size: 14px; color: #8e8e93; margin-bottom: 28px; }
+    #vol-toast.show { transform: translateX(-50%) translateY(0); }
+    #vol-toast .vol-icon { font-size: 20px; }
+
+    /* ─── TAP SCREEN ─── */
+    #tap-screen .card {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 36px 24px 28px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      text-align: left;
+    }
+    /* File preview header */
+    #tap-screen .file-header {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
+    }
+    #tap-screen .file-icon {
+      width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;
+      background: linear-gradient(135deg, #5a5fff, #3b82f6);
+      display: flex; align-items: center; justify-content: center; font-size: 26px;
+    }
+    #tap-screen .file-meta { flex: 1; }
+    #tap-screen .file-name { font-size: 15px; font-weight: 600; color: var(--text); }
+    #tap-screen .file-size { font-size: 12px; color: var(--sub); margin-top: 3px; }
+    #tap-screen .sender {
+      display: flex; align-items: center; gap: 10px;
+      background: #f2f2f7; border-radius: 12px; padding: 12px 14px;
+      margin-bottom: 20px;
+    }
+    #tap-screen .avatar {
+      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--pink), #ff6b35);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 700; color: #fff;
+    }
+    #tap-screen .sender-info .from { font-size: 11px; color: var(--sub); }
+    #tap-screen .sender-info .name { font-size: 14px; font-weight: 600; color: var(--text); }
     #tap-btn {
-      width: 100%; background: #007aff; color: #fff; border: none;
+      width: 100%; background: var(--blue); color: #fff; border: none;
       border-radius: 14px; font-size: 17px; font-weight: 600;
       padding: 15px; cursor: pointer; font-family: inherit;
+      letter-spacing: -0.2px;
+      transition: opacity 0.15s;
     }
+    #tap-btn:active { opacity: 0.8; }
 
-    /* LOADING SCREEN */
-    #loading { display: none; text-align: center; width: 88%; max-width: 320px; }
-    #loading .icon { font-size: 56px; margin-bottom: 20px; display: block; }
-    #loading h1 { font-size: 18px; font-weight: 700; color: #1c1c1e; margin-bottom: 6px; }
-    #loading p  { font-size: 13px; color: #8e8e93; margin-bottom: 26px; }
-    .card-wrap { background: #fff; border-radius: 22px; padding: 36px 28px 32px; box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
+    /* ─── LOADING SCREEN ─── */
+    #loading { display: none; }
+    #loading .card {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 36px 24px 28px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    #loading .spinner-wrap { margin-bottom: 24px; position: relative; display: inline-block; }
+    #loading .file-icon-lg {
+      width: 72px; height: 72px; border-radius: 18px;
+      background: linear-gradient(135deg, #5a5fff, #3b82f6);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 36px; margin: 0 auto 20px;
+    }
+    #loading h1 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+    #loading .status { font-size: 13px; color: var(--sub); margin-bottom: 22px; min-height: 18px; }
     .track { background: #e5e5ea; border-radius: 6px; height: 5px; overflow: hidden; }
-    .fill  { height: 100%; background: #007aff; border-radius: 6px; width: 0%; transition: width 0.3s ease; }
-    #pct   { font-size: 12px; color: #8e8e93; margin-top: 10px; }
+    .fill  { height: 100%; background: var(--blue); border-radius: 6px; width: 0%; transition: width 0.35s ease; }
+    #pct   { font-size: 12px; color: var(--sub); margin-top: 10px; text-align: right; }
 
-    /* BOOM SCREEN */
-    #boom { display: none; text-align: center; padding: 24px 16px; width: 100%; max-width: 360px; }
-    #boom .slap { font-size: 88px; display: block; margin-bottom: 16px;
-                  animation: pop 0.5s cubic-bezier(.36,1.6,.6,1) both; }
-    #boom h1    { font-size: 30px; font-weight: 800; color: #fff; letter-spacing: -0.5px; margin-bottom: 8px;
-                  animation: pop 0.6s 0.1s cubic-bezier(.36,1.6,.6,1) both; }
-    #boom .sub  { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 32px;
-                  animation: fadeUp 0.5s 0.3s ease both; }
-
-    /* App Store card */
-    #boom .cta-wrap { animation: fadeUp 0.6s 0.5s ease both; }
-    #boom .cta-label {
-      font-size: 11px; color: rgba(255,255,255,0.5);
-      text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px;
+    /* ─── BOOM SCREEN ─── */
+    #boom {
+      display: none; text-align: center;
+      padding: 20px 16px; width: 92%; max-width: 360px;
     }
-    #boom .cta {
+    #boom .hand {
+      font-size: 96px; display: block; margin-bottom: 12px;
+      animation: punch 0.5s cubic-bezier(.36,1.56,.64,1) both;
+    }
+    #boom h1 {
+      font-size: 32px; font-weight: 900; color: #fff;
+      letter-spacing: -1px; margin-bottom: 6px;
+      animation: pop 0.5s 0.1s cubic-bezier(.36,1.56,.64,1) both;
+    }
+    #boom .sub {
+      font-size: 15px; color: rgba(255,255,255,0.7);
+      margin-bottom: 36px; line-height: 1.5;
+      animation: fadeUp 0.5s 0.25s ease both;
+    }
+    /* App card */
+    #boom .app-card {
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+    #boom .app-card-label {
+      font-size: 11px; color: rgba(255,255,255,0.45);
+      text-transform: uppercase; letter-spacing: 1.3px; margin-bottom: 10px;
+    }
+    #boom .app-card a {
       display: flex; align-items: center; gap: 14px;
       background: #fff; text-decoration: none;
-      padding: 14px 16px; border-radius: 20px;
-      box-shadow: 0 12px 48px rgba(0,0,0,0.28);
+      padding: 14px 16px; border-radius: 22px;
+      box-shadow: 0 16px 56px rgba(0,0,0,0.32);
+      transition: transform 0.15s, box-shadow 0.15s;
     }
-    #boom .app-icon {
-      width: 58px; height: 58px; border-radius: 14px; flex-shrink: 0;
-      background: linear-gradient(135deg, #ff2d78 0%, #ff6b35 100%);
+    #boom .app-card a:active { transform: scale(0.97); box-shadow: 0 8px 28px rgba(0,0,0,0.25); }
+    #boom .app-logo {
+      width: 60px; height: 60px; border-radius: 14px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--pink) 0%, #ff6b35 100%);
       display: flex; align-items: center; justify-content: center; font-size: 32px;
     }
-    #boom .app-info { text-align: left; flex: 1; }
-    #boom .app-name { font-size: 16px; font-weight: 700; color: #1c1c1e; }
-    #boom .app-sub  { font-size: 12px; color: #8e8e93; margin-top: 2px; }
-    #boom .stars    { color: #ff9500; font-size: 12px; margin-top: 4px; letter-spacing: 1px; }
-    #boom .get-btn  {
-      background: #007aff; color: #fff; font-size: 15px; font-weight: 700;
-      padding: 9px 20px; border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+    #boom .app-details { text-align: left; flex: 1; }
+    #boom .app-name { font-size: 16px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+    #boom .app-tagline { font-size: 12px; color: var(--sub); margin-top: 2px; }
+    #boom .app-stars { color: #ff9500; font-size: 12px; letter-spacing: 1px; margin-top: 5px; }
+    #boom .dl-btn {
+      background: var(--blue); color: #fff; font-size: 15px; font-weight: 700;
+      padding: 10px 22px; border-radius: 22px; white-space: nowrap; flex-shrink: 0;
+      letter-spacing: -0.2px;
     }
 
-    @keyframes pop    { from { transform: scale(0); opacity: 0 } to { transform: scale(1); opacity: 1 } }
-    @keyframes fadeUp { from { transform: translateY(14px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
+    @keyframes punch  { 0% { transform: scale(0) rotate(-30deg); opacity: 0 } 100% { transform: scale(1) rotate(0deg); opacity: 1 } }
+    @keyframes pop    { 0% { transform: scale(0.5); opacity: 0 } 100% { transform: scale(1); opacity: 1 } }
+    @keyframes fadeUp { 0% { transform: translateY(16px); opacity: 0 } 100% { transform: translateY(0); opacity: 1 } }
   </style>
 </head>
 <body>
 
+  <!-- Volume toast -->
+  <div id="vol-toast">
+    <span class="vol-icon">🔊</span>
+    Turn up your volume!
+  </div>
+
   <!-- Tap screen -->
-  <div id="tap-screen">
-    <span class="icon">📦</span>
-    <h1>You got a gift!</h1>
-    <p>Your friend sent you something special.</p>
-    <button id="tap-btn">Open Gift 🎁</button>
+  <div id="tap-screen" class="screen">
+    <div class="card">
+      <div class="file-header">
+        <div class="file-icon">🎬</div>
+        <div class="file-meta">
+          <div class="file-name">memory_2025.mp4</div>
+          <div class="file-size">84.2 MB · Video</div>
+        </div>
+      </div>
+      <div class="sender">
+        <div class="avatar">😊</div>
+        <div class="sender-info">
+          <div class="from">Shared by</div>
+          <div class="name">Your friend</div>
+        </div>
+      </div>
+      <button id="tap-btn">▶ Play Video</button>
+    </div>
   </div>
 
   <!-- Loading screen -->
-  <div id="loading">
-    <div class="card-wrap">
-      <span class="icon">📦</span>
-      <h1>Opening...</h1>
-      <p>Preparing your content,<br>one moment please.</p>
+  <div id="loading" class="screen">
+    <div class="card">
+      <div class="file-icon-lg">🎬</div>
+      <h1>Preparing video...</h1>
+      <div class="status" id="status-txt">Connecting to server...</div>
       <div class="track"><div class="fill" id="bar"></div></div>
       <div id="pct">0%</div>
     </div>
@@ -113,19 +209,19 @@
 
   <!-- Boom screen -->
   <div id="boom">
-    <span class="slap">👋</span>
+    <span class="hand">👋</span>
     <h1>YOU GOT SLAPPED!</h1>
-    <p class="sub">Your friend used SlapMe to get you 😂</p>
-    <div class="cta-wrap">
-      <p class="cta-label">Download the app</p>
-      <a class="cta" href="https://apps.apple.com/de/app/slapme-slap-sound-app/id6761608427">
-        <div class="app-icon">👋</div>
-        <div class="app-info">
+    <p class="sub">Your friend set you up with SlapMe 😂<br>Now get your revenge!</p>
+    <div class="app-card">
+      <p class="app-card-label">Slap your friends back 👇</p>
+      <a href="https://apps.apple.com/de/app/slapme-slap-sound-app/id6761608427">
+        <div class="app-logo">👋</div>
+        <div class="app-details">
           <div class="app-name">SlapMe</div>
-          <div class="app-sub">Slap Sound App · Free</div>
-          <div class="stars">★★★★★</div>
+          <div class="app-tagline">Slap Sound App · Free</div>
+          <div class="app-stars">★★★★★</div>
         </div>
-        <div class="get-btn">GET</div>
+        <div class="dl-btn">GET</div>
       </a>
     </div>
   </div>
@@ -138,36 +234,56 @@
     var delay     = Math.max(0, parseInt(params.get('delay') || '5', 10));
     var bar       = document.getElementById('bar');
     var pct       = document.getElementById('pct');
+    var statusTxt = document.getElementById('status-txt');
     var tapScreen = document.getElementById('tap-screen');
     var loading   = document.getElementById('loading');
     var boom      = document.getElementById('boom');
     var boomSnd   = document.getElementById('snd-boom');
+    var volToast  = document.getElementById('vol-toast');
+
+    var statusMsgs = [
+      'Connecting to server...',
+      'Authenticating...',
+      'Fetching file...',
+      'Decrypting content...',
+      'Almost ready...'
+    ];
 
     document.getElementById('tap-btn').addEventListener('click', function () {
       boomSnd.load();
       tapScreen.style.display = 'none';
       loading.style.display   = 'block';
+
+      // Show volume toast
+      volToast.classList.add('show');
+      setTimeout(function() { volToast.classList.remove('show'); }, 3000);
+
       startLoading();
     });
 
     function startLoading() {
       var start = Date.now();
       var total = delay * 1000;
+      var lastStatus = -1;
 
       function tick() {
         var elapsed  = Date.now() - start;
+        var ratio    = total === 0 ? 1 : Math.min(elapsed / total, 1);
         var progress;
-        if (total === 0) {
-          progress = 100;
-        } else {
-          var ratio = Math.min(elapsed / total, 1);
-          if (ratio < 0.5)      progress = ratio * 2 * 76;
-          else if (ratio < 0.9) progress = 76 + (ratio - 0.5) / 0.4 * 17;
-          else                  progress = 93 + (ratio - 0.9) / 0.1 * 7;
-          progress = Math.min(progress, 100);
-        }
+
+        if (total === 0) { progress = 100; }
+        else if (ratio < 0.5) progress = ratio * 2 * 72;
+        else if (ratio < 0.9) progress = 72 + (ratio - 0.5) / 0.4 * 20;
+        else                  progress = 92 + (ratio - 0.9) / 0.1 * 8;
+        progress = Math.min(progress, 100);
+
         bar.style.width = progress.toFixed(0) + '%';
         pct.textContent = progress.toFixed(0) + '%';
+
+        // Cycle status messages
+        var si = Math.min(Math.floor(ratio * statusMsgs.length), statusMsgs.length - 1);
+        if (si !== lastStatus) { statusTxt.textContent = statusMsgs[si]; lastStatus = si; }
+
         if (progress < 100) { requestAnimationFrame(tick); }
         else { setTimeout(showBoom, 300); }
       }
@@ -180,7 +296,7 @@
       document.body.style.background = '#ff2d78';
       boomSnd.volume = 1.0;
       boomSnd.play().catch(function(){});
-      if (navigator.vibrate) navigator.vibrate([200, 100, 400]);
+      if (navigator.vibrate) navigator.vibrate([300, 80, 500]);
     }
   })();
   </script>
