@@ -88,6 +88,10 @@
     </a>
   </div>
 
+  <!-- Preload sounds -->
+  <audio id="snd-slap" src="../sounds/slap.mp3" preload="auto"></audio>
+  <audio id="snd-ow"   src="../sounds/ow.mp3"   preload="auto"></audio>
+
   <script>
   (function () {
     var params  = new URLSearchParams(window.location.search);
@@ -136,6 +140,14 @@
       loading.style.display = 'none';
       boom.style.display = 'block';
       document.body.style.background = '#ff2d78';
+
+      // Play slap sound at max volume, then ow
+      var slapSnd = document.getElementById('snd-slap');
+      var owSnd   = document.getElementById('snd-ow');
+      slapSnd.volume = 1.0;
+      owSnd.volume   = 1.0;
+      slapSnd.play().catch(function(){});
+      slapSnd.onended = function() { owSnd.play().catch(function(){}); };
 
       // Vibrate if supported (Android)
       if (navigator.vibrate) navigator.vibrate([200, 100, 400]);
